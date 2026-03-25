@@ -1,26 +1,140 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --vip-gold: #D4AF37;
+  --vip-gold-hover: #A8891A;
+  --vip-gold-subtle: #FBF5DC;
+  --vip-navy: #0A1628;
+  --vip-navy-700: #1E3A5F;
+  --vip-navy-100: #E8EEF5;
+  --vip-white: #FFFFFF;
+  --vip-surface: #F7F9FC;
+  --vip-border: #E2E8F0;
+  --vip-text: #0A1628;
+  --vip-muted: #64748B;
+  --vip-muted-light: #94A3B8;
+
+  --v-green: #059669;
+  --v-green-bg: #ECFDF5;
+  --v-amber: #D97706;
+  --v-amber-bg: #FFFBEB;
+  --v-red: #DC2626;
+  --v-red-bg: #FFF5F5;
+
+  --agent-1: #0891B2;
+  --agent-2: #D4AF37;
+  --agent-3: #7C3AED;
+  --agent-4: #059669;
+  --agent-5: #DC2626;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--vip-surface);
+  --color-foreground: var(--vip-text);
+  --color-vip-gold: #D4AF37;
+  --color-vip-gold-hover: #A8891A;
+  --color-vip-gold-subtle: #FBF5DC;
+  --color-vip-navy: #0A1628;
+  --color-vip-navy-700: #1E3A5F;
+  --color-vip-navy-100: #E8EEF5;
+  --color-vip-surface: #F7F9FC;
+  --color-vip-border: #E2E8F0;
+  --color-vip-muted: #64748B;
+  --color-vip-muted-light: #94A3B8;
+  --color-v-green: #059669;
+  --color-v-green-bg: #ECFDF5;
+  --color-v-amber: #D97706;
+  --color-v-amber-bg: #FFFBEB;
+  --color-v-red: #DC2626;
+  --color-v-red-bg: #FFF5F5;
+  --font-sans: var(--font-dm);
+  --font-mono: var(--font-mono-jb);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--vip-surface);
+  color: var(--vip-text);
+  font-family: var(--font-dm), sans-serif;
 }
+
+/* Status dot pulse animations */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(5, 150, 105, 0); }
+}
+@keyframes pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(217, 119, 6, 0); }
+}
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+}
+
+.status-dot-green { animation: pulse-green 2s infinite; }
+.status-dot-amber { animation: pulse-amber 2s infinite; }
+.status-dot-red { animation: pulse-red 2s infinite; }
+
+/* Span bar fill animation */
+@keyframes fill-right {
+  from { width: 0%; }
+  to { width: var(--span-width); }
+}
+.span-bar {
+  animation: fill-right 500ms ease-out forwards;
+}
+
+/* Fade up entrance */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.3s ease-out forwards;
+}
+
+/* Nav active indicator */
+@keyframes slide-in-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Tooltip */
+.tooltip-enter {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+.tooltip-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tabular nums for counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Row hover gold tint */
+.row-hover:hover {
+  background: rgba(212, 175, 55, 0.04);
+}
+
+/* Card base */
+.card {
+  border: 1px solid var(--vip-border);
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(10,22,40,0.06), 0 1px 2px rgba(10,22,40,0.04);
+  padding: 20px 24px;
+  transition: box-shadow 0.15s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(10,22,40,0.10);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--vip-border); border-radius: 3px; }
