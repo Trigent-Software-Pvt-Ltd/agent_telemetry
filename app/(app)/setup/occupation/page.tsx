@@ -5,6 +5,7 @@ import { OccupationSearch } from '@/components/setup/OccupationSearch'
 import { OccupationPreview } from '@/components/setup/OccupationPreview'
 import { SelectedProcesses } from '@/components/setup/SelectedProcesses'
 import { ONET_OCCUPATIONS } from '@/lib/mock-data'
+import { WizardProgress } from '@/components/setup/WizardProgress'
 import type { OnetOccupation } from '@/types/telemetry'
 
 interface ConfiguredProcess {
@@ -56,6 +57,8 @@ export default function OccupationSelectorPage() {
 
   return (
     <div className="animate-fade-up">
+      <WizardProgress currentStep={1} />
+
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>

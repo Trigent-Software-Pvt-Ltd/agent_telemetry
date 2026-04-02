@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Process } from '@/types/telemetry'
-import { AGENTS, ROI_SNAPSHOTS, LANGUAGE_MODES } from '@/lib/mock-data'
+import { AGENTS, ROI_SNAPSHOTS } from '@/lib/mock-data'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 function formatCurrency(value: number): string {
   return value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 })
@@ -13,12 +14,10 @@ const statusColors: Record<string, { bg: string; text: string; label: string }> 
 }
 
 export function ProcessCard({ process }: { process: Process }) {
-  const vocab = LANGUAGE_MODES.operations
   const statusStyle = statusColors[process.status]
   const processAgents = AGENTS.filter((a) => a.processId === process.id)
   const roi = ROI_SNAPSHOTS.find((r) => r.processId === process.id)
 
-  const statusDescription = vocab[process.status as keyof typeof vocab] ?? process.status
   const agentCount = processAgents.length
   const automatedPct = Math.round(process.agentCoverage * 100)
 
@@ -39,13 +38,16 @@ export function ProcessCard({ process }: { process: Process }) {
             >
               {process.name}
             </h3>
-            <span className="text-xs tabular-nums" style={{ color: 'var(--text-muted)' }}>
-              O*NET {process.onetCode}
-            </span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            {statusDescription} · {agentCount} agent{agentCount !== 1 ? 's' : ''} · {automatedPct}% automated
+            {agentCount} agent{agentCount !== 1 ? 's' : ''} handle {automatedPct}% of tasks
+            {roi ? `, saving ${formatCurrency(roi.netRoiWeekly)}/week` : ''}
           </p>
+          {process.onetCode && (
+            <span className="text-[10px] tabular-nums" style={{ color: 'var(--text-muted)' }}>
+              O*NET {process.onetCode}
+            </span>
+          )}
         </div>
         <Link
           href={`/process/${process.id}`}
@@ -91,9 +93,11 @@ export function ProcessCard({ process }: { process: Process }) {
               <span className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>
                 {agent.name}
               </span>
-              <span className="text-xs tabular-nums" style={{ color: 'var(--text-muted)' }}>
-                {agent.sigmaScore}σ
-              </span>
+              <SigmaTooltip value={agent.sigmaScore}>
+                <span className="text-xs tabular-nums" style={{ color: 'var(--text-muted)' }}>
+                  {agent.sigmaScore}σ
+                </span>
+              </SigmaTooltip>
             </Link>
           )
         })}

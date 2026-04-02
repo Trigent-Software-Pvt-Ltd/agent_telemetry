@@ -1,35 +1,37 @@
+import type { Metadata } from 'next'
 import { PROCESSES } from '@/lib/mock-data'
-import { MetricCards } from '@/components/dashboard/MetricCards'
+
+export const metadata: Metadata = { title: 'Dashboard' }
+import { HeroBanner } from '@/components/dashboard/HeroBanner'
+import { HealthSummary } from '@/components/dashboard/HealthSummary'
+import { AttentionRequired } from '@/components/dashboard/AttentionRequired'
 import { ProcessCard } from '@/components/dashboard/ProcessCard'
+import { QuickActions } from '@/components/dashboard/QuickActions'
 import { InsightCards } from '@/components/dashboard/InsightCards'
 
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-5">
-      {/* Page header */}
-      <div>
-        <h1
-          className="text-2xl font-bold"
-          style={{ fontFamily: 'var(--font-sora)', color: 'var(--text-primary)' }}
-        >
-          Executive Portfolio
-        </h1>
-        <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Overview of all processes and agent performance.
-        </p>
-      </div>
+      {/* 1. Narrative hero banner */}
+      <HeroBanner />
 
-      {/* Top-level metrics */}
-      <MetricCards />
+      {/* 2. Health summary (replaces binary healthy/unhealthy) */}
+      <HealthSummary />
 
-      {/* Process summary cards */}
+      {/* 3. Attention required — above process cards */}
+      <AttentionRequired />
+
+      {/* 4. Simplified process cards */}
       <div className="flex flex-col gap-4">
         {PROCESSES.map((process) => (
           <ProcessCard key={process.id} process={process} />
         ))}
       </div>
 
-      {/* Bottom insight cards */}
+      {/* 5. Quick actions */}
+      <QuickActions />
+
+      {/* 6. Bottom insight cards */}
       <InsightCards />
     </div>
   )

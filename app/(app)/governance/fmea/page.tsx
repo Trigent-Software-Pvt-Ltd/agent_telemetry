@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { FmeaEntry } from '@/types/telemetry'
+import { getFmeaEntries } from '@/lib/mock-data'
 import { RiskSummary } from '@/components/fmea/RiskSummary'
 import { RiskHeatmap } from '@/components/fmea/RiskHeatmap'
 import { FmeaDetailPanel } from '@/components/fmea/FmeaDetailPanel'
@@ -9,7 +10,15 @@ import { RiskTable } from '@/components/fmea/RiskTable'
 import { ShieldAlert } from 'lucide-react'
 
 export default function FmeaRiskBoardPage() {
-  const [selectedEntry, setSelectedEntry] = useState<FmeaEntry | null>(null)
+  // Auto-select the highest RPN entry on initial load
+  const highestRpnEntry = useMemo(() => {
+    const entries = getFmeaEntries()
+    return entries.reduce<FmeaEntry | null>((best, entry) =>
+      !best || entry.rpn > best.rpn ? entry : best
+    , null)
+  }, [])
+
+  const [selectedEntry, setSelectedEntry] = useState<FmeaEntry | null>(highestRpnEntry)
 
   return (
     <div className="flex flex-col gap-6">

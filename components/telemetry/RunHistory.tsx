@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { History } from 'lucide-react'
 import type { Run } from '@/types/telemetry'
 import { getAgentById } from '@/lib/mock-data'
+import { EmptyState } from '@/components/shared/EmptyState'
 
 interface RunHistoryProps {
   runs: Run[]
@@ -65,6 +67,18 @@ export default function RunHistory({ runs, pageSize = 10 }: RunHistoryProps) {
 
   const totalPages = Math.ceil(runs.length / pageSize)
   const pageRuns = runs.slice(page * pageSize, (page + 1) * pageSize)
+
+  if (!runs || runs.length === 0) {
+    return (
+      <div className="card animate-fade-up">
+        <EmptyState
+          icon={History}
+          title="No runs recorded yet"
+          description="Once your agent completes its first run, data will appear here."
+        />
+      </div>
+    )
+  }
 
   return (
     <div className="card animate-fade-up">

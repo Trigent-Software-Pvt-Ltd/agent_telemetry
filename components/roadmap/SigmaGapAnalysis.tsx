@@ -1,4 +1,5 @@
 import type { Agent } from '@/types/telemetry'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 interface SigmaGapAnalysisProps {
   agents: Agent[]
@@ -39,7 +40,9 @@ export function SigmaGapAnalysis({ agents, targetSigma }: SigmaGapAnalysisProps)
                         : 'var(--status-amber)',
                   }}
                 >
-                  {agent.sigmaScore.toFixed(1)}&sigma;
+                  <SigmaTooltip value={agent.sigmaScore}>
+                    <span>{agent.sigmaScore.toFixed(1)}&sigma;</span>
+                  </SigmaTooltip>
                 </span>
               </div>
 

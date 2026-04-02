@@ -2,6 +2,7 @@
 
 import { ShieldPlus } from 'lucide-react'
 import { toast } from 'sonner'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import type { OversightGap } from '@/lib/mock-data'
 
 interface OversightGapTableProps {
@@ -63,7 +64,9 @@ export function OversightGapTable({ gaps }: OversightGapTableProps) {
                     {Math.round(gap.automationScore * 100)}%
                   </td>
                   <td className="px-4 py-3 tabular-nums whitespace-nowrap font-semibold">
-                    {gap.sigmaScore.toFixed(1)}&sigma;
+                    <SigmaTooltip value={gap.sigmaScore}>
+                      <span>{gap.sigmaScore.toFixed(1)}&sigma;</span>
+                    </SigmaTooltip>
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
                     <span

@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { getAlertHistory, AlertHistoryEntry } from '@/lib/mock-data'
-import { CheckCircle, Eye } from 'lucide-react'
+import { CheckCircle, Eye, BellOff } from 'lucide-react'
+import { EmptyState } from '@/components/shared/EmptyState'
 
 const SEVERITY_STYLES: Record<string, { bg: string; color: string }> = {
   Critical: { bg: '#FFF5F5', color: '#DC2626' },
@@ -42,6 +43,31 @@ export function AlertHistory() {
       prev.map(a => a.id === id ? { ...a, status: 'Resolved' as const } : a)
     )
     toast.success('Alert resolved')
+  }
+
+  if (!alerts || alerts.length === 0) {
+    return (
+      <section>
+        <div className="mb-4">
+          <h2
+            className="text-xs font-semibold uppercase"
+            style={{ color: '#64748B', letterSpacing: '0.08em' }}
+          >
+            Alert History
+          </h2>
+          <p className="text-[12px] mt-1" style={{ color: '#94A3B8' }}>
+            Recent alert events across all monitored agents.
+          </p>
+        </div>
+        <div className="card">
+          <EmptyState
+            icon={BellOff}
+            title="No alerts triggered yet"
+            description="When an agent breaches an SLA threshold or triggers a rule, alerts will appear here."
+          />
+        </div>
+      </section>
+    )
   }
 
   return (

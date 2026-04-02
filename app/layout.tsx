@@ -24,7 +24,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'r-Potential | Agent Quality & Process ROI',
+  title: {
+    template: '%s — r-Potential',
+    default: 'r-Potential | Agent Quality Platform',
+  },
   description: 'Agent Quality & Process ROI Platform powered by FuzeBox',
 }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { StatusDot } from '@/components/shared/StatusDot'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import { useLanguageMode } from '@/hooks/useLanguageMode'
 import { useOrganisation } from '@/hooks/useOrganisation'
 import { LANGUAGE_MODES, getServqualScores, computeServqualScore } from '@/lib/mock-data'
@@ -135,9 +136,11 @@ export function AgentSigmaCard({ agent }: { agent: Agent }) {
           </>
         ) : (
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold tabular-nums" style={{ color: '#111827' }}>
-              {agent.sigmaScore.toFixed(1)}&sigma;
-            </span>
+            <SigmaTooltip value={agent.sigmaScore}>
+              <span className="text-2xl font-bold tabular-nums" style={{ color: '#111827' }}>
+                {agent.sigmaScore.toFixed(1)}&sigma;
+              </span>
+            </SigmaTooltip>
             <span
               className="text-sm font-semibold"
               style={{

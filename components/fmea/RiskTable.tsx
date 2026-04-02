@@ -3,7 +3,8 @@
 import { useState, useMemo, Fragment } from 'react'
 import { getFmeaEntries } from '@/lib/mock-data'
 import type { FmeaEntry } from '@/types/telemetry'
-import { ChevronDown, ChevronUp, ChevronRight } from 'lucide-react'
+import { ChevronDown, ChevronUp, ChevronRight, AlertTriangle } from 'lucide-react'
+import { EmptyState } from '@/components/shared/EmptyState'
 
 interface RiskTableProps {
   selectedId: string | null
@@ -69,6 +70,18 @@ export function RiskTable({ selectedId, onSelect }: RiskTableProps) {
     { key: 'rpn', label: 'RPN' },
     { key: 'status', label: 'Status' },
   ]
+
+  if (!entries || entries.length === 0) {
+    return (
+      <div className="card">
+        <EmptyState
+          icon={AlertTriangle}
+          title="No risk items identified"
+          description="FMEA risk entries will appear here once failure modes are analyzed for your agents."
+        />
+      </div>
+    )
+  }
 
   return (
     <div className="card" style={{ padding: 0, overflow: 'hidden' }}>

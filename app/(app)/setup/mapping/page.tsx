@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useMemo } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { WizardProgress } from '@/components/setup/WizardProgress'
 import { TaskMappingList } from '@/components/setup/TaskMappingList'
 import type { TaskAssignment } from '@/components/setup/TaskMappingList'
 import { MappingSummary } from '@/components/setup/MappingSummary'
@@ -83,6 +84,8 @@ export default function MappingPage() {
 
   return (
     <div className="animate-fade-up">
+      <WizardProgress currentStep={2} />
+
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>

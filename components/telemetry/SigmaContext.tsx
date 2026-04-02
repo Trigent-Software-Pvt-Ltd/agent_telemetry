@@ -26,7 +26,7 @@ export default function SigmaContext({ agent, process }: SigmaContextProps) {
           <span className="text-sm font-medium text-text-primary">{agent.tasks.length}</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-sm text-text-secondary">Quality Score (OEE)</span>
+          <span className="text-sm text-text-secondary">Quality Score</span>
           <span className="text-sm font-bold tabular-nums" style={{ color: qualityScore >= 80 ? 'var(--status-green)' : qualityScore >= 65 ? 'var(--status-amber)' : 'var(--status-red)' }}>
             {qualityScore}%
           </span>

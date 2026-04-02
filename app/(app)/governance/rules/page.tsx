@@ -7,7 +7,7 @@ import { ComplianceGauge } from '@/components/governance/ComplianceGauge'
 import { GovernanceRuleCard } from '@/components/governance/GovernanceRuleCard'
 import { ViolationsList } from '@/components/governance/ViolationsList'
 import { AddRuleForm } from '@/components/governance/AddRuleForm'
-import { Scale } from 'lucide-react'
+import { Scale, AlertTriangle } from 'lucide-react'
 
 export default function GovernanceRulesPage() {
   const [rules, setRules] = useState<GovernanceRule[]>(getGovernanceRules)
@@ -51,6 +51,37 @@ export default function GovernanceRulesPage() {
 
       {/* Compliance gauge */}
       <ComplianceGauge satisfied={satisfiedCount} total={activeRules.length} />
+
+      {/* Risk consequence callout — only when violations exist */}
+      {violations.length > 0 && (
+        <div
+          className="card flex items-start gap-3"
+          style={{
+            background: violations.length >= 2 ? 'var(--status-red-bg)' : 'var(--status-amber-bg)',
+            border: `1px solid ${violations.length >= 2 ? 'var(--status-red)' : 'var(--status-amber)'}`,
+          }}
+        >
+          <AlertTriangle
+            size={20}
+            className="flex-shrink-0 mt-0.5"
+            style={{ color: violations.length >= 2 ? 'var(--status-red)' : 'var(--status-amber)' }}
+          />
+          <div>
+            <p
+              className="text-sm font-semibold"
+              style={{
+                color: violations.length >= 2 ? 'var(--status-red)' : 'var(--status-amber)',
+                fontFamily: 'var(--font-sora)',
+              }}
+            >
+              {violations.length} violated rule{violations.length !== 1 ? 's' : ''} put you at risk of non-compliance with EU AI Act Article 14
+            </p>
+            <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
+              Estimated exposure: regulatory audit flag. Review and remediate violated rules to maintain compliance posture.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Rules list */}
       <div className="flex flex-col gap-3">

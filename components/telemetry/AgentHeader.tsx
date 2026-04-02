@@ -1,4 +1,5 @@
 import type { Agent } from '@/types/telemetry'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 interface AgentHeaderProps {
   agent: Agent
@@ -47,14 +48,16 @@ export default function AgentHeader({ agent, consistency, slaHitRate, costPerOut
         </div>
 
         {/* Sigma badge */}
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ backgroundColor: cfg.bg }}>
-          <span className="text-lg font-bold tabular-nums" style={{ color: cfg.color }}>
-            {agent.sigmaScore.toFixed(1)}&sigma;
-          </span>
-          <span className="text-sm" style={{ color: cfg.color }}>
-            {agent.sigmaTrend === 'up' ? '↑' : agent.sigmaTrend === 'down' ? '↓' : '→'}
-          </span>
-        </div>
+        <SigmaTooltip value={agent.sigmaScore}>
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ backgroundColor: cfg.bg }}>
+            <span className="text-lg font-bold tabular-nums" style={{ color: cfg.color }}>
+              {agent.sigmaScore.toFixed(1)}&sigma;
+            </span>
+            <span className="text-sm" style={{ color: cfg.color }}>
+              {agent.sigmaTrend === 'up' ? '↑' : agent.sigmaTrend === 'down' ? '↓' : '→'}
+            </span>
+          </div>
+        </SigmaTooltip>
       </div>
 
       {/* Stat boxes */}

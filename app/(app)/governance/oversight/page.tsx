@@ -20,10 +20,10 @@ export default function OversightGapReportPage() {
         </div>
         <div>
           <h1 className="text-2xl font-bold font-[var(--font-sora)]">
-            Oversight Gap Report
+            Unreviewed Decisions
           </h1>
           <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Tasks with full agent ownership but no human review process
+            Tasks where AI operates without human review
           </p>
           <p className="mt-0.5 text-xs" style={{ color: 'var(--text-muted)' }}>
             ISO/IEC 42001 &middot; Autonomous tasks require documented risk acceptance or review gates

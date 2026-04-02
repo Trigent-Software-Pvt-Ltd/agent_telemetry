@@ -16,10 +16,11 @@ import type { Agent } from '@/types/telemetry'
 interface Props {
   agent: Agent
   sigmaTarget: number
+  defaultOpen?: boolean
 }
 
-export default function CostOfInaction({ agent, sigmaTarget }: Props) {
-  const [isOpen, setIsOpen] = useState(false)
+export default function CostOfInaction({ agent, sigmaTarget, defaultOpen = false }: Props) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
 
   // Only show for agents below sigma target
   if (agent.sigmaScore >= sigmaTarget) return null

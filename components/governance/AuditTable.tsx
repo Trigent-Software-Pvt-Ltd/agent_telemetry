@@ -1,7 +1,9 @@
 'use client'
 
+import { Shield } from 'lucide-react'
 import { AUDIT_LOG } from '@/lib/mock-data'
 import type { DecisionType } from '@/types/telemetry'
+import { EmptyState } from '@/components/shared/EmptyState'
 
 const pillStyles: Record<DecisionType, { bg: string; color: string; label: string }> = {
   approved:   { bg: 'var(--status-green-bg)', color: 'var(--status-green)', label: 'APPROVED' },
@@ -22,6 +24,18 @@ function formatDate(iso: string) {
 }
 
 export function AuditTable() {
+  if (!AUDIT_LOG || AUDIT_LOG.length === 0) {
+    return (
+      <div className="card">
+        <EmptyState
+          icon={Shield}
+          title="No audit entries yet"
+          description="Audit entries will appear here as agents make decisions and humans review them."
+        />
+      </div>
+    )
+  }
+
   return (
     <div className="card overflow-hidden" style={{ padding: 0 }}>
       <div className="overflow-x-auto">

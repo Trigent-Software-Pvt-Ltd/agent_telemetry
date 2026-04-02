@@ -1,6 +1,8 @@
 'use client'
 
+import { Radio } from 'lucide-react'
 import { LiveEvent } from '@/lib/mock-data'
+import { EmptyState } from '@/components/shared/EmptyState'
 
 interface Props {
   events: LiveEvent[]
@@ -24,6 +26,15 @@ export function LiveEventFeed({ events }: Props) {
         </h2>
       </div>
       <div className="flex-1 overflow-y-auto p-2 space-y-1" style={{ maxHeight: 520 }}>
+        {(!events || events.length === 0) && (
+          <div style={{ color: 'var(--text-muted)' }}>
+            <EmptyState
+              icon={Radio}
+              title="Waiting for events..."
+              description="Live events will stream here once agents begin processing."
+            />
+          </div>
+        )}
         {events.map((evt, i) => (
           <div
             key={evt.id}

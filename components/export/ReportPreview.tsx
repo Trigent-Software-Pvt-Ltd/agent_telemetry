@@ -1,6 +1,7 @@
 'use client'
 
 import { PROCESSES, AGENTS, ROI_SNAPSHOTS, AUDIT_LOG } from '@/lib/mock-data'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 interface ReportPreviewProps {
   sections: string[]
@@ -141,11 +142,13 @@ export function ReportPreview({ sections, processes, reportName }: ReportPreview
                     />
                     <span>{agent.name}</span>
                   </div>
-                  <span className="font-mono font-semibold" style={{
-                    color: agent.sigmaScore >= 4 ? 'var(--status-green)' : agent.sigmaScore >= 3 ? 'var(--status-amber)' : 'var(--status-red)',
-                  }}>
-                    {agent.sigmaScore.toFixed(1)}σ
-                  </span>
+                  <SigmaTooltip value={agent.sigmaScore}>
+                    <span className="font-mono font-semibold" style={{
+                      color: agent.sigmaScore >= 4 ? 'var(--status-green)' : agent.sigmaScore >= 3 ? 'var(--status-amber)' : 'var(--status-red)',
+                    }}>
+                      {agent.sigmaScore.toFixed(1)}σ
+                    </span>
+                  </SigmaTooltip>
                 </div>
               ))}
             </div>

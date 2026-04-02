@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAgentById, getRunsForAgent, getProcessById, getAgentRoi, ORGANISATION } from '@/lib/mock-data'
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const agent = getAgentById(id)
+  return { title: agent ? agent.name : 'Agent' }
+}
 import AgentHeader from '@/components/telemetry/AgentHeader'
 import MetricsBar from '@/components/telemetry/MetricsBar'
 import AgentRoiCard from '@/components/telemetry/AgentRoiCard'
@@ -54,11 +61,15 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
         p95Latency={agent.p95LatencyMs}
       />
 
+      {/* Cost of Inaction — moved above ROI for executive visibility */}
+      <CostOfInaction
+        agent={agent}
+        sigmaTarget={ORGANISATION.sigmaTarget}
+        defaultOpen={agent.sigmaScore < ORGANISATION.sigmaTarget && agent.sigmaTrend === 'down'}
+      />
+
       {/* Agent ROI Breakdown */}
       {agentRoi && <AgentRoiCard roi={agentRoi} />}
-
-      {/* Cost of Inaction — only for agents below sigma target */}
-      <CostOfInaction agent={agent} sigmaTarget={ORGANISATION.sigmaTarget} />
 
       {/* Main content: Run History + Sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

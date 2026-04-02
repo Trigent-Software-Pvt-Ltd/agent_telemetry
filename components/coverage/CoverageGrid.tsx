@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { CoverageMapEntry, Agent } from '@/types/telemetry'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import { CoverageSummaryBar } from './CoverageSummaryBar'
 import { TaskDetailPanel } from './TaskDetailPanel'
 
@@ -51,7 +52,7 @@ export function CoverageGrid({ entries, agents, processName }: CoverageGridProps
       {/* Header */}
       <div>
         <h1 className="text-xl font-bold" style={{ color: '#111827' }}>
-          Coverage Map &mdash; {processName}
+          Task Assignment &mdash; {processName}
         </h1>
         <p className="text-xs mt-1" style={{ color: '#9CA3AF' }}>
           Click any task to see detailed ownership analysis
@@ -127,18 +128,20 @@ export function CoverageGrid({ entries, agents, processName }: CoverageGridProps
                 {entry.ownership === 'agent' && agent && (
                   <span className="text-[11px] text-text-secondary flex items-center gap-1">
                     {agent.name}
-                    <span
-                      className="font-bold tabular-nums"
-                      style={{
-                        color: agent.sigmaScore >= 4.0
-                          ? 'var(--status-green)'
-                          : agent.sigmaScore >= 3.0
-                            ? 'var(--status-amber)'
-                            : 'var(--status-red)',
-                      }}
-                    >
-                      {agent.sigmaScore.toFixed(1)}&sigma;
-                    </span>
+                    <SigmaTooltip value={agent.sigmaScore}>
+                      <span
+                        className="font-bold tabular-nums"
+                        style={{
+                          color: agent.sigmaScore >= 4.0
+                            ? 'var(--status-green)'
+                            : agent.sigmaScore >= 3.0
+                              ? 'var(--status-amber)'
+                              : 'var(--status-red)',
+                        }}
+                      >
+                        {agent.sigmaScore.toFixed(1)}&sigma;
+                      </span>
+                    </SigmaTooltip>
                   </span>
                 )}
               </div>

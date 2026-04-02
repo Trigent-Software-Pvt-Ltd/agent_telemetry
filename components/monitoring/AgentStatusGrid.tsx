@@ -1,10 +1,19 @@
 'use client'
 
-import { AgentStatus } from '@/lib/mock-data'
+import { AgentStatus, AGENTS, PROCESSES } from '@/lib/mock-data'
+import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import { Bot } from 'lucide-react'
 
 interface Props {
   agents: AgentStatus[]
+}
+
+// Map agent IDs to their process names (T5)
+function getProcessName(agentId: string): string {
+  const agent = AGENTS.find(a => a.id === agentId)
+  if (!agent) return ''
+  const process = PROCESSES.find(p => p.id === agent.processId)
+  return process?.name ?? ''
 }
 
 const statusDotClass: Record<string, string> = {
@@ -55,6 +64,9 @@ export function AgentStatusGrid({ agents }: Props) {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-semibold text-white truncate">{agent.agentName}</div>
+                <div className="text-[11px] truncate" style={{ color: '#CBD5E1' }}>
+                  {getProcessName(agent.agentId)}
+                </div>
                 <div className="text-xs font-[var(--font-mono-jb)]" style={{ color: '#94A3B8' }}>{agent.model}</div>
               </div>
             </div>
@@ -74,9 +86,11 @@ export function AgentStatusGrid({ agents }: Props) {
               </div>
               <div>
                 <div className="text-[10px] uppercase" style={{ color: '#64748B' }}>Sigma</div>
-                <div className="text-sm font-semibold tabular-nums" style={{ color: '#D4AF37' }}>
-                  {agent.sigmaScore.toFixed(1)}
-                </div>
+                <SigmaTooltip value={agent.sigmaScore}>
+                  <div className="text-sm font-semibold tabular-nums" style={{ color: '#D4AF37' }}>
+                    {agent.sigmaScore.toFixed(1)}
+                  </div>
+                </SigmaTooltip>
               </div>
             </div>
 
