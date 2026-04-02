@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Sora, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { Toaster } from 'sonner'
+import { LanguageModeProvider } from '@/hooks/useLanguageModeProvider'
+import { OrganisationProvider } from '@/hooks/useOrganisationProvider'
 import './globals.css'
 
 const sora = Sora({
@@ -22,8 +24,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'VIPPlay Agent Telemetry',
-  description: 'Agentic AI Performance Telemetry Platform',
+  title: 'r-Potential | Agent Quality & Process ROI',
+  description: 'Agent Quality & Process ROI Platform powered by FuzeBox',
 }
 
 export default function RootLayout({
@@ -33,8 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sora.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-[var(--vip-surface)] text-[var(--vip-text)] font-[var(--font-dm)]">
-        {children}
+      <body className="min-h-screen bg-[var(--surface)] text-[var(--text-primary)] font-[var(--font-dm)]">
+        <OrganisationProvider>
+          <LanguageModeProvider>
+            {children}
+          </LanguageModeProvider>
+        </OrganisationProvider>
         <Toaster position="bottom-right" richColors />
       </body>
     </html>

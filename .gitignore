@@ -44,3 +44,4 @@ credentials.csv
 next-env.d.ts
 
 .vercel
+.claude/worktrees/

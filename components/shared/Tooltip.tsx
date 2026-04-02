@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, ReactNode } from 'react'
+import { useState, useRef, type ReactNode } from 'react'
 
 export function Tooltip({ content, children }: { content: ReactNode; children: ReactNode }) {
   const [visible, setVisible] = useState(false)
@@ -18,9 +18,9 @@ export function Tooltip({ content, children }: { content: ReactNode; children: R
         <div
           className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 rounded-lg text-xs whitespace-nowrap"
           style={{
-            background: '#0A1628',
+            background: '#0f1117',
             color: '#FFFFFF',
-            boxShadow: '0 4px 16px rgba(10,22,40,0.20)',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.20)',
             animation: 'fade-up 0.15s ease-out forwards',
           }}
         >

@@ -1,12 +1,13 @@
 'use client'
 
 import clsx from 'clsx'
+import type { Status } from '@/types/telemetry'
 
-export function StatusDot({ status, size = 8 }: { status: 'green' | 'amber' | 'red'; size?: number }) {
-  const colors = {
-    green: { bg: '#059669', className: 'status-dot-green' },
-    amber: { bg: '#D97706', className: 'status-dot-amber' },
-    red: { bg: '#DC2626', className: 'status-dot-red' },
+export function StatusDot({ status, size = 8 }: { status: Status; size?: number }) {
+  const colors: Record<Status, { bg: string; className: string }> = {
+    green: { bg: '#1D9E75', className: 'status-dot-green' },
+    amber: { bg: '#BA7517', className: 'status-dot-amber' },
+    red: { bg: '#E24B4A', className: 'status-dot-red' },
   }
   const c = colors[status]
   return (

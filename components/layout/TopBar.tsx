@@ -1,94 +1,184 @@
 'use client'
 
-import { WORKFLOWS } from '@/lib/mock-data'
-import { computeSummary } from '@/lib/mock-data'
-import { VerdictBadge } from '@/components/shared/VerdictBadge'
-import { ExportButton } from '@/components/shared/ExportButton'
-import { ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { useLanguageMode } from '@/hooks/useLanguageMode'
+import { Bell } from 'lucide-react'
+import type { LanguageMode } from '@/types/telemetry'
 
-interface TopBarProps {
-  activeWorkflowId: string
-  onWorkflowChange: (id: string) => void
-  showWorkflowSelector?: boolean
-}
+const NOTIFICATIONS = [
+  { id: 1, type: 'warning' as const, message: 'Recommendation Writer quality declined to 2.9\u03c3', time: '2 hours ago' },
+  { id: 2, type: 'success' as const, message: 'Odds Analysis Agent reached 4.2\u03c3 target', time: '1 day ago' },
+  { id: 3, type: 'warning' as const, message: 'Override rate on recommendation tasks: 40%', time: '2 days ago' },
+]
 
-export function TopBar({ activeWorkflowId, onWorkflowChange, showWorkflowSelector = true }: TopBarProps) {
+function NotificationBell() {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-  const activeWorkflow = WORKFLOWS.find(w => w.id === activeWorkflowId)!
-  const activeSummary = computeSummary(activeWorkflowId)
+  const warningCount = NOTIFICATIONS.filter(n => n.type === 'warning').length
 
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
     }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const dateRanges = ['24h', '7d', '30d', '90d']
-  const [activeRange, setActiveRange] = useState('30d')
-
   return (
-    <div className="flex items-center justify-between py-4 px-6 bg-white border-b" style={{ borderColor: '#E2E8F0' }}>
-      <div className="flex items-center gap-4">
-        {showWorkflowSelector && (
-          <div className="relative" ref={ref}>
-            <button
-              onClick={() => setOpen(!open)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-semibold font-[var(--font-sora)] cursor-pointer"
-              style={{ borderColor: '#E2E8F0', color: '#0A1628' }}
-            >
-              {activeWorkflow.name}
-              <VerdictBadge verdict={activeSummary.verdict} size="sm" />
-              <ChevronDown size={16} style={{ color: '#64748B' }} />
-            </button>
-            {open && (
-              <div
-                className="absolute top-full left-0 mt-1 w-80 rounded-lg border bg-white z-50"
-                style={{ borderColor: '#E2E8F0', boxShadow: '0 4px 16px rgba(10,22,40,0.12)' }}
-              >
-                {WORKFLOWS.map(w => {
-                  const s = computeSummary(w.id)
-                  return (
-                    <button
-                      key={w.id}
-                      onClick={() => { onWorkflowChange(w.id); setOpen(false) }}
-                      className="w-full flex items-center justify-between px-4 py-3 text-sm text-left transition-colors cursor-pointer row-hover"
-                      style={{ borderBottom: '1px solid #E2E8F0' }}
-                    >
-                      <div>
-                        <div className="font-semibold" style={{ color: '#0A1628' }}>{w.name}</div>
-                        <div className="text-xs" style={{ color: '#64748B' }}>{w.framework} · {w.model}</div>
-                      </div>
-                      <VerdictBadge verdict={s.verdict} size="sm" />
-                    </button>
-                  )
-                })}
-              </div>
-            )}
-          </div>
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(prev => !prev)}
+        className="relative p-2 rounded-lg transition-colors cursor-pointer"
+        style={{ color: 'var(--text-secondary)' }}
+        aria-label="Notifications"
+      >
+        <Bell size={18} />
+        {warningCount > 0 && (
+          <span
+            className="absolute -top-0.5 -right-0.5 flex items-center justify-center text-[10px] font-bold text-white rounded-full"
+            style={{ width: 16, height: 16, background: 'var(--status-red)' }}
+          >
+            {warningCount}
+          </span>
         )}
+      </button>
 
-        <div className="flex items-center gap-1">
-          {dateRanges.map(range => (
-            <button
-              key={range}
-              onClick={() => setActiveRange(range)}
-              className="px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer"
-              style={{
-                background: activeRange === range ? '#E8EEF5' : 'transparent',
-                color: activeRange === range ? '#0A1628' : '#64748B',
-              }}
+      {open && (
+        <div
+          className="absolute right-0 top-full mt-2 w-80 rounded-xl overflow-hidden shadow-lg z-50 animate-fade-up"
+          style={{ background: '#FFFFFF', border: '1px solid var(--border)' }}
+        >
+          <div className="px-4 py-3 font-semibold text-sm" style={{ borderBottom: '1px solid var(--border)' }}>
+            Notifications
+          </div>
+          {NOTIFICATIONS.map(notif => (
+            <div
+              key={notif.id}
+              className="px-4 py-3 flex items-start gap-3 row-hover"
+              style={{ borderBottom: '1px solid var(--border)' }}
             >
-              {range}
-            </button>
+              <span
+                className="mt-0.5 flex-shrink-0 inline-block rounded-full"
+                style={{
+                  width: 8, height: 8,
+                  backgroundColor: notif.type === 'warning' ? 'var(--status-amber)' : 'var(--status-green)',
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm leading-snug" style={{ color: 'var(--text-primary)' }}>
+                  {notif.message}
+                </p>
+                <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                  {notif.time}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
+      )}
+    </div>
+  )
+}
 
-      <ExportButton />
+function Breadcrumb() {
+  const pathname = usePathname()
+
+  const segments = pathname.split('/').filter(Boolean)
+
+  const labels: Record<string, string> = {
+    dashboard: 'Dashboard',
+    roi: 'ROI Calculator',
+    export: 'Board Export',
+    process: 'Processes',
+    agents: 'Agents',
+    governance: 'Governance',
+    audit: 'Audit Log',
+    fmea: 'FMEA Risk Board',
+    settings: 'Settings',
+    setup: 'Setup',
+    occupation: 'Occupation Selector',
+    mapping: 'Agent-Task Mapping',
+    labor: 'Labor Graph',
+    sigma: 'Sigma Scorecard',
+    coverage: 'Coverage Map',
+    roadmap: 'Roadmap',
+    'sports-betting': 'Sports Betting Analyst',
+    'customer-service': 'Customer Service Rep',
+    'odds-analysis': 'Odds Analysis Agent',
+    'line-comparison': 'Line Comparison Agent',
+    'recommendation-writer': 'Recommendation Writer Agent',
+    'customer-response': 'Customer Response Agent',
+  }
+
+  const crumbs = segments.map((seg, i) => ({
+    label: labels[seg] || seg.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+    isLast: i === segments.length - 1,
+  }))
+
+  return (
+    <div className="flex items-center gap-1.5 text-sm">
+      {crumbs.map((crumb, i) => (
+        <span key={i} className="flex items-center gap-1.5">
+          {i > 0 && (
+            <span style={{ color: '#D1D5DB' }}>/</span>
+          )}
+          <span
+            className={crumb.isLast ? 'font-semibold' : ''}
+            style={{ color: crumb.isLast ? '#111827' : '#9CA3AF' }}
+          >
+            {crumb.label}
+          </span>
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function LanguageToggle() {
+  const { mode, setMode } = useLanguageMode()
+
+  const options: { value: LanguageMode; label: string }[] = [
+    { value: 'operations', label: 'Operations' },
+    { value: 'quality', label: 'Quality' },
+  ]
+
+  return (
+    <div
+      className="inline-flex rounded-lg p-1"
+      style={{ background: '#F3F4F6', border: '1px solid #E8E6E0' }}
+    >
+      {options.map(opt => (
+        <button
+          key={opt.value}
+          onClick={() => setMode(opt.value)}
+          className="px-4 py-2 rounded-md text-sm font-medium transition-all cursor-pointer"
+          style={{
+            background: mode === opt.value ? '#FFFFFF' : 'transparent',
+            color: mode === opt.value ? '#111827' : '#6B7280',
+            boxShadow: mode === opt.value ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+          }}
+        >
+          {opt.label}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+export function TopBar() {
+  return (
+    <div
+      className="flex items-center justify-between py-3.5 px-6 bg-white"
+      style={{ borderBottom: '1px solid #E8E6E0' }}
+    >
+      <Breadcrumb />
+      <div className="flex items-center gap-3">
+        <LanguageToggle />
+        <NotificationBell />
+      </div>
     </div>
   )
 }
