@@ -22,6 +22,7 @@ const STATUS_COLORS: Record<string, string> = {
 interface DpmoTrendChartProps {
   agents: Agent[]
   trends: Record<string, SigmaTrendPoint[]>
+  rangeLabel?: string
 }
 
 interface MergedPoint {
@@ -91,7 +92,7 @@ function CustomTooltip({
   )
 }
 
-export function DpmoTrendChart({ agents, trends }: DpmoTrendChartProps) {
+export function DpmoTrendChart({ agents, trends, rangeLabel }: DpmoTrendChartProps) {
   // Merge all agent trend data into a single array keyed by date
   const dateMap = new Map<string, MergedPoint>()
 
@@ -108,6 +109,7 @@ export function DpmoTrendChart({ agents, trends }: DpmoTrendChartProps) {
   }
 
   const data = Array.from(dateMap.values()).sort((a, b) => a.date.localeCompare(b.date))
+  const tickInterval = data.length > 100 ? 25 : data.length > 50 ? 12 : 4
 
   const agentMap: Record<string, Agent> = {}
   for (const a of agents) {
@@ -119,7 +121,7 @@ export function DpmoTrendChart({ agents, trends }: DpmoTrendChartProps) {
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-sm font-semibold" style={{ color: '#111827' }}>
-            30-Day DPMO Trend
+            {rangeLabel === '90d' ? '90-Day' : rangeLabel === '6m' ? '6-Month' : '30-Day'} DPMO Trend
           </h3>
           <p className="text-xs mt-0.5" style={{ color: '#9CA3AF' }}>
             Lower DPMO is better. Target: 6,210 DPMO (4.0&sigma;)
@@ -137,7 +139,7 @@ export function DpmoTrendChart({ agents, trends }: DpmoTrendChartProps) {
               const d = new Date(val)
               return `${d.getDate()}/${d.getMonth() + 1}`
             }}
-            interval={4}
+            interval={tickInterval}
           />
           <YAxis
             tick={{ fontSize: 10, fill: '#9CA3AF' }}

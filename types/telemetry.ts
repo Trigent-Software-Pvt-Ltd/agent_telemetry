@@ -472,3 +472,153 @@ export interface Correlation {
   insight: string
   data: CorrelationPoint[]
 }
+
+// ─── Phase 7: Agent Availability ─────────────────────────────────
+
+export interface AvailabilityIncident {
+  date: string
+  durationMinutes: number
+  cause: string
+}
+
+export interface AgentAvailability {
+  agentId: string
+  uptimePct: number
+  mttrMinutes: number
+  incidents: AvailabilityIncident[]
+}
+
+// ─── Phase 8: Agent Setup Costs (Payback Calculator) ──────────
+
+export interface AgentSetupCost {
+  agentId: string
+  agentName: string
+  setupCost: number
+  weeklyNetRoi: number
+  weeksToPayback: number
+}
+
+// ─── Phase 8: TCO, Model Comparison, Maturity, Projection, Build vs Buy ──
+
+export interface TcoCategoryBreakdown {
+  name: string
+  value: number
+  pct: number
+  color: string
+}
+
+export interface AgentOversightEfficiency {
+  agentId: string
+  agentName: string
+  sigmaScore: number
+  oversightHoursPerWeek: number
+  costPerWeek: number
+}
+
+export interface TokenCostRow {
+  agentId: string
+  agentName: string
+  avgTokensPerRun: number
+  costPerToken: number
+  costPerRun: number
+}
+
+export interface ModelOption {
+  id: string
+  name: string
+  costPerToken: number
+  estimatedSigmaDelta: number
+  estimatedLatencyMs: number
+  monthlyCostEstimate: number
+}
+
+export interface MaturityDimension {
+  dimension: string
+  score: number
+  nextLevel: string
+  action: string
+}
+
+export interface MaturityLevel {
+  level: number
+  name: string
+  description: string
+}
+
+export interface LongRangeMonth {
+  month: number
+  label: string
+  conservative: number
+  moderate: number
+  aggressive: number
+  headcount: number
+  agentCoveragePct: number
+}
+
+export interface BuildVsOption {
+  approach: 'build' | 'buy'
+  estimatedCost: number
+  timeline: string
+  riskLevel: 'Low' | 'Medium' | 'High'
+  controlLevel: 'Full' | 'Moderate' | 'Limited'
+}
+
+export interface BuildVsProcess {
+  processId: string
+  processName: string
+  build: BuildVsOption
+  buy: BuildVsOption
+  recommendation: 'build' | 'buy'
+  reasoning: string
+}
+
+export interface DecisionFactor {
+  factor: string
+  weight: number
+  buildScore: number
+  buyScore: number
+}
+
+// ─── Phase 9.2: Compliance & Geo-Scoped Rules ────────────────
+
+export type ComplianceStatus = 'PASS' | 'PARTIAL' | 'NOT_STARTED'
+export type Geography = 'Global' | 'EU' | 'US' | 'APAC'
+
+export interface ComplianceRequirement {
+  id: string
+  requirement: string
+  status: ComplianceStatus
+  detail: string
+}
+
+export interface EvidenceChainItem {
+  task: string
+  agentDecision: string
+  humanReview: string
+  outcome: string
+}
+
+export interface MtbvDataPoint {
+  month: string
+  days: number
+}
+
+// ─── Phase 9.3: Human vs Agent & Team Impact ─────────────────
+
+export interface HumanBaseline {
+  taskId: string
+  task: string
+  humanErrorRate: number
+  humanAvgTimeMinutes: number
+  agentErrorRate: number
+  agentAvgTimeMinutes: number
+}
+
+export interface TeamMemberImpact {
+  name: string
+  role: string
+  hoursFreed: number
+  oversightHours: number
+  netSaved: number
+  satisfaction: number  // 1-5
+}

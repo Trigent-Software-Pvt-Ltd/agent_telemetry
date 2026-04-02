@@ -5,6 +5,7 @@ import { SystemHealthBanner } from '@/components/monitoring/SystemHealthBanner'
 import { MonitoringMetrics } from '@/components/monitoring/MonitoringMetrics'
 import { AgentStatusGrid } from '@/components/monitoring/AgentStatusGrid'
 import { LiveEventFeed } from '@/components/monitoring/LiveEventFeed'
+import { EmergencyPause } from '@/components/monitoring/EmergencyPause'
 import {
   getSystemHealth,
   getAgentStatuses,
@@ -18,6 +19,7 @@ export default function MonitoringPage() {
   const [agents, setAgents] = useState<AgentStatus[]>(getAgentStatuses)
   const [events, setEvents] = useState<LiveEvent[]>(() => getLiveEvents(20))
   const [tick, setTick] = useState(0)
+  const [allPaused, setAllPaused] = useState(false)
 
   // Simulate live updates every 5 seconds
   const addEvent = useCallback(() => {
@@ -79,8 +81,16 @@ export default function MonitoringPage() {
         </div>
       </div>
 
-      {/* System health banner */}
-      <SystemHealthBanner status={health.status} label={health.label} />
+      {/* System health banner + emergency pause */}
+      <div className="flex items-center gap-4">
+        <div className="flex-1">
+          <SystemHealthBanner
+            status={allPaused ? 'down' : health.status}
+            label={allPaused ? 'ALL AGENTS PAUSED \u2014 manual mode active' : health.label}
+          />
+        </div>
+        <EmergencyPause onPauseChange={setAllPaused} />
+      </div>
 
       {/* Top metrics bar */}
       <MonitoringMetrics

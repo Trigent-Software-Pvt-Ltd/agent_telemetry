@@ -2,11 +2,15 @@
 
 import { useState } from 'react'
 import type { CoverageMapEntry, Agent, Process, OnetTask } from '@/types/telemetry'
+import type { TaskPerformanceMetric } from '@/lib/mock-data'
 import { CoverageSummaryBar } from './CoverageSummaryBar'
 import { TaskDetailPanel } from './TaskDetailPanel'
+import { TaskPerformanceOverlay } from './TaskPerformanceOverlay'
+import { HumanVsAgentComparison } from './HumanVsAgentComparison'
 import TaskBoard from '@/components/labor/TaskBoard'
 import SkillsPanel from '@/components/labor/SkillsPanel'
-import { LayoutGrid, List } from 'lucide-react'
+import { getHumanBaseline } from '@/lib/mock-data'
+import { LayoutGrid, List, GitCompareArrows } from 'lucide-react'
 
 type ViewMode = 'card' | 'list'
 
@@ -15,6 +19,7 @@ interface TaskOwnershipPageProps {
   agents: Agent[]
   tasks: OnetTask[]
   process: Process
+  taskPerformance?: TaskPerformanceMetric[]
 }
 
 const ownershipStyles: Record<string, { border: string; bg: string; pill: string; pillText: string }> = {
@@ -44,9 +49,23 @@ const confidenceColors: Record<string, string> = {
   low: 'var(--status-red)',
 }
 
-export function TaskOwnershipPage({ entries, agents, tasks, process }: TaskOwnershipPageProps) {
+export function TaskOwnershipPage({ entries, agents, tasks, process, taskPerformance }: TaskOwnershipPageProps) {
+  const perfMap = new Map<string, TaskPerformanceMetric>()
+  if (taskPerformance) {
+    for (const tp of taskPerformance) {
+      perfMap.set(tp.taskId, tp)
+    }
+  }
+
+  // Find worst agent task for the insight callout
+  const worstAgentTask = taskPerformance
+    ?.filter((tp) => tp.ownership === 'agent' && tp.totalRuns > 0)
+    .reduce<TaskPerformanceMetric | null>((worst, tp) =>
+      !worst || tp.successRate < worst.successRate ? tp : worst
+    , null)
   const [viewMode, setViewMode] = useState<ViewMode>('card')
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null)
+  const [showHumanComparison, setShowHumanComparison] = useState(false)
 
   const selectedEntry = entries.find((e) => e.taskId === selectedTaskId) ?? null
   const selectedAgent = selectedEntry?.agentId
@@ -73,6 +92,21 @@ export function TaskOwnershipPage({ entries, agents, tasks, process }: TaskOwner
           </p>
         </div>
 
+        <div className="flex items-center gap-3">
+          {/* Human comparison toggle */}
+          <button
+            onClick={() => setShowHumanComparison(prev => !prev)}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer"
+            style={{
+              background: showHumanComparison ? 'var(--vip-navy)' : 'var(--surface)',
+              color: showHumanComparison ? '#FFFFFF' : 'var(--text-muted)',
+              border: `1px solid ${showHumanComparison ? 'var(--vip-navy)' : 'var(--border)'}`,
+            }}
+          >
+            <GitCompareArrows size={14} />
+            Compare with human baseline
+          </button>
+
         {/* View toggle */}
         <div
           className="inline-flex rounded-lg p-1"
@@ -97,7 +131,29 @@ export function TaskOwnershipPage({ entries, agents, tasks, process }: TaskOwner
             )
           })}
         </div>
+        </div>
       </div>
+
+      {/* Human vs Agent comparison overlay */}
+      {showHumanComparison && (
+        <HumanVsAgentComparison baselines={getHumanBaseline()} />
+      )}
+
+      {/* Insight callout */}
+      {worstAgentTask && (
+        <div
+          className="rounded-lg px-4 py-3 text-sm"
+          style={{
+            background: 'var(--status-red-bg)',
+            border: '1px solid var(--status-red)',
+            color: 'var(--text-primary)',
+          }}
+        >
+          <strong>Quality alert:</strong> Agents are worst at &ldquo;{worstAgentTask.task}&rdquo;
+          ({Math.round(worstAgentTask.successRate * 100)}% success rate).
+          Consider reverting to collaborative mode or improving the prompt chain.
+        </div>
+      )}
 
       {/* Coverage summary bar (shared) */}
       <CoverageSummaryBar entries={entries} />
@@ -186,6 +242,11 @@ export function TaskOwnershipPage({ entries, agents, tasks, process }: TaskOwner
                       </span>
                     )}
                   </div>
+
+                  {/* Task performance metrics overlay */}
+                  {perfMap.has(entry.taskId) && (
+                    <TaskPerformanceOverlay perf={perfMap.get(entry.taskId)!} />
+                  )}
                 </button>
               )
             })}

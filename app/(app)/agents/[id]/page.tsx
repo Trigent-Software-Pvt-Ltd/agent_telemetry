@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAgentById, getRunsForAgent, getProcessById, getAgentRoi, ORGANISATION } from '@/lib/mock-data'
+import { getAgentById, getRunsForAgent, getProcessById, getAgentRoi, getAgentAvailability, getPeakHourData, ORGANISATION } from '@/lib/mock-data'
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
@@ -14,6 +14,8 @@ import SigmaContext from '@/components/telemetry/SigmaContext'
 import RunHistory from '@/components/telemetry/RunHistory'
 import DefectAnalysis from '@/components/telemetry/DefectAnalysis'
 import CostOfInaction from '@/components/telemetry/CostOfInaction'
+import AvailabilityCard from '@/components/telemetry/AvailabilityCard'
+import { PeakHourHeatmap } from '@/components/telemetry/PeakHourHeatmap'
 
 export default async function AgentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -42,6 +44,8 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
     : 'N/A'
 
   const agentRoi = getAgentRoi(id)
+  const availability = getAgentAvailability(id)
+  const peakHourData = getPeakHourData()
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
@@ -61,12 +65,18 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
         p95Latency={agent.p95LatencyMs}
       />
 
+      {/* Availability */}
+      {availability && <AvailabilityCard availability={availability} />}
+
       {/* Cost of Inaction — moved above ROI for executive visibility */}
       <CostOfInaction
         agent={agent}
         sigmaTarget={ORGANISATION.sigmaTarget}
         defaultOpen={agent.sigmaScore < ORGANISATION.sigmaTarget && agent.sigmaTrend === 'down'}
       />
+
+      {/* Peak Hour Heatmap */}
+      <PeakHourHeatmap data={peakHourData} />
 
       {/* Agent ROI Breakdown */}
       {agentRoi && <AgentRoiCard roi={agentRoi} />}

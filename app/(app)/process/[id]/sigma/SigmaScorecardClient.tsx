@@ -1,11 +1,13 @@
 'use client'
 
+import { useCallback } from 'react'
 import { AgentSigmaCard } from '@/components/sigma/AgentSigmaCard'
 import { SigmaLegend } from '@/components/sigma/SigmaLegend'
-import { DpmoTrendChart } from '@/components/sigma/DpmoTrendChart'
+import { ExtendedTrends } from '@/components/sigma/ExtendedTrends'
 import { ImprovementTracker } from '@/components/sigma/ImprovementTracker'
 import type { Process, Agent, SigmaTrendPoint } from '@/types/telemetry'
-import type { SigmaHistoryEntry } from '@/lib/mock-data'
+import type { SigmaHistoryEntry, TimeRange } from '@/lib/mock-data'
+import { getSigmaTrendsForRange, getLatencyTrendsForRange } from '@/lib/mock-data'
 
 interface SigmaScorecardClientProps {
   process: Process
@@ -16,6 +18,23 @@ interface SigmaScorecardClientProps {
 }
 
 export function SigmaScorecardClient({ process, agents, trends, sigmaTarget, sigmaHistory }: SigmaScorecardClientProps) {
+  const getTrends = useCallback((range: TimeRange) => {
+    if (range === '30d') return trends
+    const result: Record<string, SigmaTrendPoint[]> = {}
+    for (const agent of agents) {
+      result[agent.id] = getSigmaTrendsForRange(agent.id, range)
+    }
+    return result
+  }, [agents, trends])
+
+  const getLatencyTrends = useCallback((range: TimeRange) => {
+    const result: Record<string, ReturnType<typeof getLatencyTrendsForRange>> = {}
+    for (const agent of agents) {
+      result[agent.id] = getLatencyTrendsForRange(agent.id, range)
+    }
+    return result
+  }, [agents])
+
   return (
     <div className="space-y-6 animate-fade-up">
       {/* Header */}
@@ -43,8 +62,12 @@ export function SigmaScorecardClient({ process, agents, trends, sigmaTarget, sig
       {/* Sigma Legend */}
       <SigmaLegend agents={agents} target={sigmaTarget} />
 
-      {/* DPMO Trend Chart */}
-      <DpmoTrendChart agents={agents} trends={trends} />
+      {/* Extended Trends: DPMO + Latency with time range selector */}
+      <ExtendedTrends
+        agents={agents}
+        getTrends={getTrends}
+        getLatencyTrends={getLatencyTrends}
+      />
 
       {/* Improvement Tracker */}
       <ImprovementTracker history={sigmaHistory} sigmaTarget={sigmaTarget} />

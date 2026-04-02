@@ -13,6 +13,7 @@ import type {
   LanguageVocabulary,
   OnetOccupation,
   CoverageMapEntry,
+  Ownership,
   FmeaEntry,
   TransformationStage,
   ReportConfig,
@@ -35,6 +36,23 @@ import type {
   AnomalySeverity,
   Correlation,
   CorrelationPoint,
+  AgentAvailability,
+  AgentSetupCost,
+  TcoCategoryBreakdown,
+  AgentOversightEfficiency,
+  TokenCostRow,
+  ModelOption,
+  MaturityDimension,
+  MaturityLevel,
+  LongRangeMonth,
+  BuildVsProcess,
+  DecisionFactor,
+  ComplianceRequirement,
+  EvidenceChainItem,
+  MtbvDataPoint,
+  HumanBaseline,
+  TeamMemberImpact,
+  Geography,
 } from '@/types/telemetry'
 
 // ─── Organisation ────────────────────────────────────────────────
@@ -2067,4 +2085,586 @@ const CORRELATIONS: Correlation[] = [
 
 export function getCorrelations(): Correlation[] {
   return CORRELATIONS
+}
+
+// ─── Phase 7.4: Agent Availability ────────────────────────────
+
+const AGENT_AVAILABILITY: Record<string, AgentAvailability> = {
+  'odds-analysis': {
+    agentId: 'odds-analysis',
+    uptimePct: 99.2,
+    mttrMinutes: 12,
+    incidents: [
+      { date: '2026-03-18', durationMinutes: 8, cause: 'Odds feed API rate-limit exceeded' },
+      { date: '2026-03-05', durationMinutes: 22, cause: 'Model endpoint cold start after deployment' },
+      { date: '2026-02-14', durationMinutes: 5, cause: 'DNS resolution timeout to upstream provider' },
+    ],
+  },
+  'line-comparison': {
+    agentId: 'line-comparison',
+    uptimePct: 97.8,
+    mttrMinutes: 18,
+    incidents: [
+      { date: '2026-03-22', durationMinutes: 35, cause: 'Upstream sportsbook API returned 503 for 35 mins' },
+      { date: '2026-03-10', durationMinutes: 12, cause: 'Token budget exceeded — request rejected by gateway' },
+      { date: '2026-02-26', durationMinutes: 8, cause: 'Model version mismatch after canary rollout' },
+    ],
+  },
+  'recommendation-writer': {
+    agentId: 'recommendation-writer',
+    uptimePct: 95.4,
+    mttrMinutes: 24,
+    incidents: [
+      { date: '2026-03-25', durationMinutes: 42, cause: 'Prompt template corruption after config push' },
+      { date: '2026-03-14', durationMinutes: 18, cause: 'Output validation schema rejected all responses' },
+      { date: '2026-02-20', durationMinutes: 30, cause: 'Inference provider outage (OpenAI incident #4821)' },
+    ],
+  },
+  'customer-response': {
+    agentId: 'customer-response',
+    uptimePct: 98.5,
+    mttrMinutes: 14,
+    incidents: [
+      { date: '2026-03-20', durationMinutes: 15, cause: 'Intent classifier confidence below threshold' },
+      { date: '2026-03-02', durationMinutes: 10, cause: 'Response cache invalidation caused cold misses' },
+    ],
+  },
+}
+
+export function getAgentAvailability(agentId: string): AgentAvailability | undefined {
+  return AGENT_AVAILABILITY[agentId]
+}
+
+// ─── 7.2.1 Extended Sigma Trends (90-day / 6-month) ────────────
+
+export interface LatencyTrendPoint {
+  day: number
+  date: string
+  p95Ms: number
+}
+
+function generateExtendedSigmaTrend(
+  agentId: string,
+  startSigma: number,
+  endSigma: number,
+  noiseAmplitude: number,
+  days: number,
+  baseDate: Date,
+): SigmaTrendPoint[] {
+  const seedBase = agentId.length * 17
+  return Array.from({ length: days }, (_, i) => {
+    const t = i / (days - 1)
+    const linearSigma = startSigma + (endSigma - startSigma) * t
+    const noise = seededNoise(seedBase + i + days) * noiseAmplitude
+    const sigma = parseFloat((linearSigma + noise).toFixed(2))
+    const date = new Date(baseDate)
+    date.setUTCDate(date.getUTCDate() + i)
+    return { day: i + 1, date: date.toISOString().slice(0, 10), sigma, dpmo: sigmaToDpmo(sigma) }
+  })
+}
+
+function generateLatencyTrend(
+  agentId: string,
+  baseP95: number,
+  drift: number,
+  noiseAmp: number,
+  days: number,
+  baseDate: Date,
+): LatencyTrendPoint[] {
+  const seedBase = agentId.length * 23
+  return Array.from({ length: days }, (_, i) => {
+    const t = i / (days - 1)
+    const base = baseP95 + drift * t
+    const noise = seededNoise(seedBase + i + 100) * noiseAmp
+    const p95Ms = Math.max(200, Math.round(base + noise))
+    const date = new Date(baseDate)
+    date.setUTCDate(date.getUTCDate() + i)
+    return { day: i + 1, date: date.toISOString().slice(0, 10), p95Ms }
+  })
+}
+
+// Agent trend configs: [startSigma, endSigma, noiseAmp, baseP95, p95Drift, latencyNoise]
+const TREND_CONFIGS: Record<string, [number, number, number, number, number, number]> = {
+  'odds-analysis':         [3.5, 4.2, 0.06, 1200, 100, 200],
+  'line-comparison':       [3.2, 3.4, 0.08, 1800, 200, 300],
+  'recommendation-writer': [3.5, 2.9, 0.05, 2200, 400, 350],
+  'customer-response':     [3.0, 3.2, 0.07, 1600, -100, 250],
+}
+
+export const SIGMA_TRENDS_90D: Record<string, SigmaTrendPoint[]> = {}
+export const SIGMA_TRENDS_6M: Record<string, SigmaTrendPoint[]> = {}
+export const LATENCY_TRENDS_30D: Record<string, LatencyTrendPoint[]> = {}
+export const LATENCY_TRENDS_90D: Record<string, LatencyTrendPoint[]> = {}
+export const LATENCY_TRENDS_6M: Record<string, LatencyTrendPoint[]> = {}
+
+for (const [agentId, cfg] of Object.entries(TREND_CONFIGS)) {
+  SIGMA_TRENDS_90D[agentId] = generateExtendedSigmaTrend(agentId, cfg[0], cfg[1], cfg[2], 90, new Date('2026-01-02T00:00:00Z'))
+  SIGMA_TRENDS_6M[agentId] = generateExtendedSigmaTrend(agentId, cfg[0] - 0.3, cfg[1], cfg[2], 180, new Date('2025-10-04T00:00:00Z'))
+  LATENCY_TRENDS_30D[agentId] = generateLatencyTrend(agentId, cfg[3], cfg[4] / 3, cfg[5], 30, new Date('2026-03-01T00:00:00Z'))
+  LATENCY_TRENDS_90D[agentId] = generateLatencyTrend(agentId, cfg[3], cfg[4], cfg[5], 90, new Date('2026-01-02T00:00:00Z'))
+  LATENCY_TRENDS_6M[agentId] = generateLatencyTrend(agentId, cfg[3] - 200, cfg[4] * 2, cfg[5], 180, new Date('2025-10-04T00:00:00Z'))
+}
+
+export type TimeRange = '30d' | '90d' | '6m'
+
+export function getSigmaTrendsForRange(agentId: string, range: TimeRange): SigmaTrendPoint[] {
+  if (range === '90d') return SIGMA_TRENDS_90D[agentId] ?? []
+  if (range === '6m') return SIGMA_TRENDS_6M[agentId] ?? []
+  return SIGMA_TRENDS[agentId] ?? []
+}
+
+export function getLatencyTrendsForRange(agentId: string, range: TimeRange): LatencyTrendPoint[] {
+  if (range === '90d') return LATENCY_TRENDS_90D[agentId] ?? []
+  if (range === '6m') return LATENCY_TRENDS_6M[agentId] ?? []
+  return LATENCY_TRENDS_30D[agentId] ?? []
+}
+
+// ─── 7.2.2 Peak Hour Heatmap ──────────────────────────────────
+
+export interface PeakHourCell {
+  hour: number
+  dayOfWeek: number  // 0=Mon ... 6=Sun
+  runs: number
+  failures: number
+  failureRate: number
+}
+
+function generatePeakHourData(): PeakHourCell[] {
+  const cells: PeakHourCell[] = []
+  for (let day = 0; day < 7; day++) {
+    for (let hour = 0; hour < 24; hour++) {
+      const seed = day * 24 + hour
+      const n = seededNoise(seed * 13 + 7)
+      // Business hours get more runs
+      const isBusinessHour = hour >= 8 && hour <= 18
+      const isFriday = day === 4
+      const isPeakAfternoon = hour >= 14 && hour <= 16
+      const baseRuns = isBusinessHour ? 30 + Math.round(n * 15) : 5 + Math.round(Math.abs(n) * 8)
+      const runs = Math.max(1, baseRuns + (isFriday ? 10 : 0))
+
+      // Failure rate spikes in afternoon, especially Friday
+      let baseFailRate = isBusinessHour ? 0.06 : 0.03
+      if (isPeakAfternoon) baseFailRate += 0.10
+      if (isFriday && isPeakAfternoon) baseFailRate += 0.12
+      if (isFriday && hour >= 17) baseFailRate += 0.08
+      const failureRate = Math.min(0.45, Math.max(0.01, baseFailRate + seededNoise(seed * 31 + 11) * 0.04))
+      const failures = Math.round(runs * failureRate)
+
+      cells.push({
+        hour,
+        dayOfWeek: day,
+        runs,
+        failures,
+        failureRate: parseFloat(failureRate.toFixed(3)),
+      })
+    }
+  }
+  return cells
+}
+
+export const PEAK_HOUR_DATA: PeakHourCell[] = generatePeakHourData()
+
+export function getPeakHourData(): PeakHourCell[] {
+  return PEAK_HOUR_DATA
+}
+
+// ─── 7.3.1 Per-Task Agent Quality ─────────────────────────────
+
+export interface TaskPerformanceMetric {
+  taskId: string
+  task: string
+  ownership: Ownership
+  agentId: string | null
+  successRate: number      // 0-1
+  avgLatencyMs: number
+  avgCostPerRun: number
+  totalRuns: number
+  nextBestCandidate: boolean  // badge for best collaborative task to automate
+}
+
+export const TASK_PERFORMANCE: TaskPerformanceMetric[] = [
+  { taskId: 't1', task: 'Analyse betting line movements', ownership: 'agent', agentId: 'odds-analysis', successRate: 0.94, avgLatencyMs: 1150, avgCostPerRun: 0.11, totalRuns: 482, nextBestCandidate: false },
+  { taskId: 't2', task: 'Compare competitor odds across platforms', ownership: 'agent', agentId: 'line-comparison', successRate: 0.87, avgLatencyMs: 1920, avgCostPerRun: 0.09, totalRuns: 395, nextBestCandidate: false },
+  { taskId: 't3', task: 'Generate client recommendations', ownership: 'agent', agentId: 'recommendation-writer', successRate: 0.61, avgLatencyMs: 2650, avgCostPerRun: 0.14, totalRuns: 310, nextBestCandidate: false },
+  { taskId: 't4', task: 'Review and approve automated recommendations', ownership: 'collaborative', agentId: 'recommendation-writer', successRate: 0.78, avgLatencyMs: 1800, avgCostPerRun: 0.08, totalRuns: 215, nextBestCandidate: true },
+  { taskId: 't5', task: 'Escalate unusual market movements', ownership: 'collaborative', agentId: null, successRate: 0.72, avgLatencyMs: 2100, avgCostPerRun: 0.06, totalRuns: 148, nextBestCandidate: false },
+  { taskId: 't6', task: 'Maintain client relationship context', ownership: 'human', agentId: null, successRate: 0, avgLatencyMs: 0, avgCostPerRun: 0, totalRuns: 0, nextBestCandidate: false },
+  { taskId: 't7', task: 'Regulatory compliance review', ownership: 'human', agentId: null, successRate: 0, avgLatencyMs: 0, avgCostPerRun: 0, totalRuns: 0, nextBestCandidate: false },
+  { taskId: 't8', task: 'Handle client disputes and complaints', ownership: 'human', agentId: null, successRate: 0, avgLatencyMs: 0, avgCostPerRun: 0, totalRuns: 0, nextBestCandidate: false },
+  { taskId: 't9', task: 'Team briefings and knowledge sharing', ownership: 'human', agentId: null, successRate: 0, avgLatencyMs: 0, avgCostPerRun: 0, totalRuns: 0, nextBestCandidate: false },
+  { taskId: 't10', task: 'Emergency market intervention decisions', ownership: 'human', agentId: null, successRate: 0, avgLatencyMs: 0, avgCostPerRun: 0, totalRuns: 0, nextBestCandidate: false },
+]
+
+export function getTaskPerformance(): TaskPerformanceMetric[] {
+  return TASK_PERFORMANCE
+}
+
+// ─── 7.3.2 Override Quality Analysis ──────────────────────────
+
+export interface ReviewerStats {
+  reviewer: string
+  overrides: number
+  helpfulPct: number        // % that improved outcomes
+  avgReviewTimeMin: number
+}
+
+export interface OverrideHourlyDistribution {
+  hour: number
+  overrides: number
+}
+
+export interface OverrideQualityData {
+  reviewers: ReviewerStats[]
+  hourlyDistribution: OverrideHourlyDistribution[]
+  insight: string
+}
+
+export const OVERRIDE_QUALITY: OverrideQualityData = {
+  reviewers: [
+    { reviewer: 'Marcus Webb', overrides: 8, helpfulPct: 75, avgReviewTimeMin: 3.2 },
+    { reviewer: 'Priya Sharma', overrides: 6, helpfulPct: 83, avgReviewTimeMin: 4.1 },
+    { reviewer: 'David Chen', overrides: 5, helpfulPct: 60, avgReviewTimeMin: 2.8 },
+    { reviewer: 'Elena Kowalski', overrides: 4, helpfulPct: 50, avgReviewTimeMin: 5.5 },
+    { reviewer: 'James OBrien', overrides: 3, helpfulPct: 67, avgReviewTimeMin: 3.9 },
+  ],
+  hourlyDistribution: [
+    { hour: 8, overrides: 1 },
+    { hour: 9, overrides: 3 },
+    { hour: 10, overrides: 4 },
+    { hour: 11, overrides: 3 },
+    { hour: 12, overrides: 1 },
+    { hour: 13, overrides: 2 },
+    { hour: 14, overrides: 5 },
+    { hour: 15, overrides: 7 },
+    { hour: 16, overrides: 4 },
+    { hour: 17, overrides: 2 },
+    { hour: 18, overrides: 1 },
+  ],
+  insight: 'Marcus Webb overrides most often (8 times), 75% improved outcomes. Peak override activity occurs between 2-4 PM, correlating with afternoon market volatility.',
+}
+
+export function getOverrideQuality(): OverrideQualityData {
+  return OVERRIDE_QUALITY
+}
+
+// ─── 8.1.2 Agent Setup Costs (Payback Calculator) ───────────────
+
+export const AGENT_SETUP_COSTS: AgentSetupCost[] = AGENTS.map(agent => {
+  const roi = getAgentRoi(agent.id)
+  const weeklyNet = roi?.netRoiWeekly ?? 0
+  // Setup cost based on complexity: red agents cost more to configure
+  const complexityMultiplier = agent.status === 'red' ? 2.0 : agent.status === 'amber' ? 1.4 : 1.0
+  const setupCost = Math.round(800 * complexityMultiplier + agent.tasks.length * 200)
+  const weeksToPayback = weeklyNet > 0 ? Math.round((setupCost / weeklyNet) * 10) / 10 : Infinity
+
+  return {
+    agentId: agent.id,
+    agentName: agent.name,
+    setupCost,
+    weeklyNetRoi: weeklyNet,
+    weeksToPayback,
+  }
+})
+
+// ─── 8.2.1 TCO Breakdown ────────────────────────────────────────
+
+export function getTcoBreakdown(): TcoCategoryBreakdown[] {
+  const total = ROI_SNAPSHOTS.reduce((acc, s) => {
+    acc.inference += s.inferenceCostWeekly
+    acc.oversight += s.oversightCostWeekly
+    acc.governance += s.governanceOverheadWeekly
+    return acc
+  }, { inference: 0, oversight: 0, governance: 0 })
+
+  const setup = Math.round((total.inference + total.oversight + total.governance) * 0.1 / 0.9)
+  const grand = total.inference + total.oversight + total.governance + setup
+
+  return [
+    { name: 'Inference', value: total.inference, pct: Math.round(total.inference / grand * 100), color: '#378ADD' },
+    { name: 'Oversight Labor', value: total.oversight, pct: Math.round(total.oversight / grand * 100), color: '#E87461' },
+    { name: 'Governance', value: total.governance, pct: Math.round(total.governance / grand * 100), color: '#D4AF37' },
+    { name: 'Setup & Training', value: setup, pct: Math.round(setup / grand * 100), color: '#7C3AED' },
+  ]
+}
+
+export function getWasteRatio(): { pct: number; amount: number } {
+  const totalInference = ROI_SNAPSHOTS.reduce((a, s) => a + s.inferenceCostWeekly, 0)
+  const totalRuns = AGENTS.reduce((a, ag) => a + ag.totalRuns, 0)
+  const failedRuns = AGENTS.reduce((a, ag) => a + ag.defects.failures, 0)
+  const failRate = failedRuns / totalRuns
+  const wasteAmount = +(totalInference * failRate).toFixed(2)
+  return { pct: Math.round(failRate * 100), amount: wasteAmount }
+}
+
+export function getAgentOversightEfficiency(): AgentOversightEfficiency[] {
+  return AGENTS.map(a => {
+    // Lower sigma = more oversight needed (inverse relationship)
+    const baseHours = a.sigmaScore >= 4.0 ? 2 : a.sigmaScore >= 3.5 ? 3.5 : a.sigmaScore >= 3.0 ? 6 : 8
+    const costRate = 55 // $/hr for oversight labor
+    return {
+      agentId: a.id,
+      agentName: a.name,
+      sigmaScore: a.sigmaScore,
+      oversightHoursPerWeek: baseHours,
+      costPerWeek: Math.round(baseHours * costRate),
+    }
+  })
+}
+
+export function getTokenCostTable(): TokenCostRow[] {
+  return AGENTS.map(a => {
+    const avgTokens = a.model.includes('mini') ? 1200 : a.model.includes('sonnet') ? 1800 : 2400
+    const costPerToken = a.avgCostPerRun / avgTokens
+    return {
+      agentId: a.id,
+      agentName: a.name,
+      avgTokensPerRun: avgTokens,
+      costPerToken: +costPerToken.toFixed(8),
+      costPerRun: a.avgCostPerRun,
+    }
+  })
+}
+
+// ─── 8.2.2 Model Cost Comparison ────────────────────────────────
+
+export const MODEL_OPTIONS: Record<string, ModelOption[]> = {
+  'gpt-4o': [
+    { id: 'claude-sonnet', name: 'Claude Sonnet 4', costPerToken: 0.000008, estimatedSigmaDelta: 0.3, estimatedLatencyMs: 2800, monthlyCostEstimate: 32 },
+    { id: 'gpt-4o-mini', name: 'GPT-4o Mini', costPerToken: 0.000003, estimatedSigmaDelta: -0.4, estimatedLatencyMs: 1800, monthlyCostEstimate: 14 },
+    { id: 'claude-haiku', name: 'Claude Haiku 4', costPerToken: 0.000004, estimatedSigmaDelta: -0.2, estimatedLatencyMs: 1500, monthlyCostEstimate: 18 },
+  ],
+  'claude-3-5-sonnet': [
+    { id: 'gpt-4o', name: 'GPT-4o', costPerToken: 0.00001, estimatedSigmaDelta: 0.1, estimatedLatencyMs: 3200, monthlyCostEstimate: 48 },
+    { id: 'claude-sonnet-4', name: 'Claude Sonnet 4', costPerToken: 0.000008, estimatedSigmaDelta: 0.5, estimatedLatencyMs: 2600, monthlyCostEstimate: 36 },
+    { id: 'gpt-4o-mini', name: 'GPT-4o Mini', costPerToken: 0.000003, estimatedSigmaDelta: -0.6, estimatedLatencyMs: 1800, monthlyCostEstimate: 12 },
+  ],
+  'gpt-4o-mini': [
+    { id: 'claude-haiku', name: 'Claude Haiku 4', costPerToken: 0.000004, estimatedSigmaDelta: 0.2, estimatedLatencyMs: 1500, monthlyCostEstimate: 16 },
+    { id: 'gpt-4o', name: 'GPT-4o', costPerToken: 0.00001, estimatedSigmaDelta: 0.8, estimatedLatencyMs: 3200, monthlyCostEstimate: 52 },
+    { id: 'claude-sonnet', name: 'Claude Sonnet 4', costPerToken: 0.000008, estimatedSigmaDelta: 0.6, estimatedLatencyMs: 2800, monthlyCostEstimate: 38 },
+  ],
+}
+
+export function getModelOptionsForAgent(agentId: string): { agent: Agent; currentCostPerRun: number; currentMonthlySpend: number; alternatives: ModelOption[] } {
+  const agent = AGENTS.find(a => a.id === agentId)!
+  const runsPerMonth = agent.totalRuns * 4
+  const currentMonthlySpend = +(agent.avgCostPerRun * runsPerMonth).toFixed(2)
+  const alternatives = MODEL_OPTIONS[agent.model] || MODEL_OPTIONS['gpt-4o']
+  return { agent, currentCostPerRun: agent.avgCostPerRun, currentMonthlySpend, alternatives }
+}
+
+// ─── 8.3.1 AI Maturity Score ────────────────────────────────────
+
+export const MATURITY_LEVELS: MaturityLevel[] = [
+  { level: 1, name: 'Exploring', description: 'Investigating AI use cases, no production agents' },
+  { level: 2, name: 'Piloting', description: 'Running proof-of-concepts with limited scope' },
+  { level: 3, name: 'Scaling', description: 'Multiple agents in production, measuring ROI' },
+  { level: 4, name: 'Optimized', description: 'Continuous improvement, high automation coverage' },
+  { level: 5, name: 'Autonomous', description: 'Self-optimizing AI ecosystem with minimal oversight' },
+]
+
+export function getMaturityDimensions(): MaturityDimension[] {
+  return [
+    { dimension: 'Coverage', score: 3, nextLevel: 'Achieve >50% task coverage across all processes', action: 'Expand agent coverage to Customer Service routing and escalation tasks' },
+    { dimension: 'Quality', score: 3, nextLevel: 'Reach average 4.0\u03C3 across all agents', action: 'Improve Recommendation Writer from 2.9\u03C3 to 3.5\u03C3 with prompt refinement' },
+    { dimension: 'ROI', score: 4, nextLevel: 'Achieve >$3,000/week net ROI across all processes', action: 'Expand agent coverage in Customer Service to increase gross savings' },
+    { dimension: 'Governance', score: 4, nextLevel: 'Achieve 100% compliance with all active rules', action: 'Resolve override rate cap violation and complete overdue FMEA reviews' },
+    { dimension: 'Workforce Readiness', score: 2, nextLevel: 'Complete training programs for 80%+ of affected staff', action: 'Launch AI collaboration training and formalize new role definitions' },
+  ]
+}
+
+export function getMaturityScore(): number {
+  const dims = getMaturityDimensions()
+  return Math.round(dims.reduce((a, d) => a + d.score, 0) / dims.length)
+}
+
+// ─── 8.3.2 Long-Range Projection (36 months) ───────────────────
+
+export function getLongRangeProjection(): LongRangeMonth[] {
+  const months: LongRangeMonth[] = []
+  const startHeadcount = PROCESSES.reduce((a, p) => a + p.headcount, 0)
+
+  for (let i = 0; i <= 36; i++) {
+    const label = i === 0 ? 'Now' : `M${i}`
+
+    // Cumulative ROI curves (monthly increments, compounding)
+    const conservativeMonthly = 1800 + i * 120
+    const moderateMonthly = 2400 + i * 200
+    const aggressiveMonthly = 3200 + i * 320
+
+    const conservative = i === 0 ? 0 : months[i - 1].conservative + conservativeMonthly
+    const moderate = i === 0 ? 0 : months[i - 1].moderate + moderateMonthly
+    const aggressive = i === 0 ? 0 : months[i - 1].aggressive + aggressiveMonthly
+
+    // Headcount trajectory (moderate scenario)
+    const headcountDecay = Math.max(4, Math.round(startHeadcount * Math.max(0.2, 1 - 0.018 * i)))
+
+    // Agent coverage growth
+    const baseCoverage = 0.37
+    const coveragePct = Math.min(0.85, baseCoverage + 0.014 * i)
+
+    months.push({ month: i, label, conservative, moderate, aggressive, headcount: headcountDecay, agentCoveragePct: +coveragePct.toFixed(2) })
+  }
+
+  return months
+}
+
+// ─── 8.3.3 Build vs Buy ─────────────────────────────────────────
+
+export function getBuildVsProcesses(): BuildVsProcess[] {
+  return [
+    {
+      processId: 'sports-betting',
+      processName: 'Sports Betting Analyst',
+      build: { approach: 'build', estimatedCost: 85000, timeline: '4-6 months', riskLevel: 'Medium', controlLevel: 'Full' },
+      buy: { approach: 'buy', estimatedCost: 48000, timeline: '2-3 weeks', riskLevel: 'Low', controlLevel: 'Limited' },
+      recommendation: 'build',
+      reasoning: 'Specialized domain with proprietary odds models. High control needed for regulatory compliance. Custom build yields better long-term ROI despite higher upfront cost.',
+    },
+    {
+      processId: 'customer-service',
+      processName: 'Customer Service Representative',
+      build: { approach: 'build', estimatedCost: 62000, timeline: '3-4 months', riskLevel: 'Medium', controlLevel: 'Full' },
+      buy: { approach: 'buy', estimatedCost: 18000, timeline: '1-2 weeks', riskLevel: 'Low', controlLevel: 'Moderate' },
+      recommendation: 'buy',
+      reasoning: 'Commodity use case with well-established vendor solutions. Faster time to value and lower total cost. Vendor handles maintenance and model updates.',
+    },
+  ]
+}
+
+export function getBuildVsDecisionFactors(): DecisionFactor[] {
+  return [
+    { factor: 'Cost (Year 1)', weight: 25, buildScore: 3, buyScore: 5 },
+    { factor: 'Speed to Deploy', weight: 20, buildScore: 2, buyScore: 5 },
+    { factor: 'Control & Customization', weight: 25, buildScore: 5, buyScore: 2 },
+    { factor: 'Quality Ceiling', weight: 15, buildScore: 5, buyScore: 3 },
+    { factor: 'Maintenance Burden', weight: 15, buildScore: 2, buyScore: 4 },
+  ]
+}
+
+// ─── 9.1 Agent Dependencies ──────────────────────────────────────
+
+export interface AgentDependency {
+  from: string
+  to: string
+  type: 'data_flow' | 'shared_resource'
+  resource?: string
+}
+
+const AGENT_DEPENDENCIES: AgentDependency[] = [
+  { from: 'odds-analysis', to: 'line-comparison', type: 'data_flow' },
+  { from: 'line-comparison', to: 'recommendation-writer', type: 'data_flow' },
+  { from: 'odds-analysis', to: '', type: 'shared_resource', resource: 'Odds Feed API' },
+  { from: 'line-comparison', to: '', type: 'shared_resource', resource: 'Odds Feed API' },
+]
+
+export function getAgentDependencies(): AgentDependency[] {
+  return AGENT_DEPENDENCIES
+}
+
+// ─── 9.2.1 Compliance & Certification ────────────────────────
+
+export const COMPLIANCE_REQUIREMENTS: ComplianceRequirement[] = [
+  { id: 'cr-01', requirement: 'Human oversight for high-risk AI decisions', status: 'PASS', detail: 'Audit trail active' },
+  { id: 'cr-02', requirement: 'Documented risk assessment (FMEA)', status: 'PASS', detail: '8 risk items assessed' },
+  { id: 'cr-03', requirement: 'Transparency: users know when AI is involved', status: 'PASS', detail: 'Collaborative tasks labeled' },
+  { id: 'cr-04', requirement: 'Data governance: training data documented', status: 'PARTIAL', detail: '3 of 4 agents' },
+  { id: 'cr-05', requirement: 'Bias monitoring', status: 'NOT_STARTED', detail: '' },
+  { id: 'cr-06', requirement: 'Incident logging and response', status: 'PASS', detail: 'Audit log active' },
+  { id: 'cr-07', requirement: 'Regular quality review cycle', status: 'PASS', detail: 'Sigma scorecard weekly' },
+  { id: 'cr-08', requirement: 'Override documentation', status: 'PASS', detail: '27% override rate tracked' },
+  { id: 'cr-09', requirement: 'Version control and rollback capability', status: 'PASS', detail: 'Version timeline' },
+  { id: 'cr-10', requirement: 'Third-party audit export', status: 'PASS', detail: 'PDF export available' },
+]
+
+export const EVIDENCE_CHAINS: EvidenceChainItem[] = [
+  {
+    task: 'Generate client recommendations',
+    agentDecision: 'Recommended "Over 2.5 goals" at 1.85 odds for Arsenal vs Chelsea',
+    humanReview: 'Analyst Sarah Chen reviewed — approved with minor phrasing edit',
+    outcome: 'Recommendation sent to client. Correct outcome confirmed next day.',
+  },
+  {
+    task: 'Escalate unusual market movements',
+    agentDecision: 'Flagged 15% odds swing on Liverpool match as "high severity"',
+    humanReview: 'Senior Analyst James Park validated — confirmed insider activity suspected',
+    outcome: 'Escalated to compliance. Trading suspended on that market within 2 hours.',
+  },
+  {
+    task: 'Review and approve automated recommendations',
+    agentDecision: 'Batch of 12 recommendations generated for weekly client report',
+    humanReview: 'Analyst Maria Lopez reviewed — overrode 2 of 12 (stale odds data)',
+    outcome: '10 approved recommendations delivered. 2 regenerated with fresh data.',
+  },
+]
+
+export function getComplianceRequirements(): ComplianceRequirement[] {
+  return COMPLIANCE_REQUIREMENTS
+}
+
+export function getEvidenceChains(): EvidenceChainItem[] {
+  return EVIDENCE_CHAINS
+}
+
+export function getAuditReadinessScore(): number {
+  const passed = COMPLIANCE_REQUIREMENTS.filter(r => r.status === 'PASS').length
+  const partial = COMPLIANCE_REQUIREMENTS.filter(r => r.status === 'PARTIAL').length
+  return Math.round(((passed + partial * 0.5) / COMPLIANCE_REQUIREMENTS.length) * 100)
+}
+
+// ─── 9.2.2 Geo-Scoped Rules & MTBV ─────────────────────────
+
+export const RULE_GEOGRAPHIES: Record<string, Geography> = {
+  'gr-01': 'Global',
+  'gr-02': 'EU',
+  'gr-03': 'Global',
+  'gr-04': 'EU',
+  'gr-05': 'Global',
+  'gr-06': 'US',
+  'gr-07': 'EU',
+  'gr-08': 'Global',
+  'gr-09': 'APAC',
+  'gr-10': 'EU',
+}
+
+export const MTBV_DATA: MtbvDataPoint[] = [
+  { month: 'Oct 2025', days: 6 },
+  { month: 'Nov 2025', days: 8 },
+  { month: 'Dec 2025', days: 7 },
+  { month: 'Jan 2026', days: 10 },
+  { month: 'Feb 2026', days: 9 },
+  { month: 'Mar 2026', days: 12 },
+]
+
+export function getMtbvData(): MtbvDataPoint[] {
+  return MTBV_DATA
+}
+
+export function getRuleGeography(ruleId: string): Geography {
+  return RULE_GEOGRAPHIES[ruleId] ?? 'Global'
+}
+
+// ─── 9.3.1 Human vs Agent Comparison ─────────────────────────
+
+export const HUMAN_BASELINE: HumanBaseline[] = [
+  { taskId: 't1', task: 'Analyse betting line movements', humanErrorRate: 0.12, humanAvgTimeMinutes: 45, agentErrorRate: 0.04, agentAvgTimeMinutes: 3 },
+  { taskId: 't2', task: 'Compare competitor odds across platforms', humanErrorRate: 0.09, humanAvgTimeMinutes: 30, agentErrorRate: 0.06, agentAvgTimeMinutes: 2 },
+  { taskId: 't3', task: 'Generate client recommendations', humanErrorRate: 0.05, humanAvgTimeMinutes: 60, agentErrorRate: 0.11, agentAvgTimeMinutes: 8 },
+]
+
+export function getHumanBaseline(): HumanBaseline[] {
+  return HUMAN_BASELINE
+}
+
+// ─── 9.3.2 Team Impact Cards ─────────────────────────────────
+
+export const TEAM_MEMBERS: TeamMemberImpact[] = [
+  { name: 'Sarah Chen', role: 'Senior Analyst', hoursFreed: 8, oversightHours: 3, netSaved: 5, satisfaction: 4 },
+  { name: 'James Park', role: 'Risk Manager', hoursFreed: 6, oversightHours: 2, netSaved: 4, satisfaction: 5 },
+  { name: 'Maria Lopez', role: 'Junior Analyst', hoursFreed: 10, oversightHours: 4, netSaved: 6, satisfaction: 4 },
+  { name: 'David Kim', role: 'Compliance Officer', hoursFreed: 5, oversightHours: 1, netSaved: 4, satisfaction: 3 },
+]
+
+export function getTeamMembers(): TeamMemberImpact[] {
+  return TEAM_MEMBERS
 }

@@ -2,10 +2,11 @@
 
 import { useState, use } from 'react'
 import type { Scenario } from '@/types/telemetry'
-import { getWorkforceProjection, getWorkforceProcess } from '@/lib/mock-data'
+import { getWorkforceProjection, getWorkforceProcess, getTeamMembers } from '@/lib/mock-data'
 import { ScenarioToggle } from '@/components/labor/ScenarioToggle'
 import { WorkforceSummary } from '@/components/labor/WorkforceSummary'
 import { WorkforcePlanCharts } from '@/components/labor/WorkforcePlanCharts'
+import { TeamImpactCards } from '@/components/labor/TeamImpactCards'
 import { ArrowLeft, Users } from 'lucide-react'
 import Link from 'next/link'
 
@@ -64,6 +65,9 @@ export default function WorkforcePage({ params }: { params: Promise<{ id: string
 
       {/* Charts */}
       <WorkforcePlanCharts projection={projection} />
+
+      {/* Team Impact */}
+      <TeamImpactCards members={getTeamMembers()} />
     </div>
   )
 }

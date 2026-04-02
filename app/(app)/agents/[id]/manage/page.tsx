@@ -4,10 +4,12 @@ import { use, useState } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { toast } from 'sonner'
-import { getAgentProfile, getAgentsByWorkflow, getDecommissionImpact } from '@/lib/mock-data'
+import { getAgentProfile, getAgentsByWorkflow, getDecommissionImpact, getAgentVersions } from '@/lib/mock-data'
 import { AgentActions } from '@/components/telemetry/AgentActions'
 import { DecommissionPanel } from '@/components/telemetry/DecommissionPanel'
 import { SwapPanel } from '@/components/telemetry/SwapPanel'
+import { MaintenanceScheduler } from '@/components/telemetry/MaintenanceScheduler'
+import { VersionTimeline } from '@/components/telemetry/VersionTimeline'
 import { ArrowLeft, ArrowRightLeft } from 'lucide-react'
 
 type ActivePanel = 'none' | 'decommission' | 'pause' | 'reassign' | 'swap'
@@ -22,6 +24,7 @@ export default function AgentManagePage({ params }: { params: Promise<{ id: stri
 
   const impact = getDecommissionImpact(id)
   const processAgents = getAgentsByWorkflow(agent.workflowId).filter(a => a.id !== id)
+  const versions = getAgentVersions(id)
 
   function handleDecommission() {
     setAgentStatus('decommissioned')
@@ -250,6 +253,16 @@ export default function AgentManagePage({ params }: { params: Promise<{ id: stri
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* Maintenance Scheduler */}
+            {activePanel === 'none' && (
+              <MaintenanceScheduler agentName={agent.name} />
+            )}
+
+            {/* Version Timeline with Rollback */}
+            {activePanel === 'none' && versions.length > 0 && (
+              <VersionTimeline versions={versions} />
             )}
           </div>
     </div>

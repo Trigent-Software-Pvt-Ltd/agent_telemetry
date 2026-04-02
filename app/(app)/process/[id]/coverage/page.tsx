@@ -1,4 +1,4 @@
-import { getProcessById, getCoverageMap, getAgentsForProcess, getTasksForProcess } from '@/lib/mock-data'
+import { getProcessById, getCoverageMap, getAgentsForProcess, getTasksForProcess, getTaskPerformance } from '@/lib/mock-data'
 import { notFound } from 'next/navigation'
 import { TaskOwnershipPage } from '@/components/coverage/TaskOwnershipPage'
 
@@ -15,6 +15,7 @@ export default async function CoverageMapPage({
   const entries = getCoverageMap(id)
   const agents = getAgentsForProcess(id)
   const tasks = getTasksForProcess(id)
+  const taskPerformance = getTaskPerformance()
 
   return (
     <TaskOwnershipPage
@@ -22,6 +23,7 @@ export default async function CoverageMapPage({
       agents={agents}
       tasks={tasks}
       process={process}
+      taskPerformance={taskPerformance}
     />
   )
 }

@@ -5,13 +5,55 @@ import { History } from 'lucide-react'
 import type { Run } from '@/types/telemetry'
 import { getAgentById } from '@/lib/mock-data'
 import { EmptyState } from '@/components/shared/EmptyState'
+import FailureEscalationCard from '@/components/telemetry/FailureEscalationCard'
 
 interface RunHistoryProps {
   runs: Run[]
   pageSize?: number
 }
 
-function SpanTree({ run }: { run: Run }) {
+/** CEO-friendly one-line summary for a run */
+function RunSummary({ run }: { run: Run }) {
+  const stepCount = run.spans.length
+  const durationSec = (run.durationMs / 1000).toFixed(1)
+
+  if (run.outcome) {
+    return (
+      <p className="text-sm text-text-primary">
+        This run <span className="font-semibold text-status-green">succeeded</span> in{' '}
+        <span className="font-semibold tabular-nums">{durationSec}s</span>, cost{' '}
+        <span className="font-semibold tabular-nums">${run.totalCost.toFixed(4)}</span>, processed{' '}
+        <span className="font-semibold tabular-nums">{stepCount} step{stepCount !== 1 ? 's' : ''}</span>
+      </p>
+    )
+  }
+
+  // Find the failed span
+  const failedSpanIdx = run.spans.findIndex(s => s.status === 'error')
+  const failedSpan = failedSpanIdx >= 0 ? run.spans[failedSpanIdx] : null
+
+  return (
+    <p className="text-sm text-text-primary">
+      This run{' '}
+      <span className="font-semibold text-status-red">FAILED</span>
+      {failedSpan ? (
+        <>
+          {' '}at step {failedSpanIdx + 1} &mdash;{' '}
+          <span className="font-semibold">{failedSpan.name}</span>{' '}
+          {failedSpan.error
+            ? failedSpan.error.toLowerCase().includes('timeout')
+              ? `timed out after ${(failedSpan.duration_ms / 1000).toFixed(1)}s`
+              : failedSpan.error
+            : `errored after ${(failedSpan.duration_ms / 1000).toFixed(1)}s`}
+        </>
+      ) : (
+        <> after {durationSec}s</>
+      )}
+    </p>
+  )
+}
+
+function SpanTimeline({ run }: { run: Run }) {
   const maxDuration = Math.max(...run.spans.map((s) => s.duration_ms), 1)
   const agent = getAgentById(run.agentId)
 
@@ -31,27 +73,38 @@ function SpanTree({ run }: { run: Run }) {
       </div>
 
       <div className="mt-3 space-y-1.5">
-        <p className="text-xs text-text-muted uppercase tracking-wide">Span Tree</p>
+        <p className="text-xs text-text-muted uppercase tracking-wide">Span Timeline</p>
         {run.spans.map((span, i) => {
           const widthPct = Math.max(5, (span.duration_ms / maxDuration) * 100)
+          const isError = span.status === 'error'
           return (
-            <div key={i} className="flex items-center gap-3">
-              <span className="text-xs text-text-secondary w-40 truncate">{span.name}</span>
-              <div className="flex-1 h-5 bg-surface rounded overflow-hidden relative">
-                <div
-                  className="span-bar h-full rounded"
-                  style={{
-                    '--span-width': `${widthPct}%`,
-                    backgroundColor: span.status === 'error' ? 'var(--status-red)' : 'var(--status-green)',
-                    opacity: 0.75,
-                  } as React.CSSProperties}
-                />
+            <div key={i}>
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-text-secondary w-40 truncate">{span.name}</span>
+                <div className="flex-1 h-5 bg-surface rounded overflow-hidden relative">
+                  <div
+                    className="span-bar h-full rounded"
+                    style={{
+                      '--span-width': `${widthPct}%`,
+                      backgroundColor: isError ? 'var(--status-red)' : 'var(--status-green)',
+                      opacity: 0.75,
+                    } as React.CSSProperties}
+                  />
+                </div>
+                <span className="text-xs tabular-nums text-text-muted w-16 text-right">
+                  {span.duration_ms}ms
+                </span>
+                <span className="text-xs tabular-nums text-text-muted w-14 text-right">
+                  {span.tool_calls} call{span.tool_calls !== 1 ? 's' : ''}
+                </span>
+                {isError && (
+                  <span className="text-xs text-status-red">&#10005;</span>
+                )}
               </div>
-              <span className="text-xs tabular-nums text-text-muted w-16 text-right">
-                {span.duration_ms}ms
-              </span>
-              {span.status === 'error' && (
-                <span className="text-xs text-status-red">&#10005;</span>
+              {isError && span.error && (
+                <div className="ml-[calc(10rem+0.75rem)] mt-1 px-2 py-1 rounded text-xs text-status-red bg-status-red/5 border border-status-red/20">
+                  {span.error}
+                </div>
               )}
             </div>
           )
@@ -116,8 +169,15 @@ export default function RunHistory({ runs, pageSize = 10 }: RunHistoryProps) {
                 <span className="text-xs text-text-muted">{isExpanded ? '▲' : '▼'}</span>
               </button>
               {isExpanded && (
-                <div className="px-3 pb-3">
-                  <SpanTree run={run} />
+                <div className="px-3 pb-3 space-y-3">
+                  {/* CEO summary line */}
+                  <RunSummary run={run} />
+                  {/* Engineer span timeline */}
+                  <SpanTimeline run={run} />
+                  {/* Failure escalation (only for failed runs) */}
+                  {!run.outcome && (
+                    <FailureEscalationCard run={run} />
+                  )}
                 </div>
               )}
             </div>

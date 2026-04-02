@@ -10,8 +10,11 @@ import { HonestNote } from '@/components/roi/HonestNote'
 import CostTrendChart from '@/components/dashboard/CostTrendChart'
 import AgentCostBreakdown from '@/components/dashboard/AgentCostBreakdown'
 import CostMetricCards from '@/components/dashboard/CostMetricCards'
+import { PaybackTimeline } from '@/components/roi/PaybackTimeline'
+import TcoBreakdown from '@/components/roi/TcoBreakdown'
+import LongRangeProjection from '@/components/roi/LongRangeProjection'
 
-type TabId = 'roi' | 'costs'
+type TabId = 'roi' | 'costs' | 'payback' | 'tco' | 'projection'
 
 export default function FinancialImpactPage() {
   const [activeTab, setActiveTab] = useState<TabId>('roi')
@@ -23,6 +26,9 @@ export default function FinancialImpactPage() {
   const tabs: { id: TabId; label: string }[] = [
     { id: 'roi', label: 'ROI Summary' },
     { id: 'costs', label: 'Inference Costs' },
+    { id: 'payback', label: 'Payback' },
+    { id: 'tco', label: 'TCO' },
+    { id: 'projection', label: '3-Year' },
   ]
 
   return (
@@ -117,6 +123,14 @@ export default function FinancialImpactPage() {
           </div>
         </>
       )}
+
+      {activeTab === 'payback' && (
+        <PaybackTimeline />
+      )}
+
+      {activeTab === 'tco' && <TcoBreakdown />}
+
+      {activeTab === 'projection' && <LongRangeProjection />}
     </div>
   )
 }

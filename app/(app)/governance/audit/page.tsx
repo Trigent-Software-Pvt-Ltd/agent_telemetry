@@ -6,10 +6,12 @@ import { AuditTable } from '@/components/governance/AuditTable'
 import { AuditFilters } from '@/components/governance/AuditFilters'
 import { OverrideTrendChart } from '@/components/governance/OverrideTrendChart'
 import { OverrideCorrelation } from '@/components/governance/OverrideCorrelation'
-import { getOverrideTrends } from '@/lib/mock-data'
+import { OverrideQualityAnalysis } from '@/components/governance/OverrideQualityAnalysis'
+import { getOverrideTrends, getOverrideQuality } from '@/lib/mock-data'
 import { Download } from 'lucide-react'
 
 const overrideTrends = getOverrideTrends()
+const overrideQuality = getOverrideQuality()
 
 export default function AuditLogPage() {
   return (
@@ -56,6 +58,9 @@ export default function AuditLogPage() {
 
       {/* Correlation Insight */}
       <OverrideCorrelation trends={overrideTrends} />
+
+      {/* Override Quality Analysis */}
+      <OverrideQualityAnalysis data={overrideQuality} />
 
       {/* Filters */}
       <div className="no-print">

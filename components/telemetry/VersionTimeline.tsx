@@ -1,14 +1,39 @@
 'use client'
 
+import { useState } from 'react'
+import { toast } from 'sonner'
 import { AgentVersion } from '@/types/telemetry'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import { GitBranch, CheckCircle2, XCircle } from 'lucide-react'
+import { GitBranch, CheckCircle2, XCircle, RotateCcw, AlertTriangle, X } from 'lucide-react'
 
 interface VersionTimelineProps {
   versions: AgentVersion[]
 }
 
-export function VersionTimeline({ versions }: VersionTimelineProps) {
+export function VersionTimeline({ versions: initialVersions }: VersionTimelineProps) {
+  const [versions, setVersions] = useState(initialVersions)
+  const [rollbackTarget, setRollbackTarget] = useState<AgentVersion | null>(null)
+
+  const currentVersion = versions.find(v => v.status === 'current')
+
+  function handleRollback(target: AgentVersion) {
+    setVersions(prev =>
+      prev.map(v => {
+        if (v.version === target.version) {
+          return { ...v, status: 'current' as const, label: 'current', retiredReason: undefined }
+        }
+        if (v.status === 'current') {
+          return { ...v, status: 'retired' as const, label: 'retired', retiredReason: `Rolled back to ${target.version}` }
+        }
+        return v
+      })
+    )
+    setRollbackTarget(null)
+    toast.success(`Rolled back to ${target.version}`, {
+      description: `Model changed to ${target.model}. Previous version has been retired.`,
+    })
+  }
+
   const chartData = [...versions].reverse().map(v => ({
     name: v.version,
     sigma: v.sigma,
@@ -97,6 +122,18 @@ export function VersionTimeline({ versions }: VersionTimelineProps) {
                         Retired: {v.retiredReason}
                       </div>
                     )}
+
+                    {/* Rollback button for non-current versions */}
+                    {!isCurrent && (
+                      <button
+                        onClick={() => setRollbackTarget(v)}
+                        className="flex items-center gap-1.5 mt-2 px-3 py-1.5 rounded-lg text-xs font-medium border cursor-pointer transition-colors row-hover"
+                        style={{ borderColor: '#E2E8F0', color: '#64748B' }}
+                      >
+                        <RotateCcw size={12} />
+                        Roll Back to This Version
+                      </button>
+                    )}
                   </div>
                 </div>
               )
@@ -133,6 +170,60 @@ export function VersionTimeline({ versions }: VersionTimelineProps) {
           </ResponsiveContainer>
         </div>
       </div>
+
+      {/* Rollback confirmation dialog */}
+      {rollbackTarget && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(10,22,40,0.6)' }}>
+          <div
+            className="relative w-full max-w-md rounded-2xl p-6 animate-fade-up"
+            style={{ background: '#FFFFFF', boxShadow: '0 20px 60px rgba(10,22,40,0.25)' }}
+          >
+            <button
+              onClick={() => setRollbackTarget(null)}
+              className="absolute top-4 right-4 p-1 rounded-lg cursor-pointer"
+              style={{ color: '#94A3B8' }}
+            >
+              <X size={18} />
+            </button>
+
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(217,119,6,0.1)' }}>
+              <AlertTriangle size={24} style={{ color: '#D97706' }} />
+            </div>
+
+            <h2 className="text-lg font-bold font-[var(--font-sora)] mb-3" style={{ color: '#0A1628' }}>
+              Roll back to {rollbackTarget.version}?
+            </h2>
+
+            {currentVersion && (
+              <div className="rounded-lg p-4 mb-5" style={{ background: '#FFFBEB', border: '1px solid #FDE68A' }}>
+                <p className="text-sm" style={{ color: '#92400E' }}>
+                  This will change the model from <strong>{currentVersion.model}</strong> to <strong>{rollbackTarget.model}</strong>
+                </p>
+                <p className="text-xs mt-2" style={{ color: '#92400E' }}>
+                  Framework: {currentVersion.framework} → {rollbackTarget.framework} &middot; Previous sigma: {rollbackTarget.sigma.toFixed(1)}σ
+                </p>
+              </div>
+            )}
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setRollbackTarget(null)}
+                className="flex-1 px-4 py-2.5 rounded-lg text-sm font-medium border cursor-pointer"
+                style={{ borderColor: '#E2E8F0', color: '#64748B' }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleRollback(rollbackTarget)}
+                className="flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold text-white cursor-pointer"
+                style={{ background: '#D97706' }}
+              >
+                Confirm Rollback
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

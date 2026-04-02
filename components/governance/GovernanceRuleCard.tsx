@@ -1,16 +1,19 @@
 'use client'
 
-import type { GovernanceRule, EnforcementLevel } from '@/types/telemetry'
-import { ShieldCheck, ShieldAlert, ShieldOff } from 'lucide-react'
+import type { GovernanceRule, EnforcementLevel, Geography } from '@/types/telemetry'
+import { ShieldCheck, ShieldAlert, ShieldOff, Globe } from 'lucide-react'
 import clsx from 'clsx'
 
 interface GovernanceRuleCardProps {
   rule: GovernanceRule
+  geography?: Geography
   onToggleActive: (id: string) => void
   onChangeEnforcement: (id: string, level: EnforcementLevel) => void
+  onChangeGeography?: (id: string, geo: Geography) => void
 }
 
 const ENFORCEMENT_LEVELS: EnforcementLevel[] = ['Block', 'Warn', 'Log']
+const GEOGRAPHIES: Geography[] = ['Global', 'EU', 'US', 'APAC']
 
 const enforcementColors: Record<EnforcementLevel, string> = {
   Block: 'var(--v-red)',
@@ -18,7 +21,7 @@ const enforcementColors: Record<EnforcementLevel, string> = {
   Log: 'var(--vip-muted)',
 }
 
-export function GovernanceRuleCard({ rule, onToggleActive, onChangeEnforcement }: GovernanceRuleCardProps) {
+export function GovernanceRuleCard({ rule, geography = 'Global', onToggleActive, onChangeEnforcement, onChangeGeography }: GovernanceRuleCardProps) {
   const statusColor = !rule.active
     ? 'var(--vip-muted-light)'
     : rule.satisfied
@@ -58,6 +61,27 @@ export function GovernanceRuleCard({ rule, onToggleActive, onChangeEnforcement }
           {rule.condition}
         </p>
       </div>
+
+      {/* Geography selector */}
+      {onChangeGeography && (
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          <Globe size={12} style={{ color: 'var(--vip-muted)' }} />
+          <select
+            value={geography}
+            onChange={e => onChangeGeography(rule.id, e.target.value as Geography)}
+            className="text-[10px] font-semibold rounded px-1.5 py-1 border-0 cursor-pointer"
+            style={{
+              background: 'var(--vip-navy-100)',
+              color: 'var(--vip-navy)',
+              outline: 'none',
+            }}
+          >
+            {GEOGRAPHIES.map(geo => (
+              <option key={geo} value={geo}>{geo}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Enforcement toggle */}
       <div className="flex gap-1 rounded-md p-0.5" style={{ background: 'var(--vip-navy-100)' }}>

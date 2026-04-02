@@ -25,6 +25,11 @@ import {
   Cable,
   Palette,
   Building2,
+  FlaskConical,
+  ArrowLeftRight,
+  Target,
+  GitBranch,
+  ShieldCheck,
   ChevronDown,
   ChevronRight,
 } from 'lucide-react'
@@ -302,6 +307,30 @@ export function Sidebar() {
             active={pathname === '/analytics/correlations' || pathname.startsWith('/analytics/correlations/')}
             icon={<Waypoints size={16} />}
           />
+          <NavItem
+            href="/insights/scenarios"
+            label="What-If Scenarios"
+            active={pathname === '/insights/scenarios'}
+            icon={<FlaskConical size={16} />}
+          />
+          <NavItem
+            href="/insights/model-comparison"
+            label="Model Comparison"
+            active={pathname === '/insights/model-comparison'}
+            icon={<ArrowLeftRight size={16} />}
+          />
+          <NavItem
+            href="/insights/maturity"
+            label="AI Maturity"
+            active={pathname === '/insights/maturity'}
+            icon={<Target size={16} />}
+          />
+          <NavItem
+            href="/insights/build-vs-buy"
+            label="Build vs Buy"
+            active={pathname === '/insights/build-vs-buy'}
+            icon={<Scale size={16} />}
+          />
 
           {/* ── GOVERNANCE ────────────────────────────────────── */}
           <SectionLabel>Governance</SectionLabel>
@@ -331,6 +360,12 @@ export function Sidebar() {
             active={pathname === '/governance/rules' || pathname.startsWith('/governance/rules/')}
             icon={<Scale size={16} />}
           />
+          <NavItem
+            href="/governance/compliance"
+            label="Compliance"
+            active={pathname === '/governance/compliance' || pathname.startsWith('/governance/compliance/')}
+            icon={<ShieldCheck size={16} />}
+          />
 
           {/* ── PLANNING ──────────────────────────────────────── */}
           <SectionLabel>Planning</SectionLabel>
@@ -345,6 +380,12 @@ export function Sidebar() {
             label="Agent Comparison"
             active={pathname === '/agents/compare'}
             icon={<ArrowRightLeft size={16} />}
+          />
+          <NavItem
+            href="/agents/dependencies"
+            label="Dependencies"
+            active={pathname === '/agents/dependencies'}
+            icon={<GitBranch size={16} />}
           />
 
           {/* ── CONFIGURE (collapsed by default) ──────────────── */}
