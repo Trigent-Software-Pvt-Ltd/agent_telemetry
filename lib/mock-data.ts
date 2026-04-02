@@ -1078,8 +1078,16 @@ export const AGENT_PROFILES: AgentProfile[] = [
     ] },
 ]
 
+const AGENT_ID_TO_PROFILE: Record<string, string> = {
+  'odds-analysis': 'odds-scraper',
+  'line-comparison': 'line-comparison-profile',
+  'recommendation-writer': 'recommendation-writer-profile',
+  'customer-response': 'player-profiler',
+}
+
 export function getAgentProfile(agentId: string): AgentProfile | undefined {
-  return AGENT_PROFILES.find(a => a.id === agentId)
+  const profileId = AGENT_ID_TO_PROFILE[agentId] ?? agentId
+  return AGENT_PROFILES.find(a => a.id === profileId)
 }
 
 export function getAgentsByWorkflow(workflowId: string): AgentProfile[] {
