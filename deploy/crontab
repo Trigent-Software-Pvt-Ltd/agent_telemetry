@@ -1,0 +1,23 @@
+# Agent Telemetry — Cron Jobs
+# Install: sudo cp deploy/crontab /etc/cron.d/agent-telemetry
+
+SHELL=/bin/bash
+CRON_SECRET=<set-in-env>
+
+# Langfuse sync — every 15 minutes
+*/15 * * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/sync-langfuse >> /var/log/agent-telemetry/cron.log 2>&1
+
+# Compute agent metrics — every hour
+0 * * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/compute-metrics >> /var/log/agent-telemetry/cron.log 2>&1
+
+# Compute process ROI — every hour
+5 * * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/compute-process-roi >> /var/log/agent-telemetry/cron.log 2>&1
+
+# Check governance rules — every hour
+10 * * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/check-governance >> /var/log/agent-telemetry/cron.log 2>&1
+
+# Check budget limits — every hour
+15 * * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/check-budgets >> /var/log/agent-telemetry/cron.log 2>&1
+
+# Detect anomalies — every 6 hours
+0 */6 * * * ec2-user curl -sf -H "x-cron-secret: $CRON_SECRET" http://localhost:3000/api/cron/detect-anomalies >> /var/log/agent-telemetry/cron.log 2>&1

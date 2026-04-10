@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-VIPPlay Agent Telemetry — a Next.js 16 frontend platform for monitoring agentic AI workflow performance. 35 routes, 60+ components across 5 phases. Displays verdicts (GREEN/AMBER/RED), sigma scores, coverage maps, ROI waterfalls, FMEA risk boards, workforce planning, governance rules, and live monitoring for multi-agent workflows. All data is currently **mock/deterministic** (no backend, no API calls).
+VIPPlay Agent Telemetry — a Next.js 16 full-stack platform for monitoring agentic AI workflow performance. 41 page routes + 22 API routes, 60+ components across 9 phases. Displays verdicts (GREEN/AMBER/RED), sigma scores, coverage maps, ROI waterfalls, FMEA risk boards, workforce planning, governance rules, and live monitoring for multi-agent workflows. Backend uses PostgreSQL (RDS) via Drizzle ORM with Langfuse integration for telemetry ingestion. Data source is switchable between mock data and real DB via `DATA_SOURCE` env var.
 
 ## Commands
 
@@ -12,6 +12,9 @@ VIPPlay Agent Telemetry — a Next.js 16 frontend platform for monitoring agenti
 - `npm run build` — Production build
 - `npm run start` — Serve production build
 - `npm run lint` — ESLint (flat config, core-web-vitals + typescript presets)
+- `npx drizzle-kit push` — Push schema to database (requires `DATABASE_URL`)
+- `npx drizzle-kit studio` — Open Drizzle Studio (DB browser)
+- `npx tsx scripts/seed.ts` — Seed database from mock data
 
 ## Tech Stack
 
@@ -20,6 +23,9 @@ VIPPlay Agent Telemetry — a Next.js 16 frontend platform for monitoring agenti
 - **Fonts**: Sora (headings, `--font-sora`), DM Sans (body, `--font-dm`), JetBrains Mono (code, `--font-mono-jb`) — **not Geist**
 - **Recharts** for charts (area, bar, radar, scatter, composed, waterfall)
 - **Lucide React** for icons, **clsx** for conditional classes, **sonner** for toasts
+- **Drizzle ORM** (`drizzle-orm` + `pg`) for database access — schema in `lib/db/schema.ts`
+- **NextAuth.js v4** for authentication (credentials provider, JWT sessions)
+- **ioredis** for ElastiCache Redis (SSE pub/sub, session store)
 - Path alias: `@/*` maps to project root
 
 ## Next.js 16 Breaking Changes
@@ -34,7 +40,17 @@ This version has breaking changes from training data. **Read `node_modules/next/
 
 ## Architecture
 
-### Route Map (35 routes)
+### Layout Structure
+
+Two-tier layout using a Next.js route group:
+
+- `app/layout.tsx` — Root layout: fonts, metadata (`r-Potential` title template), `<OrganisationProvider>` → `<LanguageModeProvider>` wrapping, Sonner toaster
+- `app/(app)/layout.tsx` — **Client component** (`'use client'`): Sidebar (fixed 260px left), TopBar (breadcrumbs), CommandPalette (Ctrl/Cmd+K). All authenticated routes live here.
+- `app/login/page.tsx` and `app/page.tsx` (redirect) sit **outside** the `(app)` group — no sidebar/topbar.
+
+When adding new routes, place them under `app/(app)/` to get the shell layout automatically.
+
+### Route Map (41 routes)
 
 **Phase 1 — Core Demo:**
 - `app/page.tsx` — Redirects to `/dashboard`
@@ -45,7 +61,7 @@ This version has breaking changes from training data. **Read `node_modules/next/
 - `/process/[id]/sigma` — C4 Sigma Scorecard + Improvement Tracker
 - `/agents/[id]` — D1 Agent Telemetry + Cost of Inaction + Version Timeline
 - `/governance/audit` — D2 Audit Log + Override Trend Analysis
-- `/login` — Login page
+- `/login` — Login page (outside `(app)` group)
 - `/settings` — Settings + shared links
 
 **Phase 2 — Complete Platform:**
@@ -80,10 +96,38 @@ This version has breaking changes from training data. **Read `node_modules/next/
 - `/dashboard/benchmarks` — Industry benchmark comparison
 - `/analytics/correlations` — Correlation engine with scatter plots
 
-### Data Layer (all mock, no backend)
-- `types/telemetry.ts` — All types: Process, Agent, Run, Span, RoiSnapshot, AgentRoi, CoverageMapEntry, FmeaEntry, TransformationStage, ServqualDimension, GovernanceRule, WorkforceProjection, Correlation, Anomaly, and more
-- `lib/mock-data.ts` — Deterministic mock data generator with 40+ helper functions
+**Phases 7–9 — Deep Observability & Financial Modeling:**
+- `/insights/scenarios` — What-if scenario analysis
+- `/insights/model-comparison` — LLM model comparison
+- `/insights/maturity` — Maturity assessment
+- `/insights/build-vs-buy` — Build vs. buy decision framework
+- `/agents/dependencies` — Agent dependency graph
+- `/governance/compliance` — Compliance requirements tracker
+
+### Data Layer
+- `types/telemetry.ts` — All types (50+ interfaces): Process, Agent, Run, Span, RoiSnapshot, AgentRoi, CoverageMapEntry, FmeaEntry, GovernanceRule, WorkforceProjection, Correlation, Anomaly, etc.
+- `lib/db/schema.ts` — Drizzle ORM schema (25 PostgreSQL tables)
+- `lib/db/index.ts` — Database connection pool (node-postgres → Drizzle)
+- `lib/data/*.ts` — 9 async data access modules (processes, agents, runs, sigma, governance, settings, analytics, monitoring, insights) — reads from PostgreSQL
+- `lib/data-source.ts` — Bridge file: re-exports from `lib/mock-data.ts` by default. To use DB, import from `lib/data/*` directly. See file header for migration guide.
+- `lib/mock-data.ts` — Deterministic mock data (constants + sync functions). Used as default data source and for seeding.
 - `lib/verdict-logic.ts` — Verdict display config (colors/icons) and recommendation text
+- `lib/auth.ts` — NextAuth config (credentials provider, PBKDF2 hashing, JWT sessions)
+
+### API Routes (22 endpoints)
+- `app/api/v1/ingest/runs/` — `POST` telemetry ingestion (API key auth, idempotent)
+- `app/api/v1/ingest/batch/` — `POST` batch run ingestion (transactional)
+- `app/api/governance/rules/` — CRUD for governance rules
+- `app/api/governance/fmea/` — CRUD for FMEA risk entries
+- `app/api/settings/alerts/` — CRUD for alert rules
+- `app/api/settings/budgets/` — GET/PUT budget caps with current spend
+- `app/api/settings/notifications/` — channels + rules management
+- `app/api/settings/branding/` — white-label config
+- `app/api/processes/[slug]/coverage/` — GET/PUT task coverage map
+- `app/api/organisations/[id]/` — org settings
+- `app/api/monitoring/stream/` — SSE real-time event stream (polls DB every 5s)
+- `app/api/auth/[...nextauth]/` — NextAuth handler
+- `app/api/cron/*` — 6 cron endpoints (compute-metrics, compute-process-roi, detect-anomalies, sync-langfuse, check-governance, check-budgets). Secured via `x-cron-secret` header.
 
 ### Component Organization
 - `components/layout/` — `Sidebar` (fixed left nav, 260px) and `TopBar` (breadcrumbs, notifications)
@@ -98,12 +142,16 @@ This version has breaking changes from training data. **Read `node_modules/next/
 - `components/export/` — Board export (ExportConfigForm, ReportPreview, ScheduledReports)
 - `components/settings/` — All settings panels (SLA, alerts, budgets, notifications, branding, integrations)
 - `components/monitoring/` — Live monitoring (AgentStatusGrid, LiveEventFeed)
-- `components/shared/` — Reusable: StatusDot, VerdictBadge, Tooltip, ShareButton
+- `components/shared/` — Reusable: StatusDot, VerdictBadge, Tooltip, ShareButton, CommandPalette
 
 ### State Management
-- `hooks/useLanguageMode.ts` — Language mode context (operations/quality vocabulary)
-- `hooks/useOrganisation.ts` — Organisation context (OEE/SERVQUAL quality framework)
+- `hooks/useLanguageMode.ts` — Language mode context hook (operations/quality vocabulary)
+- `hooks/useLanguageModeProvider.tsx` — Provider component wrapping the context
+- `hooks/useOrganisation.ts` — Organisation context hook (OEE/SERVQUAL quality framework)
+- `hooks/useOrganisationProvider.tsx` — Provider component wrapping the context
 - `hooks/useCountUp.ts` — Animation hook for number counters
+
+Providers are mounted in the root layout (`app/layout.tsx`). Hooks are consumed in client components throughout the app.
 
 ### Design System
 - Light mode, VIP/luxury aesthetic: navy sidebar (`#0A1628`), gold accent (`#D4AF37`), white cards on `#F7F9FC` surface
