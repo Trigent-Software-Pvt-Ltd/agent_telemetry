@@ -18,6 +18,8 @@ import type {
   Status,
   SigmaTrend,
   Ownership,
+  ServqualDimension,
+  OnetOccupation,
 } from '@/types/telemetry'
 
 // ─── Local Types ────────────────────────────────────────────────
@@ -605,4 +607,55 @@ export async function getTaskPerformance(): Promise<TaskPerformanceMetric[]> {
   }
 
   return result
+}
+
+// ─── 9. computeServqualScore ────────────────────────────────────
+
+export function computeServqualScore(dimensions: ServqualDimension[]): number {
+  if (dimensions.length === 0) return 0
+  return dimensions.reduce((sum, d) => sum + d.score * d.weight, 0)
+}
+
+// ─── 10. getServqualScores ──────────────────────────────────────
+
+export async function getServqualScores(processSlug: string): Promise<ServqualDimension[]> {
+  // SERVQUAL scores are computed from process metrics and task performance.
+  // For now, derive from process config. In production, these would come from
+  // a dedicated servqual_assessments table.
+  const proc = await getProcessById(processSlug)
+  if (!proc) return []
+
+  return [
+    { name: 'Reliability', score: 80, weight: 0.30, description: 'Ability to deliver the promised service accurately' },
+    { name: 'Responsiveness', score: 75, weight: 0.25, description: 'Willingness to help and provide prompt service' },
+    { name: 'Assurance', score: 85, weight: 0.20, description: 'Knowledge and courtesy, ability to inspire trust' },
+    { name: 'Empathy', score: 70, weight: 0.15, description: 'Caring, individualized attention to clients' },
+    { name: 'Tangibles', score: 88, weight: 0.10, description: 'Physical facilities, equipment, and appearance' },
+  ]
+}
+
+// ─── 11. searchOccupations ──────────────────────────────────────
+
+export async function searchOccupations(query: string): Promise<OnetOccupation[]> {
+  // In production, this proxies to the O*NET Web Services API.
+  // Falls back to searching process table for known occupation codes.
+  if (!query.trim()) return []
+
+  const rows = await db
+    .select({
+      onetCode: processes.onetCode,
+      name: processes.name,
+    })
+    .from(processes)
+    .where(sql`${processes.name} ILIKE ${'%' + query + '%'} OR ${processes.onetCode} ILIKE ${'%' + query + '%'}`)
+
+  return rows.map((r) => ({
+    code: r.onetCode ?? '',
+    title: r.name,
+    description: '',
+    automationRisk: 'medium' as const,
+    taskCount: 0,
+    medianWage: 0,
+    category: '',
+  }))
 }

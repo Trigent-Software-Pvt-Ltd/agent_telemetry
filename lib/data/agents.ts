@@ -7,6 +7,7 @@ import { eq, and, desc, gte, sql, sum } from 'drizzle-orm'
 import type {
   Agent, AgentProfile, AgentVersion, DecommissionImpact,
   StagingCandidate, AgentAvailability, AgentTask,
+  AgentOversightEfficiency,
 } from '@/types/telemetry'
 
 // ─── Local interfaces (not in telemetry.ts) ──────────────────
@@ -395,4 +396,106 @@ export async function getAgentDependencies(): Promise<AgentDependency[]> {
   }
 
   return deps
+}
+
+// ─── getAgentsByWorkflow ────────────────────────────────────────
+
+export async function getAgentsByWorkflow(processSlug: string): Promise<AgentProfile[]> {
+  const processAgents = await db
+    .select()
+    .from(agents)
+    .innerJoin(processes, eq(agents.processId, processes.id))
+    .where(eq(processes.slug, processSlug))
+
+  const results: AgentProfile[] = []
+
+  for (const row of processAgents) {
+    const agent = row.agents
+    const proc = row.processes
+
+    // Get latest metrics
+    const [metrics] = await db
+      .select()
+      .from(agentMetricsDaily)
+      .where(eq(agentMetricsDaily.agentId, agent.id))
+      .orderBy(desc(agentMetricsDaily.date))
+      .limit(1)
+
+    // Get task breakdown
+    const agentTasks = await db
+      .select({ task: onetTasks.task, timeWeight: onetTasks.timeWeight })
+      .from(onetTasks)
+      .where(eq(onetTasks.agentId, agent.id))
+
+    const totalRuns = metrics?.totalRuns ?? 0
+    const successRate = totalRuns > 0 ? ((metrics?.successfulRuns ?? 0) / totalRuns) : 0
+    const sigmaScore = metrics?.sigmaScore ? parseFloat(String(metrics.sigmaScore)) : 0
+    const dpmo = metrics?.dpmo ?? 0
+    const avgCost = metrics?.totalCost && totalRuns > 0
+      ? parseFloat(String(metrics.totalCost)) / totalRuns
+      : 0
+
+    results.push({
+      id: agent.slug,
+      name: agent.name,
+      workflowId: proc.slug,
+      processName: proc.name,
+      sigmaScore,
+      dpmo,
+      successRate,
+      avgCostPerRun: parseFloat(avgCost.toFixed(4)),
+      p95Latency: metrics?.p95DurationMs ?? 0,
+      totalRuns,
+      weeklyROI: 0,
+      status: (agent.status ?? 'active') as 'active' | 'paused' | 'decommissioned',
+      consistency: Math.round(successRate * 100),
+      tasks: agentTasks.map((t) => ({
+        name: t.task,
+        timeWeight: parseFloat(String(t.timeWeight)),
+        weeklyVolume: 0,
+        avgCost: 0,
+      })),
+    })
+  }
+
+  return results
+}
+
+// ─── getAgentOversightEfficiency ────────────────────────────────
+
+export async function getAgentOversightEfficiency(): Promise<AgentOversightEfficiency[]> {
+  const allAgents = await db
+    .select({
+      id: agents.id,
+      slug: agents.slug,
+      name: agents.name,
+    })
+    .from(agents)
+    .where(eq(agents.status, 'active'))
+
+  const results: AgentOversightEfficiency[] = []
+  const costRate = 55 // $/hr for oversight labor
+
+  for (const agent of allAgents) {
+    const [metrics] = await db
+      .select({ sigmaScore: agentMetricsDaily.sigmaScore })
+      .from(agentMetricsDaily)
+      .where(eq(agentMetricsDaily.agentId, agent.id))
+      .orderBy(desc(agentMetricsDaily.date))
+      .limit(1)
+
+    const sigma = metrics?.sigmaScore ? parseFloat(String(metrics.sigmaScore)) : 3.0
+    // Lower sigma = more oversight needed
+    const baseHours = sigma >= 4.0 ? 2 : sigma >= 3.5 ? 3.5 : sigma >= 3.0 ? 6 : 8
+
+    results.push({
+      agentId: agent.slug,
+      agentName: agent.name,
+      sigmaScore: sigma,
+      oversightHoursPerWeek: baseHours,
+      costPerWeek: Math.round(baseHours * costRate),
+    })
+  }
+
+  return results
 }

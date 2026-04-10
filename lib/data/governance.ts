@@ -494,3 +494,14 @@ export async function getRuleGeography(ruleId: string): Promise<Geography> {
 
   return (row?.geography as Geography) ?? 'Global'
 }
+
+// ─── 11. getAuditReadinessScore ─────────────────────────────────
+
+export async function getAuditReadinessScore(orgId: string): Promise<number> {
+  const reqs = await getComplianceRequirements(orgId)
+  if (reqs.length === 0) return 0
+
+  const passed = reqs.filter((r) => r.status === 'PASS').length
+  const partial = reqs.filter((r) => r.status === 'PARTIAL').length
+  return Math.round(((passed + partial * 0.5) / reqs.length) * 100)
+}

@@ -1,5 +1,5 @@
 /**
- * Seed script — populates the database with data from lib/mock-data.ts.
+ * Seed script — populates the database with data from lib/seed-data.ts.
  *
  * This is the migration safety net: after seeding, every screen should
  * render identically to the mock version.
@@ -30,7 +30,7 @@ import {
   COMPLIANCE_REQUIREMENTS as MOCK_COMPLIANCE,
   MTBV_DATA,
   SIGMA_TRENDS,
-} from '../lib/mock-data'
+} from '../lib/seed-data'
 import { createPasswordHash } from '../lib/auth'
 
 // ─── Deterministic UUID generation ────────────────────────────

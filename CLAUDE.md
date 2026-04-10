@@ -109,8 +109,8 @@ When adding new routes, place them under `app/(app)/` to get the shell layout au
 - `lib/db/schema.ts` — Drizzle ORM schema (25 PostgreSQL tables)
 - `lib/db/index.ts` — Database connection pool (node-postgres → Drizzle)
 - `lib/data/*.ts` — 9 async data access modules (processes, agents, runs, sigma, governance, settings, analytics, monitoring, insights) — reads from PostgreSQL
-- `lib/data-source.ts` — Bridge file: re-exports from `lib/mock-data.ts` by default. To use DB, import from `lib/data/*` directly. See file header for migration guide.
-- `lib/mock-data.ts` — Deterministic mock data (constants + sync functions). Used as default data source and for seeding.
+- `lib/data-source.ts` — Bridge file: re-exports from `lib/seed-data.ts`. To use DB, import from `lib/data/*` directly. See file header for migration guide.
+- `lib/seed-data.ts` — Seed data (constants + sync functions). Used as default data source and for DB seeding.
 - `lib/verdict-logic.ts` — Verdict display config (colors/icons) and recommendation text
 - `lib/auth.ts` — NextAuth config (credentials provider, PBKDF2 hashing, JWT sessions)
 

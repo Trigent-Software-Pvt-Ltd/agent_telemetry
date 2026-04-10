@@ -1,4 +1,4 @@
-import { eq, and, desc, gte, sql, sum, count } from 'drizzle-orm'
+import { eq, and, desc, gte, sql, sum, count, avg } from 'drizzle-orm'
 import { db } from '@/lib/db'
 import {
   agents,
@@ -12,6 +12,8 @@ import type {
   Span,
   AgentRoi,
   MonthlyCost,
+  TcoCategoryBreakdown,
+  TokenCostRow,
 } from '@/types/telemetry'
 
 // ─── Helpers ────────────────────────────────────────────────────
@@ -265,6 +267,105 @@ export async function getMonthlyCosts(processSlug?: string): Promise<MonthlyCost
       inferenceCost: toNumber(row.totalCost),
       runs: Number(row.totalRuns),
       successfulRuns: toNumber(row.successfulRuns),
+    })
+  }
+
+  return results
+}
+
+// ─── 5. getTcoBreakdown ─────────────────────────────────────────
+
+export async function getTcoBreakdown(): Promise<TcoCategoryBreakdown[]> {
+  // Aggregate costs across all process metrics
+  const [agg] = await db
+    .select({
+      inference: sum(processMetricsDaily.inferenceCostWeekly).as('inference'),
+      oversight: sum(processMetricsDaily.oversightCostWeekly).as('oversight'),
+      governance: sum(processMetricsDaily.governanceCostWeekly).as('governance'),
+    })
+    .from(processMetricsDaily)
+
+  const inference = toNumber(agg?.inference)
+  const oversight = toNumber(agg?.oversight)
+  const governance = toNumber(agg?.governance)
+  const setup = Math.round((inference + oversight + governance) * 0.1 / 0.9)
+  const grand = inference + oversight + governance + setup
+
+  if (grand === 0) {
+    return [
+      { name: 'Inference', value: 0, pct: 25, color: '#378ADD' },
+      { name: 'Oversight Labor', value: 0, pct: 25, color: '#E87461' },
+      { name: 'Governance', value: 0, pct: 25, color: '#D4AF37' },
+      { name: 'Setup & Training', value: 0, pct: 25, color: '#7C3AED' },
+    ]
+  }
+
+  return [
+    { name: 'Inference', value: inference, pct: Math.round(inference / grand * 100), color: '#378ADD' },
+    { name: 'Oversight Labor', value: oversight, pct: Math.round(oversight / grand * 100), color: '#E87461' },
+    { name: 'Governance', value: governance, pct: Math.round(governance / grand * 100), color: '#D4AF37' },
+    { name: 'Setup & Training', value: setup, pct: Math.round(setup / grand * 100), color: '#7C3AED' },
+  ]
+}
+
+// ─── 6. getWasteRatio ───────────────────────────────────────────
+
+export async function getWasteRatio(): Promise<{ pct: number; amount: number }> {
+  const [agg] = await db
+    .select({
+      totalRuns: count(runs.id).as('total_runs'),
+      failedRuns: sum(
+        sql<number>`CASE WHEN ${runs.outcome} = false THEN 1 ELSE 0 END`
+      ).as('failed_runs'),
+      totalCost: sum(runs.totalCost).as('total_cost'),
+    })
+    .from(runs)
+
+  const totalRuns = agg?.totalRuns ?? 0
+  const failedRuns = toNumber(agg?.failedRuns)
+  const totalCost = toNumber(agg?.totalCost)
+
+  if (totalRuns === 0) return { pct: 0, amount: 0 }
+
+  const failRate = failedRuns / totalRuns
+  const wasteAmount = parseFloat((totalCost * failRate).toFixed(2))
+  return { pct: Math.round(failRate * 100), amount: wasteAmount }
+}
+
+// ─── 7. getTokenCostTable ───────────────────────────────────────
+
+export async function getTokenCostTable(): Promise<TokenCostRow[]> {
+  const allAgents = await db
+    .select({
+      slug: agents.slug,
+      name: agents.name,
+      model: agents.model,
+    })
+    .from(agents)
+    .where(eq(agents.status, 'active'))
+
+  const results: TokenCostRow[] = []
+
+  for (const agent of allAgents) {
+    const [agg] = await db
+      .select({
+        avgTokens: avg(runs.tokenCount).as('avg_tokens'),
+        avgCost: avg(runs.totalCost).as('avg_cost'),
+      })
+      .from(runs)
+      .innerJoin(agents, eq(runs.agentId, agents.id))
+      .where(eq(agents.slug, agent.slug))
+
+    const avgTokensPerRun = Math.round(toNumber(agg?.avgTokens, 1000))
+    const costPerRun = toNumber(agg?.avgCost, 0.01)
+    const costPerToken = avgTokensPerRun > 0 ? costPerRun / avgTokensPerRun : 0
+
+    results.push({
+      agentId: agent.slug,
+      agentName: agent.name,
+      avgTokensPerRun,
+      costPerToken: parseFloat(costPerToken.toFixed(8)),
+      costPerRun: parseFloat(costPerRun.toFixed(4)),
     })
   }
 
