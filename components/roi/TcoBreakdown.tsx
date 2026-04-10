@@ -5,7 +5,7 @@ import {
 } from 'recharts'
 import {
   getTcoBreakdown, getWasteRatio, getAgentOversightEfficiency, getTokenCostTable,
-} from '@/lib/mock-data'
+} from '@/lib/data-source'
 
 export default function TcoBreakdown() {
   const breakdown = getTcoBreakdown()

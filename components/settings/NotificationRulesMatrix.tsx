@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getNotificationRules, NotificationRule } from '@/lib/mock-data'
+import { getNotificationRules, NotificationRule } from '@/lib/data-source'
 import { Bell } from 'lucide-react'
 
 export function NotificationRulesMatrix() {

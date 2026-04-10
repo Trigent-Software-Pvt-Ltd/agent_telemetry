@@ -4,7 +4,7 @@ import { StatusDot } from '@/components/shared/StatusDot'
 import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import { useLanguageMode } from '@/hooks/useLanguageMode'
 import { useOrganisation } from '@/hooks/useOrganisation'
-import { LANGUAGE_MODES, getServqualScores, computeServqualScore } from '@/lib/mock-data'
+import { LANGUAGE_MODES, getServqualScores, computeServqualScore } from '@/lib/data-source'
 import type { Agent } from '@/types/telemetry'
 
 const STATUS_BORDER_COLORS: Record<string, string> = {

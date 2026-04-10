@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getSharedLinks, SharedLink } from '@/lib/mock-data'
+import { getSharedLinks, SharedLink } from '@/lib/data-source'
 import { Link2, Trash2, ExternalLink } from 'lucide-react'
 import { toast } from 'sonner'
 

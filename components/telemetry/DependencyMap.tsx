@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import { AGENTS, PROCESSES, getAgentDependencies, type AgentDependency } from '@/lib/mock-data'
+import { AGENTS, PROCESSES, getAgentDependencies, type AgentDependency } from '@/lib/data-source'
 import { AlertTriangle, Database, ArrowRight } from 'lucide-react'
 
 /* ── Card positions for the layout ─────────────────────────────── */

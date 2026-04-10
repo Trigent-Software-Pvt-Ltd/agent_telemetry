@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Mail, MessageSquare, Monitor, CheckCircle, XCircle, Zap } from 'lucide-react'
 import { toast } from 'sonner'
-import type { NotificationChannel } from '@/lib/mock-data'
+import type { NotificationChannel } from '@/lib/data-source'
 
 const CHANNEL_ICONS: Record<string, typeof Mail> = {
   email: Mail,

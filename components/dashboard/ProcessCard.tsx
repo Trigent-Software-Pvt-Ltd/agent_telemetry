@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Process } from '@/types/telemetry'
-import { AGENTS, ROI_SNAPSHOTS } from '@/lib/mock-data'
+import { AGENTS, ROI_SNAPSHOTS } from '@/lib/data-source'
 import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 function formatCurrency(value: number): string {

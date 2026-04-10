@@ -1,6 +1,6 @@
 'use client'
 
-import { SIGMA_LEVELS } from '@/lib/mock-data'
+import { SIGMA_LEVELS } from '@/lib/data-source'
 import type { Agent } from '@/types/telemetry'
 
 const STATUS_COLORS: Record<string, string> = {

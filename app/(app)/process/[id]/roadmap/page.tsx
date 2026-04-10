@@ -1,5 +1,5 @@
-import { getProcessById, getTransformationStages, getAgentsForProcess } from '@/lib/mock-data'
-import { ORGANISATION } from '@/lib/mock-data'
+import { getProcessById, getTransformationStages, getAgentsForProcess } from '@/lib/data-source'
+import { ORGANISATION } from '@/lib/data-source'
 import { notFound } from 'next/navigation'
 import { RoadmapClient } from '@/components/roadmap/RoadmapClient'
 
@@ -10,11 +10,11 @@ export default async function RoadmapPage({
 }) {
   const { id } = await params
 
-  const process = getProcessById(id)
+  const process = await getProcessById(id)
   if (!process) return notFound()
 
-  const stages = getTransformationStages(id)
-  const agents = getAgentsForProcess(id)
+  const stages = await getTransformationStages(id)
+  const agents = await getAgentsForProcess(id)
 
   return (
     <RoadmapClient

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { Save } from 'lucide-react'
-import { getAgentSlaConfigs, AgentSlaConfig } from '@/lib/mock-data'
+import { getAgentSlaConfigs, AgentSlaConfig } from '@/lib/data-source'
 import { SlaAgentRow } from './SlaAgentRow'
 
 export function SlaConfigPanel() {

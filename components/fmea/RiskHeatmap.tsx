@@ -1,6 +1,6 @@
 'use client'
 
-import { getFmeaEntries } from '@/lib/mock-data'
+import { getFmeaEntries } from '@/lib/data-source'
 import type { FmeaEntry } from '@/types/telemetry'
 import {
   ScatterChart,

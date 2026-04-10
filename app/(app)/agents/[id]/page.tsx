@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAgentById, getRunsForAgent, getProcessById, getAgentRoi, getAgentAvailability, getPeakHourData, ORGANISATION } from '@/lib/mock-data'
+import { getAgentById, getRunsForAgent, getProcessById, getAgentRoi, getAgentAvailability, getPeakHourData, ORGANISATION } from '@/lib/data-source'
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
-  const agent = getAgentById(id)
+  const agent = await getAgentById(id)
   return { title: agent ? agent.name : 'Agent' }
 }
 import AgentHeader from '@/components/telemetry/AgentHeader'
@@ -19,13 +19,13 @@ import { PeakHourHeatmap } from '@/components/telemetry/PeakHourHeatmap'
 
 export default async function AgentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const agent = getAgentById(id)
+  const agent = await getAgentById(id)
   if (!agent) notFound()
 
-  const process = getProcessById(agent.processId)
+  const process = await getProcessById(agent.processId)
   if (!process) notFound()
 
-  const runs = getRunsForAgent(id)
+  const runs = await getRunsForAgent(id)
 
   // Compute derived stats
   const durations = runs.map((r) => r.durationMs).sort((a, b) => a - b)
@@ -43,9 +43,9 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
     ? `$${(totalCost / successfulRuns.length).toFixed(4)}`
     : 'N/A'
 
-  const agentRoi = getAgentRoi(id)
-  const availability = getAgentAvailability(id)
-  const peakHourData = getPeakHourData()
+  const agentRoi = await getAgentRoi(id)
+  const availability = await getAgentAvailability(id)
+  const peakHourData = await getPeakHourData()
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">

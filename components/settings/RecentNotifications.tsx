@@ -1,6 +1,6 @@
 'use client'
 
-import { getRecentNotifications } from '@/lib/mock-data'
+import { getRecentNotifications } from '@/lib/data-source'
 import { Clock, Mail, MessageSquare, Monitor } from 'lucide-react'
 
 const channelIcons: Record<string, typeof Mail> = {

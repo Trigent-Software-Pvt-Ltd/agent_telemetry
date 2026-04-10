@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from 'recharts'
 import type { RoiSnapshot } from '@/types/telemetry'
-import { PROCESSES } from '@/lib/mock-data'
+import { PROCESSES } from '@/lib/data-source'
 
 interface Props {
   snapshots: RoiSnapshot[]

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getAlertRules, AlertRule } from '@/lib/mock-data'
+import { getAlertRules, AlertRule } from '@/lib/data-source'
 import { AlertRuleCard } from './AlertRuleCard'
 
 export function AlertRulesPanel() {

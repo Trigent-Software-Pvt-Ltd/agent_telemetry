@@ -2,7 +2,7 @@
 
 import { CorrelationCard } from '@/components/dashboard/CorrelationCard'
 import { CorrelationSummary } from '@/components/dashboard/CorrelationSummary'
-import { getCorrelations } from '@/lib/mock-data'
+import { getCorrelations } from '@/lib/data-source'
 import { Waypoints } from 'lucide-react'
 
 export default function CorrelationsPage() {

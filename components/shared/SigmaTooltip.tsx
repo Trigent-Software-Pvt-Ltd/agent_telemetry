@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, type ReactNode } from 'react'
-import { SIGMA_LEVELS } from '@/lib/mock-data'
+import { SIGMA_LEVELS } from '@/lib/data-source'
 
 function getSigmaLabel(value: number): string {
   // Find the closest sigma level

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { ORGANISATION } from '@/lib/mock-data'
+import { ORGANISATION } from '@/lib/data-source'
 import { useOrganisation } from '@/hooks/useOrganisation'
 
 const inputStyle: React.CSSProperties = {

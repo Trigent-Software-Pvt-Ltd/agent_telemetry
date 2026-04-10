@@ -1,7 +1,7 @@
 'use client'
 
 import type { RoiSnapshot } from '@/types/telemetry'
-import { PROCESSES } from '@/lib/mock-data'
+import { PROCESSES } from '@/lib/data-source'
 
 interface Props {
   snapshots: RoiSnapshot[]

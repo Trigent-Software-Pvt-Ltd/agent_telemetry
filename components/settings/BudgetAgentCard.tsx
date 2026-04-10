@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AgentBudget } from '@/lib/mock-data'
+import { AgentBudget } from '@/lib/data-source'
 import { Bot, AlertCircle } from 'lucide-react'
 
 interface Props {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AGENTS, ORGANISATION, ROI_SNAPSHOTS } from '@/lib/mock-data'
+import { AGENTS, ORGANISATION, ROI_SNAPSHOTS } from '@/lib/data-source'
 
 function formatCurrency(value: number): string {
   return value.toLocaleString('en-US', {

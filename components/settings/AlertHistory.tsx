@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { getAlertHistory, AlertHistoryEntry } from '@/lib/mock-data'
+import { getAlertHistory, AlertHistoryEntry } from '@/lib/data-source'
 import { CheckCircle, Eye, BellOff } from 'lucide-react'
 import { EmptyState } from '@/components/shared/EmptyState'
 

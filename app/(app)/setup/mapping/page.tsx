@@ -6,7 +6,7 @@ import { WizardProgress } from '@/components/setup/WizardProgress'
 import { TaskMappingList } from '@/components/setup/TaskMappingList'
 import type { TaskAssignment } from '@/components/setup/TaskMappingList'
 import { MappingSummary } from '@/components/setup/MappingSummary'
-import { COVERAGE_MAP, AGENTS, PROCESSES } from '@/lib/mock-data'
+import { COVERAGE_MAP, AGENTS, PROCESSES } from '@/lib/data-source'
 import type { Ownership } from '@/types/telemetry'
 
 const PROCESS_OPTIONS = PROCESSES.map((p) => ({

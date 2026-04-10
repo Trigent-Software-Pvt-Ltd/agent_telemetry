@@ -1,6 +1,6 @@
 'use client'
 
-import { getBuildVsProcesses, getBuildVsDecisionFactors } from '@/lib/mock-data'
+import { getBuildVsProcesses, getBuildVsDecisionFactors } from '@/lib/data-source'
 
 export default function BuildVsBuy() {
   const processes = getBuildVsProcesses()

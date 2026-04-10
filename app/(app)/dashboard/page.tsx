@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PROCESSES } from '@/lib/mock-data'
+import { PROCESSES } from '@/lib/data-source'
 
 export const metadata: Metadata = { title: 'Dashboard' }
 import { HeroBanner } from '@/components/dashboard/HeroBanner'

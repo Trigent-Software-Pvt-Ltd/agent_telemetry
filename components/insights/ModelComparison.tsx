@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AGENTS, getModelOptionsForAgent } from '@/lib/mock-data'
+import { AGENTS, getModelOptionsForAgent } from '@/lib/data-source'
 
 export default function ModelComparison() {
   const [selectedAgentId, setSelectedAgentId] = useState(AGENTS[0].id)

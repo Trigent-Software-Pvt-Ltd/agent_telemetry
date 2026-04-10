@@ -1,6 +1,6 @@
 'use client'
 
-import { AgentSlaConfig } from '@/lib/mock-data'
+import { AgentSlaConfig } from '@/lib/data-source'
 
 interface SlaAgentRowProps {
   config: AgentSlaConfig

@@ -1,7 +1,7 @@
 'use client'
 
 import { Radio } from 'lucide-react'
-import { LiveEvent } from '@/lib/mock-data'
+import { LiveEvent } from '@/lib/data-source'
 import { EmptyState } from '@/components/shared/EmptyState'
 
 interface Props {

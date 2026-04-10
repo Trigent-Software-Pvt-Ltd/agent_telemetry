@@ -1,6 +1,6 @@
 'use client'
 
-import { getComplianceRequirements, getEvidenceChains, getAuditReadinessScore } from '@/lib/mock-data'
+import { getComplianceRequirements, getEvidenceChains, getAuditReadinessScore } from '@/lib/data-source'
 import { ComplianceChecklist } from './ComplianceChecklist'
 import { EvidenceChain } from './EvidenceChain'
 import { ComplianceCertificate } from './ComplianceCertificate'

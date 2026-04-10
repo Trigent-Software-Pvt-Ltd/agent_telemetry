@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { AGENTS, PROCESSES, ORGANISATION } from '@/lib/mock-data'
+import { AGENTS, PROCESSES, ORGANISATION } from '@/lib/data-source'
 import type { Status } from '@/types/telemetry'
 import {
   LayoutDashboard,

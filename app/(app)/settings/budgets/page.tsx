@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { BudgetOverview } from '@/components/settings/BudgetOverview'
 import { BudgetAgentCard } from '@/components/settings/BudgetAgentCard'
 import { BudgetChart } from '@/components/settings/BudgetChart'
-import { getAgentBudgets, type AgentBudget } from '@/lib/mock-data'
+import { getAgentBudgets, type AgentBudget } from '@/lib/data-source'
 import { toast } from 'sonner'
 import { Save } from 'lucide-react'
 

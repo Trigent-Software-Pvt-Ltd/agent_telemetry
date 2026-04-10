@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { GovernanceRule, EnforcementLevel, Geography } from '@/types/telemetry'
-import { getGovernanceRules, getGovernanceViolations, getMtbvData, getRuleGeography } from '@/lib/mock-data'
+import { getGovernanceRules, getGovernanceViolations, getMtbvData, getRuleGeography } from '@/lib/data-source'
 import { ComplianceGauge } from '@/components/governance/ComplianceGauge'
 import { GovernanceRuleCard } from '@/components/governance/GovernanceRuleCard'
 import { ViolationsList } from '@/components/governance/ViolationsList'

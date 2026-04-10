@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { REPORT_HISTORY } from '@/lib/mock-data'
+import { REPORT_HISTORY } from '@/lib/data-source'
 import { ExportConfigForm } from '@/components/export/ExportConfigForm'
 import { ReportPreview } from '@/components/export/ReportPreview'
 import { ReportHistory } from '@/components/export/ReportHistory'

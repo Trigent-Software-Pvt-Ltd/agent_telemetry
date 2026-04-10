@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { History } from 'lucide-react'
 import type { Run } from '@/types/telemetry'
-import { getAgentById } from '@/lib/mock-data'
+import { getAgentById } from '@/lib/data-source'
 import { EmptyState } from '@/components/shared/EmptyState'
 import FailureEscalationCard from '@/components/telemetry/FailureEscalationCard'
 

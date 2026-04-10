@@ -2,7 +2,7 @@
 
 import { use } from 'react'
 import Link from 'next/link'
-import { getAgentById, getStagingCandidate } from '@/lib/mock-data'
+import { getAgentById, getStagingCandidate } from '@/lib/data-source'
 import { StagingView } from '@/components/telemetry/StagingView'
 import { ArrowLeft } from 'lucide-react'
 

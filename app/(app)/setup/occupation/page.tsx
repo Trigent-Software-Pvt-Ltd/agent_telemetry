@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react'
 import { OccupationSearch } from '@/components/setup/OccupationSearch'
 import { OccupationPreview } from '@/components/setup/OccupationPreview'
 import { SelectedProcesses } from '@/components/setup/SelectedProcesses'
-import { ONET_OCCUPATIONS } from '@/lib/mock-data'
+import { ONET_OCCUPATIONS } from '@/lib/data-source'
 import { WizardProgress } from '@/components/setup/WizardProgress'
 import type { OnetOccupation } from '@/types/telemetry'
 

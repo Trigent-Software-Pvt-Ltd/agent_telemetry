@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { AgentProfile } from '@/types/telemetry'
-import { getAllAgents } from '@/lib/mock-data'
+import { getAllAgents } from '@/lib/data-source'
 import { ChevronDown, Trophy } from 'lucide-react'
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,

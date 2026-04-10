@@ -1,6 +1,6 @@
 'use client'
 
-import { getMaturityDimensions, getMaturityScore, MATURITY_LEVELS } from '@/lib/mock-data'
+import { getMaturityDimensions, getMaturityScore, MATURITY_LEVELS } from '@/lib/data-source'
 import MaturityRadar from './MaturityRadar'
 
 export default function MaturityScore() {

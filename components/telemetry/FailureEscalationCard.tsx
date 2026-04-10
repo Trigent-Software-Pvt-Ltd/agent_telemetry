@@ -2,7 +2,7 @@
 
 import { AlertTriangle, User, CheckCircle, Clock } from 'lucide-react'
 import type { Run } from '@/types/telemetry'
-import { AUDIT_LOG } from '@/lib/mock-data'
+import { AUDIT_LOG } from '@/lib/data-source'
 
 interface FailureEscalationCardProps {
   run: Run

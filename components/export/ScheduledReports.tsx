@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Calendar, Clock, Mail, Pause, Play, Trash2, Edit3, Plus } from 'lucide-react'
-import { getScheduledReports, PROCESSES } from '@/lib/mock-data'
+import { getScheduledReports, PROCESSES } from '@/lib/data-source'
 import type { ScheduledReport } from '@/types/telemetry'
 
 const SECTION_OPTIONS = [

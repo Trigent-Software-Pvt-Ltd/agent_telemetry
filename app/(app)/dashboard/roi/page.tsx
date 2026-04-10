@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ROI_SNAPSHOTS, PROCESSES, getMonthlyCosts } from '@/lib/mock-data'
+import { ROI_SNAPSHOTS, PROCESSES, getMonthlyCosts } from '@/lib/data-source'
 import { CostSlider } from '@/components/roi/CostSlider'
 import { RoiSummaryCards } from '@/components/roi/RoiSummaryCards'
 import { WaterfallChart } from '@/components/roi/WaterfallChart'

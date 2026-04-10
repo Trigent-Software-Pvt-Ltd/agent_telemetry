@@ -1,6 +1,6 @@
 import type { ProcessBenchmark } from '@/types/telemetry'
 import { Lightbulb, Star, AlertCircle } from 'lucide-react'
-import { AGENTS, AUDIT_LOG } from '@/lib/mock-data'
+import { AGENTS, AUDIT_LOG } from '@/lib/data-source'
 
 interface BenchmarkInsightsProps {
   benchmarks: ProcessBenchmark[]

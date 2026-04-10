@@ -1,7 +1,7 @@
 'use client'
 
 import { TrendingUp, TrendingDown, Minus, Calendar } from 'lucide-react'
-import type { SigmaHistoryEntry } from '@/lib/mock-data'
+import type { SigmaHistoryEntry } from '@/lib/data-source'
 
 interface ImprovementTrackerProps {
   history: SigmaHistoryEntry[]

@@ -1,7 +1,7 @@
 'use client'
 
 import { ShieldAlert, AlertTriangle, AlertCircle, CheckCircle } from 'lucide-react'
-import type { OversightGap } from '@/lib/mock-data'
+import type { OversightGap } from '@/lib/data-source'
 
 interface OversightSummaryProps {
   gaps: OversightGap[]

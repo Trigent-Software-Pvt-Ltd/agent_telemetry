@@ -2,7 +2,7 @@
 
 import { useLanguageMode } from '@/hooks/useLanguageMode'
 import { useOrganisation } from '@/hooks/useOrganisation'
-import { getServqualScores, computeServqualScore } from '@/lib/mock-data'
+import { getServqualScores, computeServqualScore } from '@/lib/data-source'
 import type { Agent, RoiSnapshot } from '@/types/telemetry'
 
 interface EquationCenterProps {

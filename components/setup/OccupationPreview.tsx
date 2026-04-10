@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import { getTasksForProcess } from '@/lib/mock-data'
+import { getTasksForProcess } from '@/lib/data-source'
 import type { OnetOccupation, OnetTask } from '@/types/telemetry'
 
 interface OccupationPreviewProps {

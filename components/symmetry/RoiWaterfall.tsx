@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getAgentRoisForProcess } from '@/lib/mock-data'
+import { getAgentRoisForProcess } from '@/lib/data-source'
 import type { RoiSnapshot, AgentRoi } from '@/types/telemetry'
 
 interface RoiWaterfallProps {

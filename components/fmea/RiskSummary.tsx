@@ -1,4 +1,4 @@
-import { getFmeaEntries } from '@/lib/mock-data'
+import { getFmeaEntries } from '@/lib/data-source'
 import { AlertTriangle, ShieldAlert, CircleDot, ShieldCheck } from 'lucide-react'
 
 export function RiskSummary() {

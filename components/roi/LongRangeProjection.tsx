@@ -5,7 +5,7 @@ import {
   AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, Legend,
 } from 'recharts'
-import { getLongRangeProjection } from '@/lib/mock-data'
+import { getLongRangeProjection } from '@/lib/data-source'
 
 export default function LongRangeProjection() {
   const data = getLongRangeProjection()

@@ -1,4 +1,4 @@
-import { PROCESSES, AGENTS, ORGANISATION } from '@/lib/mock-data'
+import { PROCESSES, AGENTS, ORGANISATION } from '@/lib/data-source'
 
 export function HealthSummary() {
   const sigmaTarget = ORGANISATION.sigmaTarget

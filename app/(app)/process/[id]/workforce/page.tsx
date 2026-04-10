@@ -2,7 +2,7 @@
 
 import { useState, use } from 'react'
 import type { Scenario } from '@/types/telemetry'
-import { getWorkforceProjection, getWorkforceProcess, getTeamMembers } from '@/lib/mock-data'
+import { getWorkforceProjection, getWorkforceProcess, getTeamMembers } from '@/lib/data-source'
 import { ScenarioToggle } from '@/components/labor/ScenarioToggle'
 import { WorkforceSummary } from '@/components/labor/WorkforceSummary'
 import { WorkforcePlanCharts } from '@/components/labor/WorkforcePlanCharts'

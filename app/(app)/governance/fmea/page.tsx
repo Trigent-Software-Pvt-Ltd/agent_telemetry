@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import type { FmeaEntry } from '@/types/telemetry'
-import { getFmeaEntries } from '@/lib/mock-data'
+import { getFmeaEntries } from '@/lib/data-source'
 import { RiskSummary } from '@/components/fmea/RiskSummary'
 import { RiskHeatmap } from '@/components/fmea/RiskHeatmap'
 import { FmeaDetailPanel } from '@/components/fmea/FmeaDetailPanel'

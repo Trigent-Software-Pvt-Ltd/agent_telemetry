@@ -2,7 +2,7 @@
 
 import { OversightSummary } from '@/components/governance/OversightSummary'
 import { OversightGapTable } from '@/components/governance/OversightGapTable'
-import { getOversightGaps } from '@/lib/mock-data'
+import { getOversightGaps } from '@/lib/data-source'
 import { ShieldAlert } from 'lucide-react'
 
 const gaps = getOversightGaps()

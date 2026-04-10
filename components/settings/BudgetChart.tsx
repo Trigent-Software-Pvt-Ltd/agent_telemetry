@@ -1,6 +1,6 @@
 'use client'
 
-import { AgentBudget } from '@/lib/mock-data'
+import { AgentBudget } from '@/lib/data-source'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, ReferenceLine,

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
-import { searchOccupations } from '@/lib/mock-data'
+import { searchOccupations } from '@/lib/data-source'
 import type { OnetOccupation } from '@/types/telemetry'
 
 interface OccupationSearchProps {

@@ -17,7 +17,7 @@ import {
   ArrowRight,
   X,
 } from 'lucide-react'
-import { PROCESSES, AGENTS } from '@/lib/mock-data'
+import { PROCESSES, AGENTS } from '@/lib/data-source'
 
 interface CommandItem {
   id: string

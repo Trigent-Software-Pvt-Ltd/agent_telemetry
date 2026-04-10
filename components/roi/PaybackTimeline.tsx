@@ -12,7 +12,7 @@ import {
   Tooltip,
   ReferenceLine,
 } from 'recharts'
-import { AGENT_SETUP_COSTS } from '@/lib/mock-data'
+import { AGENT_SETUP_COSTS } from '@/lib/data-source'
 
 export function PaybackTimeline() {
   const data = AGENT_SETUP_COSTS

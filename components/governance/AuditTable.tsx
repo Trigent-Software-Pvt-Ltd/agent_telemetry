@@ -1,7 +1,7 @@
 'use client'
 
 import { Shield } from 'lucide-react'
-import { AUDIT_LOG } from '@/lib/mock-data'
+import { AUDIT_LOG } from '@/lib/data-source'
 import type { DecisionType } from '@/types/telemetry'
 import { EmptyState } from '@/components/shared/EmptyState'
 

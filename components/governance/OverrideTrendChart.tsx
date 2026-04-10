@@ -13,7 +13,7 @@ import {
   ComposedChart,
   Bar,
 } from 'recharts'
-import type { OverrideTrendWeek } from '@/lib/mock-data'
+import type { OverrideTrendWeek } from '@/lib/data-source'
 
 interface OverrideTrendChartProps {
   trends: OverrideTrendWeek[]

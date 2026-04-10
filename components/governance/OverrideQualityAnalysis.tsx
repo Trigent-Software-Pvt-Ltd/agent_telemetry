@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
-import type { OverrideQualityData } from '@/lib/mock-data'
+import type { OverrideQualityData } from '@/lib/data-source'
 import { AlertTriangle } from 'lucide-react'
 
 interface OverrideQualityAnalysisProps {

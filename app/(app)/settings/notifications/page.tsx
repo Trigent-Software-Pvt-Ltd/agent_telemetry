@@ -3,7 +3,7 @@
 import { NotificationChannelCard } from '@/components/settings/NotificationChannelCard'
 import { NotificationRulesMatrix } from '@/components/settings/NotificationRulesMatrix'
 import { RecentNotifications } from '@/components/settings/RecentNotifications'
-import { getNotificationChannels } from '@/lib/mock-data'
+import { getNotificationChannels } from '@/lib/data-source'
 import { ShareButton } from '@/components/shared/ShareButton'
 
 export default function NotificationsPage() {

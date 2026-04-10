@@ -12,7 +12,7 @@ import {
   getLiveEvents,
   type LiveEvent,
   type AgentStatus,
-} from '@/lib/mock-data'
+} from '@/lib/data-source'
 
 export default function MonitoringPage() {
   const [health, setHealth] = useState(getSystemHealth)

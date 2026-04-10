@@ -3,7 +3,7 @@ import {
   getAgentsForProcess,
   getTasksForProcess,
   getRoiForProcess,
-} from '@/lib/mock-data'
+} from '@/lib/data-source'
 import { notFound } from 'next/navigation'
 import { SymmetryDashboard } from './SymmetryDashboard'
 
@@ -14,12 +14,12 @@ export default async function ProcessDetailPage({
 }) {
   const { id } = await params
 
-  const process = getProcessById(id)
+  const process = await getProcessById(id)
   if (!process) return notFound()
 
-  const agents = getAgentsForProcess(id)
-  const tasks = getTasksForProcess(id)
-  const roi = getRoiForProcess(id)
+  const agents = await getAgentsForProcess(id)
+  const tasks = await getTasksForProcess(id)
+  const roi = await getRoiForProcess(id)
   if (!roi) return notFound()
 
   const agentTasks = tasks.filter((t) => t.ownership === 'agent')

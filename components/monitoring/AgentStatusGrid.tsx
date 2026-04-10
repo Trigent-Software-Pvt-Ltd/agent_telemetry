@@ -1,6 +1,6 @@
 'use client'
 
-import { AgentStatus, AGENTS, PROCESSES } from '@/lib/mock-data'
+import { AgentStatus, AGENTS, PROCESSES } from '@/lib/data-source'
 import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 import { Bot } from 'lucide-react'
 

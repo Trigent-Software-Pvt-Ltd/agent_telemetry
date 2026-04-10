@@ -1,22 +1,22 @@
-import { getProcessById, getAgentsForProcess, getSigmaTrendForAgent, getSigmaHistory, ORGANISATION } from '@/lib/mock-data'
+import { getProcessById, getAgentsForProcess, getSigmaTrendForAgent, getSigmaHistory, ORGANISATION } from '@/lib/data-source'
 import { SigmaScorecardClient } from './SigmaScorecardClient'
 import { notFound } from 'next/navigation'
 
 export default async function SigmaScorecardPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const process = getProcessById(id)
+  const process = await getProcessById(id)
 
   if (!process) {
     notFound()
   }
 
-  const agents = getAgentsForProcess(id)
-  const trends: Record<string, ReturnType<typeof getSigmaTrendForAgent>> = {}
+  const agents = await getAgentsForProcess(id)
+  const trends: Record<string, Awaited<ReturnType<typeof getSigmaTrendForAgent>>> = {}
   for (const agent of agents) {
-    trends[agent.id] = getSigmaTrendForAgent(agent.id)
+    trends[agent.id] = await getSigmaTrendForAgent(agent.id)
   }
 
-  const sigmaHistory = getSigmaHistory(id)
+  const sigmaHistory = await getSigmaHistory(id)
 
   return (
     <SigmaScorecardClient

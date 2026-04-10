@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import type { PeakHourCell } from '@/lib/mock-data'
+import type { PeakHourCell } from '@/lib/data-source'
 
 interface PeakHourHeatmapProps {
   data: PeakHourCell[]

@@ -7,7 +7,7 @@ import { AuditFilters } from '@/components/governance/AuditFilters'
 import { OverrideTrendChart } from '@/components/governance/OverrideTrendChart'
 import { OverrideCorrelation } from '@/components/governance/OverrideCorrelation'
 import { OverrideQualityAnalysis } from '@/components/governance/OverrideQualityAnalysis'
-import { getOverrideTrends, getOverrideQuality } from '@/lib/mock-data'
+import { getOverrideTrends, getOverrideQuality } from '@/lib/data-source'
 import { Download } from 'lucide-react'
 
 const overrideTrends = getOverrideTrends()

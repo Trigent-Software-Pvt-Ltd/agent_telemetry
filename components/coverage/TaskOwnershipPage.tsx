@@ -2,14 +2,14 @@
 
 import { useState } from 'react'
 import type { CoverageMapEntry, Agent, Process, OnetTask } from '@/types/telemetry'
-import type { TaskPerformanceMetric } from '@/lib/mock-data'
+import type { TaskPerformanceMetric } from '@/lib/data-source'
 import { CoverageSummaryBar } from './CoverageSummaryBar'
 import { TaskDetailPanel } from './TaskDetailPanel'
 import { TaskPerformanceOverlay } from './TaskPerformanceOverlay'
 import { HumanVsAgentComparison } from './HumanVsAgentComparison'
 import TaskBoard from '@/components/labor/TaskBoard'
 import SkillsPanel from '@/components/labor/SkillsPanel'
-import { getHumanBaseline } from '@/lib/mock-data'
+import { getHumanBaseline } from '@/lib/data-source'
 import { LayoutGrid, List, GitCompareArrows } from 'lucide-react'
 
 type ViewMode = 'card' | 'list'

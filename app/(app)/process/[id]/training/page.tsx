@@ -1,16 +1,16 @@
 import { notFound } from 'next/navigation'
-import { getProcessById, getSkillsGap, getTrainingProgress } from '@/lib/mock-data'
+import { getProcessById, getSkillsGap, getTrainingProgress } from '@/lib/data-source'
 import { SkillsGapTable } from '@/components/labor/SkillsGapTable'
 import { TrainingProgress } from '@/components/labor/TrainingProgress'
 import { TrainingRecommendations } from '@/components/labor/TrainingRecommendations'
 
 export default async function TrainingPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const process = getProcessById(id)
+  const process = await getProcessById(id)
   if (!process) notFound()
 
-  const skills = getSkillsGap(id)
-  const members = getTrainingProgress(id)
+  const skills = await getSkillsGap(id)
+  const members = await getTrainingProgress(id)
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">

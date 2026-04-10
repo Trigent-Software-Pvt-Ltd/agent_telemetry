@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, Fragment } from 'react'
-import { getFmeaEntries } from '@/lib/mock-data'
+import { getFmeaEntries } from '@/lib/data-source'
 import type { FmeaEntry } from '@/types/telemetry'
 import { ChevronDown, ChevronUp, ChevronRight, AlertTriangle } from 'lucide-react'
 import { EmptyState } from '@/components/shared/EmptyState'

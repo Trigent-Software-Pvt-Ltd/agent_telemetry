@@ -1,6 +1,6 @@
 'use client'
 
-import { PROCESSES, AGENTS, ROI_SNAPSHOTS, AUDIT_LOG } from '@/lib/mock-data'
+import { PROCESSES, AGENTS, ROI_SNAPSHOTS, AUDIT_LOG } from '@/lib/data-source'
 import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
 
 interface ReportPreviewProps {

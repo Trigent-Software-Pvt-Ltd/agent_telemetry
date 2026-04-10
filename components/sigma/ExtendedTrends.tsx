@@ -13,7 +13,7 @@ import {
   Legend,
 } from 'recharts'
 import type { Agent, SigmaTrendPoint } from '@/types/telemetry'
-import type { TimeRange, LatencyTrendPoint } from '@/lib/mock-data'
+import type { TimeRange, LatencyTrendPoint } from '@/lib/data-source'
 import { DpmoTrendChart } from './DpmoTrendChart'
 
 const STATUS_COLORS: Record<string, string> = {

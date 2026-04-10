@@ -1,6 +1,6 @@
 'use client'
 
-import { AgentBudget } from '@/lib/mock-data'
+import { AgentBudget } from '@/lib/data-source'
 import { DollarSign, TrendingUp, Wallet, AlertTriangle } from 'lucide-react'
 
 interface Props {

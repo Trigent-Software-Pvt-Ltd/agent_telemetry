@@ -2,7 +2,7 @@
 
 import { useLanguageMode } from '@/hooks/useLanguageMode'
 import { useOrganisation } from '@/hooks/useOrganisation'
-import { getAgentRoisForProcess, getServqualScores, computeServqualScore } from '@/lib/mock-data'
+import { getAgentRoisForProcess, getServqualScores, computeServqualScore } from '@/lib/data-source'
 import type { Agent, OnetTask, RoiSnapshot } from '@/types/telemetry'
 
 interface AgentColumnProps {

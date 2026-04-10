@@ -1,6 +1,6 @@
 'use client'
 
-import { AlertRule, AGENTS } from '@/lib/mock-data'
+import { AlertRule, AGENTS } from '@/lib/data-source'
 import { ToggleLeft, ToggleRight } from 'lucide-react'
 
 interface AlertRuleCardProps {

@@ -3,7 +3,7 @@
 import { ShieldPlus } from 'lucide-react'
 import { toast } from 'sonner'
 import { SigmaTooltip } from '@/components/shared/SigmaTooltip'
-import type { OversightGap } from '@/lib/mock-data'
+import type { OversightGap } from '@/lib/data-source'
 
 interface OversightGapTableProps {
   gaps: OversightGap[]

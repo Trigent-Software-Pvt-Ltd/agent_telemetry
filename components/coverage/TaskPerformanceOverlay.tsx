@@ -1,6 +1,6 @@
 'use client'
 
-import type { TaskPerformanceMetric } from '@/lib/mock-data'
+import type { TaskPerformanceMetric } from '@/lib/data-source'
 import { Award, Clock, DollarSign, CheckCircle } from 'lucide-react'
 
 interface TaskPerformanceOverlayProps {

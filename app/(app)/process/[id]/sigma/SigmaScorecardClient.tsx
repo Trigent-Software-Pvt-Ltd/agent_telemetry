@@ -6,8 +6,8 @@ import { SigmaLegend } from '@/components/sigma/SigmaLegend'
 import { ExtendedTrends } from '@/components/sigma/ExtendedTrends'
 import { ImprovementTracker } from '@/components/sigma/ImprovementTracker'
 import type { Process, Agent, SigmaTrendPoint } from '@/types/telemetry'
-import type { SigmaHistoryEntry, TimeRange } from '@/lib/mock-data'
-import { getSigmaTrendsForRange, getLatencyTrendsForRange } from '@/lib/mock-data'
+import type { SigmaHistoryEntry, TimeRange } from '@/lib/data-source'
+import { getSigmaTrendsForRange, getLatencyTrendsForRange } from '@/lib/data-source'
 
 interface SigmaScorecardClientProps {
   process: Process

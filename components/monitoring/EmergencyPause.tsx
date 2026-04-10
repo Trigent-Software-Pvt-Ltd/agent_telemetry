@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { OctagonX, Play, AlertTriangle, X } from 'lucide-react'
-import { AGENTS, PROCESSES } from '@/lib/mock-data'
+import { AGENTS, PROCESSES } from '@/lib/data-source'
 
 export function EmergencyPause({
   onPauseChange,

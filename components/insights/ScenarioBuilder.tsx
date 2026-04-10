@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { UserPlus, Users, TrendingUp } from 'lucide-react'
-import { PROCESSES, AGENTS, ROI_SNAPSHOTS, ONET_TASKS, getAgentRoi } from '@/lib/mock-data'
+import { PROCESSES, AGENTS, ROI_SNAPSHOTS, ONET_TASKS, getAgentRoi } from '@/lib/data-source'
 import { ScenarioCard } from './ScenarioCard'
 import { ScenarioResults } from './ScenarioResults'
 

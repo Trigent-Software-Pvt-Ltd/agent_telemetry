@@ -1,8 +1,8 @@
 'use client'
 
 import { AlertTriangle, ArrowRight } from 'lucide-react'
-import type { OverrideTrendWeek } from '@/lib/mock-data'
-import { AGENTS } from '@/lib/mock-data'
+import type { OverrideTrendWeek } from '@/lib/data-source'
+import { AGENTS } from '@/lib/data-source'
 
 interface OverrideCorrelationProps {
   trends: OverrideTrendWeek[]

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getProcessBenchmarks, getIndustryBenchmarks } from '@/lib/mock-data'
+import { getProcessBenchmarks, getIndustryBenchmarks } from '@/lib/data-source'
 import { BenchmarkTable } from '@/components/dashboard/BenchmarkTable'
 import { BenchmarkRadar } from '@/components/dashboard/BenchmarkRadar'
 import { BenchmarkInsights } from '@/components/dashboard/BenchmarkInsights'
