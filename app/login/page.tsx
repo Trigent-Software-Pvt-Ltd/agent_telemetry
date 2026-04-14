@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 export default function LoginPage() {
@@ -29,20 +30,16 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-3 mb-2">
-            <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg"
-              style={{ background: '#378ADD', color: '#FFFFFF' }}
-            >
-              rP
-            </div>
-            <div className="text-left">
-              <div className="text-lg font-bold font-[var(--font-sora)]" style={{ color: '#111827' }}>
-                r-Potential
-              </div>
-              <div className="text-xs" style={{ color: '#9CA3AF' }}>
-                Powered by FuzeBox
-              </div>
+          <div className="inline-flex flex-col items-center gap-2 mb-2">
+            <Image
+              src="/quadrant-logo.png"
+              alt="Quadrant Two Capital Partners"
+              width={180}
+              height={44}
+              style={{ objectFit: 'contain' }}
+            />
+            <div className="text-[11px] tracking-wider uppercase" style={{ color: '#9CA3AF' }}>
+              AI Console · Delivered by FuzeBox
             </div>
           </div>
           <p className="text-sm mt-4" style={{ color: '#6B7280' }}>
@@ -138,7 +135,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="mt-6 pt-5 text-center" style={{ borderTop: '1px solid #E8E6E0' }}>
           <p className="text-xs" style={{ color: '#9CA3AF' }}>
-            Agent Quality & Process ROI Platform
+            Quadrant × FuzeBox.AI — Delivered by Trigent
           </p>
         </div>
       </div>

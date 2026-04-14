@@ -69,7 +69,7 @@ export function ComplianceCertificate({ score, requirements }: ComplianceCertifi
                 <div className="mb-6">
                   <p className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Issued to</p>
                   <p className="text-lg font-bold" style={{ color: 'var(--vip-navy)', fontFamily: 'var(--font-sora)' }}>
-                    r-Potential (FuzeBox AI)
+                    Quadrant Two Capital Partners (via FuzeBox.AI)
                   </p>
                 </div>
 

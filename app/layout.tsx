@@ -25,10 +25,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s — r-Potential',
-    default: 'r-Potential | Agent Quality Platform',
+    template: '%s — Quadrant × FuzeBox',
+    default: 'Quadrant AI Console',
   },
-  description: 'Agent Quality & Process ROI Platform powered by FuzeBox',
+  description: 'Quadrant Two Capital Partners — Agentic AI Console delivered by FuzeBox',
 }
 
 export default function RootLayout({
