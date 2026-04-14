@@ -133,9 +133,9 @@ export function Sidebar() {
             icon={<Database size={16} />}
           />
           <NavItem
-            href="/dashboard/export"
+            href="/reports/day5"
             label="Reports"
-            active={isActive('/dashboard/export')}
+            active={isActive('/reports') || isActive('/dashboard/export')}
             icon={<FileText size={16} />}
           />
           <NavItem
