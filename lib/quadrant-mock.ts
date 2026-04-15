@@ -1076,7 +1076,7 @@ export function getDay5ReportData() {
       unclearCount: cands.filter(c => c.fitState === 'unclear').length,
     },
     recommendation: {
-      decision: 'conditional' as const,
+      decision: 'conditional' as 'yes' | 'no' | 'conditional',
       narrative:
         'Extend engagement conditional on (a) tightening Chief of Staff prompt against admin-card churn, and (b) adding a licensing-dispute evidence source to Sourcing rule 1. Data inventory is sufficient; evaluation set of 10 calibration examples is tracking at 7/10 accuracy, above the 6/10 minimum go/no-go.',
       signedBy: 'Les Perry (FuzeBox.AI) · Sam Stillman (Quadrant)',
