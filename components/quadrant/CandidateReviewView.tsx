@@ -252,6 +252,12 @@ function EvidencePanel({
       </div>
 
       <div className="p-4 space-y-4">
+        {/* B1: Disqualifier pill strip */}
+        <DisqualifierStrip disq={candidate.disqualifiers} />
+
+        {/* B1: Thesis Fit block */}
+        <ThesisFitBlock fit={candidate.thesisFit} />
+
         {/* Identity */}
         <div>
           <div className="text-xs uppercase mb-1" style={{ color: 'var(--text-muted)' }}>
@@ -426,5 +432,109 @@ function LabelButton({
     >
       {icon} {label}
     </button>
+  )
+}
+
+// ─── B1: Disqualifier pill strip ──────────────────────────────────
+
+function DisqualifierStrip({ disq }: { disq: SourcingCandidate['disqualifiers'] }) {
+  const pills: Array<{ key: keyof SourcingCandidate['disqualifiers']; label: string; triggered: boolean }> = [
+    { key: 'founderConcentration', label: 'Founder concentration', triggered: disq.founderConcentration },
+    { key: 'msoAbsent', label: 'MSO absence', triggered: disq.msoAbsent },
+    { key: 'rateCeiling', label: 'Rate ceiling', triggered: disq.rateCeiling },
+    { key: 'priorAuthBurden', label: 'Prior-auth burden', triggered: disq.priorAuthBurden },
+    { key: 'referralConcentration', label: 'Referral concentration', triggered: disq.referralConcentration },
+  ]
+  const failedCount = pills.filter(p => p.triggered).length
+
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-2">
+        <div className="text-xs uppercase" style={{ color: 'var(--text-muted)' }}>
+          Disqualifier screen
+        </div>
+        <div className="text-[11px]" style={{ color: failedCount === 0 ? '#1D9E75' : '#E24B4A' }}>
+          {failedCount === 0 ? 'All clear' : `${failedCount} triggered`}
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-1.5">
+        {pills.map(p => (
+          <span
+            key={p.key}
+            className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-semibold"
+            style={{
+              background: p.triggered ? 'rgba(226,75,74,0.12)' : 'rgba(29,158,117,0.12)',
+              color: p.triggered ? '#E24B4A' : '#1D9E75',
+              border: `1px solid ${p.triggered ? 'rgba(226,75,74,0.35)' : 'rgba(29,158,117,0.35)'}`,
+            }}
+            title={p.triggered ? `${p.label} — triggered` : `${p.label} — clear`}
+          >
+            {p.triggered ? <XCircle size={10} /> : <CheckCircle2 size={10} />}
+            {p.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ─── B1: Thesis Fit block ─────────────────────────────────────────
+
+function fitTone(score: number): { color: string; bar: string } {
+  if (score >= 80) return { color: '#1D9E75', bar: 'rgba(29,158,117,0.9)' }
+  if (score >= 60) return { color: '#F59E0B', bar: 'rgba(245,158,11,0.9)' }
+  return { color: '#E24B4A', bar: 'rgba(226,75,74,0.9)' }
+}
+
+function ThesisFitBlock({ fit }: { fit: SourcingCandidate['thesisFit'] }) {
+  const dims: Array<{ key: keyof Omit<SourcingCandidate['thesisFit'], 'total'>; label: string }> = [
+    { key: 'financial', label: 'Financial Fit' },
+    { key: 'serviceCategory', label: 'Service Category Fit' },
+    { key: 'commercialMix', label: 'Commercial Mix' },
+    { key: 'rateArbitrage', label: 'Rate Arbitrage' },
+    { key: 'msoOverlap', label: 'MSO Overlap' },
+    { key: 'staffReferrals', label: 'Staff & Referrals' },
+  ]
+  const totalTone = fitTone(fit.total)
+
+  return (
+    <div className="p-3 rounded-lg border" style={{ borderColor: 'var(--border)', background: 'var(--surface-muted, #F7F9FC)' }}>
+      <div className="flex items-baseline justify-between mb-3">
+        <div className="text-xs uppercase" style={{ color: 'var(--text-muted)' }}>
+          Thesis Fit
+        </div>
+        <div className="text-lg font-bold font-mono" style={{ color: totalTone.color }}>
+          {fit.total} <span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>/ 100</span>
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        {dims.map(d => {
+          const score = fit[d.key]
+          const tone = fitTone(score)
+          return (
+            <div key={d.key} className="flex items-center gap-2">
+              <div className="text-[11px] flex-shrink-0" style={{ width: 128, color: 'var(--text-secondary)' }}>
+                {d.label}
+              </div>
+              <div
+                className="flex-1 h-1.5 rounded-full overflow-hidden"
+                style={{ background: 'rgba(107,114,128,0.12)' }}
+              >
+                <div
+                  className="h-full rounded-full"
+                  style={{ width: `${score}%`, background: tone.bar }}
+                />
+              </div>
+              <div
+                className="text-[11px] font-mono font-semibold flex-shrink-0 text-right"
+                style={{ width: 24, color: tone.color }}
+              >
+                {score}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }

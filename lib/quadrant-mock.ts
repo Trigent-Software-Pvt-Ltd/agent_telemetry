@@ -426,6 +426,23 @@ export interface SourcingCandidate {
   reviewedBy?: string
   reviewedAt?: string
   notes?: string
+  // B1: Thesis Fit Scorecard
+  thesisFit: {
+    financial: number
+    serviceCategory: number
+    commercialMix: number
+    rateArbitrage: number
+    msoOverlap: number
+    staffReferrals: number
+    total: number
+  }
+  disqualifiers: {
+    founderConcentration: boolean
+    msoAbsent: boolean
+    rateCeiling: boolean
+    priorAuthBurden: boolean
+    referralConcentration: boolean
+  }
 }
 
 const METROS: Array<[string, string]> = [
@@ -543,6 +560,42 @@ function buildCandidates(): SourcingCandidate[] {
       },
     ]
 
+    // ─── B1: Thesis Fit dimensions (deterministic, realistic spread) ───
+    // Tier buckets: seedGood -> mostly 75-95, seedPoor -> mostly 25-55, others -> 50-85
+    const dimRand = seededRand(i * 17 + 3)
+    const tierBase = isSeedGood ? 78 : isSeedPoor ? 38 : 62
+    const tierSpread = isSeedGood ? 18 : isSeedPoor ? 22 : 28
+    const dim = () => Math.max(5, Math.min(98, Math.round(tierBase + (dimRand() - 0.5) * tierSpread)))
+    const financial = dim()
+    const serviceCategory = dim()
+    const commercialMix = dim()
+    const rateArbitrage = dim()
+    const msoOverlap = dim()
+    const staffReferrals = dim()
+    // Weights: financial 25, serviceCategory 15, commercialMix 15, rateArbitrage 20, mso 15, staff 10
+    const thesisTotal = Math.round(
+      financial * 0.25 +
+        serviceCategory * 0.15 +
+        commercialMix * 0.15 +
+        rateArbitrage * 0.2 +
+        msoOverlap * 0.15 +
+        staffReferrals * 0.1,
+    )
+
+    // ─── B1: Disqualifiers (deterministic). Seed-good rarely trigger; seed-poor often do. ───
+    const disqRand = seededRand(i * 29 + 7)
+    const dq = (goodProb: number, poorProb: number, otherProb: number) => {
+      const p = isSeedGood ? goodProb : isSeedPoor ? poorProb : otherProb
+      return disqRand() < p
+    }
+    const disqualifiers = {
+      founderConcentration: dq(0.05, 0.55, 0.2),
+      msoAbsent: dq(0.05, 0.45, 0.15),
+      rateCeiling: dq(0.08, 0.5, 0.2),
+      priorAuthBurden: dq(0.1, 0.4, 0.25),
+      referralConcentration: dq(0.05, 0.5, 0.18),
+    }
+
     list.push({
       id: `cand-${i + 1}`,
       companyName: COMPANY_NAMES[i],
@@ -562,6 +615,16 @@ function buildCandidates(): SourcingCandidate[] {
       evidence,
       fitState,
       groundTruth: isSeedGood ? 'good_fit' : isSeedPoor ? 'poor_fit' : undefined,
+      thesisFit: {
+        financial,
+        serviceCategory,
+        commercialMix,
+        rateArbitrage,
+        msoOverlap,
+        staffReferrals,
+        total: thesisTotal,
+      },
+      disqualifiers,
     })
   }
   return list

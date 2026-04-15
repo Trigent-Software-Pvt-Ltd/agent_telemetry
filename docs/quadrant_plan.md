@@ -5,9 +5,11 @@
 **Duration:** 5 working days of UI work on mock data.
 **Confirmed scope:** Same-pattern / narrower-scope / one net-new screen framing (per `quadrant_effort.md`).
 
+**Status (2026-04-15):** ✅ Days 1–5 complete and committed. Landing redirect to `/agents/chief-of-staff` in place. Residual sigma/OEE/SERVQUAL references exist only in hidden routes (acceptable per §1.2 "hide, don't delete"). Remaining: §12 open questions pending Sam's input.
+
 ---
 
-## 1. Branding & Shell (Day 1 AM — ~½ day)
+## 1. Branding & Shell (Day 1 AM — ~½ day) ✅ DONE (`2f86772`)
 
 ### 1.1 Replace "r-Potential" with Quadrant logo
 Logo source: `https://quadrantcapital.com/wp-content/themes/quadrant/images/capital-logo.png`
@@ -40,7 +42,7 @@ Top-level nav becomes:
 
 ---
 
-## 2. Mock Data Reshape (Day 1 PM — ~½ day)
+## 2. Mock Data Reshape (Day 1 PM — ~½ day) ✅ DONE (`2f86772`)
 
 File: `lib/mock-data.ts` — replace the `AGENTS`, `PROCESSES`, `ORGANISATION` constants with Quadrant-flavored equivalents.
 
@@ -89,7 +91,7 @@ Realistic-ish healthcare service provider names. Fields:
 
 ---
 
-## 3. Chief of Staff — Relabel + Per-User Split (Day 2 — ~1 day)
+## 3. Chief of Staff — Relabel + Per-User Split (Day 2 — ~1 day) ✅ DONE (`ea0e075`)
 
 **Route:** `/agents/chief-of-staff`
 **Reuses:** `AgentHeader`, `MetricsBar`, `CostOfInaction`, `VersionTimeline`, `AgentRoiCard`
@@ -115,7 +117,7 @@ Tabs on the CoS page: **All · Sam · Genevieve · Ted**. Each tab filters the s
 
 ---
 
-## 4. Prompt Registry (Day 3 AM — ~½ day)
+## 4. Prompt Registry (Day 3 AM — ~½ day) ✅ DONE (`ea0e075`)
 
 **Route:** `/chief-of-staff/prompts` (new)
 **Reuses:** `VersionTimeline` component + syntax-highlighted code viewer
@@ -131,7 +133,7 @@ Each briefing on the CoS page shows which prompt version it ran under.
 
 ---
 
-## 5. Sourcing Agent — Run Trace + Manager View (Day 3 PM — ~½ day)
+## 5. Sourcing Agent — Run Trace + Manager View (Day 3 PM — ~½ day) ✅ DONE (`2c718f3`)
 
 **Route:** `/agents/sourcing-agent`
 **Reuses:** `AgentHeader`, `MetricsBar`, `AgentRoiCard`
@@ -155,7 +157,7 @@ Three tiles (Finder / Classifier / Estimator) with last-run metrics, success rat
 
 ---
 
-## 6. Candidate Review Dashboard (Day 4 — ~1 day) ⭐ NET-NEW
+## 6. Candidate Review Dashboard (Day 4 — ~1 day) ⭐ NET-NEW ✅ DONE (`db84255`)
 
 **Route:** `/sourcing/review`
 **This is the one genuinely new screen.** It is the Day-5 working session artifact.
@@ -181,7 +183,7 @@ Persist to mock ground-truth store. Top of page shows: "Reviewed X of 21 · X go
 
 ---
 
-## 7. Data Sources + Two-Rule Eval + Ground-Truth Panels (Day 5 AM — ~½ day)
+## 7. Data Sources + Two-Rule Eval + Ground-Truth Panels (Day 5 AM — ~½ day) ✅ DONE (`2c718f3`)
 
 ### 7.1 Data Sources page (new, `/settings/data-sources`)
 Status tiles for CMS Medicare Utilization / NPI Registry / state licensing:
@@ -200,7 +202,7 @@ Status tiles for CMS Medicare Utilization / NPI Registry / state licensing:
 
 ---
 
-## 8. Day-5 Report Artifact (Day 5 PM — ~½ day)
+## 8. Day-5 Report Artifact (Day 5 PM — ~½ day) ✅ DONE (`2cf5e7b`)
 
 **Route:** reuse `/dashboard/export` with Quadrant template.
 
@@ -215,7 +217,7 @@ Satisfies plan §12 ("decision meeting with written decision").
 
 ---
 
-## 9. Polish + Demo Walkthrough (Day 5 PM — ~½ day)
+## 9. Polish + Demo Walkthrough (Day 5 PM — ~½ day) ✅ DONE (`2cf5e7b`)
 
 - Breadcrumbs + TopBar labels consistent with Quadrant vocabulary
 - Landing page (`/`) redirects to `/agents/chief-of-staff` (Sam's morning ritual)
@@ -247,7 +249,7 @@ Satisfies plan §12 ("decision meeting with written decision").
 
 ---
 
-## 12. Open Questions (if any surface during build)
+## 12. Open Questions (if any surface during build) ⏳ PENDING SAM
 
 1. Does Sam have the actual briefingEngine.js prompt text he's OK with us showing in the registry, or do we write a plausible mock?
 2. Are we authorized to use real company names in the mock candidate list (e.g., real PT chains from public NPI data) or do we fabricate all 25 names?
@@ -256,3 +258,108 @@ Satisfies plan §12 ("decision meeting with written decision").
 ---
 
 *Once Days 1–5 are complete, the same mock becomes the live-demo artifact used during the actual Quadrant 5-day sprint — real ingestion data simply replaces the seed values.*
+
+---
+
+# Part B — Demo-Winning Extensions (Day 6 — ~1.5 days)
+
+**Status:** PLANNED (2026-04-15)
+**Goal:** Tighten the story for the Quadrant win. Not full scope. Two targeted additions that answer the two questions Sam will ask in the demo: *"why did the agent surface this candidate?"* and *"is this enterprise-ready?"* Plus three small polish items drawn from `Quadrant_Development_Plan_full_scope.md` that make the demo feel like the 12-week plan, not a 5-day hack.
+
+---
+
+## B1. Thesis Fit Scorecard — inside Candidate Review side panel (~½ day)
+
+**Route:** reuses existing `/sourcing/review` side panel — no new route.
+**Why it wins:** Directly answers "why this candidate?" — the first question in every demo. Elevates the current two-rule eval into the full thesis story without building 6 specialist pages.
+
+### B1.1 Thesis Fit Score block (new section in side panel)
+- Headline: **Thesis Fit: XX / 100** (weighted composite)
+- 6 weighted dimensions, each with score + short evidence hint:
+  - Financial Fit (EBITDA $1–5M band)
+  - Service Category Fit (Tier 1 vs Tier 2 CPT alignment)
+  - Commercial Mix (≥ 40% commercial volume)
+  - Rate Arbitrage Opportunity (current vs MSO-target rate delta)
+  - MSO Geographic Overlap (150–175% Medicare MSO presence in metro)
+  - Staff & Referral Health (≥ 2 non-founder staff, ≥ 3 independent refs, no single ref ≥ 50%)
+- Each dimension shown as a mini horizontal bar with numeric score and pass/warn/fail colour
+
+### B1.2 Disqualifier Row (new pill strip above the thesis score)
+5 pills, each red or green, corresponding to §2.3 disqualifiers:
+- Founder concentration
+- MSO absence in geography
+- Rate ceiling (> 140% Medicare)
+- Prior-auth burden
+- Single-referral-practice concentration (≥ 50%)
+
+### B1.3 Mock data additions
+- Extend each candidate in `lib/mock-data.ts` with `thesisFit: { financial, serviceCategory, commercialMix, rateArbitrage, msoOverlap, staffReferrals, total }` plus `disqualifiers: { founderConcentration, msoAbsent, rateCeiling, priorAuthBurden, referralConcentration }` — all booleans/numbers, deterministic.
+
+---
+
+## B2. Production Readiness preview screen (~½ day)
+
+**Route:** new `/governance/production-readiness` (single screen).
+**Sidebar:** add under "Governance" parent (see B4).
+**Why it wins:** Answers "is this enterprise-ready?" in one screen. Maps to full-scope §8 Phase 4 hardening deliverables without building four separate screens.
+
+### B2.1 Four tiles on one page
+| Tile | Content |
+|---|---|
+| **Access Control** | Three role pills: Principal (Sam, full access), Team Member (Genevieve / Ted, own briefing + review), Observer (read-only). Last role-change event shown. |
+| **GSTI Score Threshold** | Current GSTI (mock 87), baseline 82, alert threshold 75. Sparkline of last 14 days. "Alert on breach" toggle. |
+| **Audit Trail Preview** | Last 10 events — each with timestamp, actor, action, trace ID. Events: prompt change, candidate approval, feedback capture, deployment. |
+| **Retry / Circuit Breaker Health** | Per-data-source tile: CMS Utilization (healthy), Transparency in Coverage (degraded — 2 retries), NPI Registry (healthy), HubSpot (healthy). Shows graceful-degradation state. |
+
+### B2.2 Reuse
+- Audit Trail Preview reuses `AuditTable` component
+- Role pills reuse existing pill/badge components
+- GSTI sparkline reuses existing trend chart component
+
+---
+
+## B3. Sidebar restructure — Governance parent with children (~15 min)
+
+Turn "Rules & Evidence" into a Governance parent with two/three children (plan §1.2 originally said rules + audit; audit was unreachable):
+- **Governance**
+  - Rules — `/governance/rules`
+  - Audit Trail — `/governance/audit`
+  - Production Readiness — `/governance/production-readiness` (added in B2)
+
+Implementation: collapsible nav group in `components/layout/Sidebar.tsx`.
+
+---
+
+## B4. Data Sources expansion — 5 tiles (~¼ day)
+
+Expand `/settings/data-sources` from 3 to 5 tiles to match full-scope §7.1 data inventory deliverable:
+1. **CMS Medicare Utilization** — access: live, last sync: today, records: 1.2M NPIs, known gaps: 2023 Q4 late filings
+2. **CMS Transparency in Coverage** — access: live, last sync: today, records: 340M rate rows, known gaps: 12% MRF parse failures
+3. **NPI Registry** — access: live, last sync: today, records: 7.2M NPIs, known gaps: none
+4. **State Licensing Databases** — access: partial (28/50 states automated), last sync: varies, known gaps: 22 states manual
+5. **MSO / IPA Directory** — access: paid subscription required, last sync: pending, known gaps: no unified source — composite from 4 paid feeds
+
+Adds honesty-about-gaps to the narrative (full-scope §10.1 Data Availability Risk mitigation).
+
+---
+
+## B5. Day 6 Summary
+
+| Item | Effort | Delivers |
+|---|---|---|
+| B1 Thesis Fit Scorecard | ½ day | Single-screen answer to "why this candidate?" |
+| B2 Production Readiness screen | ½ day | Single-screen answer to "is this enterprise-ready?" |
+| B3 Sidebar Governance parent | 15 min | Clean nav; surfaces Audit Trail |
+| B4 Data Sources 5-tile expansion | ¼ day | Honesty-about-gaps story |
+| **Total** | **~1.5 days** | |
+
+---
+
+## B6. Explicit Non-Goals for Part B
+
+- **NOT building 6 specialist pages** (CMS Analyst, Payer Analyst, MSO Overlap, Disqualifier Screener standalone, Thesis Fit Scorer standalone). Three specialists in manager trace stay as-is.
+- **NOT building a Criteria Engine dedicated screen.** Rule pass/fail is shown inline via the Thesis Fit Scorecard.
+- **NOT building a 12-week timeline screen.** That belongs in the proposal deck, not the mock.
+- **NOT renaming "Sourcing Agent" to "Sourcing System".** Quadrant's own source doc uses "Sourcing Agent."
+- **NOT building separate RBAC / GSTI / audit / retry screens.** All four consolidated into the single Production Readiness page.
+

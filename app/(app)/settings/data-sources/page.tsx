@@ -1,6 +1,15 @@
 import type { Metadata } from 'next'
-import { DATA_SOURCES } from '@/lib/quadrant-mock'
-import { Database, CheckCircle2, AlertTriangle, XCircle } from 'lucide-react'
+import {
+  Database,
+  Activity,
+  BadgeCheck,
+  Map,
+  Lock,
+  CheckCircle2,
+  AlertTriangle,
+  XCircle,
+} from 'lucide-react'
+import { DATA_SOURCE_TILES, type DataSourceTile } from './data'
 
 export const metadata: Metadata = { title: 'Data Sources' }
 
@@ -8,6 +17,14 @@ const STATUS_STYLES = {
   connected: { label: 'Connected', color: '#1D9E75', bg: 'rgba(29,158,117,0.12)', Icon: CheckCircle2 },
   partial: { label: 'Partial', color: '#F59E0B', bg: 'rgba(245,158,11,0.12)', Icon: AlertTriangle },
   missing: { label: 'Missing', color: '#E24B4A', bg: 'rgba(226,75,74,0.12)', Icon: XCircle },
+} as const
+
+const ICONS = {
+  database: Database,
+  activity: Activity,
+  badge: BadgeCheck,
+  map: Map,
+  lock: Lock,
 } as const
 
 export default function Page() {
@@ -27,9 +44,10 @@ export default function Page() {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        {DATA_SOURCES.map(s => {
+        {DATA_SOURCE_TILES.map((s: DataSourceTile) => {
           const sty = STATUS_STYLES[s.status]
-          const Icon = sty.Icon
+          const StatusIcon = sty.Icon
+          const TileIcon = ICONS[s.icon]
           return (
             <div key={s.id} className="card p-5">
               <div className="flex items-start justify-between">
@@ -38,7 +56,7 @@ export default function Page() {
                     className="w-9 h-9 rounded-lg flex items-center justify-center"
                     style={{ background: 'var(--surface-muted, #F7F9FC)' }}
                   >
-                    <Database size={18} style={{ color: 'var(--text-secondary)' }} />
+                    <TileIcon size={18} style={{ color: 'var(--text-secondary)' }} />
                   </div>
                   <div>
                     <div className="text-sm font-semibold">{s.name}</div>
@@ -51,17 +69,17 @@ export default function Page() {
                   className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-semibold"
                   style={{ background: sty.bg, color: sty.color }}
                 >
-                  <Icon size={12} /> {sty.label}
+                  <StatusIcon size={12} /> {s.statusLabelOverride ?? sty.label}
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-3 mt-4 text-xs">
                 <div>
                   <div className="uppercase" style={{ color: 'var(--text-muted)' }}>Last sync</div>
-                  <div className="font-mono mt-0.5">{new Date(s.lastSync).toLocaleString()}</div>
+                  <div className="font-mono mt-0.5">{s.lastSync}</div>
                 </div>
                 <div>
                   <div className="uppercase" style={{ color: 'var(--text-muted)' }}>Records indexed</div>
-                  <div className="font-semibold mt-0.5">{s.recordsIndexed.toLocaleString()}</div>
+                  <div className="font-semibold mt-0.5">{s.recordsIndexed}</div>
                 </div>
               </div>
               <div className="mt-3 pt-3 border-t text-xs" style={{ borderColor: 'var(--border)' }}>

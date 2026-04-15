@@ -9,6 +9,8 @@ import {
   Search,
   ClipboardCheck,
   Scale,
+  History,
+  ShieldCheck,
   FileCode,
   Database,
   FileText,
@@ -112,9 +114,21 @@ export function Sidebar() {
           <SectionLabel>Governance</SectionLabel>
           <NavItem
             href="/governance/rules"
-            label="Rules & Evidence"
-            active={isActive('/governance/rules') || isActive('/governance/audit')}
+            label="Rules"
+            active={isActive('/governance/rules')}
             icon={<Scale size={16} />}
+          />
+          <NavItem
+            href="/governance/audit"
+            label="Audit Trail"
+            active={isActive('/governance/audit')}
+            icon={<History size={16} />}
+          />
+          <NavItem
+            href="/governance/production-readiness"
+            label="Production Readiness"
+            active={isActive('/governance/production-readiness')}
+            icon={<ShieldCheck size={16} />}
           />
 
           <SectionLabel>Chief of Staff</SectionLabel>

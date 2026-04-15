@@ -622,3 +622,23 @@ export interface TeamMemberImpact {
   netSaved: number
   satisfaction: number  // 1-5
 }
+
+// ─── Quadrant B1: Thesis Fit Scorecard ────────────────────────────
+
+export interface ThesisFit {
+  financial: number          // Financial Fit — EBITDA $1–5M band (0-100)
+  serviceCategory: number    // Service Category Fit — Tier 1/2 CPT alignment (0-100)
+  commercialMix: number      // Commercial Mix — >= 40% commercial volume (0-100)
+  rateArbitrage: number      // Rate Arbitrage — current vs MSO-target rate delta (0-100)
+  msoOverlap: number         // MSO Geographic Overlap — 150-175% Medicare MSO presence (0-100)
+  staffReferrals: number     // Staff & Referral Health — >=2 non-founder staff, >=3 ind refs (0-100)
+  total: number              // Weighted composite (0-100)
+}
+
+export interface CandidateDisqualifiers {
+  founderConcentration: boolean   // true = triggered (bad)
+  msoAbsent: boolean              // true = no MSO presence in geo (bad)
+  rateCeiling: boolean            // true = rates > 140% Medicare (bad)
+  priorAuthBurden: boolean        // true = high prior-auth burden (bad)
+  referralConcentration: boolean  // true = single referral practice >= 50% (bad)
+}
