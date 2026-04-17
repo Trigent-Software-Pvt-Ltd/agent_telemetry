@@ -11,6 +11,8 @@ import type {
   SourcingCandidate,
 } from '@/lib/quadrant-mock'
 import { ChevronDown, ChevronRight, Circle, CheckCircle2 } from 'lucide-react'
+import LiveBadge from './LiveBadge'
+import RunNowButton from './RunNowButton'
 
 interface Props {
   agent: QuadrantAgent
@@ -19,6 +21,8 @@ interface Props {
   ruleOutcomes: RuleOutcome[]
   groundTruth: GroundTruthExample[]
   candidates: SourcingCandidate[]
+  /** 'live' when the page is wired to the live Sourcing Agent backend. Default 'mock'. */
+  source?: 'mock' | 'live'
 }
 
 export default function SourcingAgentView({
@@ -28,7 +32,9 @@ export default function SourcingAgentView({
   ruleOutcomes,
   groundTruth,
   candidates,
+  source = 'mock',
 }: Props) {
+  const isLive = source === 'live'
   const [selectedRunId, setSelectedRunId] = useState(runs[0].id)
   const [expandedStep, setExpandedStep] = useState<string | null>(null)
 
@@ -49,9 +55,12 @@ export default function SourcingAgentView({
             <div className="text-xs uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
               Agent · Multi-specialist
             </div>
-            <h1 className="text-2xl font-bold mt-1" style={{ fontFamily: 'var(--font-sora)' }}>
-              {agent.name}
-            </h1>
+            <div className="flex items-center gap-2.5 mt-1">
+              <h1 className="text-2xl font-bold" style={{ fontFamily: 'var(--font-sora)' }}>
+                {agent.name}
+              </h1>
+              {isLive && <LiveBadge />}
+            </div>
             <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
               {agent.summary}
             </p>
@@ -60,13 +69,16 @@ export default function SourcingAgentView({
               <span className="capitalize" style={{ color: '#F59E0B' }}>{agent.status}</span>
             </div>
           </div>
-          <Link
-            href="/sourcing/review"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white cursor-pointer"
-            style={{ background: '#378ADD' }}
-          >
-            Review surfaced candidates →
-          </Link>
+          <div className="flex items-center gap-2">
+            {isLive && <RunNowButton />}
+            <Link
+              href="/sourcing/review"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white cursor-pointer"
+              style={{ background: '#378ADD' }}
+            >
+              Review surfaced candidates →
+            </Link>
+          </div>
         </div>
       </div>
 

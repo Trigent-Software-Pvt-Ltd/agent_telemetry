@@ -1,0 +1,3202 @@
+[
+  {
+    "npi": "1934016530",
+    "orgName": "MileHigh Rehabilitation Associates",
+    "state": "AZ",
+    "medicareAllowedAmount": 85196,
+    "billedEncounters": 889,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1991386497",
+    "orgName": "Ironclad Spine & Sports PT",
+    "state": "CA",
+    "medicareAllowedAmount": 217909,
+    "billedEncounters": 2022,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1923852996",
+    "orgName": "PrimeCare Orthopedic PT",
+    "state": "TX",
+    "medicareAllowedAmount": 3176132,
+    "billedEncounters": 34831,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1759595863",
+    "orgName": "Riverbend Neighborhood PT",
+    "state": "GA",
+    "medicareAllowedAmount": 1762882,
+    "billedEncounters": 20239,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1845110824",
+    "orgName": "Sentinel Physio Collective",
+    "state": "CA",
+    "medicareAllowedAmount": 3070241,
+    "billedEncounters": 39317,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1402632272",
+    "orgName": "Poplar PT Alliance",
+    "state": "NC",
+    "medicareAllowedAmount": 1044002,
+    "billedEncounters": 9788,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1797251279",
+    "orgName": "TrueNorth Sports & Spine PT",
+    "state": "TX",
+    "medicareAllowedAmount": 1360010,
+    "billedEncounters": 16954,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1374607177",
+    "orgName": "Evergreen Motion Clinic",
+    "state": "PA",
+    "medicareAllowedAmount": 827649,
+    "billedEncounters": 6370,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1708584908",
+    "orgName": "Volunteer Physical Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 174939,
+    "billedEncounters": 1293,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1543737435",
+    "orgName": "Marshland Musculoskeletal Therapy",
+    "state": "TX",
+    "medicareAllowedAmount": 603460,
+    "billedEncounters": 5992,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1117212168",
+    "orgName": "Lakeshore PT & Wellness",
+    "state": "AZ",
+    "medicareAllowedAmount": 2949226,
+    "billedEncounters": 26048,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1925879343",
+    "orgName": "Cactus PT & Sports Performance",
+    "state": "TN",
+    "medicareAllowedAmount": 3714927,
+    "billedEncounters": 32503,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1655934373",
+    "orgName": "SouthStar Motion Health",
+    "state": "OH",
+    "medicareAllowedAmount": 674199,
+    "billedEncounters": 7372,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1690463873",
+    "orgName": "Crystal Orthopedic PT",
+    "state": "GA",
+    "medicareAllowedAmount": 1134478,
+    "billedEncounters": 10710,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1289373984",
+    "orgName": "Sunset Active Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 1006530,
+    "billedEncounters": 7860,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1824196416",
+    "orgName": "Ironclad Rehab Solutions",
+    "state": "NC",
+    "medicareAllowedAmount": 1000548,
+    "billedEncounters": 8516,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1880580955",
+    "orgName": "Compass Therapy Studio",
+    "state": "OH",
+    "medicareAllowedAmount": 73923,
+    "billedEncounters": 782,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1839813109",
+    "orgName": "TrueNorth PT Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 420539,
+    "billedEncounters": 3621,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1311623841",
+    "orgName": "Signature PT Collective",
+    "state": "CA",
+    "medicareAllowedAmount": 4427974,
+    "billedEncounters": 56709,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1211854440",
+    "orgName": "Beacon Therapy Partners",
+    "state": "NC",
+    "medicareAllowedAmount": 1423232,
+    "billedEncounters": 10734,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1103973253",
+    "orgName": "Springfield Sports Medicine & PT",
+    "state": "CO",
+    "medicareAllowedAmount": 151018,
+    "billedEncounters": 1276,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1617718688",
+    "orgName": "Tradition Advanced PT",
+    "state": "FL",
+    "medicareAllowedAmount": 505398,
+    "billedEncounters": 4907,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1989910885",
+    "orgName": "Ironbridge PT Alliance",
+    "state": "CO",
+    "medicareAllowedAmount": 4364817,
+    "billedEncounters": 56462,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1435036472",
+    "orgName": "PrimeCare Family Physical Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 165800,
+    "billedEncounters": 1872,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1964723117",
+    "orgName": "WestWind Musculoskeletal Therapy",
+    "state": "OH",
+    "medicareAllowedAmount": 162406,
+    "billedEncounters": 1260,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1161633263",
+    "orgName": "Lonestar Sports Medicine & PT",
+    "state": "CA",
+    "medicareAllowedAmount": 539406,
+    "billedEncounters": 4859,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1072052396",
+    "orgName": "MetroCore PT Specialists",
+    "state": "PA",
+    "medicareAllowedAmount": 4252538,
+    "billedEncounters": 30649,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1213616534",
+    "orgName": "Azalea Rehabilitation Partners",
+    "state": "FL",
+    "medicareAllowedAmount": 1278044,
+    "billedEncounters": 10174,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1675599201",
+    "orgName": "Stonewall Physio Partners",
+    "state": "TN",
+    "medicareAllowedAmount": 2204928,
+    "billedEncounters": 23817,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1718167406",
+    "orgName": "Hillcrest Spine & Sports PT",
+    "state": "TN",
+    "medicareAllowedAmount": 3074897,
+    "billedEncounters": 28551,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1880696587",
+    "orgName": "OakTerra Rehab",
+    "state": "TX",
+    "medicareAllowedAmount": 1585765,
+    "billedEncounters": 19373,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1610583454",
+    "orgName": "Gateway PT Collective",
+    "state": "CA",
+    "medicareAllowedAmount": 129445,
+    "billedEncounters": 1577,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1019548684",
+    "orgName": "Lakeshore Rehab Group",
+    "state": "TN",
+    "medicareAllowedAmount": 1162629,
+    "billedEncounters": 12997,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1080978725",
+    "orgName": "Horizon Sports Medicine & PT",
+    "state": "TX",
+    "medicareAllowedAmount": 477825,
+    "billedEncounters": 4325,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1094984937",
+    "orgName": "Paramount Therapy Institute",
+    "state": "PA",
+    "medicareAllowedAmount": 2775978,
+    "billedEncounters": 32656,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1671470455",
+    "orgName": "Brookside Advanced PT",
+    "state": "CA",
+    "medicareAllowedAmount": 568739,
+    "billedEncounters": 7329,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1298796717",
+    "orgName": "Rocky Family Physical Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 515309,
+    "billedEncounters": 4650,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1200003091",
+    "orgName": "Sierra Physio Collective",
+    "state": "TN",
+    "medicareAllowedAmount": 244733,
+    "billedEncounters": 1959,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1690155807",
+    "orgName": "UnityHealth Peak Performance PT",
+    "state": "CO",
+    "medicareAllowedAmount": 1722330,
+    "billedEncounters": 14084,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1446631473",
+    "orgName": "SilverOak Rehab Works",
+    "state": "AZ",
+    "medicareAllowedAmount": 935656,
+    "billedEncounters": 8913,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1802864033",
+    "orgName": "Gulfcoast Rehabilitation Partners",
+    "state": "TN",
+    "medicareAllowedAmount": 750616,
+    "billedEncounters": 6011,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1822742043",
+    "orgName": "Mesa Dynamic PT",
+    "state": "FL",
+    "medicareAllowedAmount": 2479814,
+    "billedEncounters": 18232,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1516715528",
+    "orgName": "Sapphire Elite Rehab",
+    "state": "TN",
+    "medicareAllowedAmount": 114022,
+    "billedEncounters": 1331,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1668758078",
+    "orgName": "Horizon Neighborhood PT",
+    "state": "GA",
+    "medicareAllowedAmount": 1924265,
+    "billedEncounters": 20453,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1540624059",
+    "orgName": "Pioneer Orthopedic PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 120966,
+    "billedEncounters": 897,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1222043733",
+    "orgName": "Milestone Therapy Studio",
+    "state": "OH",
+    "medicareAllowedAmount": 3543875,
+    "billedEncounters": 25204,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1575944241",
+    "orgName": "WestWind Rehabilitation Associates",
+    "state": "PA",
+    "medicareAllowedAmount": 659329,
+    "billedEncounters": 7358,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1167601197",
+    "orgName": "Milestone Rehab Works",
+    "state": "CO",
+    "medicareAllowedAmount": 4324394,
+    "billedEncounters": 45177,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1744245877",
+    "orgName": "Everglade Physical Therapy Group",
+    "state": "CA",
+    "medicareAllowedAmount": 655331,
+    "billedEncounters": 4858,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1067033193",
+    "orgName": "Granite PT Alliance",
+    "state": "OH",
+    "medicareAllowedAmount": 3456054,
+    "billedEncounters": 26483,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1426928575",
+    "orgName": "Jasper Rehabilitation Associates",
+    "state": "GA",
+    "medicareAllowedAmount": 1648914,
+    "billedEncounters": 15160,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1349088026",
+    "orgName": "Emerald Physical Medicine",
+    "state": "NC",
+    "medicareAllowedAmount": 519018,
+    "billedEncounters": 5518,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1408476286",
+    "orgName": "Obsidian Neighborhood PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 2876552,
+    "billedEncounters": 28685,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1426908058",
+    "orgName": "Everglade Physio Works",
+    "state": "FL",
+    "medicareAllowedAmount": 575928,
+    "billedEncounters": 4950,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1973055722",
+    "orgName": "Crossroads Therapy Network",
+    "state": "AZ",
+    "medicareAllowedAmount": 504304,
+    "billedEncounters": 3663,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1467704975",
+    "orgName": "Everglade Advanced PT",
+    "state": "PA",
+    "medicareAllowedAmount": 658998,
+    "billedEncounters": 5279,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1091676456",
+    "orgName": "Seabreeze Active Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 1044226,
+    "billedEncounters": 10184,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1827828337",
+    "orgName": "Palmetto Rehab Solutions",
+    "state": "GA",
+    "medicareAllowedAmount": 3755996,
+    "billedEncounters": 47137,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1501509039",
+    "orgName": "Willow Spine & Sports PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 896117,
+    "billedEncounters": 11560,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1409993732",
+    "orgName": "Sunrise Therapy Network",
+    "state": "TX",
+    "medicareAllowedAmount": 763537,
+    "billedEncounters": 6913,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1459826109",
+    "orgName": "Brookside Movement Clinic",
+    "state": "TX",
+    "medicareAllowedAmount": 319481,
+    "billedEncounters": 2995,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1121379892",
+    "orgName": "Elmwood Outpatient Therapy",
+    "state": "TN",
+    "medicareAllowedAmount": 1600735,
+    "billedEncounters": 17199,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1343483916",
+    "orgName": "BrightPath PT & Wellness",
+    "state": "OH",
+    "medicareAllowedAmount": 1046732,
+    "billedEncounters": 7465,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1269881086",
+    "orgName": "Riverbend Orthopedic PT",
+    "state": "NC",
+    "medicareAllowedAmount": 3433050,
+    "billedEncounters": 38622,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1390572149",
+    "orgName": "Copperfield Peak Performance PT",
+    "state": "FL",
+    "medicareAllowedAmount": 205377,
+    "billedEncounters": 2197,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1380249618",
+    "orgName": "Dune Rehab Works",
+    "state": "GA",
+    "medicareAllowedAmount": 309396,
+    "billedEncounters": 2826,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1550450112",
+    "orgName": "LightBridge Rehabilitation",
+    "state": "AZ",
+    "medicareAllowedAmount": 386053,
+    "billedEncounters": 3519,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1786859860",
+    "orgName": "Buckeye Therapy Center",
+    "state": "CO",
+    "medicareAllowedAmount": 318150,
+    "billedEncounters": 2477,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1249822128",
+    "orgName": "Canyon Hands-On Therapy",
+    "state": "TN",
+    "medicareAllowedAmount": 788623,
+    "billedEncounters": 6695,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1257062900",
+    "orgName": "Firstline Physio Works",
+    "state": "GA",
+    "medicareAllowedAmount": 431631,
+    "billedEncounters": 5581,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1475671127",
+    "orgName": "Birchwood Physio Works",
+    "state": "AZ",
+    "medicareAllowedAmount": 965766,
+    "billedEncounters": 10821,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1647475130",
+    "orgName": "DueWest PT Services",
+    "state": "CA",
+    "medicareAllowedAmount": 2404751,
+    "billedEncounters": 24874,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1308941680",
+    "orgName": "Riverview PT Collective",
+    "state": "CA",
+    "medicareAllowedAmount": 1931646,
+    "billedEncounters": 19197,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1272188021",
+    "orgName": "Appalachian Outpatient Rehab",
+    "state": "AZ",
+    "medicareAllowedAmount": 2138764,
+    "billedEncounters": 27321,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1441411840",
+    "orgName": "Valleyview Motion Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 500049,
+    "billedEncounters": 4741,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1782764555",
+    "orgName": "Cornerstone Therapy Institute",
+    "state": "CO",
+    "medicareAllowedAmount": 201295,
+    "billedEncounters": 2231,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1705150868",
+    "orgName": "Ashwood Dynamic PT",
+    "state": "OH",
+    "medicareAllowedAmount": 1456248,
+    "billedEncounters": 16327,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1126096127",
+    "orgName": "Magnolia Rehabilitation Associates",
+    "state": "CA",
+    "medicareAllowedAmount": 269764,
+    "billedEncounters": 2941,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1500786747",
+    "orgName": "UnityHealth Neighborhood PT",
+    "state": "TX",
+    "medicareAllowedAmount": 1006487,
+    "billedEncounters": 11687,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1928957199",
+    "orgName": "Sapphire Rehab Works",
+    "state": "PA",
+    "medicareAllowedAmount": 1096042,
+    "billedEncounters": 12221,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1212134768",
+    "orgName": "FieldStone PT Group",
+    "state": "TN",
+    "medicareAllowedAmount": 611378,
+    "billedEncounters": 6442,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1550538960",
+    "orgName": "Firstline Rehabilitation Associates",
+    "state": "PA",
+    "medicareAllowedAmount": 585500,
+    "billedEncounters": 4955,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1245214176",
+    "orgName": "Lantern Health Physio",
+    "state": "FL",
+    "medicareAllowedAmount": 384051,
+    "billedEncounters": 4494,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1534052200",
+    "orgName": "Pinnacle Rehabilitation Center",
+    "state": "PA",
+    "medicareAllowedAmount": 753035,
+    "billedEncounters": 8272,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1318118917",
+    "orgName": "Goldleaf Neighborhood PT",
+    "state": "GA",
+    "medicareAllowedAmount": 453359,
+    "billedEncounters": 5842,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1666066616",
+    "orgName": "Ridgeline Therapy Partners",
+    "state": "TN",
+    "medicareAllowedAmount": 4142035,
+    "billedEncounters": 50396,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1650038969",
+    "orgName": "BlueRidge Therapy Partners",
+    "state": "AZ",
+    "medicareAllowedAmount": 2956174,
+    "billedEncounters": 22175,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1517086189",
+    "orgName": "Pinnacle Rehabilitation Partners",
+    "state": "TX",
+    "medicareAllowedAmount": 449692,
+    "billedEncounters": 5803,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1718147157",
+    "orgName": "Crestview Motion Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 387921,
+    "billedEncounters": 3613,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1627331190",
+    "orgName": "Sunrise Outpatient Rehab",
+    "state": "CA",
+    "medicareAllowedAmount": 3685162,
+    "billedEncounters": 25804,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1593526351",
+    "orgName": "Appalachian Outpatient Therapy",
+    "state": "TX",
+    "medicareAllowedAmount": 1199770,
+    "billedEncounters": 10915,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1922817082",
+    "orgName": "NorthStar Rehab Clinic",
+    "state": "TX",
+    "medicareAllowedAmount": 1086460,
+    "billedEncounters": 9800,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1879261054",
+    "orgName": "Skyline Physio Works",
+    "state": "CO",
+    "medicareAllowedAmount": 138095,
+    "billedEncounters": 1187,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1268553023",
+    "orgName": "Autumn Rehab Works",
+    "state": "CO",
+    "medicareAllowedAmount": 2420776,
+    "billedEncounters": 26161,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1382049497",
+    "orgName": "Winterset Community Rehab",
+    "state": "CO",
+    "medicareAllowedAmount": 1762015,
+    "billedEncounters": 12686,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1244569816",
+    "orgName": "Midland Outpatient Rehab",
+    "state": "AZ",
+    "medicareAllowedAmount": 1599046,
+    "billedEncounters": 15613,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1925867241",
+    "orgName": "Peach Rehab Group",
+    "state": "PA",
+    "medicareAllowedAmount": 1320716,
+    "billedEncounters": 10044,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1011042914",
+    "orgName": "NewDawn Spine & Sports PT",
+    "state": "NC",
+    "medicareAllowedAmount": 569876,
+    "billedEncounters": 4114,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1479428752",
+    "orgName": "DueWest Integrated PT",
+    "state": "TN",
+    "medicareAllowedAmount": 1863763,
+    "billedEncounters": 17161,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1958351099",
+    "orgName": "Freedom PT Clinic",
+    "state": "TN",
+    "medicareAllowedAmount": 2402860,
+    "billedEncounters": 26883,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1423595591",
+    "orgName": "Premier Rehab Works",
+    "state": "CA",
+    "medicareAllowedAmount": 222825,
+    "billedEncounters": 1801,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1093342149",
+    "orgName": "Skyline Physical Therapy",
+    "state": "GA",
+    "medicareAllowedAmount": 941228,
+    "billedEncounters": 9732,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1324891352",
+    "orgName": "Harborline Therapy",
+    "state": "OH",
+    "medicareAllowedAmount": 649776,
+    "billedEncounters": 5206,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1510953787",
+    "orgName": "Autumn Motion & Rehab",
+    "state": "GA",
+    "medicareAllowedAmount": 550765,
+    "billedEncounters": 7111,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1560408239",
+    "orgName": "Ridgepoint Therapy",
+    "state": "OH",
+    "medicareAllowedAmount": 171461,
+    "billedEncounters": 1805,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1864325598",
+    "orgName": "Saguaro Motion Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 3161115,
+    "billedEncounters": 27041,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1586549901",
+    "orgName": "Dogwood Orthopedic PT",
+    "state": "FL",
+    "medicareAllowedAmount": 571579,
+    "billedEncounters": 4312,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1140840255",
+    "orgName": "Magnolia Hands-On Therapy",
+    "state": "CA",
+    "medicareAllowedAmount": 210138,
+    "billedEncounters": 2211,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1809586353",
+    "orgName": "BlueRidge Active Therapy",
+    "state": "OH",
+    "medicareAllowedAmount": 2358563,
+    "billedEncounters": 19876,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1849326343",
+    "orgName": "Paramount Dynamic PT",
+    "state": "TN",
+    "medicareAllowedAmount": 365243,
+    "billedEncounters": 3360,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1958055544",
+    "orgName": "Appalachian Therapy Studio",
+    "state": "NC",
+    "medicareAllowedAmount": 622979,
+    "billedEncounters": 7471,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1650325271",
+    "orgName": "Midland PT Collective",
+    "state": "NC",
+    "medicareAllowedAmount": 1767711,
+    "billedEncounters": 19646,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1127139745",
+    "orgName": "Ridgeline Active Therapy",
+    "state": "TX",
+    "medicareAllowedAmount": 95738,
+    "billedEncounters": 1142,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1260716969",
+    "orgName": "Alamo Outpatient Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 856792,
+    "billedEncounters": 10529,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1935122156",
+    "orgName": "Winterset Movement Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 609812,
+    "billedEncounters": 4936,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1384480044",
+    "orgName": "Obsidian Outpatient Rehab",
+    "state": "OH",
+    "medicareAllowedAmount": 504281,
+    "billedEncounters": 5288,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1797966193",
+    "orgName": "Essential Physical Medicine",
+    "state": "CA",
+    "medicareAllowedAmount": 856405,
+    "billedEncounters": 6152,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1921924190",
+    "orgName": "Juniper Therapy Studio",
+    "state": "TX",
+    "medicareAllowedAmount": 3710172,
+    "billedEncounters": 33687,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1794219710",
+    "orgName": "Winterset Physio Works",
+    "state": "FL",
+    "medicareAllowedAmount": 877884,
+    "billedEncounters": 8807,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1298387754",
+    "orgName": "Oakwood Therapy Studio",
+    "state": "TX",
+    "medicareAllowedAmount": 1328749,
+    "billedEncounters": 13651,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1877346331",
+    "orgName": "Lonestar PT & Sports Performance",
+    "state": "TX",
+    "medicareAllowedAmount": 301831,
+    "billedEncounters": 3517,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1968590446",
+    "orgName": "Ironclad Motion Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 114530,
+    "billedEncounters": 868,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1460416771",
+    "orgName": "Hillview Rehabilitation Partners",
+    "state": "CO",
+    "medicareAllowedAmount": 237888,
+    "billedEncounters": 2715,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1360806617",
+    "orgName": "Anchor Orthopedic PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 78544,
+    "billedEncounters": 968,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1652037083",
+    "orgName": "Buckeye Outpatient Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 1088919,
+    "billedEncounters": 13074,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1014254989",
+    "orgName": "Diamond Rehabilitation Associates",
+    "state": "TX",
+    "medicareAllowedAmount": 1760648,
+    "billedEncounters": 14461,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1716754103",
+    "orgName": "NorthStar Integrated PT",
+    "state": "CA",
+    "medicareAllowedAmount": 147034,
+    "billedEncounters": 1736,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1007297571",
+    "orgName": "Eastpark Peak Performance PT",
+    "state": "FL",
+    "medicareAllowedAmount": 1220884,
+    "billedEncounters": 10997,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1890065586",
+    "orgName": "Eastpark PT Services",
+    "state": "FL",
+    "medicareAllowedAmount": 2592721,
+    "billedEncounters": 21055,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1138066569",
+    "orgName": "NorthStar Dynamic PT",
+    "state": "NC",
+    "medicareAllowedAmount": 3499469,
+    "billedEncounters": 33798,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1501524450",
+    "orgName": "Bedrock Rehabilitation Associates",
+    "state": "NC",
+    "medicareAllowedAmount": 408785,
+    "billedEncounters": 4138,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1969812194",
+    "orgName": "Creekside PT & Wellness",
+    "state": "FL",
+    "medicareAllowedAmount": 713459,
+    "billedEncounters": 8392,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1520245367",
+    "orgName": "Ironwood Rehab Group",
+    "state": "CO",
+    "medicareAllowedAmount": 508391,
+    "billedEncounters": 5133,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1402363941",
+    "orgName": "MetroCore Therapy Group",
+    "state": "TN",
+    "medicareAllowedAmount": 420305,
+    "billedEncounters": 3001,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1473177098",
+    "orgName": "Diamond PT & Sports Performance",
+    "state": "TX",
+    "medicareAllowedAmount": 1377658,
+    "billedEncounters": 13403,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1542801402",
+    "orgName": "Magnolia Advanced PT",
+    "state": "CA",
+    "medicareAllowedAmount": 749007,
+    "billedEncounters": 9295,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1557390030",
+    "orgName": "NorthStar Physical Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 3446076,
+    "billedEncounters": 40489,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1410186613",
+    "orgName": "Parkway Motion Health",
+    "state": "GA",
+    "medicareAllowedAmount": 1230067,
+    "billedEncounters": 15046,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1754246640",
+    "orgName": "Emerald Rehabilitation Services",
+    "state": "AZ",
+    "medicareAllowedAmount": 1473731,
+    "billedEncounters": 17895,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1654771747",
+    "orgName": "Cornerstone Musculoskeletal Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 762835,
+    "billedEncounters": 9305,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1459118971",
+    "orgName": "Northwind Physical Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 503892,
+    "billedEncounters": 3886,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1481620633",
+    "orgName": "Autumn Therapy Institute",
+    "state": "PA",
+    "medicareAllowedAmount": 1132497,
+    "billedEncounters": 11972,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1383552225",
+    "orgName": "Freedom Rehab Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 178623,
+    "billedEncounters": 1621,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1837831209",
+    "orgName": "Prairie Therapy Studio",
+    "state": "TN",
+    "medicareAllowedAmount": 684599,
+    "billedEncounters": 5287,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1175765371",
+    "orgName": "Skyline Rehab Clinic",
+    "state": "FL",
+    "medicareAllowedAmount": 427535,
+    "billedEncounters": 3893,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1393874709",
+    "orgName": "Evergreen PT Associates",
+    "state": "PA",
+    "medicareAllowedAmount": 270355,
+    "billedEncounters": 3380,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1172701008",
+    "orgName": "Highland Advanced PT",
+    "state": "CA",
+    "medicareAllowedAmount": 350823,
+    "billedEncounters": 3880,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1489023867",
+    "orgName": "Emerald Therapy Institute",
+    "state": "OH",
+    "medicareAllowedAmount": 250494,
+    "billedEncounters": 2467,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1967056270",
+    "orgName": "Vertex PT Clinics",
+    "state": "NC",
+    "medicareAllowedAmount": 452693,
+    "billedEncounters": 5875,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1521295126",
+    "orgName": "Whitestone Peak Performance PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 736894,
+    "billedEncounters": 7074,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1642750879",
+    "orgName": "Keystone Motion Health",
+    "state": "CA",
+    "medicareAllowedAmount": 277426,
+    "billedEncounters": 3016,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1057061814",
+    "orgName": "Northpark PT Alliance",
+    "state": "FL",
+    "medicareAllowedAmount": 4430449,
+    "billedEncounters": 47965,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1795848796",
+    "orgName": "Fairview Orthopedic PT",
+    "state": "TX",
+    "medicareAllowedAmount": 429492,
+    "billedEncounters": 3797,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1205133039",
+    "orgName": "Stonewall Neighborhood PT",
+    "state": "CO",
+    "medicareAllowedAmount": 58097,
+    "billedEncounters": 578,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1316634879",
+    "orgName": "Firstline Rehab Works",
+    "state": "PA",
+    "medicareAllowedAmount": 3423652,
+    "billedEncounters": 36823,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1128353591",
+    "orgName": "Saguaro PT Associates",
+    "state": "OH",
+    "medicareAllowedAmount": 369212,
+    "billedEncounters": 4526,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1091196093",
+    "orgName": "Brookview Active Therapy",
+    "state": "CA",
+    "medicareAllowedAmount": 563150,
+    "billedEncounters": 4838,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1101192502",
+    "orgName": "Midland Rehab Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 92939,
+    "billedEncounters": 1028,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1394714626",
+    "orgName": "Hillview Rehabilitation Associates",
+    "state": "CA",
+    "medicareAllowedAmount": 3779643,
+    "billedEncounters": 43743,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1753011885",
+    "orgName": "UnityHealth PT & Wellness",
+    "state": "CO",
+    "medicareAllowedAmount": 1653732,
+    "billedEncounters": 18258,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1757226885",
+    "orgName": "Magnolia Rehab Solutions",
+    "state": "GA",
+    "medicareAllowedAmount": 235057,
+    "billedEncounters": 1951,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1756810829",
+    "orgName": "Parkside Advanced PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 718427,
+    "billedEncounters": 8015,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1995902559",
+    "orgName": "Meridian Rehab Network",
+    "state": "TX",
+    "medicareAllowedAmount": 1735993,
+    "billedEncounters": 14604,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1587087250",
+    "orgName": "Cypress Therapy Network",
+    "state": "GA",
+    "medicareAllowedAmount": 1464130,
+    "billedEncounters": 14964,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1239004437",
+    "orgName": "Birchwood Outpatient Rehab",
+    "state": "TN",
+    "medicareAllowedAmount": 606514,
+    "billedEncounters": 7534,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1429793920",
+    "orgName": "MetroCore Therapy Network",
+    "state": "PA",
+    "medicareAllowedAmount": 680303,
+    "billedEncounters": 5122,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1537377832",
+    "orgName": "NewDawn Rehab Works",
+    "state": "FL",
+    "medicareAllowedAmount": 3804960,
+    "billedEncounters": 42258,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1327525714",
+    "orgName": "Crossroads Therapy Center",
+    "state": "TX",
+    "medicareAllowedAmount": 239951,
+    "billedEncounters": 1877,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1703997737",
+    "orgName": "Tidewater Active Therapy",
+    "state": "TN",
+    "medicareAllowedAmount": 370862,
+    "billedEncounters": 4715,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1657864211",
+    "orgName": "UnityHealth Therapy Partners",
+    "state": "FL",
+    "medicareAllowedAmount": 452341,
+    "billedEncounters": 4698,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1202389185",
+    "orgName": "Accelus Physio Partners",
+    "state": "AZ",
+    "medicareAllowedAmount": 342059,
+    "billedEncounters": 2837,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1299195001",
+    "orgName": "Everglade Rehab Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 3627473,
+    "billedEncounters": 40324,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1335310874",
+    "orgName": "Parkside Rehab Group",
+    "state": "FL",
+    "medicareAllowedAmount": 179917,
+    "billedEncounters": 1636,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1393711746",
+    "orgName": "Harbor Advanced PT",
+    "state": "FL",
+    "medicareAllowedAmount": 1449509,
+    "billedEncounters": 17406,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1769687001",
+    "orgName": "Parkway Motion & Rehab",
+    "state": "NC",
+    "medicareAllowedAmount": 1503403,
+    "billedEncounters": 16967,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1679775894",
+    "orgName": "Cornerstone Rehabilitation Associates",
+    "state": "CA",
+    "medicareAllowedAmount": 1007738,
+    "billedEncounters": 11222,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1586440719",
+    "orgName": "Eastpark Spine & Sports PT",
+    "state": "FL",
+    "medicareAllowedAmount": 1064285,
+    "billedEncounters": 13579,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1766118974",
+    "orgName": "Pinewood Neighborhood PT",
+    "state": "TN",
+    "medicareAllowedAmount": 276977,
+    "billedEncounters": 2986,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1678507895",
+    "orgName": "Tidewater Rehab Clinic",
+    "state": "PA",
+    "medicareAllowedAmount": 416110,
+    "billedEncounters": 4001,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1677223848",
+    "orgName": "Winterset Peak Performance PT",
+    "state": "FL",
+    "medicareAllowedAmount": 758453,
+    "billedEncounters": 9680,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1346920761",
+    "orgName": "Ironbridge Sports Medicine & PT",
+    "state": "FL",
+    "medicareAllowedAmount": 1278311,
+    "billedEncounters": 11818,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1695487026",
+    "orgName": "Sunset Rehab Works",
+    "state": "OH",
+    "medicareAllowedAmount": 1622252,
+    "billedEncounters": 15930,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1349913028",
+    "orgName": "Alliance Rehabilitation Services",
+    "state": "OH",
+    "medicareAllowedAmount": 108048,
+    "billedEncounters": 854,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1986167639",
+    "orgName": "Palmetto Family Physical Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 1009390,
+    "billedEncounters": 10574,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1455418007",
+    "orgName": "Southpark Physical Therapy Group",
+    "state": "FL",
+    "medicareAllowedAmount": 53392,
+    "billedEncounters": 594,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1229708133",
+    "orgName": "Heartland Outpatient PT",
+    "state": "NC",
+    "medicareAllowedAmount": 323396,
+    "billedEncounters": 3662,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1876420374",
+    "orgName": "Topaz PT Clinic",
+    "state": "TX",
+    "medicareAllowedAmount": 3949476,
+    "billedEncounters": 30688,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1182619765",
+    "orgName": "DueWest Motion & Rehab",
+    "state": "CA",
+    "medicareAllowedAmount": 2670209,
+    "billedEncounters": 21331,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1400150591",
+    "orgName": "Essential Outpatient Therapy",
+    "state": "OH",
+    "medicareAllowedAmount": 1154699,
+    "billedEncounters": 10191,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1870428571",
+    "orgName": "Brookline Outpatient Rehab",
+    "state": "CA",
+    "medicareAllowedAmount": 3619826,
+    "billedEncounters": 28014,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1168830523",
+    "orgName": "Tradition Rehabilitation Associates",
+    "state": "FL",
+    "medicareAllowedAmount": 3868056,
+    "billedEncounters": 35008,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1554555772",
+    "orgName": "Cypress Rehab Associates",
+    "state": "CO",
+    "medicareAllowedAmount": 138021,
+    "billedEncounters": 1486,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1082547301",
+    "orgName": "Pioneer PT Services",
+    "state": "TX",
+    "medicareAllowedAmount": 183938,
+    "billedEncounters": 2176,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1407688117",
+    "orgName": "Freedom Therapy Center",
+    "state": "GA",
+    "medicareAllowedAmount": 731897,
+    "billedEncounters": 7157,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1936318791",
+    "orgName": "Marshland PT & Sports Performance",
+    "state": "PA",
+    "medicareAllowedAmount": 727635,
+    "billedEncounters": 7939,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1612703848",
+    "orgName": "PrimeCare PT Collective",
+    "state": "CO",
+    "medicareAllowedAmount": 1281293,
+    "billedEncounters": 14671,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1724132157",
+    "orgName": "Tidewater Rehab Solutions",
+    "state": "TN",
+    "medicareAllowedAmount": 3550112,
+    "billedEncounters": 44994,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1163197722",
+    "orgName": "Magnolia Spine & Sports PT",
+    "state": "CO",
+    "medicareAllowedAmount": 1739607,
+    "billedEncounters": 20974,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1811481776",
+    "orgName": "Springfield Neighborhood PT",
+    "state": "NC",
+    "medicareAllowedAmount": 528357,
+    "billedEncounters": 5052,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1252774949",
+    "orgName": "Gateway PT Associates",
+    "state": "OH",
+    "medicareAllowedAmount": 1203018,
+    "billedEncounters": 12011,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1666356807",
+    "orgName": "Granite PT Specialists",
+    "state": "CA",
+    "medicareAllowedAmount": 1055663,
+    "billedEncounters": 13550,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1250302895",
+    "orgName": "Eastpark PT & Wellness",
+    "state": "OH",
+    "medicareAllowedAmount": 398517,
+    "billedEncounters": 3440,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1101011524",
+    "orgName": "Juniper Sports & Spine PT",
+    "state": "CA",
+    "medicareAllowedAmount": 243544,
+    "billedEncounters": 1832,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1928512109",
+    "orgName": "Hillcrest Therapy Network",
+    "state": "TX",
+    "medicareAllowedAmount": 1414853,
+    "billedEncounters": 9923,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1779273847",
+    "orgName": "Granite Musculoskeletal Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 1454370,
+    "billedEncounters": 14219,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1759078249",
+    "orgName": "Peach Advanced PT",
+    "state": "TN",
+    "medicareAllowedAmount": 1036674,
+    "billedEncounters": 13108,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1548194244",
+    "orgName": "Tarheel Orthopedic PT",
+    "state": "TN",
+    "medicareAllowedAmount": 445834,
+    "billedEncounters": 5290,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1862282562",
+    "orgName": "Copperfield Musculoskeletal Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 1392151,
+    "billedEncounters": 15669,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1434468536",
+    "orgName": "Seabreeze Motion & Rehab",
+    "state": "OH",
+    "medicareAllowedAmount": 904850,
+    "billedEncounters": 11653,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1259281079",
+    "orgName": "Amberline Rehabilitation Associates",
+    "state": "TN",
+    "medicareAllowedAmount": 4329895,
+    "billedEncounters": 31217,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1585709965",
+    "orgName": "Frontline PT Collective",
+    "state": "GA",
+    "medicareAllowedAmount": 2575664,
+    "billedEncounters": 28208,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1950905808",
+    "orgName": "DueWest Rehabilitation Partners",
+    "state": "AZ",
+    "medicareAllowedAmount": 3080624,
+    "billedEncounters": 26302,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1710578339",
+    "orgName": "FirstLight Orthopedic PT",
+    "state": "TX",
+    "medicareAllowedAmount": 408147,
+    "billedEncounters": 4441,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1253755165",
+    "orgName": "Prestige Advanced PT",
+    "state": "GA",
+    "medicareAllowedAmount": 166654,
+    "billedEncounters": 1588,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1864647525",
+    "orgName": "Blackstone Rehabilitation Associates",
+    "state": "TX",
+    "medicareAllowedAmount": 174443,
+    "billedEncounters": 1942,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1952430939",
+    "orgName": "Cascade Integrated PT",
+    "state": "FL",
+    "medicareAllowedAmount": 3090999,
+    "billedEncounters": 25977,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1417388455",
+    "orgName": "BlueRidge PT Associates",
+    "state": "PA",
+    "medicareAllowedAmount": 207771,
+    "billedEncounters": 1573,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1844318316",
+    "orgName": "Diamond Rehab Clinic",
+    "state": "NC",
+    "medicareAllowedAmount": 1267323,
+    "billedEncounters": 15132,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1792177660",
+    "orgName": "Obsidian PT Associates",
+    "state": "FL",
+    "medicareAllowedAmount": 1554037,
+    "billedEncounters": 15556,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1158914869",
+    "orgName": "Sunset Peak Performance PT",
+    "state": "FL",
+    "medicareAllowedAmount": 766628,
+    "billedEncounters": 7899,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1093080291",
+    "orgName": "Birchwood Community Rehab",
+    "state": "CO",
+    "medicareAllowedAmount": 1143143,
+    "billedEncounters": 11770,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1448699643",
+    "orgName": "Copperfield Therapy Studio",
+    "state": "GA",
+    "medicareAllowedAmount": 237675,
+    "billedEncounters": 2518,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1531712397",
+    "orgName": "Cascadia Outpatient Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 730727,
+    "billedEncounters": 7082,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1804722093",
+    "orgName": "Whitestone PT & Wellness",
+    "state": "CA",
+    "medicareAllowedAmount": 338632,
+    "billedEncounters": 3350,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1564418926",
+    "orgName": "Cascadia Rehabilitation Services",
+    "state": "PA",
+    "medicareAllowedAmount": 481426,
+    "billedEncounters": 3768,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1681460711",
+    "orgName": "Driftwood Motion Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 500627,
+    "billedEncounters": 4356,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1266849465",
+    "orgName": "BlueRidge Neighborhood PT",
+    "state": "CA",
+    "medicareAllowedAmount": 1853351,
+    "billedEncounters": 22626,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1265993048",
+    "orgName": "Willow Physical Therapy Group",
+    "state": "TX",
+    "medicareAllowedAmount": 565931,
+    "billedEncounters": 5521,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1454335459",
+    "orgName": "Cascadia PT & Wellness",
+    "state": "FL",
+    "medicareAllowedAmount": 1412485,
+    "billedEncounters": 10928,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1363737098",
+    "orgName": "BrightPath Movement Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 978320,
+    "billedEncounters": 10246,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1927403132",
+    "orgName": "Hillview Therapy Institute",
+    "state": "CO",
+    "medicareAllowedAmount": 244539,
+    "billedEncounters": 2585,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1954217181",
+    "orgName": "Meadowview Therapy Network",
+    "state": "NC",
+    "medicareAllowedAmount": 437734,
+    "billedEncounters": 4068,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1428077068",
+    "orgName": "Everglade Community Rehab",
+    "state": "TX",
+    "medicareAllowedAmount": 1341058,
+    "billedEncounters": 10272,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1406431887",
+    "orgName": "Palmetto Orthopedic PT",
+    "state": "CO",
+    "medicareAllowedAmount": 656343,
+    "billedEncounters": 6683,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1814418393",
+    "orgName": "Lonestar Rehab Clinic",
+    "state": "TX",
+    "medicareAllowedAmount": 1703786,
+    "billedEncounters": 15947,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1764143441",
+    "orgName": "Magnolia PT & Sports Performance",
+    "state": "TN",
+    "medicareAllowedAmount": 1670715,
+    "billedEncounters": 14618,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1590258206",
+    "orgName": "Birchwood Movement Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 298324,
+    "billedEncounters": 2237,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1091333701",
+    "orgName": "Parkway Dynamic PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 659115,
+    "billedEncounters": 6335,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1970956291",
+    "orgName": "Milestone Dynamic PT",
+    "state": "CA",
+    "medicareAllowedAmount": 1567097,
+    "billedEncounters": 16447,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1137993856",
+    "orgName": "NewDawn Rehab Solutions",
+    "state": "TX",
+    "medicareAllowedAmount": 946216,
+    "billedEncounters": 12130,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1919847315",
+    "orgName": "Summit Orthopedic PT",
+    "state": "GA",
+    "medicareAllowedAmount": 1114327,
+    "billedEncounters": 8665,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1368345439",
+    "orgName": "Brookline PT Clinic",
+    "state": "FL",
+    "medicareAllowedAmount": 1239187,
+    "billedEncounters": 10224,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1245907793",
+    "orgName": "Jasper Rehabilitation Partners",
+    "state": "FL",
+    "medicareAllowedAmount": 829371,
+    "billedEncounters": 8955,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1555035052",
+    "orgName": "Dune PT Collective",
+    "state": "TN",
+    "medicareAllowedAmount": 325376,
+    "billedEncounters": 3953,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1208998244",
+    "orgName": "Midland Rehab Solutions",
+    "state": "GA",
+    "medicareAllowedAmount": 222844,
+    "billedEncounters": 2606,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1645029574",
+    "orgName": "Seabreeze Sports Medicine & PT",
+    "state": "PA",
+    "medicareAllowedAmount": 903543,
+    "billedEncounters": 10173,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1005988793",
+    "orgName": "Riverview Movement Clinic",
+    "state": "NC",
+    "medicareAllowedAmount": 328393,
+    "billedEncounters": 2571,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1867040896",
+    "orgName": "Azalea Rehabilitation Services",
+    "state": "OH",
+    "medicareAllowedAmount": 1524505,
+    "billedEncounters": 11962,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1965372985",
+    "orgName": "Argent Physio",
+    "state": "GA",
+    "medicareAllowedAmount": 1360571,
+    "billedEncounters": 13035,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1200734483",
+    "orgName": "Willow Physio Partners",
+    "state": "TX",
+    "medicareAllowedAmount": 1311444,
+    "billedEncounters": 11325,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1464435052",
+    "orgName": "Parkside Outpatient Rehab",
+    "state": "AZ",
+    "medicareAllowedAmount": 354726,
+    "billedEncounters": 3902,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1404020670",
+    "orgName": "Cypress Rehab Works",
+    "state": "CO",
+    "medicareAllowedAmount": 327124,
+    "billedEncounters": 4123,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1526840641",
+    "orgName": "Liberty Sports Medicine & PT",
+    "state": "AZ",
+    "medicareAllowedAmount": 385027,
+    "billedEncounters": 4348,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1819368346",
+    "orgName": "Amberline Rehab Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 2667731,
+    "billedEncounters": 26152,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1614407735",
+    "orgName": "Parkside Motion Clinic",
+    "state": "TN",
+    "medicareAllowedAmount": 583233,
+    "billedEncounters": 6720,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1093239823",
+    "orgName": "Saguaro Physical Therapy Group",
+    "state": "TN",
+    "medicareAllowedAmount": 1090231,
+    "billedEncounters": 13353,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1867627294",
+    "orgName": "Redwood Dynamic PT",
+    "state": "TX",
+    "medicareAllowedAmount": 2432807,
+    "billedEncounters": 28215,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1087692483",
+    "orgName": "SilverOak Family Physical Therapy",
+    "state": "PA",
+    "medicareAllowedAmount": 1328015,
+    "billedEncounters": 16021,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1049274043",
+    "orgName": "Crossroads Hands-On Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 2068965,
+    "billedEncounters": 25127,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1172951641",
+    "orgName": "Bayside Family Physical Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 58638,
+    "billedEncounters": 511,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1474608634",
+    "orgName": "Crossroads Rehab Group",
+    "state": "AZ",
+    "medicareAllowedAmount": 1777192,
+    "billedEncounters": 17336,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1664836233",
+    "orgName": "Liberty Orthopedic PT",
+    "state": "CO",
+    "medicareAllowedAmount": 1608921,
+    "billedEncounters": 16441,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1198733579",
+    "orgName": "Freedom Spine & Sports PT",
+    "state": "TN",
+    "medicareAllowedAmount": 1637942,
+    "billedEncounters": 18134,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1958708407",
+    "orgName": "TrueNorth Physical Medicine",
+    "state": "NC",
+    "medicareAllowedAmount": 761182,
+    "billedEncounters": 8006,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1489085590",
+    "orgName": "Clearwater PT Specialists",
+    "state": "OH",
+    "medicareAllowedAmount": 1632732,
+    "billedEncounters": 14535,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1013630487",
+    "orgName": "Mesa Sports Medicine & PT",
+    "state": "TN",
+    "medicareAllowedAmount": 81976,
+    "billedEncounters": 1064,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1169282921",
+    "orgName": "Saguaro Physical Therapy",
+    "state": "TX",
+    "medicareAllowedAmount": 134772,
+    "billedEncounters": 1532,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1394714408",
+    "orgName": "EastRiver Rehabilitation Services",
+    "state": "GA",
+    "medicareAllowedAmount": 4271800,
+    "billedEncounters": 52449,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1230418984",
+    "orgName": "Pike Physical Therapy",
+    "state": "TX",
+    "medicareAllowedAmount": 888125,
+    "billedEncounters": 9293,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1647001568",
+    "orgName": "Everglade Physical Medicine",
+    "state": "PA",
+    "medicareAllowedAmount": 1563018,
+    "billedEncounters": 12100,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1893888039",
+    "orgName": "Magnolia Therapy Center",
+    "state": "CA",
+    "medicareAllowedAmount": 1243825,
+    "billedEncounters": 13253,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1626546260",
+    "orgName": "Quartz Physio Works",
+    "state": "FL",
+    "medicareAllowedAmount": 56096,
+    "billedEncounters": 435,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1589902047",
+    "orgName": "Diamond Physical Medicine",
+    "state": "OH",
+    "medicareAllowedAmount": 642996,
+    "billedEncounters": 5790,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1962770877",
+    "orgName": "MetroCore Orthopedic PT",
+    "state": "CA",
+    "medicareAllowedAmount": 1055671,
+    "billedEncounters": 9863,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1648119198",
+    "orgName": "Ironbridge PT & Wellness",
+    "state": "OH",
+    "medicareAllowedAmount": 652675,
+    "billedEncounters": 4719,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1298541264",
+    "orgName": "Heritage Hands-On Therapy",
+    "state": "NC",
+    "medicareAllowedAmount": 2846483,
+    "billedEncounters": 26042,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1196901242",
+    "orgName": "BlueRidge Dynamic PT",
+    "state": "CA",
+    "medicareAllowedAmount": 4450819,
+    "billedEncounters": 54976,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1399957434",
+    "orgName": "Willow Peak Performance PT",
+    "state": "PA",
+    "medicareAllowedAmount": 785780,
+    "billedEncounters": 8356,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1831329890",
+    "orgName": "Highland Rehab Solutions",
+    "state": "OH",
+    "medicareAllowedAmount": 211419,
+    "billedEncounters": 1496,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1633881659",
+    "orgName": "Lakeshore Motion Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 4480400,
+    "billedEncounters": 56291,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1055325800",
+    "orgName": "Springfield Therapy Group",
+    "state": "AZ",
+    "medicareAllowedAmount": 1924995,
+    "billedEncounters": 20921,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1328731625",
+    "orgName": "Hillcrest Rehab Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 1673702,
+    "billedEncounters": 21035,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1826861731",
+    "orgName": "Brookview Therapy Partners",
+    "state": "GA",
+    "medicareAllowedAmount": 1605394,
+    "billedEncounters": 20401,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1253931779",
+    "orgName": "Essential Rehab Group",
+    "state": "TX",
+    "medicareAllowedAmount": 1694007,
+    "billedEncounters": 17822,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1912019407",
+    "orgName": "Ashwood Therapy Institute",
+    "state": "CO",
+    "medicareAllowedAmount": 2700630,
+    "billedEncounters": 21195,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1419765856",
+    "orgName": "Harbor PT Alliance",
+    "state": "PA",
+    "medicareAllowedAmount": 550515,
+    "billedEncounters": 4363,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1715006468",
+    "orgName": "Ironclad Rehab Group",
+    "state": "GA",
+    "medicareAllowedAmount": 59243,
+    "billedEncounters": 452,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1119588546",
+    "orgName": "Pinewood PT Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 388277,
+    "billedEncounters": 3583,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1239151727",
+    "orgName": "Evergreen Rehab Associates",
+    "state": "NC",
+    "medicareAllowedAmount": 4323399,
+    "billedEncounters": 39652,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1215136866",
+    "orgName": "Brookline Sports Medicine & PT",
+    "state": "GA",
+    "medicareAllowedAmount": 2002643,
+    "billedEncounters": 24717,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1938576972",
+    "orgName": "Parkside Rehab Clinic",
+    "state": "CA",
+    "medicareAllowedAmount": 378164,
+    "billedEncounters": 4152,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1227663411",
+    "orgName": "Sapphire Outpatient Therapy",
+    "state": "FL",
+    "medicareAllowedAmount": 4413130,
+    "billedEncounters": 42308,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1118704734",
+    "orgName": "Blackstone Rehab Group",
+    "state": "TX",
+    "medicareAllowedAmount": 772335,
+    "billedEncounters": 7937,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1616025586",
+    "orgName": "Prairie PT Collective",
+    "state": "CA",
+    "medicareAllowedAmount": 124727,
+    "billedEncounters": 1509,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1253866697",
+    "orgName": "Emerald PT & Wellness",
+    "state": "FL",
+    "medicareAllowedAmount": 984707,
+    "billedEncounters": 8629,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1397733463",
+    "orgName": "UnityHealth Rehab Works",
+    "state": "CA",
+    "medicareAllowedAmount": 2262866,
+    "billedEncounters": 28460,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1946870198",
+    "orgName": "Beacon Therapy Studio",
+    "state": "NC",
+    "medicareAllowedAmount": 60522,
+    "billedEncounters": 782,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1907652615",
+    "orgName": "Crestline PT Associates",
+    "state": "CA",
+    "medicareAllowedAmount": 3351167,
+    "billedEncounters": 27438,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1484188546",
+    "orgName": "Amberline Therapy Network",
+    "state": "GA",
+    "medicareAllowedAmount": 711666,
+    "billedEncounters": 7074,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1087644398",
+    "orgName": "Emerald Motion Health",
+    "state": "NC",
+    "medicareAllowedAmount": 930848,
+    "billedEncounters": 10043,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1380006264",
+    "orgName": "Palmetto Sports Medicine & PT",
+    "state": "TN",
+    "medicareAllowedAmount": 3622019,
+    "billedEncounters": 25805,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1558554850",
+    "orgName": "Milestone Motion Health",
+    "state": "OH",
+    "medicareAllowedAmount": 515337,
+    "billedEncounters": 6259,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1658428927",
+    "orgName": "CentralPark Hands-On Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 1655620,
+    "billedEncounters": 12001,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1307740673",
+    "orgName": "Tradition Rehabilitation Center",
+    "state": "GA",
+    "medicareAllowedAmount": 829115,
+    "billedEncounters": 7534,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1258023452",
+    "orgName": "Tidewater Rehab Group",
+    "state": "TN",
+    "medicareAllowedAmount": 377748,
+    "billedEncounters": 4637,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1871070326",
+    "orgName": "Crystal Physical Therapy",
+    "state": "CA",
+    "medicareAllowedAmount": 3647995,
+    "billedEncounters": 43747,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1640217918",
+    "orgName": "Tidewater Physio Works",
+    "state": "PA",
+    "medicareAllowedAmount": 1255859,
+    "billedEncounters": 15641,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1980796532",
+    "orgName": "Brookline Rehabilitation Associates",
+    "state": "GA",
+    "medicareAllowedAmount": 417899,
+    "billedEncounters": 4749,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1350027087",
+    "orgName": "Cornerstone Spine & Sports PT",
+    "state": "CA",
+    "medicareAllowedAmount": 820032,
+    "billedEncounters": 9187,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1249085165",
+    "orgName": "Freedom Outpatient Rehab",
+    "state": "OH",
+    "medicareAllowedAmount": 680090,
+    "billedEncounters": 4769,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1482470996",
+    "orgName": "SilverOak Therapy Network",
+    "state": "CA",
+    "medicareAllowedAmount": 3700970,
+    "billedEncounters": 38814,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1893411824",
+    "orgName": "Foundry Motion Clinic",
+    "state": "CA",
+    "medicareAllowedAmount": 1030321,
+    "billedEncounters": 7777,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1932781570",
+    "orgName": "Gateway Rehab Clinic",
+    "state": "GA",
+    "medicareAllowedAmount": 533334,
+    "billedEncounters": 5835,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1113648599",
+    "orgName": "Lonestar Community Rehab",
+    "state": "OH",
+    "medicareAllowedAmount": 293242,
+    "billedEncounters": 3664,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1104765961",
+    "orgName": "Whitestone Active Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 160550,
+    "billedEncounters": 1244,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1996565454",
+    "orgName": "Gulfcoast Orthopedic PT",
+    "state": "NC",
+    "medicareAllowedAmount": 371666,
+    "billedEncounters": 4708,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1989362654",
+    "orgName": "Skyline PT Services",
+    "state": "CO",
+    "medicareAllowedAmount": 510547,
+    "billedEncounters": 3882,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1344745119",
+    "orgName": "Autumn Rehab Associates",
+    "state": "AZ",
+    "medicareAllowedAmount": 4303931,
+    "billedEncounters": 44550,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1356034790",
+    "orgName": "BlueLane Sports PT",
+    "state": "FL",
+    "medicareAllowedAmount": 580714,
+    "billedEncounters": 6908,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1369091671",
+    "orgName": "Firstline Physical Medicine",
+    "state": "OH",
+    "medicareAllowedAmount": 356238,
+    "billedEncounters": 3791,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1388626110",
+    "orgName": "Emerald PT Collective",
+    "state": "TX",
+    "medicareAllowedAmount": 3986148,
+    "billedEncounters": 37523,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1375762897",
+    "orgName": "Trident Outpatient Rehab",
+    "state": "PA",
+    "medicareAllowedAmount": 1492606,
+    "billedEncounters": 14266,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1855444514",
+    "orgName": "Vanguard Physio Partners",
+    "state": "TX",
+    "medicareAllowedAmount": 750091,
+    "billedEncounters": 9288,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1418427428",
+    "orgName": "Magnolia Neighborhood PT",
+    "state": "NC",
+    "medicareAllowedAmount": 3495634,
+    "billedEncounters": 42898,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1791682135",
+    "orgName": "Crestview PT Services",
+    "state": "NC",
+    "medicareAllowedAmount": 4113389,
+    "billedEncounters": 38112,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1087367553",
+    "orgName": "Premier Musculoskeletal Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 784834,
+    "billedEncounters": 7140,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1744946099",
+    "orgName": "Lonestar Rehab Solutions",
+    "state": "FL",
+    "medicareAllowedAmount": 612154,
+    "billedEncounters": 6548,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1064970133",
+    "orgName": "Seabreeze Integrated PT",
+    "state": "TN",
+    "medicareAllowedAmount": 265147,
+    "billedEncounters": 2273,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1574717241",
+    "orgName": "NorthStar Therapy Group",
+    "state": "TX",
+    "medicareAllowedAmount": 64819,
+    "billedEncounters": 744,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1638626796",
+    "orgName": "Lakeview PT Collective",
+    "state": "TN",
+    "medicareAllowedAmount": 1445916,
+    "billedEncounters": 16619,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1794014175",
+    "orgName": "Stanton Holdings Rehabilitation",
+    "state": "NC",
+    "medicareAllowedAmount": 572298,
+    "billedEncounters": 6449,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1017221304",
+    "orgName": "Sagebrush Elite Rehab",
+    "state": "TX",
+    "medicareAllowedAmount": 522059,
+    "billedEncounters": 5315,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1436491636",
+    "orgName": "Lakeview Rehabilitation Center",
+    "state": "NC",
+    "medicareAllowedAmount": 2355476,
+    "billedEncounters": 17832,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1309025452",
+    "orgName": "Valleyview Physio Works",
+    "state": "NC",
+    "medicareAllowedAmount": 279020,
+    "billedEncounters": 2333,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1778235481",
+    "orgName": "Harbor PT & Sports Performance",
+    "state": "PA",
+    "medicareAllowedAmount": 2633565,
+    "billedEncounters": 28143,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1910128435",
+    "orgName": "Sagebrush Family Physical Therapy",
+    "state": "CA",
+    "medicareAllowedAmount": 658701,
+    "billedEncounters": 5793,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1258520331",
+    "orgName": "Everglade Movement Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 649353,
+    "billedEncounters": 7049,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1170705797",
+    "orgName": "Ashwood Rehab Group",
+    "state": "PA",
+    "medicareAllowedAmount": 756854,
+    "billedEncounters": 7264,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1626920893",
+    "orgName": "Tarheel Neighborhood PT",
+    "state": "GA",
+    "medicareAllowedAmount": 773739,
+    "billedEncounters": 5506,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1690906112",
+    "orgName": "Tarheel Family Physical Therapy",
+    "state": "GA",
+    "medicareAllowedAmount": 1424648,
+    "billedEncounters": 16589,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1534365233",
+    "orgName": "Copperfield Physical Therapy Group",
+    "state": "PA",
+    "medicareAllowedAmount": 3949420,
+    "billedEncounters": 39819,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1198816170",
+    "orgName": "Lakeview Rehab Group",
+    "state": "AZ",
+    "medicareAllowedAmount": 3625025,
+    "billedEncounters": 47100,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1698696277",
+    "orgName": "Hillview Sports & Spine PT",
+    "state": "CA",
+    "medicareAllowedAmount": 322182,
+    "billedEncounters": 2493,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1530997930",
+    "orgName": "Paramount PT Alliance",
+    "state": "PA",
+    "medicareAllowedAmount": 446147,
+    "billedEncounters": 3445,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1254792806",
+    "orgName": "Lakeview Rehab Clinic",
+    "state": "FL",
+    "medicareAllowedAmount": 387803,
+    "billedEncounters": 5039,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1569474008",
+    "orgName": "CedarSpine Wellness",
+    "state": "PA",
+    "medicareAllowedAmount": 953157,
+    "billedEncounters": 7394,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1886212770",
+    "orgName": "Anchor Advanced PT",
+    "state": "PA",
+    "medicareAllowedAmount": 356002,
+    "billedEncounters": 4316,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1872076900",
+    "orgName": "Canyon Dynamic PT",
+    "state": "TX",
+    "medicareAllowedAmount": 1440618,
+    "billedEncounters": 10966,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1794171032",
+    "orgName": "Firstline Integrated PT",
+    "state": "TN",
+    "medicareAllowedAmount": 791214,
+    "billedEncounters": 9734,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1402539579",
+    "orgName": "Bedrock Orthopedic PT",
+    "state": "GA",
+    "medicareAllowedAmount": 3797633,
+    "billedEncounters": 41129,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1101005961",
+    "orgName": "BlueRidge Musculoskeletal Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 683380,
+    "billedEncounters": 7406,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1803845961",
+    "orgName": "Crossroads Neighborhood PT",
+    "state": "PA",
+    "medicareAllowedAmount": 3366493,
+    "billedEncounters": 31594,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1342575623",
+    "orgName": "Greenlake Physical Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 812430,
+    "billedEncounters": 8846,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1642859805",
+    "orgName": "Horizon Therapy Center",
+    "state": "FL",
+    "medicareAllowedAmount": 1734525,
+    "billedEncounters": 12404,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1644240712",
+    "orgName": "Westpark Therapy Studio",
+    "state": "CO",
+    "medicareAllowedAmount": 859061,
+    "billedEncounters": 8323,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1751792784",
+    "orgName": "Alliance PT Associates",
+    "state": "PA",
+    "medicareAllowedAmount": 80228,
+    "billedEncounters": 817,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1481287523",
+    "orgName": "Fairview Rehab Solutions",
+    "state": "NC",
+    "medicareAllowedAmount": 111293,
+    "billedEncounters": 1284,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1443767692",
+    "orgName": "Palmetto Motion Health",
+    "state": "CA",
+    "medicareAllowedAmount": 615183,
+    "billedEncounters": 7441,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1244003162",
+    "orgName": "PrimeCare Rehab Clinic",
+    "state": "FL",
+    "medicareAllowedAmount": 712944,
+    "billedEncounters": 6868,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1825007818",
+    "orgName": "Trailhead Musculoskeletal Therapy",
+    "state": "GA",
+    "medicareAllowedAmount": 205834,
+    "billedEncounters": 2489,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1409385890",
+    "orgName": "Compass Family Physical Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 3803367,
+    "billedEncounters": 35579,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1156530581",
+    "orgName": "Compass Physio Partners",
+    "state": "AZ",
+    "medicareAllowedAmount": 1237603,
+    "billedEncounters": 10177,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1199396072",
+    "orgName": "Rising Peak Performance PT",
+    "state": "OH",
+    "medicareAllowedAmount": 583921,
+    "billedEncounters": 6301,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1019985152",
+    "orgName": "Coastal Therapy Group",
+    "state": "FL",
+    "medicareAllowedAmount": 696092,
+    "billedEncounters": 7364,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1761342975",
+    "orgName": "Valleyview Orthopedic PT",
+    "state": "OH",
+    "medicareAllowedAmount": 549191,
+    "billedEncounters": 6526,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1556351586",
+    "orgName": "Copperfield Motion Clinic",
+    "state": "TX",
+    "medicareAllowedAmount": 3572419,
+    "billedEncounters": 28084,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1358815878",
+    "orgName": "Horizon Orthopedic PT",
+    "state": "FL",
+    "medicareAllowedAmount": 1573888,
+    "billedEncounters": 19509,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1012928659",
+    "orgName": "Beacon Outpatient Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 694621,
+    "billedEncounters": 8933,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1098192141",
+    "orgName": "Bedrock Physical Therapy",
+    "state": "CO",
+    "medicareAllowedAmount": 730420,
+    "billedEncounters": 6695,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1487559743",
+    "orgName": "Ironclad Rehab Works",
+    "state": "PA",
+    "medicareAllowedAmount": 3780864,
+    "billedEncounters": 39687,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1172345865",
+    "orgName": "Sierra Physical Medicine",
+    "state": "AZ",
+    "medicareAllowedAmount": 96101,
+    "billedEncounters": 741,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1513734926",
+    "orgName": "Fairview Physical Therapy Group",
+    "state": "TX",
+    "medicareAllowedAmount": 1316960,
+    "billedEncounters": 12267,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1328726300",
+    "orgName": "Winterset PT Alliance",
+    "state": "TX",
+    "medicareAllowedAmount": 1726425,
+    "billedEncounters": 15202,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1544998322",
+    "orgName": "Sunset Spine & Sports PT",
+    "state": "NC",
+    "medicareAllowedAmount": 200983,
+    "billedEncounters": 2529,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1524294795",
+    "orgName": "Crystal Peak Performance PT",
+    "state": "TX",
+    "medicareAllowedAmount": 1397819,
+    "billedEncounters": 11113,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1312289690",
+    "orgName": "Canyon Rehab Clinic",
+    "state": "OH",
+    "medicareAllowedAmount": 1082756,
+    "billedEncounters": 7681,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1517424636",
+    "orgName": "Dune Motion Health",
+    "state": "AZ",
+    "medicareAllowedAmount": 1571807,
+    "billedEncounters": 20234,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1642268868",
+    "orgName": "PineRidge Rehab Associates",
+    "state": "TN",
+    "medicareAllowedAmount": 2457530,
+    "billedEncounters": 26110,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1074806072",
+    "orgName": "Copperline Physical Therapy",
+    "state": "AZ",
+    "medicareAllowedAmount": 653396,
+    "billedEncounters": 6387,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1416664478",
+    "orgName": "Vanguard Integrated PT",
+    "state": "PA",
+    "medicareAllowedAmount": 1092866,
+    "billedEncounters": 13179,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1037924181",
+    "orgName": "Harbor Spine & Sports PT",
+    "state": "NC",
+    "medicareAllowedAmount": 647993,
+    "billedEncounters": 6207,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1005859671",
+    "orgName": "Willow Physio Collective",
+    "state": "AZ",
+    "medicareAllowedAmount": 1571066,
+    "billedEncounters": 17123,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1840058863",
+    "orgName": "MedForce Rehab",
+    "state": "CA",
+    "medicareAllowedAmount": 666126,
+    "billedEncounters": 5284,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1769633764",
+    "orgName": "EastRiver Physical Medicine",
+    "state": "CA",
+    "medicareAllowedAmount": 747025,
+    "billedEncounters": 9605,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1523577002",
+    "orgName": "Beacon Family Physical Therapy",
+    "state": "PA",
+    "medicareAllowedAmount": 879739,
+    "billedEncounters": 6735,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1196233450",
+    "orgName": "Parkway PT Services",
+    "state": "CA",
+    "medicareAllowedAmount": 1652571,
+    "billedEncounters": 16362,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1969029143",
+    "orgName": "Copperfield Movement Clinic",
+    "state": "CO",
+    "medicareAllowedAmount": 128491,
+    "billedEncounters": 1399,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1277194827",
+    "orgName": "Harbor Rehab Group",
+    "state": "GA",
+    "medicareAllowedAmount": 1098665,
+    "billedEncounters": 8545,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1204202304",
+    "orgName": "Mesa Motion & Rehab",
+    "state": "PA",
+    "medicareAllowedAmount": 274443,
+    "billedEncounters": 3232,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1491763191",
+    "orgName": "Sagebrush Movement Clinic",
+    "state": "FL",
+    "medicareAllowedAmount": 410594,
+    "billedEncounters": 4494,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1210352489",
+    "orgName": "Crossroads Movement Clinic",
+    "state": "AZ",
+    "medicareAllowedAmount": 1653558,
+    "billedEncounters": 13118,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1915993040",
+    "orgName": "Cornerstone Dynamic PT",
+    "state": "OH",
+    "medicareAllowedAmount": 553342,
+    "billedEncounters": 7130,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1564460617",
+    "orgName": "Rising Therapy Center",
+    "state": "PA",
+    "medicareAllowedAmount": 390493,
+    "billedEncounters": 2774,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1960410423",
+    "orgName": "Volunteer Movement Clinic",
+    "state": "TN",
+    "medicareAllowedAmount": 113431,
+    "billedEncounters": 923,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1262960943",
+    "orgName": "Highland Motion Health",
+    "state": "TN",
+    "medicareAllowedAmount": 1689083,
+    "billedEncounters": 16075,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1728844196",
+    "orgName": "Patriot Sports & Spine PT",
+    "state": "FL",
+    "medicareAllowedAmount": 2222076,
+    "billedEncounters": 17286,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1711937088",
+    "orgName": "Lonestar Rehabilitation Services",
+    "state": "OH",
+    "medicareAllowedAmount": 844778,
+    "billedEncounters": 6496,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1430150958",
+    "orgName": "Premier Rehabilitation Center",
+    "state": "PA",
+    "medicareAllowedAmount": 3365531,
+    "billedEncounters": 35197,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1270451874",
+    "orgName": "Crystal Therapy Studio",
+    "state": "TN",
+    "medicareAllowedAmount": 1450845,
+    "billedEncounters": 18325,
+    "fiscalYear": 2024
+  },
+  {
+    "npi": "1126558131",
+    "orgName": "Skyline PT Alliance",
+    "state": "TX",
+    "medicareAllowedAmount": 968701,
+    "billedEncounters": 12539,
+    "fiscalYear": 2024
+  }
+]

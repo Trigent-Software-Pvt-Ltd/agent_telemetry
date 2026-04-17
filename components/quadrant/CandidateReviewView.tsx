@@ -1,18 +1,23 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { toast } from 'sonner'
 import { setCandidateFit } from '@/lib/quadrant-mock'
 import type { SourcingCandidate, SourcingRun, FitState } from '@/lib/quadrant-mock'
 import { X, CheckCircle2, XCircle, HelpCircle, ExternalLink, AlertTriangle } from 'lucide-react'
+import LiveBadge from './LiveBadge'
 
 type Filter = 'all' | 'unreviewed' | 'good_fit' | 'poor_fit' | 'unclear'
 
 interface Props {
   initialCandidates: SourcingCandidate[]
   runs: SourcingRun[]
+  /** 'live' when labels should round-trip through the live backend. Default 'mock'. */
+  source?: 'mock' | 'live'
 }
 
-export default function CandidateReviewView({ initialCandidates, runs }: Props) {
+export default function CandidateReviewView({ initialCandidates, runs, source = 'mock' }: Props) {
+  const isLive = source === 'live'
   const [candidates, setCandidates] = useState(initialCandidates)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [filter, setFilter] = useState<Filter>('all')
@@ -39,10 +44,48 @@ export default function CandidateReviewView({ initialCandidates, runs }: Props) 
   const unclear = candidates.filter(c => c.fitState === 'unclear').length
 
   function label(id: string, state: FitState) {
-    setCandidateFit(id, state)
+    // Optimistic update — snapshot previous state for rollback if the live
+    // POST fails.
+    const snapshot = candidates
     setCandidates(prev =>
-      prev.map(c => (c.id === id ? { ...c, fitState: state, reviewedBy: 'Sam Stillman', reviewedAt: new Date().toISOString() } : c)),
+      prev.map(c =>
+        c.id === id
+          ? { ...c, fitState: state, reviewedBy: 'Sam Stillman', reviewedAt: new Date().toISOString() }
+          : c,
+      ),
     )
+
+    if (!isLive) {
+      setCandidateFit(id, state)
+      return
+    }
+
+    // Live path: POST to the API. Reconcile on response; roll back on failure.
+    fetch(`/api/sourcing/candidates/${encodeURIComponent(id)}/label`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ fitState: state, reviewer: 'Sam Stillman' }),
+    })
+      .then(async res => {
+        if (!res.ok) {
+          let body: { error?: string; message?: string } = {}
+          try {
+            body = (await res.json()) as typeof body
+          } catch {
+            // non-JSON
+          }
+          throw new Error(body.message || body.error || `HTTP ${res.status}`)
+        }
+        const data = (await res.json()) as { candidate?: SourcingCandidate }
+        if (data.candidate) {
+          setCandidates(prev => prev.map(c => (c.id === id ? data.candidate! : c)))
+        }
+      })
+      .catch(err => {
+        console.warn('[CandidateReview] label POST failed:', err)
+        toast.error(`Couldn't save label: ${err instanceof Error ? err.message : 'unknown error'}`)
+        setCandidates(snapshot)
+      })
   }
 
   return (
@@ -54,9 +97,12 @@ export default function CandidateReviewView({ initialCandidates, runs }: Props) 
             <div className="text-xs uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
               Sourcing · Day-5 working session
             </div>
-            <h1 className="text-2xl font-bold mt-1" style={{ fontFamily: 'var(--font-sora)' }}>
-              Candidate Review
-            </h1>
+            <div className="flex items-center gap-2.5 mt-1">
+              <h1 className="text-2xl font-bold" style={{ fontFamily: 'var(--font-sora)' }}>
+                Candidate Review
+              </h1>
+              {isLive && <LiveBadge />}
+            </div>
             <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
               Outpatient Physical Therapy (Tier 1) — {candidates.length} candidates surfaced from last manager run.
               Click a row to inspect evidence and label ground truth.

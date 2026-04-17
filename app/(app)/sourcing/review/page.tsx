@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import CandidateReviewView from '@/components/quadrant/CandidateReviewView'
-import { getCandidates, SOURCING_RUNS } from '@/lib/quadrant-mock'
+import { getLiveSourcingData } from '@/lib/sourcing-data'
 
 export const metadata: Metadata = { title: 'Candidate Review' }
 
-export default function Page() {
-  return <CandidateReviewView initialCandidates={getCandidates()} runs={SOURCING_RUNS} />
+export default async function Page() {
+  const { source, runs, candidates } = await getLiveSourcingData()
+  return <CandidateReviewView initialCandidates={candidates} runs={runs} source={source} />
 }
