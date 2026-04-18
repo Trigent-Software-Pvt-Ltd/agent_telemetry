@@ -8,8 +8,10 @@
  *   AWS_SECRET_ACCESS_KEY       AWS secret access key (server-side only)
  *   BEDROCK_MODEL_ID            Bedrock Claude model id / inference profile,
  *                               default 'us.anthropic.claude-haiku-4-5-20251001-v1:0'
- *   SUPABASE_URL                Supabase Postgres base URL (e.g. https://arkosdb.trigent.com)
- *   SUPABASE_SERVICE_ROLE_KEY   Supabase service-role JWT (server-side only)
+ *   QUADRANT_DB_URL             Postgres connection string for the dedicated
+ *                               quadrant_app role against the `quadrant`
+ *                               schema at arkosdb.trigent.com.
+ *                               Example: postgres://quadrant_app:<pw>@host:5432/postgres?sslmode=require
  *   MAX_RUN_COST_USD            Per-run cost cap, default '2.00'
  *
  * Contract:
@@ -50,8 +52,7 @@ export function isProvisioned(): string[] {
   const required: Array<[string, string | undefined]> = [
     ['AWS_ACCESS_KEY_ID', process.env.AWS_ACCESS_KEY_ID],
     ['AWS_SECRET_ACCESS_KEY', process.env.AWS_SECRET_ACCESS_KEY],
-    ['SUPABASE_URL', process.env.SUPABASE_URL],
-    ['SUPABASE_SERVICE_ROLE_KEY', process.env.SUPABASE_SERVICE_ROLE_KEY],
+    ['QUADRANT_DB_URL', process.env.QUADRANT_DB_URL],
   ]
   return required.filter(([, v]) => !v || v.trim() === '').map(([k]) => k)
 }
