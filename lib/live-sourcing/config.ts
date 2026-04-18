@@ -3,10 +3,13 @@
  *
  * Required environment variables (document only; do NOT commit values):
  *   DATA_SOURCE                 'mock' (default) or 'live-sourcing'
- *   AI_GATEWAY_API_KEY          Vercel AI Gateway API token (server-side only)
- *   CLAUDE_MODEL                Gateway model string, default 'anthropic/claude-sonnet-4-5'
- *   UPSTASH_REDIS_REST_URL      Upstash Redis REST endpoint
- *   UPSTASH_REDIS_REST_TOKEN    Upstash Redis REST token
+ *   AWS_REGION                  AWS region for Bedrock (default 'us-east-1')
+ *   AWS_ACCESS_KEY_ID           AWS access key id (server-side only)
+ *   AWS_SECRET_ACCESS_KEY       AWS secret access key (server-side only)
+ *   BEDROCK_MODEL_ID            Bedrock Claude model id / inference profile,
+ *                               default 'us.anthropic.claude-haiku-4-5-20251001-v1:0'
+ *   SUPABASE_URL                Supabase Postgres base URL (e.g. https://arkosdb.trigent.com)
+ *   SUPABASE_SERVICE_ROLE_KEY   Supabase service-role JWT (server-side only)
  *   MAX_RUN_COST_USD            Per-run cost cap, default '2.00'
  *
  * Contract:
@@ -17,7 +20,7 @@
  *     non-empty so the UI can gracefully fall back to mock.
  */
 
-export const DEFAULT_CLAUDE_MODEL = 'anthropic/claude-sonnet-4-5'
+export const DEFAULT_BEDROCK_MODEL_ID = 'us.anthropic.claude-haiku-4-5-20251001-v1:0'
 export const DEFAULT_MAX_RUN_COST_USD = 2.0
 
 /** True when the user has opted into live sourcing. Defaults to false (mock). */
@@ -25,9 +28,9 @@ export function isLive(): boolean {
   return process.env.DATA_SOURCE === 'live-sourcing'
 }
 
-/** Resolved model id for generateText / generateObject calls via AI Gateway. */
-export function getClaudeModel(): string {
-  return process.env.CLAUDE_MODEL?.trim() || DEFAULT_CLAUDE_MODEL
+/** Resolved Bedrock model id (or cross-region inference profile) for InvokeModel. */
+export function getBedrockModelId(): string {
+  return process.env.BEDROCK_MODEL_ID?.trim() || DEFAULT_BEDROCK_MODEL_ID
 }
 
 /** Hard per-run USD cap parsed from MAX_RUN_COST_USD. */
@@ -45,9 +48,10 @@ export function getMaxRunCostUsd(): number {
 export function isProvisioned(): string[] {
   if (!isLive()) return []
   const required: Array<[string, string | undefined]> = [
-    ['AI_GATEWAY_API_KEY', process.env.AI_GATEWAY_API_KEY],
-    ['UPSTASH_REDIS_REST_URL', process.env.UPSTASH_REDIS_REST_URL],
-    ['UPSTASH_REDIS_REST_TOKEN', process.env.UPSTASH_REDIS_REST_TOKEN],
+    ['AWS_ACCESS_KEY_ID', process.env.AWS_ACCESS_KEY_ID],
+    ['AWS_SECRET_ACCESS_KEY', process.env.AWS_SECRET_ACCESS_KEY],
+    ['SUPABASE_URL', process.env.SUPABASE_URL],
+    ['SUPABASE_SERVICE_ROLE_KEY', process.env.SUPABASE_SERVICE_ROLE_KEY],
   ]
   return required.filter(([, v]) => !v || v.trim() === '').map(([k]) => k)
 }

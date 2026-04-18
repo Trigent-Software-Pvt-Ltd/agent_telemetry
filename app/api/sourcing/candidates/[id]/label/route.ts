@@ -10,7 +10,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { isLive, isProvisioned } from '@/lib/live-sourcing/config'
-import { addLabelToRun } from '@/lib/live-sourcing/redis'
+import { addLabelToRun } from '@/lib/live-sourcing/db'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'

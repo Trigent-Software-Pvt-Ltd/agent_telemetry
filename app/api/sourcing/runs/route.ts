@@ -11,7 +11,7 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { isLive, isProvisioned } from '@/lib/live-sourcing/config'
 import { MaxCostExceededError, runSourcingManager } from '@/lib/live-sourcing/manager'
-import { getLatestRunId, getRun } from '@/lib/live-sourcing/redis'
+import { getLatestRunId, getRun } from '@/lib/live-sourcing/db'
 
 export const runtime = 'nodejs'
 // Long-running run — avoid static optimisation of these handlers.

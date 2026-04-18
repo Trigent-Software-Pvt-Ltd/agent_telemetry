@@ -35,6 +35,7 @@ yarn-error.log*
 
 # credentials
 credentials.csv
+arkosdb_credentials.md
 
 # vercel
 .vercel

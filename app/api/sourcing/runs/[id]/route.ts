@@ -4,7 +4,7 @@
 
 import { NextResponse } from 'next/server'
 import { isLive, isProvisioned } from '@/lib/live-sourcing/config'
-import { getRun } from '@/lib/live-sourcing/redis'
+import { getRun } from '@/lib/live-sourcing/db'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'

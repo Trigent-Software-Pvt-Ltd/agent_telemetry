@@ -28,7 +28,7 @@ import { classifyCandidate } from './classifier'
 import { buildEvidence, meanConfidence } from './evidence'
 import { estimateByNpi } from './estimator'
 import { findCandidates } from './finder'
-import { setRun } from './redis'
+import { setRun } from './db'
 import { sumMetrics } from './telemetry'
 import type {
   ClassificationResult,

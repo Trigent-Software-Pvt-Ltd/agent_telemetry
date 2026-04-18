@@ -4,16 +4,15 @@
  * Discipline: rules in code, reasoning in the model.
  *   - Deterministic rules decide the obvious cases (NPI-1 solo, NPI-2 with
  *     hospital/system/clinic-network keywords).
- *   - The LLM (`generateObject`) is only invoked for the ambiguous middle
- *     where keyword matching is insufficient.
+ *   - The LLM (Bedrock Claude via `invokeClaude`) is only invoked for the
+ *     ambiguous middle where keyword matching is insufficient.
  *
  * Returns a `ClassificationResult` plus the per-call `SpecialistMetric` when
  * the LLM was invoked (zero-valued metric when pure rules fired).
  */
 
-import { z } from 'zod'
 import type { ClassificationResult, FinderCandidate, SpecialistMetric } from './types'
-import { runObject } from './telemetry'
+import { invokeClaude } from './telemetry'
 
 const CAPTIVE_KEYWORDS = [
   'hospital',
@@ -33,19 +32,31 @@ const CAPTIVE_KEYWORDS = [
  */
 const AMBIGUOUS_KEYWORDS = ['children', 'regional', 'memorial', 'baptist', 'mercy', 'saint ', 'st.']
 
-const ClassifierSchema = z.object({
-  isThirdParty: z.boolean(),
-  rationale: z.string().min(1).max(400),
-  confidence: z.number().min(0).max(1),
-})
-
-type LlmClassification = z.infer<typeof ClassifierSchema>
-
 const ZERO_METRIC: SpecialistMetric = {
   latencyMs: 0,
   tokensIn: 0,
   tokensOut: 0,
   costUsd: 0,
+}
+
+/**
+ * Tolerant JSON parser. Strips code fences, then falls back to extracting the
+ * first `{...}` block if the raw text contains prose around the JSON.
+ */
+function parseJsonStrict<T>(raw: string): T | null {
+  const stripped = raw.trim().replace(/^```(?:json)?/, '').replace(/```$/, '').trim()
+  try {
+    const obj = JSON.parse(stripped)
+    return obj as T
+  } catch {
+    const match = stripped.match(/\{[\s\S]*\}/)
+    if (!match) return null
+    try {
+      return JSON.parse(match[0]) as T
+    } catch {
+      return null
+    }
+  }
 }
 
 function hasCaptiveKeyword(name: string): boolean {
@@ -56,6 +67,15 @@ function hasCaptiveKeyword(name: string): boolean {
 function hasAmbiguousKeyword(name: string): boolean {
   const lower = name.toLowerCase()
   return AMBIGUOUS_KEYWORDS.some(k => lower.includes(k))
+}
+
+/** Clamp a number into [0, 1]. NaN / non-finite -> 0.5 (mid-confidence). */
+function clampConfidence(n: unknown): number {
+  const x = typeof n === 'number' ? n : Number.parseFloat(String(n))
+  if (!Number.isFinite(x)) return 0.5
+  if (x < 0) return 0
+  if (x > 1) return 1
+  return x
 }
 
 /**
@@ -107,37 +127,48 @@ export async function classifyCandidate(
     }
   }
 
-  // Ambiguous fallback — hand to the LLM.
-  const prompt = [
-    'Classify whether this healthcare provider is a THIRD-PARTY service business',
-    '(i.e. independent, sellable entity) or a CAPTIVE provider (hospital-owned,',
-    'health-system-owned, or employed by a larger medical institution).',
-    '',
-    `Organisation: ${candidate.orgName}`,
-    `NPI: ${candidate.npi}`,
-    `Enumeration type: ${candidate.enumerationType}`,
-    `Taxonomy: ${candidate.taxonomyDescription} (${candidate.taxonomyCode})`,
-    `Location: ${candidate.city}, ${candidate.state}`,
-    '',
-    'Return a boolean verdict, a short rationale, and a confidence in [0,1].',
-  ].join('\n')
+  // Ambiguous fallback — hand to the LLM via Bedrock.
+  const userPrompt = `Classify the following organization: is it a third-party service provider (vs a captive practice, hospital subsidiary, or integrated health system)?
 
-  const { object, metric } = await runObject<LlmClassification>({
+NPI: ${candidate.npi}
+Organization name: ${candidate.orgName}
+Taxonomy: ${candidate.taxonomyDescription} (${candidate.taxonomyCode})
+State: ${candidate.state}
+City: ${candidate.city ?? 'unknown'}
+
+Respond with strict JSON matching this exact shape:
+{"isThirdParty": boolean, "rationale": "<<one short sentence>>", "confidence": <number between 0 and 1>}`
+
+  const { text, metric } = await invokeClaude({
     system:
-      'You are a healthcare M&A research analyst. Be concise and conservative. ' +
-      'If uncertain, err toward isThirdParty=false with lower confidence.',
-    prompt,
-    schema: ClassifierSchema,
-    schemaName: 'BusinessTypeClassification',
-    temperature: 0.1,
-    maxOutputTokens: 300,
+      'You classify healthcare businesses for private-equity sourcing. Output strict JSON only, no prose.',
+    userPrompt,
+    maxTokens: 200,
+    temperature: 0,
   })
+
+  const parsed = parseJsonStrict<ClassificationResult>(text)
+
+  if (!parsed) {
+    return {
+      result: {
+        isThirdParty: true, // lean include; human reviewer decides
+        confidence: 0.4,
+        rationale: 'LLM output not parseable; defaulting to include for human review.',
+        usedLlm: true,
+      },
+      metric,
+    }
+  }
 
   return {
     result: {
-      isThirdParty: object.isThirdParty,
-      confidence: object.confidence,
-      rationale: object.rationale,
+      isThirdParty: Boolean(parsed.isThirdParty),
+      confidence: clampConfidence(parsed.confidence),
+      rationale:
+        typeof parsed.rationale === 'string' && parsed.rationale.trim() !== ''
+          ? parsed.rationale
+          : 'No rationale provided by model.',
       usedLlm: true,
     },
     metric,

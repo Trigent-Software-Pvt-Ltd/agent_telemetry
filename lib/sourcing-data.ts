@@ -39,15 +39,15 @@ function mockData(): SourcingData {
 }
 
 /**
- * Fetch live Sourcing Agent data from the backend (Upstash-backed store).
- * The backend agent exposes `getLatestRun()` from `lib/live-sourcing/redis`.
+ * Fetch live Sourcing Agent data from the backend (Supabase-backed store).
+ * The backend agent exposes `getLatestRun()` from `lib/live-sourcing/db`.
  * We call it via dynamic import so this module still builds if that file is
  * absent or mid-refactor — integration will resolve any type drift.
  */
 async function fetchLiveLatest(): Promise<{ run: SourcingRun; candidates: SourcingCandidate[] } | null> {
   try {
     // Dynamic import — backend agent owns this module; it may not exist yet.
-    const mod: unknown = await import('@/lib/live-sourcing/redis').catch(() => null)
+    const mod: unknown = await import('@/lib/live-sourcing/db').catch(() => null)
     if (!mod || typeof mod !== 'object') return null
     const getLatestRun = (mod as { getLatestRun?: unknown }).getLatestRun
     if (typeof getLatestRun !== 'function') return null
