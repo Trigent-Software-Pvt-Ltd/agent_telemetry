@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useTransition } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { toast } from 'sonner'
 import { Loader2, Play } from 'lucide-react'
 import clsx from 'clsx'
@@ -17,9 +16,7 @@ interface Props {
  * - Any other error: surface the server message (or a generic one).
  */
 export default function RunNowButton({ className }: Props) {
-  const router = useRouter()
   const [busy, setBusy] = useState(false)
-  const [, startTransition] = useTransition()
 
   const disabled = busy
 
@@ -30,12 +27,15 @@ export default function RunNowButton({ className }: Props) {
       const res = await fetch('/api/sourcing/runs', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({}),
+        body: JSON.stringify({ limit: 10 }),
       })
 
       if (res.ok) {
-        toast.success('Sourcing run started — refreshing trace.')
-        startTransition(() => router.refresh())
+        toast.success('Sourcing run complete — reloading.')
+        // Full reload is more reliable than router.refresh() here —
+        // the POST response can be large enough that an RSC refresh
+        // races with the streaming payload.
+        setTimeout(() => window.location.reload(), 400)
         return
       }
 

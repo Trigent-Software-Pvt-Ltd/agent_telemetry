@@ -16,6 +16,9 @@ import { getLatestRunId, getRun } from '@/lib/live-sourcing/db'
 export const runtime = 'nodejs'
 // Long-running run — avoid static optimisation of these handlers.
 export const dynamic = 'force-dynamic'
+// NPI Registry + classifier + estimator + DB write can run up to ~30s
+// on a cold container. Explicitly raise the function timeout.
+export const maxDuration = 60
 
 const RunRequestSchema = z.object({
   taxonomy: z.string().trim().min(1).optional(),
