@@ -9,6 +9,8 @@ import {
 import { getLiveSourcingData } from '@/lib/sourcing-data'
 
 export const metadata: Metadata = { title: 'Sourcing Agent' }
+// Server-rendered on demand — the live adapter may hit the DB per request.
+export const dynamic = 'force-dynamic'
 
 export default async function Page() {
   const agent = QUADRANT_AGENTS.find(a => a.id === 'sourcing-agent')!
