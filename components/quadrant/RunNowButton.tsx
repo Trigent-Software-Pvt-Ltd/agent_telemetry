@@ -27,7 +27,10 @@ export default function RunNowButton({ className }: Props) {
       const res = await fetch('/api/sourcing/runs', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ limit: 10 }),
+        body: JSON.stringify({
+          limit: 50,
+          states: ['TX', 'FL', 'CA', 'NC', 'AZ', 'GA', 'TN', 'PA', 'OH', 'CO'],
+        }),
       })
 
       if (res.ok) {
