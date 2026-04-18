@@ -12,6 +12,7 @@ VIPPlay Agent Telemetry — a Next.js 16 frontend platform for monitoring agenti
 - `npm run build` — Production build
 - `npm run start` — Serve production build
 - `npm run lint` — ESLint (flat config, core-web-vitals + typescript presets)
+- `npm run smoke-live` — Validate live-mode prerequisites (env, DB connectivity, Bedrock reachability)
 
 ## Tech Stack
 
@@ -111,3 +112,16 @@ This version has breaking changes from training data. **Read `node_modules/next/
 - CSS custom properties for all colors — defined in both `:root` and `@theme inline` block for Tailwind
 - `@media print` styles for PDF export (hides nav, full-width content)
 - Custom `.card` class, `.row-hover`, `.animate-fade-up`, status dot pulse animations
+
+## Live Sourcing Slice (feature-flagged)
+
+The Sourcing Agent and Candidate Review Dashboard can run genuinely live against real NPI Registry + AWS Bedrock + a dedicated Postgres schema at arkosdb — everything else in the app stays mock.
+
+- **Flag:** `DATA_SOURCE=live-sourcing` (default `mock`)
+- **Required env for live:** `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `QUADRANT_DB_URL`
+- **Optional env:** `BEDROCK_MODEL_ID` (default `us.anthropic.claude-haiku-4-5-20251001-v1:0`), `AWS_REGION` (default `us-east-1`), `MAX_RUN_COST_USD` (default `2.00`)
+- **Pipeline:** Finder (NPI Registry) → Classifier (rule-first + Bedrock fallback for ambiguous) → Estimator (bundled CMS PT utilization data + 32% Medicare-share extrapolation) → Evidence → Persist to `quadrant.sourcing_runs` / `quadrant.sourcing_candidates` via a dedicated `quadrant_app` Postgres role (direct `postgres.js`, no Supabase JS, no service_role JWT)
+- **Module layout:** `lib/live-sourcing/` (config, db, telemetry, npi-client, cms-data, finder, classifier, estimator, evidence, manager, types)
+- **Runbook:** `docs/sourcing_live_runbook.md`
+- **Smoke test:** `npm run smoke-live` / `npm run smoke-live -- --full`
+- **Mock fallback:** if `DATA_SOURCE=mock` or any required env is missing, API returns 503 and UI renders seeded data — demo never breaks.

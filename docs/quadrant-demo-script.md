@@ -33,6 +33,8 @@ Sidebar → **Sourcing Agent**.
 
 Route: `/agents/sourcing-agent`
 
+> **If `DATA_SOURCE=live-sourcing`** — header shows a green **LIVE** pill, and a **Run now** button appears. Clicking it triggers a real NPI Registry → Bedrock Claude classifier → CMS estimator pipeline, with cost and tokens surfaced per specialist in the trace. The run persists to `quadrant.sourcing_runs` at arkosdb.
+
 - Header: Claude-only, multi-specialist manager, pilot status.
 - **Specialists** — 3 tiles (Finder / Classifier / Estimator) with last-run counts, success, latency, cost.
 - **Manager trace** — single-column timeline of the selected run. Expand Step 2 (Classifier) to see 142 → 87 filtering; Step 3 (Estimator) applies Medicare %.
@@ -44,6 +46,8 @@ Click **Review surfaced candidates →** in the header.
 
 ## 4 · Candidate Review Dashboard ⭐ (3m)
 Route: `/sourcing/review`
+
+> **In live mode** — the candidate list is the latest live run's output (not the 25 seeded mocks). Clicking **Good fit / Poor fit / Unclear** POSTs to `/api/sourcing/candidates/[id]/label`, persisting to `quadrant.sourcing_candidates`. Header counter updates across refresh.
 
 - Top header: "Reviewed X of 25 · X good / X poor / X unclear". Updates live.
 - Filter pills: all / unreviewed / good_fit / poor_fit / unclear.
@@ -86,3 +90,4 @@ Route: `/reports/day5`
 2. Claude-only. Every span shows `claude-sonnet-4-20250514`.
 3. One genuinely new screen: Candidate Review. The rest is reused VIPPlay scaffolding relabeled to Quadrant vocabulary.
 4. The demo itself *becomes* the live artifact on week 1 of a real engagement — the mock values are replaced by ingest data.
+5. When `DATA_SOURCE=live-sourcing` is set, Sourcing Agent and Candidate Review are genuinely live end-to-end. Every other page stays mock. Graceful 503 fallback if any env is missing — demo never breaks.

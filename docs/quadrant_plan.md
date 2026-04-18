@@ -363,3 +363,59 @@ Adds honesty-about-gaps to the narrative (full-scope §10.1 Data Availability Ri
 - **NOT renaming "Sourcing Agent" to "Sourcing System".** Quadrant's own source doc uses "Sourcing Agent."
 - **NOT building separate RBAC / GSTI / audit / retry screens.** All four consolidated into the single Production Readiness page.
 
+---
+
+# Part C — Live Sourcing Slice (3-day commitment)
+
+**Status:** Delivered 2026-04-18
+**Summary:** Les approved 3-day path on 2026-04-15; delivery 2026-04-20. Scope: Sourcing Agent goes genuinely live (real NPI + Bedrock + persistence); everything else stays mock.
+
+---
+
+## C1. Architecture
+
+Behind a `DATA_SOURCE=live-sourcing` feature flag, the Sourcing Agent runs a real end-to-end pipeline. The **Finder** hits the public NPI Registry API (taxonomy + geography search). The **Classifier** is rule-first (NPI-1 individual records and hospital-keyword matches are classified deterministically); only ambiguous cases fall through to an LLM call via AWS Bedrock using `us.anthropic.claude-haiku-4-5-20251001-v1:0`. The **Estimator** reads a bundled `data/cms-pt-utilization.json` (400 rows of CMS Physical Therapy utilization data) and extrapolates total revenue using a default 32% Medicare-share assumption. Persistence is direct `postgres.js` writes to a dedicated `quadrant` schema accessed via a dedicated `quadrant_app` role at `arkosdb.trigent.com` — **no shared auth** with any existing Supabase service_role / anon / authenticated / supabase / postgres role, no Supabase JS client, no service_role JWT. Per-run cost is capped by `MAX_RUN_COST_USD=2.00` (default).
+
+---
+
+## C2. Key design decisions
+
+- **Rules in code, LLM only for ambiguous** — per plan §3.2. Deterministic cases never hit Bedrock.
+- **Graceful degradation** — 503 on missing env falls back to mock automatically; demo never breaks.
+- **Dedicated role + schema** — no reuse of `service_role` / `anon` / `authenticated` / `supabase` / `postgres` roles; isolated `quadrant_app` + `quadrant` schema.
+- **Claude-only framing preserved** — Haiku 4.5 for speed; Sonnet/Opus configurable via `BEDROCK_MODEL_ID`.
+
+---
+
+## C3. Files of record
+
+| Area | Location |
+|---|---|
+| Backend | `lib/live-sourcing/{config,db,telemetry,npi-client,cms-data,finder,classifier,estimator,evidence,manager,types}.ts` |
+| API routes | `app/api/sourcing/{runs,runs/[id],candidates/[id]/label}/route.ts` |
+| UI | `components/quadrant/{LiveBadge,RunNowButton}.tsx` + edits to `SourcingAgentView`, `CandidateReviewView` |
+| Adapter | `lib/sourcing-data.ts` |
+| Migration | `supabase/migrations/20260418_quadrant_schema.sql` |
+| Bundled data | `data/cms-pt-utilization.json` |
+| Runbook | `docs/sourcing_live_runbook.md` |
+| Smoke test | `scripts/smoke-live.ts` + `npm run smoke-live` |
+
+---
+
+## C4. Prerequisites for live mode
+
+See `docs/sourcing_live_runbook.md` for full setup. Three bullets:
+
+- Apply `supabase/migrations/20260418_quadrant_schema.sql` at arkosdb.
+- Open network path app → `arkosdb.trigent.com:5432` (VPC-locked; see runbook §3).
+- Flip `DATA_SOURCE=live-sourcing`.
+
+---
+
+## C5. Explicit non-goals
+
+- No Chief of Staff / Prompt Registry / Data Sources / Reports going live — all stay mock.
+- No multi-tenant / RLS / auth integration — single-app demo scope.
+- No real-time updates / SSE / streaming — synchronous POST is fine (~10–20s run).
+- No rate limiting beyond per-run cost cap.
+
