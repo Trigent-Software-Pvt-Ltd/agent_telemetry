@@ -91,6 +91,16 @@ function toIso(v: Date | string | null | undefined): string {
   return v
 }
 
+/** Defensive: jsonb columns usually come back as parsed objects, but some
+ *  postgres.js configurations or edge runtimes leave them as strings. */
+function parseJson<T>(v: unknown): T | null {
+  if (v === null || v === undefined) return null
+  if (typeof v === 'string') {
+    try { return JSON.parse(v) as T } catch { return null }
+  }
+  return v as T
+}
+
 function fromRunRow(row: RunRow): SourcingRun {
   return {
     id: row.id,
@@ -98,7 +108,7 @@ function fromRunRow(row: RunRow): SourcingRun {
     triggeredAt: toIso(row.triggered_at),
     trigger: row.trigger,
     inputBrief: row.input_brief ?? '',
-    steps: (row.steps as SourcingRun['steps']) ?? [],
+    steps: parseJson<SourcingRun['steps']>(row.steps) ?? [],
     evidenceValidatedCount: row.evidence_validated_count,
     evaluationSurfacedCount: row.evaluation_surfaced_count,
     totalCostUsd: num(row.total_cost_usd),
@@ -120,16 +130,16 @@ function fromCandRow(row: CandRow): SourcingCandidate {
     medicareRevenue: num(row.medicare_revenue),
     medicarePctAssumption: num(row.medicare_pct_assumption),
     extrapolatedTotalRevenue: num(row.extrapolated_total_revenue),
-    revenueConfidenceBand: row.revenue_confidence_band ?? [0, 0],
+    revenueConfidenceBand: parseJson<[number, number]>(row.revenue_confidence_band) ?? [0, 0],
     isThirdParty: row.is_third_party ?? false,
     revenueOver5M: row.revenue_over_5m ?? false,
     overallConfidence: num(row.overall_confidence),
-    evidence: row.evidence ?? [],
+    evidence: parseJson<SourcingCandidate['evidence']>(row.evidence) ?? [],
     fitState: row.fit_state,
     reviewedBy: row.reviewed_by ?? undefined,
     reviewedAt: row.reviewed_at ? toIso(row.reviewed_at) : undefined,
     notes: row.notes ?? undefined,
-    thesisFit: row.thesis_fit ?? {
+    thesisFit: parseJson<SourcingCandidate['thesisFit']>(row.thesis_fit) ?? {
       financial: 0,
       serviceCategory: 0,
       commercialMix: 0,
@@ -138,7 +148,7 @@ function fromCandRow(row: CandRow): SourcingCandidate {
       staffReferrals: 0,
       total: 0,
     },
-    disqualifiers: row.disqualifiers ?? {
+    disqualifiers: parseJson<SourcingCandidate['disqualifiers']>(row.disqualifiers) ?? {
       founderConcentration: false,
       msoAbsent: false,
       rateCeiling: false,
