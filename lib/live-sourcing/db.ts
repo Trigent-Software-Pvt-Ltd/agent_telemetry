@@ -25,8 +25,10 @@ export function getDb(): Sql {
   if (missing.length > 0) {
     throw new Error(`Quadrant DB not provisioned: missing ${missing.join(', ')}`)
   }
+  // SSL mode is controlled by the connection string's `sslmode` param so the
+  // app can target either the direct Postgres port (sslmode=disable) or an
+  // SSL-terminating endpoint (sslmode=require) without code changes.
   _sql = postgres(process.env.QUADRANT_DB_URL as string, {
-    ssl: 'require',
     max: 4,
     idle_timeout: 20,
     connect_timeout: 10,

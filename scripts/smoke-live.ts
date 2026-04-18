@@ -14,6 +14,18 @@
  * Exits 0 if all mandatory checks pass, 1 otherwise.
  */
 
+// ─── Load .env.local (Next.js auto-loads it in dev/build; tsx doesn't) ──────
+import { existsSync } from 'node:fs'
+for (const file of ['.env.local', '.env']) {
+  if (existsSync(file)) {
+    // Node 20.6+ supports process.loadEnvFile; fall back to manual parse.
+    const loader = (process as unknown as { loadEnvFile?: (p: string) => void })
+      .loadEnvFile
+    if (typeof loader === 'function') loader.call(process, file)
+    break
+  }
+}
+
 // ─── Force DATA_SOURCE for this process only (doesn't mutate .env.local) ────
 let forcedDataSource = false
 if (!process.env.DATA_SOURCE || process.env.DATA_SOURCE.trim() === '') {
