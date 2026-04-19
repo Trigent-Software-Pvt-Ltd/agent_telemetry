@@ -61,7 +61,7 @@ export default function SourcingAgentView({
                 {agent.name}
               </h1>
               {isLive && <LiveBadge />}
-              {isLive && <LiveAutoRefresh />}
+              {isLive && <LiveAutoRefresh currentRunId={run.id} />}
             </div>
             <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
               {agent.summary}
