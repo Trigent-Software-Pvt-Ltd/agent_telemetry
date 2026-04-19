@@ -12,6 +12,7 @@ import type {
 } from '@/lib/quadrant-mock'
 import { ChevronDown, ChevronRight, Circle, CheckCircle2 } from 'lucide-react'
 import LiveBadge from './LiveBadge'
+import LiveAutoRefresh from './LiveAutoRefresh'
 import RunNowButton from './RunNowButton'
 
 interface Props {
@@ -60,6 +61,7 @@ export default function SourcingAgentView({
                 {agent.name}
               </h1>
               {isLive && <LiveBadge />}
+              {isLive && <LiveAutoRefresh />}
             </div>
             <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
               {agent.summary}
