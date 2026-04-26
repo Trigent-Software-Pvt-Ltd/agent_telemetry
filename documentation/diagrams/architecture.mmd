@@ -1,0 +1,41 @@
+%% Overall system architecture — Mermaid
+%% Render with: https://mermaid.live/ or embed in slides
+
+flowchart TB
+    subgraph Producers
+        CA[Customer agents<br/>LangGraph · CrewAI · custom]
+        LF[Langfuse<br/>tracing backend]
+    end
+
+    subgraph "Next.js 16 app (EC2 + PM2)"
+        direction TB
+        subgraph "API surface (app/api/*)"
+            IG[Ingest<br/>/api/v1/ingest/*]
+            CR[Cron<br/>/api/cron/*]
+            SV[Settings · Governance<br/>/api/settings · /governance · /processes · /organisations]
+            SSE[SSE stream<br/>/api/monitoring/stream]
+            AU[NextAuth<br/>/api/auth/*]
+        end
+        DA[Data access<br/>lib/data/* · 9 modules]
+        DB[Drizzle ORM<br/>lib/db/schema.ts · 25 tables]
+        UI[UI<br/>41 page routes · 168 components]
+    end
+
+    subgraph "Managed services"
+        PG[(PostgreSQL<br/>AWS RDS)]
+        RD[(Redis<br/>AWS ElastiCache)]
+    end
+
+    CT[EC2 crontab<br/>deploy/crontab]
+
+    CA -->|Bearer + JSON POST| IG
+    LF -->|pull every 15m| CR
+    CT -->|x-cron-secret| CR
+
+    IG --> DA --> DB --> PG
+    CR --> DA
+    SV --> DA
+    SSE --> DA
+    UI --> DA
+    UI -. optional .-> RD
+    AU --> DB

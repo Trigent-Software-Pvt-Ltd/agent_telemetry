@@ -1,0 +1,110 @@
+{
+  "kengarff_south_jordan": {
+    "tenant_id": "kengarff_south_jordan",
+    "gsti": {
+      "skill_brake_diag_v3": 0.65,
+      "skill_engine_diag_v2": 0.60,
+      "skill_tire_alignment_v1": 0.40
+    },
+    "skill_drift_risk": {
+      "skill_brake_diag_v3": 0.18,
+      "skill_engine_diag_v2": 0.22,
+      "skill_tire_alignment_v1": 0.10
+    },
+    "uop_by_actor": {
+      "tech_27": {"readiness": 0.78, "fatigue": 0.12, "capacity": 0.80},
+      "tech_34": {"readiness": 0.42, "fatigue": 0.55, "capacity": 0.45},
+      "agent_claude_opus_47": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {
+      "default": 0.12,
+      "service_bay_diagnosis": 0.15
+    }
+  },
+  "boyd_gaming_vegas": {
+    "tenant_id": "boyd_gaming_vegas",
+    "gsti": {
+      "skill_venue_incident_v1": 0.55,
+      "skill_sportsbook_reco_v1": 0.35
+    },
+    "skill_drift_risk": {
+      "skill_venue_incident_v1": 0.20,
+      "skill_sportsbook_reco_v1": 0.12
+    },
+    "uop_by_actor": {
+      "floor_manager_08": {"readiness": 0.72, "fatigue": 0.28, "capacity": 0.70},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_claude_opus_47": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {
+      "default": 0.10,
+      "venue_operations_incident": 0.18
+    }
+  },
+  "acme_global_marketing": {
+    "tenant_id": "acme_global_marketing",
+    "gsti": {"skill_marketing_exception_v1": 0.30},
+    "skill_drift_risk": {"skill_marketing_exception_v1": 0.14},
+    "uop_by_actor": {
+      "brand_lead_03": {"readiness": 0.66, "fatigue": 0.22, "capacity": 0.70},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_salesforce_af": {"readiness": 0.92, "fatigue": 0.0, "capacity": 0.96}
+    },
+    "coordination_tax": {"default": 0.09}
+  },
+  "global_oem_cockpit": {
+    "tenant_id": "global_oem_cockpit",
+    "gsti": {"skill_cockpit_compliance_v1": 0.70},
+    "skill_drift_risk": {"skill_cockpit_compliance_v1": 0.28},
+    "uop_by_actor": {
+      "compliance_lead_02": {"readiness": 0.50, "fatigue": 0.30, "capacity": 0.55},
+      "agent_claude_opus_47": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {"default": 0.20, "automotive_cockpit_compliance": 0.22}
+  },
+  "utility_field_ops": {
+    "tenant_id": "utility_field_ops",
+    "gsti": {"skill_field_dispatch_v1": 0.40},
+    "skill_drift_risk": {"skill_field_dispatch_v1": 0.15},
+    "uop_by_actor": {
+      "dispatcher_11": {"readiness": 0.70, "fatigue": 0.25, "capacity": 0.72},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_cloudflare_think": {"readiness": 0.98, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {"default": 0.08, "field_service_dispatch": 0.10}
+  },
+  "global_retail_cx": {
+    "tenant_id": "global_retail_cx",
+    "gsti": {"skill_contact_escalation_v1": 0.45},
+    "skill_drift_risk": {"skill_contact_escalation_v1": 0.17},
+    "uop_by_actor": {
+      "agent_rep_42": {"readiness": 0.65, "fatigue": 0.40, "capacity": 0.62},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_uniphore_bac": {"readiness": 0.92, "fatigue": 0.0, "capacity": 0.96}
+    },
+    "coordination_tax": {"default": 0.11, "contact_center_escalation": 0.14}
+  },
+  "bigins_claims": {
+    "tenant_id": "bigins_claims",
+    "gsti": {"skill_claim_triage_v1": 0.48},
+    "skill_drift_risk": {"skill_claim_triage_v1": 0.16},
+    "uop_by_actor": {
+      "claims_lead_17": {"readiness": 0.68, "fatigue": 0.24, "capacity": 0.70},
+      "siu_investigator_04": {"readiness": 0.50, "fatigue": 0.35, "capacity": 0.52},
+      "agent_gpt_51": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99},
+      "agent_claude_opus_47": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {"default": 0.11, "insurance_claim_triage": 0.13}
+  },
+  "bigco_hr": {
+    "tenant_id": "bigco_hr",
+    "gsti": {"skill_hr_coaching_v1": 0.50},
+    "skill_drift_risk": {"skill_hr_coaching_v1": 0.19},
+    "uop_by_actor": {
+      "hr_lead_05": {"readiness": 0.55, "fatigue": 0.20, "capacity": 0.60},
+      "agent_claude_opus_47": {"readiness": 0.95, "fatigue": 0.0, "capacity": 0.99}
+    },
+    "coordination_tax": {"default": 0.13, "hr_workforce_coaching": 0.15}
+  }
+}

@@ -1,0 +1,36 @@
+# AEOS Policy Pack schema (informal). All fields required unless marked optional.
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://fuzebox.ai/aeos/policy-pack/v1"
+title: "AEOS Policy Pack"
+type: object
+required: [id, version, description, rules]
+properties:
+  id:
+    type: string
+    description: "Stable pack identifier, referenced by governance.policy_pack in Task objects."
+  version:
+    type: string
+    description: "Calendar version, e.g. 2026.04."
+  description:
+    type: string
+  jurisdiction:            # optional
+    type: array
+    items: {type: string}
+  rules:
+    type: array
+    items:
+      type: object
+      required: [id, severity, when, require]
+      properties:
+        id:          {type: string}
+        severity:    {enum: [critical, high, medium]}
+        description: {type: string}
+        when:
+          type: object
+          additionalProperties: true  # see README for supported keys
+        require:
+          type: object
+          additionalProperties: true
+        references:
+          type: array
+          items: {type: string}

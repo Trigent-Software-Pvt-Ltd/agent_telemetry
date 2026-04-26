@@ -1,0 +1,106 @@
+[
+  {
+    "id": "uef_core",
+    "name": "UEF Core",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.telemetry_normalizer"
+    ],
+    "pricing": {"model": "per_decision", "usd_per_1k_decisions": 45.0},
+    "description": "The AEOS decision plane — L1 through L8 plus L10 telemetry normalization."
+  },
+  {
+    "id": "governance_edition",
+    "name": "Governance Edition",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.telemetry_normalizer",
+      "packages.dynamic_instruction",
+      "packages.governance"
+    ],
+    "pricing": {"model": "per_tenant_month", "usd_per_tenant_month": 25000.0},
+    "description": "UEF Core plus L9 Dynamic Instruction Runtime, policy packs, evidence export, and two-party attestation."
+  },
+  {
+    "id": "enterprise_autonomy_index",
+    "name": "Enterprise Autonomy Index",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.telemetry_normalizer",
+      "packages.dynamic_instruction",
+      "packages.governance",
+      "packages.economic_ledger"
+    ],
+    "pricing": {"model": "per_board_seat_year", "usd_per_seat_year": 120000.0},
+    "description": "Governance Edition plus L11 Economic Ledger with EAI / HPI / HLR board metrics."
+  },
+  {
+    "id": "vertical_automotive",
+    "name": "Vertical Bundle — Automotive",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.dynamic_instruction",
+      "packages.governance",
+      "packages.economic_ledger",
+      "policies/wp29",
+      "policies/auto_safety_standard",
+      "flows/service_bay_diagnosis",
+      "flows/automotive_cockpit_compliance"
+    ],
+    "pricing": {"model": "per_dealership_month", "usd_per_dealership_month": 2800.0},
+    "description": "EAI + WP.29 + auto_safety_standard policy packs + service-bay / cockpit flows."
+  },
+  {
+    "id": "vertical_contact_center",
+    "name": "Vertical Bundle — Contact Center",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.dynamic_instruction",
+      "packages.governance",
+      "packages.economic_ledger",
+      "adapters.uniphore",
+      "flows/contact_center_escalation"
+    ],
+    "pricing": {"model": "per_agent_seat_month", "usd_per_seat_month": 140.0},
+    "description": "EAI + Uniphore adapter + GDPR policy + contact-center escalation flow."
+  },
+  {
+    "id": "vertical_gaming",
+    "name": "Vertical Bundle — Gaming",
+    "included_packages": [
+      "packages.shared",
+      "packages.skills_authority",
+      "packages.rpotential_adapter",
+      "packages.uef",
+      "packages.adapter_gateway",
+      "packages.dynamic_instruction",
+      "packages.governance",
+      "packages.economic_ledger",
+      "policies/gambling_responsible",
+      "flows/sportsbook_recommendation",
+      "flows/venue_operations_incident"
+    ],
+    "pricing": {"model": "per_property_month", "usd_per_property_month": 4500.0},
+    "description": "EAI + gambling_responsible policy + sportsbook and venue flows."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m apps.kengarff_demo.main)",
+      "Bash(python3 -m apps.conformance_suite.run_suite)",
+      "Bash(python3 -m pytest tests/test_dir.py -v)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -m pytest tests/test_ledger_persistence.py -v)",
+      "Bash(python3 -m scripts.export_evidence --tenant kengarff_south_jordan --format eu_ai_act_article_12 --period-start 2026-01-01 --period-end 2026-12-31)",
+      "Bash(python3 -m pytest tests/test_two_party_attestation.py -v)",
+      "Bash(python3 -m scripts.list_skus)",
+      "Bash(python3 -m pytest tests/ -v)",
+      "Read(//Users/LesOttolenghi/Projects/**)",
+      "Bash(tar czf:*)",
+      "Bash(cp -r fuzebox-aeos /Users/LesOttolenghi/Desktop/fuzebox-aeos-handoff/_source_snapshot/fuzebox-aeos)",
+      "Bash(find /Users/LesOttolenghi/Desktop/fuzebox-aeos-handoff/_source_snapshot -name __pycache__ -type d -exec rm -rf {} +)",
+      "Bash(find /Users/LesOttolenghi/Desktop/fuzebox-aeos-handoff/_source_snapshot -name '.pytest_cache' -type d -exec rm -rf {} +)",
+      "Bash(find /Users/LesOttolenghi/Desktop/fuzebox-aeos-handoff/_source_snapshot -name '.DS_Store' -delete)"
+    ]
+  }
+}

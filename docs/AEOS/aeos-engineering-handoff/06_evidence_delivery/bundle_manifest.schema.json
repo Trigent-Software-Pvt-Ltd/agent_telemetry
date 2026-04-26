@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fuzebox.ai/aeos/evidence/manifest/v1",
+  "title": "AEOS Evidence Bundle Manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "bundle_id",
+    "tenant_id",
+    "decision_id",
+    "execution_id",
+    "issued_at",
+    "files",
+    "attestations"
+  ],
+  "properties": {
+    "manifest_version": { "type": "string", "const": "evb.v1" },
+    "bundle_id":   { "type": "string", "pattern": "^evb_[A-Za-z0-9]+$" },
+    "tenant_id":   { "type": "string", "minLength": 1 },
+    "decision_id": { "type": "string", "pattern": "^dec_[A-Za-z0-9]+$" },
+    "execution_id":{ "type": "string", "pattern": "^exe_[A-Za-z0-9]+$" },
+    "issued_at":   { "type": "string", "format": "date-time" },
+    "policy_pack": {
+      "type": "object",
+      "required": ["pack_id", "version", "sha256"],
+      "properties": {
+        "pack_id": { "type": "string" },
+        "version": { "type": "string" },
+        "sha256":  { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "safety_envelope": { "type": ["string", "null"] },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "size_bytes"],
+        "properties": {
+          "path":       { "type": "string", "minLength": 1 },
+          "sha256":     { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 },
+          "content_type": { "type": "string" }
+        }
+      }
+    },
+    "attestations": {
+      "type": "object",
+      "required": ["fuzebox", "rpotential"],
+      "properties": {
+        "fuzebox": {
+          "type": "object",
+          "required": ["algorithm", "key_id", "signature_path"],
+          "properties": {
+            "algorithm":      { "type": "string", "const": "ed25519" },
+            "key_id":         { "type": "string" },
+            "signature_path": { "type": "string" }
+          }
+        },
+        "rpotential": {
+          "type": "object",
+          "required": ["algorithm", "key_id", "witness_path"],
+          "properties": {
+            "algorithm":     { "type": "string", "const": "HMAC-SHA256" },
+            "key_id":        { "type": "string" },
+            "witness_path":  { "type": "string" }
+          }
+        }
+      }
+    },
+    "retention": {
+      "type": "object",
+      "properties": {
+        "mode":      { "type": "string", "enum": ["compliance", "governance"] },
+        "expires_at":{ "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

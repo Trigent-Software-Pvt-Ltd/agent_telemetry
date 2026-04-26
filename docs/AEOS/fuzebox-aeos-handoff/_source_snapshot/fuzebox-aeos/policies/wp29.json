@@ -1,0 +1,25 @@
+{
+  "id": "wp29",
+  "version": "2026.04",
+  "description": "UN ECE WP.29 Cybersecurity and Software Update regulations for connected vehicles.",
+  "rules": [
+    {
+      "id": "auto_safety_human_signoff",
+      "severity": "critical",
+      "when": {"task.regulatory_class": ["auto_safety"]},
+      "require": {"path.human_involved": true}
+    },
+    {
+      "id": "cockpit_evidence_retention",
+      "severity": "high",
+      "when": {"task.regulatory_class": ["auto_safety"]},
+      "require": {"governance.evidence_export_required": true, "governance.trace_retention_days_min": 365}
+    },
+    {
+      "id": "wp29_audit_log",
+      "severity": "high",
+      "when": {"always": true},
+      "require": {"governance.audit_log_required": true}
+    }
+  ]
+}

@@ -1,0 +1,1710 @@
+[
+  {
+    "skill_id": "skill_auto_diag_01",
+    "name": "Automotive Diagnosis \u2014 Brake",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.61,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Brake \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.893,
+        "avg_cost": 28.36,
+        "avg_latency_ms": 1594459
+      },
+      "anthropic_agent": {
+        "success_rate": 0.647,
+        "avg_cost": 0.76,
+        "avg_latency_ms": 10418
+      },
+      "openai_agent": {
+        "success_rate": 0.703,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 7628
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.89,
+        "avg_cost": 14.63,
+        "avg_latency_ms": 722256
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.945,
+        "avg_cost": 10.77,
+        "avg_latency_ms": 684718
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_02",
+    "name": "Automotive Diagnosis \u2014 Engine",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.58,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Engine \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.859,
+        "avg_cost": 22.35,
+        "avg_latency_ms": 1816650
+      },
+      "anthropic_agent": {
+        "success_rate": 0.669,
+        "avg_cost": 0.83,
+        "avg_latency_ms": 12917
+      },
+      "openai_agent": {
+        "success_rate": 0.677,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 8674
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.885,
+        "avg_cost": 11.18,
+        "avg_latency_ms": 780432
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.919,
+        "avg_cost": 12.32,
+        "avg_latency_ms": 613370
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_03",
+    "name": "Automotive Diagnosis \u2014 Transmission",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.74,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Transmission \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.846,
+        "avg_cost": 27.54,
+        "avg_latency_ms": 1756234
+      },
+      "anthropic_agent": {
+        "success_rate": 0.647,
+        "avg_cost": 0.91,
+        "avg_latency_ms": 10530
+      },
+      "openai_agent": {
+        "success_rate": 0.699,
+        "avg_cost": 0.69,
+        "avg_latency_ms": 8351
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.919,
+        "avg_cost": 12.74,
+        "avg_latency_ms": 656167
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.872,
+        "avg_cost": 10.36,
+        "avg_latency_ms": 612825
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_04",
+    "name": "Automotive Diagnosis \u2014 HVAC",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.74,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 HVAC \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.85,
+        "avg_cost": 22.68,
+        "avg_latency_ms": 1381465
+      },
+      "anthropic_agent": {
+        "success_rate": 0.683,
+        "avg_cost": 0.8,
+        "avg_latency_ms": 12601
+      },
+      "openai_agent": {
+        "success_rate": 0.715,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 7190
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.938,
+        "avg_cost": 13.51,
+        "avg_latency_ms": 738683
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.939,
+        "avg_cost": 12.16,
+        "avg_latency_ms": 726653
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_05",
+    "name": "Automotive Diagnosis \u2014 Electrical",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.64,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Electrical \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.87,
+        "avg_cost": 24.51,
+        "avg_latency_ms": 1827834
+      },
+      "anthropic_agent": {
+        "success_rate": 0.69,
+        "avg_cost": 0.84,
+        "avg_latency_ms": 12516
+      },
+      "openai_agent": {
+        "success_rate": 0.697,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 8419
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.943,
+        "avg_cost": 12.91,
+        "avg_latency_ms": 776827
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.887,
+        "avg_cost": 12.31,
+        "avg_latency_ms": 690946
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_06",
+    "name": "Automotive Diagnosis \u2014 Steering",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.66,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Steering \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.875,
+        "avg_cost": 26.54,
+        "avg_latency_ms": 1804746
+      },
+      "anthropic_agent": {
+        "success_rate": 0.718,
+        "avg_cost": 0.7,
+        "avg_latency_ms": 13223
+      },
+      "openai_agent": {
+        "success_rate": 0.698,
+        "avg_cost": 0.64,
+        "avg_latency_ms": 7681
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.933,
+        "avg_cost": 14.45,
+        "avg_latency_ms": 753043
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.888,
+        "avg_cost": 10.48,
+        "avg_latency_ms": 685257
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_07",
+    "name": "Automotive Diagnosis \u2014 Battery EV",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.72,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Battery EV \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.863,
+        "avg_cost": 24.65,
+        "avg_latency_ms": 1619860
+      },
+      "anthropic_agent": {
+        "success_rate": 0.676,
+        "avg_cost": 0.83,
+        "avg_latency_ms": 12586
+      },
+      "openai_agent": {
+        "success_rate": 0.667,
+        "avg_cost": 0.67,
+        "avg_latency_ms": 8861
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.938,
+        "avg_cost": 12.72,
+        "avg_latency_ms": 755405
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.89,
+        "avg_cost": 11.74,
+        "avg_latency_ms": 685257
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_repair_01",
+    "name": "Automotive Repair \u2014 Brake Pad Replacement",
+    "allowed_paths": [
+      "human",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "torque_wrench_digital",
+      "oem_procedure_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.64,
+    "version": "1.0",
+    "description": "Automotive Repair \u2014 Brake Pad Replacement \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.89,
+        "avg_cost": 25.91,
+        "avg_latency_ms": 1584825
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.941,
+        "avg_cost": 12.87,
+        "avg_latency_ms": 622076
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_repair_02",
+    "name": "Automotive Repair \u2014 Oil Service",
+    "allowed_paths": [
+      "human",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "torque_wrench_digital",
+      "oem_procedure_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.46,
+    "version": "1.0",
+    "description": "Automotive Repair \u2014 Oil Service \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.897,
+        "avg_cost": 23.0,
+        "avg_latency_ms": 1769971
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.939,
+        "avg_cost": 14.83,
+        "avg_latency_ms": 783971
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_repair_03",
+    "name": "Automotive Repair \u2014 Tire Rotation",
+    "allowed_paths": [
+      "human",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "torque_wrench_digital",
+      "oem_procedure_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.59,
+    "version": "1.0",
+    "description": "Automotive Repair \u2014 Tire Rotation \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.878,
+        "avg_cost": 26.46,
+        "avg_latency_ms": 1702501
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.919,
+        "avg_cost": 11.12,
+        "avg_latency_ms": 724056
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_repair_04",
+    "name": "Automotive Repair \u2014 Suspension",
+    "allowed_paths": [
+      "human",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "torque_wrench_digital",
+      "oem_procedure_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.65,
+    "version": "1.0",
+    "description": "Automotive Repair \u2014 Suspension \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.91,
+        "avg_cost": 23.52,
+        "avg_latency_ms": 1618275
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.919,
+        "avg_cost": 12.85,
+        "avg_latency_ms": 628270
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_repair_05",
+    "name": "Automotive Repair \u2014 Cooling System",
+    "allowed_paths": [
+      "human",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "torque_wrench_digital",
+      "oem_procedure_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.56,
+    "version": "1.0",
+    "description": "Automotive Repair \u2014 Cooling System \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.903,
+        "avg_cost": 24.43,
+        "avg_latency_ms": 1812042
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.909,
+        "avg_cost": 11.41,
+        "avg_latency_ms": 802514
+      }
+    }
+  },
+  {
+    "skill_id": "skill_cx_triage_01",
+    "name": "Contact Center \u2014 Billing Escalation",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "uniphore_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "case_lookup",
+      "sentiment"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.5,
+    "version": "1.0",
+    "description": "Contact Center \u2014 Billing Escalation \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.851,
+        "avg_cost": 23.94,
+        "avg_latency_ms": 1711772
+      },
+      "anthropic_agent": {
+        "success_rate": 0.715,
+        "avg_cost": 0.7,
+        "avg_latency_ms": 13725
+      },
+      "openai_agent": {
+        "success_rate": 0.681,
+        "avg_cost": 0.57,
+        "avg_latency_ms": 7209
+      },
+      "uniphore_agent": {
+        "success_rate": 0.712,
+        "avg_cost": 0.51,
+        "avg_latency_ms": 6116
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.899,
+        "avg_cost": 12.52,
+        "avg_latency_ms": 628446
+      }
+    }
+  },
+  {
+    "skill_id": "skill_cx_triage_02",
+    "name": "Contact Center \u2014 Fraud Review",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "uniphore_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "case_lookup",
+      "sentiment"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.38,
+    "version": "1.0",
+    "description": "Contact Center \u2014 Fraud Review \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.878,
+        "avg_cost": 25.22,
+        "avg_latency_ms": 1822785
+      },
+      "anthropic_agent": {
+        "success_rate": 0.705,
+        "avg_cost": 0.77,
+        "avg_latency_ms": 12156
+      },
+      "openai_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 0.68,
+        "avg_latency_ms": 7435
+      },
+      "uniphore_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 0.58,
+        "avg_latency_ms": 5011
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.929,
+        "avg_cost": 11.47,
+        "avg_latency_ms": 628074
+      }
+    }
+  },
+  {
+    "skill_id": "skill_cx_triage_03",
+    "name": "Contact Center \u2014 Loyalty Retention",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "uniphore_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "case_lookup",
+      "sentiment"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.43,
+    "version": "1.0",
+    "description": "Contact Center \u2014 Loyalty Retention \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.877,
+        "avg_cost": 23.43,
+        "avg_latency_ms": 1556413
+      },
+      "anthropic_agent": {
+        "success_rate": 0.659,
+        "avg_cost": 0.82,
+        "avg_latency_ms": 12076
+      },
+      "openai_agent": {
+        "success_rate": 0.699,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 6899
+      },
+      "uniphore_agent": {
+        "success_rate": 0.736,
+        "avg_cost": 0.52,
+        "avg_latency_ms": 4844
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.872,
+        "avg_cost": 11.84,
+        "avg_latency_ms": 672646
+      }
+    }
+  },
+  {
+    "skill_id": "skill_cx_triage_04",
+    "name": "Contact Center \u2014 Tier-2 Routing",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "uniphore_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "case_lookup",
+      "sentiment"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.35,
+    "version": "1.0",
+    "description": "Contact Center \u2014 Tier-2 Routing \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.859,
+        "avg_cost": 23.27,
+        "avg_latency_ms": 1505626
+      },
+      "anthropic_agent": {
+        "success_rate": 0.686,
+        "avg_cost": 0.84,
+        "avg_latency_ms": 11588
+      },
+      "openai_agent": {
+        "success_rate": 0.694,
+        "avg_cost": 0.52,
+        "avg_latency_ms": 8732
+      },
+      "uniphore_agent": {
+        "success_rate": 0.741,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 5134
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.912,
+        "avg_cost": 10.51,
+        "avg_latency_ms": 736573
+      }
+    }
+  },
+  {
+    "skill_id": "skill_cx_triage_05",
+    "name": "Contact Center \u2014 Churn Save",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "uniphore_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "case_lookup",
+      "sentiment"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.49,
+    "version": "1.0",
+    "description": "Contact Center \u2014 Churn Save \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.861,
+        "avg_cost": 28.49,
+        "avg_latency_ms": 1643931
+      },
+      "anthropic_agent": {
+        "success_rate": 0.66,
+        "avg_cost": 0.69,
+        "avg_latency_ms": 13339
+      },
+      "openai_agent": {
+        "success_rate": 0.693,
+        "avg_cost": 0.58,
+        "avg_latency_ms": 8576
+      },
+      "uniphore_agent": {
+        "success_rate": 0.744,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 5251
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.913,
+        "avg_cost": 10.54,
+        "avg_latency_ms": 703853
+      }
+    }
+  },
+  {
+    "skill_id": "skill_events_ops_01",
+    "name": "Venue Operations \u2014 Medical Incident",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "incident_log",
+      "comms_broadcast"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.48,
+    "version": "1.0",
+    "description": "Venue Operations \u2014 Medical Incident \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.918,
+        "avg_cost": 25.8,
+        "avg_latency_ms": 1568407
+      },
+      "openai_agent": {
+        "success_rate": 0.725,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 9003
+      },
+      "anthropic_agent": {
+        "success_rate": 0.709,
+        "avg_cost": 0.86,
+        "avg_latency_ms": 12323
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.928,
+        "avg_cost": 12.76,
+        "avg_latency_ms": 664298
+      }
+    }
+  },
+  {
+    "skill_id": "skill_events_ops_02",
+    "name": "Venue Operations \u2014 Crowd Flow",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "incident_log",
+      "comms_broadcast"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.54,
+    "version": "1.0",
+    "description": "Venue Operations \u2014 Crowd Flow \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.879,
+        "avg_cost": 27.08,
+        "avg_latency_ms": 1656265
+      },
+      "openai_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 0.55,
+        "avg_latency_ms": 6808
+      },
+      "anthropic_agent": {
+        "success_rate": 0.643,
+        "avg_cost": 0.85,
+        "avg_latency_ms": 13152
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.911,
+        "avg_cost": 13.66,
+        "avg_latency_ms": 606890
+      }
+    }
+  },
+  {
+    "skill_id": "skill_events_ops_03",
+    "name": "Venue Operations \u2014 VIP Host",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "incident_log",
+      "comms_broadcast"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.5,
+    "version": "1.0",
+    "description": "Venue Operations \u2014 VIP Host \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.896,
+        "avg_cost": 22.97,
+        "avg_latency_ms": 1618750
+      },
+      "openai_agent": {
+        "success_rate": 0.706,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 8107
+      },
+      "anthropic_agent": {
+        "success_rate": 0.676,
+        "avg_cost": 0.83,
+        "avg_latency_ms": 11241
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.903,
+        "avg_cost": 11.17,
+        "avg_latency_ms": 654254
+      }
+    }
+  },
+  {
+    "skill_id": "skill_events_ops_04",
+    "name": "Venue Operations \u2014 Security Handoff",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "incident_log",
+      "comms_broadcast"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.56,
+    "version": "1.0",
+    "description": "Venue Operations \u2014 Security Handoff \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.855,
+        "avg_cost": 27.04,
+        "avg_latency_ms": 1641042
+      },
+      "openai_agent": {
+        "success_rate": 0.665,
+        "avg_cost": 0.62,
+        "avg_latency_ms": 8713
+      },
+      "anthropic_agent": {
+        "success_rate": 0.653,
+        "avg_cost": 0.85,
+        "avg_latency_ms": 10757
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.912,
+        "avg_cost": 12.78,
+        "avg_latency_ms": 720658
+      }
+    }
+  },
+  {
+    "skill_id": "skill_compliance_01",
+    "name": "Regulatory Compliance \u2014 WP.29 Cockpit Review",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "regulation_lookup",
+      "audit_trail_writer"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.73,
+    "version": "1.0",
+    "description": "Regulatory Compliance \u2014 WP.29 Cockpit Review \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.894,
+        "avg_cost": 28.74,
+        "avg_latency_ms": 1620051
+      },
+      "anthropic_agent": {
+        "success_rate": 0.661,
+        "avg_cost": 0.85,
+        "avg_latency_ms": 13419
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.938,
+        "avg_cost": 11.76,
+        "avg_latency_ms": 802379
+      }
+    }
+  },
+  {
+    "skill_id": "skill_compliance_02",
+    "name": "Regulatory Compliance \u2014 SOC2 Change Audit",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "regulation_lookup",
+      "audit_trail_writer"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.6,
+    "version": "1.0",
+    "description": "Regulatory Compliance \u2014 SOC2 Change Audit \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.863,
+        "avg_cost": 25.98,
+        "avg_latency_ms": 1401962
+      },
+      "anthropic_agent": {
+        "success_rate": 0.671,
+        "avg_cost": 0.74,
+        "avg_latency_ms": 11180
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.955,
+        "avg_cost": 13.06,
+        "avg_latency_ms": 795475
+      }
+    }
+  },
+  {
+    "skill_id": "skill_compliance_03",
+    "name": "Regulatory Compliance \u2014 EU AI Act Article-12 Pull",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "regulation_lookup",
+      "audit_trail_writer"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.69,
+    "version": "1.0",
+    "description": "Regulatory Compliance \u2014 EU AI Act Article-12 Pull \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.867,
+        "avg_cost": 25.96,
+        "avg_latency_ms": 1502340
+      },
+      "anthropic_agent": {
+        "success_rate": 0.664,
+        "avg_cost": 0.92,
+        "avg_latency_ms": 12677
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.929,
+        "avg_cost": 13.95,
+        "avg_latency_ms": 693691
+      }
+    }
+  },
+  {
+    "skill_id": "skill_compliance_04",
+    "name": "Regulatory Compliance \u2014 GDPR DSAR",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "regulation_lookup",
+      "audit_trail_writer"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.62,
+    "version": "1.0",
+    "description": "Regulatory Compliance \u2014 GDPR DSAR \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.841,
+        "avg_cost": 29.6,
+        "avg_latency_ms": 1505207
+      },
+      "anthropic_agent": {
+        "success_rate": 0.664,
+        "avg_cost": 0.69,
+        "avg_latency_ms": 10498
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.927,
+        "avg_cost": 13.82,
+        "avg_latency_ms": 673373
+      }
+    }
+  },
+  {
+    "skill_id": "skill_field_service_01",
+    "name": "Field Service \u2014 Utility Outage",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "fleet_tracker",
+      "sla_calculator"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.34,
+    "version": "1.0",
+    "description": "Field Service \u2014 Utility Outage \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.911,
+        "avg_cost": 29.64,
+        "avg_latency_ms": 1380598
+      },
+      "openai_agent": {
+        "success_rate": 0.671,
+        "avg_cost": 0.65,
+        "avg_latency_ms": 7412
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.655,
+        "avg_cost": 0.09,
+        "avg_latency_ms": 1915
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.937,
+        "avg_cost": 10.04,
+        "avg_latency_ms": 676348
+      }
+    }
+  },
+  {
+    "skill_id": "skill_field_service_02",
+    "name": "Field Service \u2014 HVAC On-Site",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "fleet_tracker",
+      "sla_calculator"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.54,
+    "version": "1.0",
+    "description": "Field Service \u2014 HVAC On-Site \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.869,
+        "avg_cost": 28.58,
+        "avg_latency_ms": 1379485
+      },
+      "openai_agent": {
+        "success_rate": 0.717,
+        "avg_cost": 0.55,
+        "avg_latency_ms": 6831
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.679,
+        "avg_cost": 0.09,
+        "avg_latency_ms": 2402
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.895,
+        "avg_cost": 10.64,
+        "avg_latency_ms": 687268
+      }
+    }
+  },
+  {
+    "skill_id": "skill_field_service_03",
+    "name": "Field Service \u2014 Cable Splice",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "fleet_tracker",
+      "sla_calculator"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.3,
+    "version": "1.0",
+    "description": "Field Service \u2014 Cable Splice \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.893,
+        "avg_cost": 27.07,
+        "avg_latency_ms": 1781362
+      },
+      "openai_agent": {
+        "success_rate": 0.74,
+        "avg_cost": 0.67,
+        "avg_latency_ms": 7653
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.664,
+        "avg_cost": 0.07,
+        "avg_latency_ms": 2414
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.901,
+        "avg_cost": 9.57,
+        "avg_latency_ms": 716174
+      }
+    }
+  },
+  {
+    "skill_id": "skill_field_service_04",
+    "name": "Field Service \u2014 Meter Exchange",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "fleet_tracker",
+      "sla_calculator"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.47,
+    "version": "1.0",
+    "description": "Field Service \u2014 Meter Exchange \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.877,
+        "avg_cost": 24.97,
+        "avg_latency_ms": 1433462
+      },
+      "openai_agent": {
+        "success_rate": 0.666,
+        "avg_cost": 0.67,
+        "avg_latency_ms": 7807
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.688,
+        "avg_cost": 0.08,
+        "avg_latency_ms": 1876
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.941,
+        "avg_cost": 11.11,
+        "avg_latency_ms": 596186
+      }
+    }
+  },
+  {
+    "skill_id": "skill_hr_people_01",
+    "name": "Workforce Coaching \u2014 Q2 Coaching Plan",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "performance_history",
+      "coaching_templates"
+    ],
+    "governance_tags": [
+      "people_data",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.52,
+    "version": "1.0",
+    "description": "Workforce Coaching \u2014 Q2 Coaching Plan \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.909,
+        "avg_cost": 24.39,
+        "avg_latency_ms": 1549965
+      },
+      "anthropic_agent": {
+        "success_rate": 0.656,
+        "avg_cost": 0.86,
+        "avg_latency_ms": 11562
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.925,
+        "avg_cost": 11.66,
+        "avg_latency_ms": 645518
+      }
+    }
+  },
+  {
+    "skill_id": "skill_hr_people_02",
+    "name": "Workforce Coaching \u2014 PIP Authoring",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "performance_history",
+      "coaching_templates"
+    ],
+    "governance_tags": [
+      "people_data",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.49,
+    "version": "1.0",
+    "description": "Workforce Coaching \u2014 PIP Authoring \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.871,
+        "avg_cost": 22.1,
+        "avg_latency_ms": 1523868
+      },
+      "anthropic_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 0.87,
+        "avg_latency_ms": 10677
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.883,
+        "avg_cost": 11.39,
+        "avg_latency_ms": 675142
+      }
+    }
+  },
+  {
+    "skill_id": "skill_hr_people_03",
+    "name": "Workforce Coaching \u2014 1:1 Summary",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "performance_history",
+      "coaching_templates"
+    ],
+    "governance_tags": [
+      "people_data",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.64,
+    "version": "1.0",
+    "description": "Workforce Coaching \u2014 1:1 Summary \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.861,
+        "avg_cost": 24.22,
+        "avg_latency_ms": 1754362
+      },
+      "anthropic_agent": {
+        "success_rate": 0.657,
+        "avg_cost": 0.72,
+        "avg_latency_ms": 12023
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.959,
+        "avg_cost": 12.38,
+        "avg_latency_ms": 794216
+      }
+    }
+  },
+  {
+    "skill_id": "skill_hr_people_04",
+    "name": "Workforce Coaching \u2014 Skill Gap Review",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "performance_history",
+      "coaching_templates"
+    ],
+    "governance_tags": [
+      "people_data",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.49,
+    "version": "1.0",
+    "description": "Workforce Coaching \u2014 Skill Gap Review \u2014 demo skill generated for aeos_demo_enterprise.",
+    "performance": {
+      "human": {
+        "success_rate": 0.849,
+        "avg_cost": 22.73,
+        "avg_latency_ms": 1726231
+      },
+      "anthropic_agent": {
+        "success_rate": 0.704,
+        "avg_cost": 0.91,
+        "avg_latency_ms": 11639
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.951,
+        "avg_cost": 13.97,
+        "avg_latency_ms": 744862
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_06_r33",
+    "name": "Automotive Diagnosis \u2014 Steering (EU-FR)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.66,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Steering \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: EU-FR.",
+    "performance": {
+      "human": {
+        "success_rate": 0.875,
+        "avg_cost": 26.54,
+        "avg_latency_ms": 1804746
+      },
+      "anthropic_agent": {
+        "success_rate": 0.718,
+        "avg_cost": 0.7,
+        "avg_latency_ms": 13223
+      },
+      "openai_agent": {
+        "success_rate": 0.698,
+        "avg_cost": 0.64,
+        "avg_latency_ms": 7681
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.933,
+        "avg_cost": 14.45,
+        "avg_latency_ms": 753043
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.888,
+        "avg_cost": 10.48,
+        "avg_latency_ms": 685257
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_07_r34",
+    "name": "Automotive Diagnosis \u2014 Battery EV (APAC-JP)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.72,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Battery EV \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: APAC-JP.",
+    "performance": {
+      "human": {
+        "success_rate": 0.863,
+        "avg_cost": 24.65,
+        "avg_latency_ms": 1619860
+      },
+      "anthropic_agent": {
+        "success_rate": 0.676,
+        "avg_cost": 0.83,
+        "avg_latency_ms": 12586
+      },
+      "openai_agent": {
+        "success_rate": 0.667,
+        "avg_cost": 0.67,
+        "avg_latency_ms": 8861
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.938,
+        "avg_cost": 12.72,
+        "avg_latency_ms": 755405
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.89,
+        "avg_cost": 11.74,
+        "avg_latency_ms": 685257
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_01_r35",
+    "name": "Automotive Diagnosis \u2014 Brake (US-West)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.61,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Brake \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: US-West.",
+    "performance": {
+      "human": {
+        "success_rate": 0.893,
+        "avg_cost": 28.36,
+        "avg_latency_ms": 1594459
+      },
+      "anthropic_agent": {
+        "success_rate": 0.647,
+        "avg_cost": 0.76,
+        "avg_latency_ms": 10418
+      },
+      "openai_agent": {
+        "success_rate": 0.703,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 7628
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.89,
+        "avg_cost": 14.63,
+        "avg_latency_ms": 722256
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.945,
+        "avg_cost": 10.77,
+        "avg_latency_ms": 684718
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_02_r36",
+    "name": "Automotive Diagnosis \u2014 Engine (US-East)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.58,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Engine \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: US-East.",
+    "performance": {
+      "human": {
+        "success_rate": 0.859,
+        "avg_cost": 22.35,
+        "avg_latency_ms": 1816650
+      },
+      "anthropic_agent": {
+        "success_rate": 0.669,
+        "avg_cost": 0.83,
+        "avg_latency_ms": 12917
+      },
+      "openai_agent": {
+        "success_rate": 0.677,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 8674
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.885,
+        "avg_cost": 11.18,
+        "avg_latency_ms": 780432
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.919,
+        "avg_cost": 12.32,
+        "avg_latency_ms": 613370
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_03_r37",
+    "name": "Automotive Diagnosis \u2014 Transmission (EU-DE)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.74,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Transmission \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: EU-DE.",
+    "performance": {
+      "human": {
+        "success_rate": 0.846,
+        "avg_cost": 27.54,
+        "avg_latency_ms": 1756234
+      },
+      "anthropic_agent": {
+        "success_rate": 0.647,
+        "avg_cost": 0.91,
+        "avg_latency_ms": 10530
+      },
+      "openai_agent": {
+        "success_rate": 0.699,
+        "avg_cost": 0.69,
+        "avg_latency_ms": 8351
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.919,
+        "avg_cost": 12.74,
+        "avg_latency_ms": 656167
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.872,
+        "avg_cost": 10.36,
+        "avg_latency_ms": 612825
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_04_r38",
+    "name": "Automotive Diagnosis \u2014 HVAC (EU-FR)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.74,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 HVAC \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: EU-FR.",
+    "performance": {
+      "human": {
+        "success_rate": 0.85,
+        "avg_cost": 22.68,
+        "avg_latency_ms": 1381465
+      },
+      "anthropic_agent": {
+        "success_rate": 0.683,
+        "avg_cost": 0.8,
+        "avg_latency_ms": 12601
+      },
+      "openai_agent": {
+        "success_rate": 0.715,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 7190
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.938,
+        "avg_cost": 13.51,
+        "avg_latency_ms": 738683
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.939,
+        "avg_cost": 12.16,
+        "avg_latency_ms": 726653
+      }
+    }
+  },
+  {
+    "skill_id": "skill_auto_diag_05_r39",
+    "name": "Automotive Diagnosis \u2014 Electrical (APAC-JP)",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "dtc_reader",
+      "oem_bulletin_lookup"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.64,
+    "version": "1.0",
+    "description": "Automotive Diagnosis \u2014 Electrical \u2014 demo skill generated for aeos_demo_enterprise. Regional variant: APAC-JP.",
+    "performance": {
+      "human": {
+        "success_rate": 0.87,
+        "avg_cost": 24.51,
+        "avg_latency_ms": 1827834
+      },
+      "anthropic_agent": {
+        "success_rate": 0.69,
+        "avg_cost": 0.84,
+        "avg_latency_ms": 12516
+      },
+      "openai_agent": {
+        "success_rate": 0.697,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 8419
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.943,
+        "avg_cost": 12.91,
+        "avg_latency_ms": 776827
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.887,
+        "avg_cost": 12.31,
+        "avg_latency_ms": 690946
+      }
+    }
+  }
+]

@@ -1,0 +1,1801 @@
+[
+  {
+    "skill_id": "demo_skill_001",
+    "name": "Placeholder Skill 001",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_001_0",
+      "tool_001_1"
+    ],
+    "governance_tags": [
+      "sla_sensitive",
+      "brand_safety",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.58,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_001. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.8,
+        "avg_cost": 35.63,
+        "avg_latency_ms": 720000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.23,
+        "avg_latency_ms": 19000
+      },
+      "openai_agent": {
+        "success_rate": 0.57,
+        "avg_cost": 0.68,
+        "avg_latency_ms": 2500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.83,
+        "avg_cost": 7.35,
+        "avg_latency_ms": 660000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.82,
+        "avg_cost": 6.57,
+        "avg_latency_ms": 690000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_002",
+    "name": "Placeholder Skill 002",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_002_0",
+      "tool_002_1",
+      "tool_002_2"
+    ],
+    "governance_tags": [
+      "strategic_skill",
+      "financial"
+    ],
+    "strategic_weight": 0.6,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_002. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.91,
+        "avg_cost": 26.97,
+        "avg_latency_ms": 1110000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.64,
+        "avg_cost": 0.3,
+        "avg_latency_ms": 12500
+      },
+      "openai_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.62,
+        "avg_latency_ms": 13000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.94,
+        "avg_cost": 15.89,
+        "avg_latency_ms": 840000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.83,
+        "avg_cost": 12.57,
+        "avg_latency_ms": 180000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_003",
+    "name": "Placeholder Skill 003",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_003_0",
+      "tool_003_1"
+    ],
+    "governance_tags": [
+      "regulatory"
+    ],
+    "strategic_weight": 0.34,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_003. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.89,
+        "avg_cost": 67.84,
+        "avg_latency_ms": 360000
+      },
+      "openai_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 1.18,
+        "avg_latency_ms": 4500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.76,
+        "avg_cost": 1.31,
+        "avg_latency_ms": 14000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.86,
+        "avg_cost": 16.62,
+        "avg_latency_ms": 420000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_004",
+    "name": "Placeholder Skill 004",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_004_0"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.72,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_004. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.91,
+        "avg_cost": 66.27,
+        "avg_latency_ms": 420000
+      },
+      "openai_agent": {
+        "success_rate": 0.7,
+        "avg_cost": 0.32,
+        "avg_latency_ms": 9500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.59,
+        "avg_cost": 0.62,
+        "avg_latency_ms": 19500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.85,
+        "avg_cost": 9.46,
+        "avg_latency_ms": 810000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_005",
+    "name": "Placeholder Skill 005",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_005_0"
+    ],
+    "governance_tags": [
+      "brand_safety",
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.53,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_005. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 30.82,
+        "avg_latency_ms": 1380000
+      },
+      "openai_agent": {
+        "success_rate": 0.77,
+        "avg_cost": 0.53,
+        "avg_latency_ms": 17500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.65,
+        "avg_cost": 1.38,
+        "avg_latency_ms": 16500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.59,
+        "avg_cost": 0.28,
+        "avg_latency_ms": 19500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.9,
+        "avg_cost": 19.18,
+        "avg_latency_ms": 480000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_006",
+    "name": "Placeholder Skill 006",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_006_0",
+      "tool_006_1"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.48,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_006. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.91,
+        "avg_cost": 79.58,
+        "avg_latency_ms": 570000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 1.2,
+        "avg_latency_ms": 15500
+      },
+      "openai_agent": {
+        "success_rate": 0.7,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 16500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.89,
+        "avg_cost": 24.33,
+        "avg_latency_ms": 90000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.92,
+        "avg_cost": 4.63,
+        "avg_latency_ms": 600000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_007",
+    "name": "Placeholder Skill 007",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_007_0"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "regulatory",
+      "customer_facing"
+    ],
+    "strategic_weight": 0.27,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_007. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.8,
+        "avg_cost": 69.16,
+        "avg_latency_ms": 1680000
+      },
+      "openai_agent": {
+        "success_rate": 0.62,
+        "avg_cost": 0.79,
+        "avg_latency_ms": 7500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 0.23,
+        "avg_latency_ms": 11500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.76,
+        "avg_cost": 0.8,
+        "avg_latency_ms": 8000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.84,
+        "avg_cost": 19.54,
+        "avg_latency_ms": 600000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_008",
+    "name": "Placeholder Skill 008",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_008_0",
+      "tool_008_1",
+      "tool_008_2"
+    ],
+    "governance_tags": [
+      "people_data"
+    ],
+    "strategic_weight": 0.31,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_008. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.93,
+        "avg_cost": 77.37,
+        "avg_latency_ms": 870000
+      },
+      "openai_agent": {
+        "success_rate": 0.61,
+        "avg_cost": 0.42,
+        "avg_latency_ms": 4500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.57,
+        "avg_cost": 0.77,
+        "avg_latency_ms": 4000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.96,
+        "avg_cost": 14.25,
+        "avg_latency_ms": 210000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_009",
+    "name": "Placeholder Skill 009",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_009_0"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.42,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_009. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.93,
+        "avg_cost": 46.74,
+        "avg_latency_ms": 690000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.78,
+        "avg_cost": 1.15,
+        "avg_latency_ms": 8000
+      },
+      "uniphore_agent": {
+        "success_rate": 0.73,
+        "avg_cost": 0.65,
+        "avg_latency_ms": 13500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.88,
+        "avg_cost": 13.9,
+        "avg_latency_ms": 180000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_010",
+    "name": "Placeholder Skill 010",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_010_0",
+      "tool_010_1",
+      "tool_010_2"
+    ],
+    "governance_tags": [
+      "customer_facing",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.81,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_010. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.88,
+        "avg_cost": 59.13,
+        "avg_latency_ms": 300000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.57,
+        "avg_cost": 0.98,
+        "avg_latency_ms": 9000
+      },
+      "uniphore_agent": {
+        "success_rate": 0.57,
+        "avg_cost": 0.12,
+        "avg_latency_ms": 12500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.83,
+        "avg_cost": 7.47,
+        "avg_latency_ms": 720000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_011",
+    "name": "Placeholder Skill 011",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_011_0",
+      "tool_011_1",
+      "tool_011_2"
+    ],
+    "governance_tags": [
+      "strategic_skill",
+      "safety_relevant",
+      "customer_facing"
+    ],
+    "strategic_weight": 0.42,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_011. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.89,
+        "avg_cost": 33.22,
+        "avg_latency_ms": 1200000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.75,
+        "avg_cost": 0.35,
+        "avg_latency_ms": 5000
+      },
+      "uniphore_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 0.58,
+        "avg_latency_ms": 15000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.89,
+        "avg_cost": 18.77,
+        "avg_latency_ms": 720000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_012",
+    "name": "Placeholder Skill 012",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_012_0"
+    ],
+    "governance_tags": [
+      "strategic_skill"
+    ],
+    "strategic_weight": 0.31,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_012. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 29.27,
+        "avg_latency_ms": 1140000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.59,
+        "avg_cost": 0.34,
+        "avg_latency_ms": 16500
+      },
+      "openai_agent": {
+        "success_rate": 0.61,
+        "avg_cost": 1.39,
+        "avg_latency_ms": 16000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.93,
+        "avg_cost": 21.69,
+        "avg_latency_ms": 180000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.83,
+        "avg_cost": 24.98,
+        "avg_latency_ms": 870000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_013",
+    "name": "Placeholder Skill 013",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_013_0",
+      "tool_013_1",
+      "tool_013_2"
+    ],
+    "governance_tags": [
+      "customer_facing",
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.68,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_013. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.87,
+        "avg_cost": 79.85,
+        "avg_latency_ms": 2010000
+      },
+      "openai_agent": {
+        "success_rate": 0.56,
+        "avg_cost": 0.62,
+        "avg_latency_ms": 14000
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.62,
+        "avg_cost": 1.19,
+        "avg_latency_ms": 16500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.62,
+        "avg_cost": 1.07,
+        "avg_latency_ms": 19500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.91,
+        "avg_cost": 13.19,
+        "avg_latency_ms": 270000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_014",
+    "name": "Placeholder Skill 014",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_014_0"
+    ],
+    "governance_tags": [
+      "customer_facing",
+      "safety_relevant",
+      "financial"
+    ],
+    "strategic_weight": 0.47,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_014. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.91,
+        "avg_cost": 19.29,
+        "avg_latency_ms": 1410000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.67,
+        "avg_cost": 1.39,
+        "avg_latency_ms": 18500
+      },
+      "openai_agent": {
+        "success_rate": 0.59,
+        "avg_cost": 1.44,
+        "avg_latency_ms": 4500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.94,
+        "avg_cost": 3.58,
+        "avg_latency_ms": 150000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.91,
+        "avg_cost": 7.41,
+        "avg_latency_ms": 180000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_015",
+    "name": "Placeholder Skill 015",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_015_0",
+      "tool_015_1",
+      "tool_015_2"
+    ],
+    "governance_tags": [
+      "people_data"
+    ],
+    "strategic_weight": 0.85,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_015. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.88,
+        "avg_cost": 38.73,
+        "avg_latency_ms": 780000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.6,
+        "avg_cost": 1.1,
+        "avg_latency_ms": 9500
+      },
+      "uniphore_agent": {
+        "success_rate": 0.62,
+        "avg_cost": 0.27,
+        "avg_latency_ms": 11500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.88,
+        "avg_cost": 23.37,
+        "avg_latency_ms": 150000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_016",
+    "name": "Placeholder Skill 016",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_016_0"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "financial",
+      "regulatory"
+    ],
+    "strategic_weight": 0.81,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_016. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.81,
+        "avg_cost": 30.99,
+        "avg_latency_ms": 780000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.58,
+        "avg_latency_ms": 4000
+      },
+      "openai_agent": {
+        "success_rate": 0.77,
+        "avg_cost": 0.6,
+        "avg_latency_ms": 7000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.88,
+        "avg_cost": 14.49,
+        "avg_latency_ms": 360000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.91,
+        "avg_cost": 24.71,
+        "avg_latency_ms": 690000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_017",
+    "name": "Placeholder Skill 017",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_017_0",
+      "tool_017_1"
+    ],
+    "governance_tags": [
+      "sla_sensitive",
+      "people_data"
+    ],
+    "strategic_weight": 0.79,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_017. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 81.73,
+        "avg_latency_ms": 1710000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.69,
+        "avg_cost": 0.47,
+        "avg_latency_ms": 8500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.92,
+        "avg_cost": 6.68,
+        "avg_latency_ms": 690000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_018",
+    "name": "Placeholder Skill 018",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_018_0"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.74,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_018. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.81,
+        "avg_cost": 46.77,
+        "avg_latency_ms": 810000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.56,
+        "avg_cost": 0.55,
+        "avg_latency_ms": 6000
+      },
+      "openai_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 0.45,
+        "avg_latency_ms": 16000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.9,
+        "avg_cost": 11.84,
+        "avg_latency_ms": 90000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.84,
+        "avg_cost": 23.74,
+        "avg_latency_ms": 750000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_019",
+    "name": "Placeholder Skill 019",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_019_0"
+    ],
+    "governance_tags": [
+      "gdpr_sensitive",
+      "customer_facing"
+    ],
+    "strategic_weight": 0.83,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_019. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.88,
+        "avg_cost": 47.23,
+        "avg_latency_ms": 360000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.63,
+        "avg_cost": 1.36,
+        "avg_latency_ms": 3000
+      },
+      "uniphore_agent": {
+        "success_rate": 0.77,
+        "avg_cost": 0.38,
+        "avg_latency_ms": 9500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.91,
+        "avg_cost": 10.13,
+        "avg_latency_ms": 600000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_020",
+    "name": "Placeholder Skill 020",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_020_0"
+    ],
+    "governance_tags": [
+      "financial"
+    ],
+    "strategic_weight": 0.71,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_020. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.93,
+        "avg_cost": 16.86,
+        "avg_latency_ms": 1710000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.78,
+        "avg_cost": 1.19,
+        "avg_latency_ms": 15000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.93,
+        "avg_cost": 21.87,
+        "avg_latency_ms": 840000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_021",
+    "name": "Placeholder Skill 021",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_021_0",
+      "tool_021_1",
+      "tool_021_2"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "brand_safety"
+    ],
+    "strategic_weight": 0.84,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_021. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.86,
+        "avg_cost": 17.9,
+        "avg_latency_ms": 1200000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.61,
+        "avg_cost": 1.24,
+        "avg_latency_ms": 16500
+      },
+      "openai_agent": {
+        "success_rate": 0.64,
+        "avg_cost": 1.25,
+        "avg_latency_ms": 9000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.85,
+        "avg_cost": 17.18,
+        "avg_latency_ms": 450000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.87,
+        "avg_cost": 21.88,
+        "avg_latency_ms": 810000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_022",
+    "name": "Placeholder Skill 022",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_022_0"
+    ],
+    "governance_tags": [
+      "strategic_skill",
+      "brand_safety",
+      "financial"
+    ],
+    "strategic_weight": 0.37,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_022. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.85,
+        "avg_cost": 17.07,
+        "avg_latency_ms": 1980000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.79,
+        "avg_cost": 0.33,
+        "avg_latency_ms": 10000
+      },
+      "uniphore_agent": {
+        "success_rate": 0.56,
+        "avg_cost": 0.93,
+        "avg_latency_ms": 13000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.92,
+        "avg_cost": 9.21,
+        "avg_latency_ms": 660000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_023",
+    "name": "Placeholder Skill 023",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_023_0",
+      "tool_023_1",
+      "tool_023_2"
+    ],
+    "governance_tags": [
+      "brand_safety",
+      "regulatory",
+      "customer_facing"
+    ],
+    "strategic_weight": 0.39,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_023. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.8,
+        "avg_cost": 84.42,
+        "avg_latency_ms": 1320000
+      },
+      "openai_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 1.42,
+        "avg_latency_ms": 8000
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.64,
+        "avg_cost": 0.18,
+        "avg_latency_ms": 12500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 1.02,
+        "avg_latency_ms": 5500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.92,
+        "avg_cost": 8.91,
+        "avg_latency_ms": 360000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_024",
+    "name": "Placeholder Skill 024",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_024_0",
+      "tool_024_1",
+      "tool_024_2"
+    ],
+    "governance_tags": [
+      "customer_facing",
+      "brand_safety"
+    ],
+    "strategic_weight": 0.59,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_024. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.83,
+        "avg_cost": 64.87,
+        "avg_latency_ms": 1020000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 1.36,
+        "avg_latency_ms": 11500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.88,
+        "avg_cost": 21.18,
+        "avg_latency_ms": 360000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_025",
+    "name": "Placeholder Skill 025",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_025_0"
+    ],
+    "governance_tags": [
+      "financial",
+      "customer_facing",
+      "brand_safety"
+    ],
+    "strategic_weight": 0.3,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_025. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.87,
+        "avg_cost": 48.16,
+        "avg_latency_ms": 690000
+      },
+      "openai_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 1.21,
+        "avg_latency_ms": 7000
+      },
+      "salesforce_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 0.48,
+        "avg_latency_ms": 12500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.83,
+        "avg_cost": 23.9,
+        "avg_latency_ms": 300000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_026",
+    "name": "Placeholder Skill 026",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_026_0",
+      "tool_026_1",
+      "tool_026_2"
+    ],
+    "governance_tags": [
+      "customer_facing",
+      "gdpr_sensitive"
+    ],
+    "strategic_weight": 0.54,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_026. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 50.64,
+        "avg_latency_ms": 1920000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.74,
+        "avg_cost": 0.73,
+        "avg_latency_ms": 8000
+      },
+      "openai_agent": {
+        "success_rate": 0.73,
+        "avg_cost": 0.63,
+        "avg_latency_ms": 14500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.85,
+        "avg_cost": 17.09,
+        "avg_latency_ms": 90000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.94,
+        "avg_cost": 21.79,
+        "avg_latency_ms": 180000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_027",
+    "name": "Placeholder Skill 027",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_027_0",
+      "tool_027_1"
+    ],
+    "governance_tags": [
+      "people_data"
+    ],
+    "strategic_weight": 0.37,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_027. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.88,
+        "avg_cost": 83.81,
+        "avg_latency_ms": 510000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.66,
+        "avg_cost": 1.22,
+        "avg_latency_ms": 18500
+      },
+      "openai_agent": {
+        "success_rate": 0.8,
+        "avg_cost": 0.93,
+        "avg_latency_ms": 16000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.91,
+        "avg_cost": 18.54,
+        "avg_latency_ms": 570000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.88,
+        "avg_cost": 22.86,
+        "avg_latency_ms": 510000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_028",
+    "name": "Placeholder Skill 028",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_028_0",
+      "tool_028_1",
+      "tool_028_2"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.25,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_028. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.93,
+        "avg_cost": 35.8,
+        "avg_latency_ms": 1770000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 0.97,
+        "avg_latency_ms": 10500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.88,
+        "avg_cost": 18.41,
+        "avg_latency_ms": 300000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_029",
+    "name": "Placeholder Skill 029",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_029_0",
+      "tool_029_1",
+      "tool_029_2"
+    ],
+    "governance_tags": [
+      "brand_safety",
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.45,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_029. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.83,
+        "avg_cost": 67.05,
+        "avg_latency_ms": 1650000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.6,
+        "avg_cost": 0.67,
+        "avg_latency_ms": 12500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.9,
+        "avg_cost": 11.56,
+        "avg_latency_ms": 270000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_030",
+    "name": "Placeholder Skill 030",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "openai_agent",
+      "hybrid_anthropic_human",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_030_0"
+    ],
+    "governance_tags": [
+      "gdpr_sensitive",
+      "people_data"
+    ],
+    "strategic_weight": 0.84,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_030. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.94,
+        "avg_cost": 37.4,
+        "avg_latency_ms": 1020000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.76,
+        "avg_cost": 1.43,
+        "avg_latency_ms": 15000
+      },
+      "openai_agent": {
+        "success_rate": 0.68,
+        "avg_cost": 1.12,
+        "avg_latency_ms": 9000
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.89,
+        "avg_cost": 8.28,
+        "avg_latency_ms": 540000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.82,
+        "avg_cost": 9.73,
+        "avg_latency_ms": 720000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_031",
+    "name": "Placeholder Skill 031",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "uniphore_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_031_0",
+      "tool_031_1"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "brand_safety"
+    ],
+    "strategic_weight": 0.69,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_031. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.8,
+        "avg_cost": 44.55,
+        "avg_latency_ms": 1380000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 0.2,
+        "avg_latency_ms": 15500
+      },
+      "uniphore_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.74,
+        "avg_latency_ms": 3500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.86,
+        "avg_cost": 9.53,
+        "avg_latency_ms": 510000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_032",
+    "name": "Placeholder Skill 032",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_032_0",
+      "tool_032_1",
+      "tool_032_2"
+    ],
+    "governance_tags": [
+      "people_data"
+    ],
+    "strategic_weight": 0.27,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_032. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 21.14,
+        "avg_latency_ms": 330000
+      },
+      "openai_agent": {
+        "success_rate": 0.74,
+        "avg_cost": 0.15,
+        "avg_latency_ms": 13000
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.61,
+        "avg_cost": 0.18,
+        "avg_latency_ms": 3000
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.74,
+        "avg_cost": 1.43,
+        "avg_latency_ms": 8000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.94,
+        "avg_cost": 16.29,
+        "avg_latency_ms": 300000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_033",
+    "name": "Placeholder Skill 033",
+    "allowed_paths": [
+      "human",
+      "anthropic_agent",
+      "hybrid_anthropic_human"
+    ],
+    "required_tools": [
+      "tool_033_0",
+      "tool_033_1"
+    ],
+    "governance_tags": [
+      "safety_relevant"
+    ],
+    "strategic_weight": 0.57,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_033. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.87,
+        "avg_cost": 34.22,
+        "avg_latency_ms": 990000
+      },
+      "anthropic_agent": {
+        "success_rate": 0.59,
+        "avg_cost": 0.94,
+        "avg_latency_ms": 5500
+      },
+      "hybrid_anthropic_human": {
+        "success_rate": 0.93,
+        "avg_cost": 5.77,
+        "avg_latency_ms": 360000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_034",
+    "name": "Placeholder Skill 034",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_034_0",
+      "tool_034_1",
+      "tool_034_2"
+    ],
+    "governance_tags": [
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.42,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_034. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.86,
+        "avg_cost": 68.63,
+        "avg_latency_ms": 420000
+      },
+      "openai_agent": {
+        "success_rate": 0.7,
+        "avg_cost": 1.26,
+        "avg_latency_ms": 9500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 1.18,
+        "avg_latency_ms": 5500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.75,
+        "avg_cost": 0.88,
+        "avg_latency_ms": 3000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.87,
+        "avg_cost": 11.85,
+        "avg_latency_ms": 420000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_035",
+    "name": "Placeholder Skill 035",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_035_0"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "customer_facing"
+    ],
+    "strategic_weight": 0.38,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_035. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.92,
+        "avg_cost": 22.92,
+        "avg_latency_ms": 990000
+      },
+      "openai_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 1.26,
+        "avg_latency_ms": 6500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.66,
+        "avg_cost": 1.12,
+        "avg_latency_ms": 10500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.7,
+        "avg_cost": 1.39,
+        "avg_latency_ms": 17000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.89,
+        "avg_cost": 20.99,
+        "avg_latency_ms": 630000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_036",
+    "name": "Placeholder Skill 036",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_036_0"
+    ],
+    "governance_tags": [
+      "safety_relevant",
+      "customer_facing",
+      "sla_sensitive"
+    ],
+    "strategic_weight": 0.67,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_036. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.84,
+        "avg_cost": 49.85,
+        "avg_latency_ms": 1470000
+      },
+      "openai_agent": {
+        "success_rate": 0.72,
+        "avg_cost": 0.56,
+        "avg_latency_ms": 17500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.76,
+        "avg_cost": 0.34,
+        "avg_latency_ms": 8500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.64,
+        "avg_cost": 0.45,
+        "avg_latency_ms": 10500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.94,
+        "avg_cost": 18.13,
+        "avg_latency_ms": 330000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_037",
+    "name": "Placeholder Skill 037",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "cloudflare_agent",
+      "google_vertex_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_037_0",
+      "tool_037_1"
+    ],
+    "governance_tags": [
+      "regulatory",
+      "sla_sensitive",
+      "people_data"
+    ],
+    "strategic_weight": 0.38,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_037. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.88,
+        "avg_cost": 33.02,
+        "avg_latency_ms": 1200000
+      },
+      "openai_agent": {
+        "success_rate": 0.71,
+        "avg_cost": 0.78,
+        "avg_latency_ms": 2500
+      },
+      "cloudflare_agent": {
+        "success_rate": 0.57,
+        "avg_cost": 0.39,
+        "avg_latency_ms": 9500
+      },
+      "google_vertex_agent": {
+        "success_rate": 0.63,
+        "avg_cost": 0.91,
+        "avg_latency_ms": 17000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.9,
+        "avg_cost": 9.91,
+        "avg_latency_ms": 780000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_038",
+    "name": "Placeholder Skill 038",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_038_0"
+    ],
+    "governance_tags": [
+      "financial",
+      "strategic_skill",
+      "brand_safety"
+    ],
+    "strategic_weight": 0.39,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_038. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.83,
+        "avg_cost": 69.1,
+        "avg_latency_ms": 900000
+      },
+      "openai_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.84,
+        "avg_latency_ms": 7500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.6,
+        "avg_cost": 1.13,
+        "avg_latency_ms": 10500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.92,
+        "avg_cost": 24.46,
+        "avg_latency_ms": 570000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_039",
+    "name": "Placeholder Skill 039",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_039_0",
+      "tool_039_1"
+    ],
+    "governance_tags": [
+      "financial"
+    ],
+    "strategic_weight": 0.51,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_039. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.83,
+        "avg_cost": 16.06,
+        "avg_latency_ms": 1320000
+      },
+      "openai_agent": {
+        "success_rate": 0.58,
+        "avg_cost": 0.14,
+        "avg_latency_ms": 3500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.69,
+        "avg_cost": 1.07,
+        "avg_latency_ms": 6000
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.91,
+        "avg_cost": 19.31,
+        "avg_latency_ms": 180000
+      }
+    }
+  },
+  {
+    "skill_id": "demo_skill_040",
+    "name": "Placeholder Skill 040",
+    "allowed_paths": [
+      "human",
+      "openai_agent",
+      "salesforce_agent",
+      "hybrid_openai_human"
+    ],
+    "required_tools": [
+      "tool_040_0"
+    ],
+    "governance_tags": [
+      "customer_facing"
+    ],
+    "strategic_weight": 0.56,
+    "version": "1.0",
+    "description": "Placeholder description for demo_skill_040. Replace before customer demo.",
+    "performance": {
+      "human": {
+        "success_rate": 0.83,
+        "avg_cost": 18.85,
+        "avg_latency_ms": 1950000
+      },
+      "openai_agent": {
+        "success_rate": 0.67,
+        "avg_cost": 1.25,
+        "avg_latency_ms": 14500
+      },
+      "salesforce_agent": {
+        "success_rate": 0.67,
+        "avg_cost": 0.9,
+        "avg_latency_ms": 3500
+      },
+      "hybrid_openai_human": {
+        "success_rate": 0.84,
+        "avg_cost": 20.66,
+        "avg_latency_ms": 360000
+      }
+    }
+  }
+]

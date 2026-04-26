@@ -1,0 +1,215 @@
+{
+  "kengarff_south_jordan": [
+    {
+      "actor_id": "tech_27",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_brake_diag_v3", "skill_engine_diag_v2", "skill_tire_alignment_v1"],
+      "availability": 0.78,
+      "fatigue": 0.12,
+      "certifications": ["ASE_Master", "Hybrid_Safety"]
+    },
+    {
+      "actor_id": "tech_34",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_brake_diag_v3", "skill_tire_alignment_v1"],
+      "availability": 0.42,
+      "fatigue": 0.55,
+      "certifications": ["ASE_A5"]
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": ["skill_brake_diag_v3", "skill_engine_diag_v2", "skill_cockpit_compliance_v1", "skill_hr_coaching_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_brake_diag_v3", "skill_contact_escalation_v1", "skill_marketing_exception_v1", "skill_field_dispatch_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    }
+  ],
+  "boyd_gaming_vegas": [
+    {
+      "actor_id": "floor_manager_08",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_venue_incident_v1", "skill_sportsbook_reco_v1"],
+      "availability": 0.72,
+      "fatigue": 0.28
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_sportsbook_reco_v1", "skill_venue_incident_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": ["skill_venue_incident_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    }
+  ],
+  "acme_global_marketing": [
+    {
+      "actor_id": "brand_lead_03",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_marketing_exception_v1"],
+      "availability": 0.66,
+      "fatigue": 0.22
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_marketing_exception_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_salesforce_af",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": ["skill_marketing_exception_v1"],
+      "availability": 0.92,
+      "fatigue": 0.0
+    }
+  ],
+  "global_oem_cockpit": [
+    {
+      "actor_id": "compliance_lead_02",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_cockpit_compliance_v1"],
+      "availability": 0.50,
+      "fatigue": 0.30,
+      "certifications": ["WP29_Assessor"]
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": ["skill_cockpit_compliance_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    }
+  ],
+  "utility_field_ops": [
+    {
+      "actor_id": "dispatcher_11",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_field_dispatch_v1"],
+      "availability": 0.70,
+      "fatigue": 0.25
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_field_dispatch_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_cloudflare_think",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": ["skill_field_dispatch_v1"],
+      "availability": 0.98,
+      "fatigue": 0.0
+    }
+  ],
+  "global_retail_cx": [
+    {
+      "actor_id": "agent_rep_42",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_contact_escalation_v1"],
+      "availability": 0.65,
+      "fatigue": 0.40
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_contact_escalation_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_uniphore_bac",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": ["skill_contact_escalation_v1"],
+      "availability": 0.92,
+      "fatigue": 0.0
+    }
+  ],
+  "bigins_claims": [
+    {
+      "actor_id": "claims_lead_17",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_claim_triage_v1"],
+      "availability": 0.68,
+      "fatigue": 0.24,
+      "certifications": ["AIC_30"]
+    },
+    {
+      "actor_id": "siu_investigator_04",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_claim_triage_v1"],
+      "availability": 0.50,
+      "fatigue": 0.35,
+      "certifications": ["CFE"]
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": ["skill_claim_triage_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": ["skill_claim_triage_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    }
+  ],
+  "bigco_hr": [
+    {
+      "actor_id": "hr_lead_05",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": ["skill_hr_coaching_v1"],
+      "availability": 0.55,
+      "fatigue": 0.20
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": ["skill_hr_coaching_v1"],
+      "availability": 0.95,
+      "fatigue": 0.0
+    }
+  ]
+}

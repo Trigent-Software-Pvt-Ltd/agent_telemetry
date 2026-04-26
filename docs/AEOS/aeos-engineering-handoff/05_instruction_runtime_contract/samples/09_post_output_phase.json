@@ -1,0 +1,28 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "post_output",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3POST9",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3POST9",
+  "issued_at": "2026-04-20T12:49:58.440Z",
+  "rules_fired": [
+    "dir_post_output_citation_verify",
+    "dir_post_output_toxicity_gate"
+  ],
+  "additional_instructions": [
+    "Verify that every factual claim in the final output carries at least one citation resolvable to a first-party source. If any claim is uncited, return it to the model with a regeneration instruction before releasing to the user.",
+    "Run the toxicity classifier on the final output. If score > 0.2, redact and request a neutral rewrite."
+  ],
+  "restricted_tools": [],
+  "required_tools": [
+    "citation_resolver",
+    "toxicity_classifier"
+  ],
+  "required_citations": true,
+  "require_human_confirmation": false,
+  "safety_envelope": "post_output_quality_v1",
+  "metadata": {
+    "pack_id": "quality_ops",
+    "ttl_seconds": 0,
+    "applies_to": "final_assistant_message"
+  }
+}

@@ -1,0 +1,28 @@
+id: gdpr
+version: "2026.04"
+description: >-
+  GDPR personal-data processing controls for EU tenants. Minimum
+  retention 180 days, audit log, human override, and — paired with the
+  dir_people_data_pii_mask L9 rule — PII masking on gdpr_sensitive
+  skills before any vendor sees the prompt.
+
+rules:
+  # Article 30 — records of processing activities
+  - id: gdpr_audit_log
+    severity: high
+    when:
+      always: true
+    require:
+      governance.audit_log_required: true
+      governance.trace_retention_days_min: 180
+
+  # Article 22 — the data subject's right not to be subject to automated decision-making
+  - id: people_data_human_override
+    severity: high
+    when:
+      always: true
+    require:
+      governance.human_override_available: true
+
+  # Pair with the L9 dir_people_data_pii_mask rule (skill governance_tag = gdpr_sensitive)
+  # for inline enforcement at prompt-construction time.

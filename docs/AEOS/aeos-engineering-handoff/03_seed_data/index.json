@@ -1,0 +1,65 @@
+{
+  "tenant_id": "aeos_demo_enterprise",
+  "counts": {
+    "skills": 40,
+    "actors_total": 200,
+    "humans": 180,
+    "agents": 20
+  },
+  "skill_ids_by_family": {
+    "auto_diag": [
+      "skill_auto_diag_01",
+      "skill_auto_diag_02",
+      "skill_auto_diag_03",
+      "skill_auto_diag_04",
+      "skill_auto_diag_05",
+      "skill_auto_diag_06",
+      "skill_auto_diag_07",
+      "skill_auto_diag_06_r33",
+      "skill_auto_diag_07_r34",
+      "skill_auto_diag_01_r35",
+      "skill_auto_diag_02_r36",
+      "skill_auto_diag_03_r37",
+      "skill_auto_diag_04_r38",
+      "skill_auto_diag_05_r39"
+    ],
+    "auto_repair": [
+      "skill_auto_repair_01",
+      "skill_auto_repair_02",
+      "skill_auto_repair_03",
+      "skill_auto_repair_04",
+      "skill_auto_repair_05"
+    ],
+    "cx_triage": [
+      "skill_cx_triage_01",
+      "skill_cx_triage_02",
+      "skill_cx_triage_03",
+      "skill_cx_triage_04",
+      "skill_cx_triage_05"
+    ],
+    "events_ops": [
+      "skill_events_ops_01",
+      "skill_events_ops_02",
+      "skill_events_ops_03",
+      "skill_events_ops_04"
+    ],
+    "compliance": [
+      "skill_compliance_01",
+      "skill_compliance_02",
+      "skill_compliance_03",
+      "skill_compliance_04"
+    ],
+    "field_service": [
+      "skill_field_service_01",
+      "skill_field_service_02",
+      "skill_field_service_03",
+      "skill_field_service_04"
+    ],
+    "hr_people": [
+      "skill_hr_people_01",
+      "skill_hr_people_02",
+      "skill_hr_people_03",
+      "skill_hr_people_04"
+    ]
+  }
+}

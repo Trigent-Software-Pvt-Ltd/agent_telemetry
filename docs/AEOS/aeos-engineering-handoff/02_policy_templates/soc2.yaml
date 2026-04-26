@@ -1,0 +1,125 @@
+# SOC 2 Type II — Security, Availability, Confidentiality Trust Service Criteria.
+# Enforced when governance.policy_pack = "soc2_type2".
+# Pack references: AICPA TSP Section 100 (2017), Points of Focus 2022 update.
+
+id: soc2_type2
+version: "2026.04"
+jurisdiction: [US, GLOBAL]
+description: >
+  Baseline SOC 2 Type II control set aligned to the Common Criteria plus
+  the Availability and Confidentiality categories. Expected to be
+  evaluated over a trailing 12-month operating period by an independent
+  CPA firm.
+
+rules:
+  # ------------------------------------------------------------------
+  # CC6 — Logical and Physical Access Controls
+  # ------------------------------------------------------------------
+  - id: cc6_1_logical_access
+    severity: high
+    description: >
+      Logical access controls protect against unauthorised access to
+      information assets. Every AEOS decision must be attributable to
+      an authenticated actor (human or agent identity).
+    when:
+      always: true
+    require:
+      "controls.identity_required": true
+      "controls.mfa_for_privileged": true
+    references:
+      - "SOC 2 CC6.1 — Logical access controls"
+
+  - id: cc6_6_encryption_in_transit
+    severity: high
+    description: "All external communication encrypted in transit."
+    when:
+      always: true
+    require:
+      "controls.encryption_in_transit": true
+    references:
+      - "SOC 2 CC6.6 — Boundary protection measures"
+
+  - id: cc6_7_encryption_at_rest
+    severity: high
+    description: "Sensitive data encrypted at rest."
+    when:
+      always: true
+    require:
+      "controls.encryption_at_rest": true
+    references:
+      - "SOC 2 CC6.7 — Transmission and disposal of confidential information"
+
+  # ------------------------------------------------------------------
+  # CC7 — System Operations (monitoring)
+  # ------------------------------------------------------------------
+  - id: cc7_2_security_monitoring
+    severity: high
+    description: >
+      System components and operations monitored to detect anomalies.
+      AEOS Economic Ledger satisfies the detection + evidence requirement.
+    when:
+      always: true
+    require:
+      "governance.audit_log_required": true
+      "governance.trace_retention_days_min": 365
+      "controls.monitoring_enabled": true
+    references:
+      - "SOC 2 CC7.2 — Anomalies and monitoring"
+      - "SOC 2 CC7.3 — Evaluation of security events"
+
+  # ------------------------------------------------------------------
+  # CC8 — Change Management
+  # ------------------------------------------------------------------
+  - id: cc8_1_change_management
+    severity: high
+    description: >
+      Authorised changes only; policy pack and UEF scoring changes must
+      carry a signed change ticket referenced in the evidence bundle.
+    when:
+      always: true
+    require:
+      "controls.change_mgmt_required": true
+    references:
+      - "SOC 2 CC8.1 — Change management"
+
+  # ------------------------------------------------------------------
+  # A1 — Availability
+  # ------------------------------------------------------------------
+  - id: a1_2_backup_and_recovery
+    severity: high
+    description: "Backup and recovery procedures in place."
+    when:
+      always: true
+    require:
+      "controls.backup_daily_min": true
+      "controls.rpo_hours_max": 24
+      "controls.rto_hours_max": 8
+    references:
+      - "SOC 2 A1.2 — Environmental protections, software, data back-up"
+
+  # ------------------------------------------------------------------
+  # C1 — Confidentiality
+  # ------------------------------------------------------------------
+  - id: c1_1_data_classification
+    severity: medium
+    description: "Confidential data identified and maintained accordingly."
+    when:
+      always: true
+    require:
+      "controls.data_classification_required": true
+    references:
+      - "SOC 2 C1.1 — Identification of confidential information"
+
+  # ------------------------------------------------------------------
+  # CC1 — Control Environment (access reviews)
+  # ------------------------------------------------------------------
+  - id: cc1_4_access_review_cadence
+    severity: medium
+    description: >
+      Periodic access reviews with max 90-day cadence for privileged users.
+    when:
+      always: true
+    require:
+      "controls.access_review_cadence_days_max": 90
+    references:
+      - "SOC 2 CC1.4 — Demonstration of commitment to competence"

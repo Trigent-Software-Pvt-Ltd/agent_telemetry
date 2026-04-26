@@ -1,0 +1,22 @@
+id: gambling_responsible
+version: "2026.04"
+description: >-
+  Responsible-gambling controls for regulated sportsbook and venue
+  operations. Paired with the L9 dir_gambling_responsible_play rule
+  which injects a responsible-play disclaimer into every prompt.
+
+rules:
+  - id: gambling_audit_log
+    severity: high
+    when:
+      task.regulatory_class: [gambling]
+    require:
+      governance.audit_log_required: true
+      governance.trace_retention_days_min: 365
+
+  - id: gambling_human_override
+    severity: high
+    when:
+      task.regulatory_class: [gambling]
+    require:
+      governance.human_override_available: true

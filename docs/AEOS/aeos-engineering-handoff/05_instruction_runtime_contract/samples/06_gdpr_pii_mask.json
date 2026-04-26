@@ -1,0 +1,28 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "pre_input",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3GDPR6",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3GDPR6",
+  "issued_at": "2026-04-20T12:46:30.555Z",
+  "rules_fired": [
+    "dir_gdpr_purpose_limitation",
+    "dir_gdpr_pii_minimisation"
+  ],
+  "additional_instructions": [
+    "Process only data necessary for the declared purpose: customer_support_triage. Reject prompt content referencing unrelated profiles or historical records outside the purpose.",
+    "Mask direct identifiers (email, phone, national ID, precise geolocation) in any output. Reference data subjects by their pseudonymous token only."
+  ],
+  "restricted_tools": [
+    "full_profile_lookup",
+    "cross_tenant_join"
+  ],
+  "required_tools": ["pii_redactor"],
+  "required_citations": false,
+  "require_human_confirmation": false,
+  "safety_envelope": "gdpr_standard_v1",
+  "metadata": {
+    "pack_id": "gdpr",
+    "ttl_seconds": 3600,
+    "purpose": "customer_support_triage"
+  }
+}

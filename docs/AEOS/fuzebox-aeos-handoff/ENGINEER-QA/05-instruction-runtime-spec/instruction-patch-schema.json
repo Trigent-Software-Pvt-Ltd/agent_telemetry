@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fuzebox.ai/schemas/aeos/instruction-patch.v1.json",
+  "title": "AEOS L9 InstructionPatch",
+  "description": "Payload emitted by DynamicInstructionRuntime.intercept() and consumed by every vendor adapter's invoke() method. Produced by `InstructionPatch.to_dict()` in packages/dynamic_instruction/runtime.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "additional_instructions": {
+      "type": "array",
+      "description": "Lines of text to prepend to the adapter's system prompt. Each adapter must prepend them with a '[L9 DIR] ' marker so the vendor log can be audited.",
+      "items": {"type": "string"}
+    },
+    "restricted_tools": {
+      "type": "array",
+      "description": "Tool names the adapter MUST remove from the candidate tool list before invoking the vendor. Checked against skill.required_tools.",
+      "items": {"type": "string"}
+    },
+    "required_tools": {
+      "type": "array",
+      "description": "Tool names the adapter MUST include (idempotent — union with skill.required_tools).",
+      "items": {"type": "string"}
+    },
+    "required_citations": {
+      "type": "boolean",
+      "description": "When true, the adapter must require the vendor to cite source documents in its output. Mock adapters suffix a citation marker to prove the wiring."
+    },
+    "require_human_confirmation": {
+      "type": "boolean",
+      "description": "When true, the adapter (human leg, if hybrid) must block on human confirmation before completing. Surfaced in HumanWorkforceAdapter.trace.dir_human_confirmation_required."
+    },
+    "rules_fired": {
+      "type": "array",
+      "description": "The rule_ids that fired to produce this patch. Recorded in the adapter trace and in the ledger row for audit.",
+      "items": {"type": "string"}
+    },
+    "safety_envelope": {
+      "type": ["string", "null"],
+      "description": "An opaque label identifying the safety envelope applied (e.g., 'safety_relevant_v1', 'gdpr_pii_mask_v1'). Used by evidence bundles to group executions by envelope."
+    }
+  },
+  "required": [
+    "additional_instructions",
+    "restricted_tools",
+    "required_tools",
+    "required_citations",
+    "require_human_confirmation",
+    "rules_fired"
+  ]
+}

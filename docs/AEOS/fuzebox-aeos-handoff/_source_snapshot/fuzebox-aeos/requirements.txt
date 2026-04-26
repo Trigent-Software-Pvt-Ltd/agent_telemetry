@@ -1,0 +1,9 @@
+# Zero dependencies are required to run the Ken Garff demo, the
+# conformance suite, or the sales dashboard. The packages below are
+# optional; install them to enable live-mode adapters and the FastAPI
+# services.
+anthropic>=0.30.0    # live-mode Anthropic MCP adapter
+openai>=1.40.0       # live-mode OpenAI AgentKit adapter
+fastapi>=0.110.0     # HTTP services
+uvicorn>=0.29.0      # ASGI server for services
+pytest>=8.0.0        # pytest runner for the conformance suite

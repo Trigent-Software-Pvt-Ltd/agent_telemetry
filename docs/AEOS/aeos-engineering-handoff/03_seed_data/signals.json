@@ -1,0 +1,1100 @@
+{
+  "aeos_demo_enterprise": {
+    "tenant_id": "aeos_demo_enterprise",
+    "gsti": {
+      "skill_auto_diag_01": 0.61,
+      "skill_auto_diag_02": 0.58,
+      "skill_auto_diag_03": 0.74,
+      "skill_auto_diag_04": 0.74,
+      "skill_auto_diag_05": 0.64,
+      "skill_auto_diag_06": 0.66,
+      "skill_auto_diag_07": 0.72,
+      "skill_auto_repair_01": 0.64,
+      "skill_auto_repair_02": 0.46,
+      "skill_auto_repair_03": 0.59,
+      "skill_auto_repair_04": 0.65,
+      "skill_auto_repair_05": 0.56,
+      "skill_cx_triage_01": 0.5,
+      "skill_cx_triage_02": 0.38,
+      "skill_cx_triage_03": 0.43,
+      "skill_cx_triage_04": 0.35,
+      "skill_cx_triage_05": 0.49,
+      "skill_events_ops_01": 0.48,
+      "skill_events_ops_02": 0.54,
+      "skill_events_ops_03": 0.5,
+      "skill_events_ops_04": 0.56,
+      "skill_compliance_01": 0.73,
+      "skill_compliance_02": 0.6,
+      "skill_compliance_03": 0.69,
+      "skill_compliance_04": 0.62,
+      "skill_field_service_01": 0.34,
+      "skill_field_service_02": 0.54,
+      "skill_field_service_03": 0.3,
+      "skill_field_service_04": 0.47,
+      "skill_hr_people_01": 0.52,
+      "skill_hr_people_02": 0.49,
+      "skill_hr_people_03": 0.64,
+      "skill_hr_people_04": 0.49,
+      "skill_auto_diag_06_r33": 0.66,
+      "skill_auto_diag_07_r34": 0.72,
+      "skill_auto_diag_01_r35": 0.61,
+      "skill_auto_diag_02_r36": 0.58,
+      "skill_auto_diag_03_r37": 0.74,
+      "skill_auto_diag_04_r38": 0.74,
+      "skill_auto_diag_05_r39": 0.64
+    },
+    "skill_drift_risk": {
+      "skill_auto_diag_01": 0.2,
+      "skill_auto_diag_02": 0.22,
+      "skill_auto_diag_03": 0.07,
+      "skill_auto_diag_04": 0.22,
+      "skill_auto_diag_05": 0.15,
+      "skill_auto_diag_06": 0.14,
+      "skill_auto_diag_07": 0.2,
+      "skill_auto_repair_01": 0.21,
+      "skill_auto_repair_02": 0.22,
+      "skill_auto_repair_03": 0.12,
+      "skill_auto_repair_04": 0.11,
+      "skill_auto_repair_05": 0.07,
+      "skill_cx_triage_01": 0.12,
+      "skill_cx_triage_02": 0.09,
+      "skill_cx_triage_03": 0.07,
+      "skill_cx_triage_04": 0.22,
+      "skill_cx_triage_05": 0.08,
+      "skill_events_ops_01": 0.22,
+      "skill_events_ops_02": 0.06,
+      "skill_events_ops_03": 0.14,
+      "skill_events_ops_04": 0.21,
+      "skill_compliance_01": 0.09,
+      "skill_compliance_02": 0.13,
+      "skill_compliance_03": 0.08,
+      "skill_compliance_04": 0.12,
+      "skill_field_service_01": 0.19,
+      "skill_field_service_02": 0.2,
+      "skill_field_service_03": 0.18,
+      "skill_field_service_04": 0.17,
+      "skill_hr_people_01": 0.23,
+      "skill_hr_people_02": 0.3,
+      "skill_hr_people_03": 0.22,
+      "skill_hr_people_04": 0.22,
+      "skill_auto_diag_06_r33": 0.1,
+      "skill_auto_diag_07_r34": 0.06,
+      "skill_auto_diag_01_r35": 0.19,
+      "skill_auto_diag_02_r36": 0.19,
+      "skill_auto_diag_03_r37": 0.16,
+      "skill_auto_diag_04_r38": 0.22,
+      "skill_auto_diag_05_r39": 0.14
+    },
+    "uop_by_actor": {
+      "h_technician_001": {
+        "readiness": 0.91,
+        "fatigue": 0.22,
+        "capacity": 0.53
+      },
+      "h_technician_002": {
+        "readiness": 0.92,
+        "fatigue": 0.12,
+        "capacity": 0.47
+      },
+      "h_technician_003": {
+        "readiness": 0.98,
+        "fatigue": 0.11,
+        "capacity": 0.6
+      },
+      "h_technician_004": {
+        "readiness": 0.92,
+        "fatigue": 0.1,
+        "capacity": 0.63
+      },
+      "h_technician_005": {
+        "readiness": 0.88,
+        "fatigue": 0.26,
+        "capacity": 0.76
+      },
+      "h_technician_006": {
+        "readiness": 0.84,
+        "fatigue": 0.35,
+        "capacity": 0.69
+      },
+      "h_technician_007": {
+        "readiness": 0.78,
+        "fatigue": 0.33,
+        "capacity": 0.7
+      },
+      "h_technician_008": {
+        "readiness": 0.95,
+        "fatigue": 0.08,
+        "capacity": 0.59
+      },
+      "h_technician_009": {
+        "readiness": 0.86,
+        "fatigue": 0.24,
+        "capacity": 0.38
+      },
+      "h_technician_010": {
+        "readiness": 0.92,
+        "fatigue": 0.21,
+        "capacity": 0.54
+      },
+      "h_technician_011": {
+        "readiness": 0.99,
+        "fatigue": 0.1,
+        "capacity": 0.46
+      },
+      "h_technician_012": {
+        "readiness": 0.88,
+        "fatigue": 0.18,
+        "capacity": 0.81
+      },
+      "h_technician_013": {
+        "readiness": 0.78,
+        "fatigue": 0.29,
+        "capacity": 0.5
+      },
+      "h_technician_014": {
+        "readiness": 0.91,
+        "fatigue": 0.09,
+        "capacity": 0.32
+      },
+      "h_technician_015": {
+        "readiness": 0.79,
+        "fatigue": 0.3,
+        "capacity": 0.57
+      },
+      "h_technician_016": {
+        "readiness": 0.86,
+        "fatigue": 0.26,
+        "capacity": 0.65
+      },
+      "h_technician_017": {
+        "readiness": 0.94,
+        "fatigue": 0.16,
+        "capacity": 0.52
+      },
+      "h_technician_018": {
+        "readiness": 0.87,
+        "fatigue": 0.28,
+        "capacity": 0.84
+      },
+      "h_technician_019": {
+        "readiness": 0.9,
+        "fatigue": 0.22,
+        "capacity": 0.8
+      },
+      "h_technician_020": {
+        "readiness": 0.9,
+        "fatigue": 0.18,
+        "capacity": 0.47
+      },
+      "h_technician_021": {
+        "readiness": 0.91,
+        "fatigue": 0.15,
+        "capacity": 0.47
+      },
+      "h_technician_022": {
+        "readiness": 0.77,
+        "fatigue": 0.34,
+        "capacity": 0.67
+      },
+      "h_technician_023": {
+        "readiness": 0.91,
+        "fatigue": 0.13,
+        "capacity": 0.72
+      },
+      "h_technician_024": {
+        "readiness": 0.93,
+        "fatigue": 0.07,
+        "capacity": 0.59
+      },
+      "h_technician_025": {
+        "readiness": 0.91,
+        "fatigue": 0.07,
+        "capacity": 0.48
+      },
+      "h_technician_026": {
+        "readiness": 0.86,
+        "fatigue": 0.28,
+        "capacity": 0.75
+      },
+      "h_technician_027": {
+        "readiness": 0.88,
+        "fatigue": 0.21,
+        "capacity": 0.53
+      },
+      "h_technician_028": {
+        "readiness": 0.98,
+        "fatigue": 0.06,
+        "capacity": 0.4
+      },
+      "h_technician_029": {
+        "readiness": 0.98,
+        "fatigue": 0.06,
+        "capacity": 0.55
+      },
+      "h_technician_030": {
+        "readiness": 0.86,
+        "fatigue": 0.19,
+        "capacity": 0.69
+      },
+      "h_technician_031": {
+        "readiness": 0.78,
+        "fatigue": 0.31,
+        "capacity": 0.66
+      },
+      "h_technician_032": {
+        "readiness": 0.86,
+        "fatigue": 0.24,
+        "capacity": 0.8
+      },
+      "h_technician_033": {
+        "readiness": 0.92,
+        "fatigue": 0.18,
+        "capacity": 0.34
+      },
+      "h_technician_034": {
+        "readiness": 0.84,
+        "fatigue": 0.31,
+        "capacity": 0.74
+      },
+      "h_technician_035": {
+        "readiness": 0.91,
+        "fatigue": 0.24,
+        "capacity": 0.68
+      },
+      "h_technician_036": {
+        "readiness": 0.94,
+        "fatigue": 0.12,
+        "capacity": 0.48
+      },
+      "h_technician_037": {
+        "readiness": 0.84,
+        "fatigue": 0.32,
+        "capacity": 0.46
+      },
+      "h_technician_038": {
+        "readiness": 0.81,
+        "fatigue": 0.28,
+        "capacity": 0.77
+      },
+      "h_technician_039": {
+        "readiness": 0.81,
+        "fatigue": 0.23,
+        "capacity": 0.69
+      },
+      "h_technician_040": {
+        "readiness": 0.9,
+        "fatigue": 0.2,
+        "capacity": 0.72
+      },
+      "h_technician_041": {
+        "readiness": 0.82,
+        "fatigue": 0.24,
+        "capacity": 0.36
+      },
+      "h_technician_042": {
+        "readiness": 0.96,
+        "fatigue": 0.14,
+        "capacity": 0.5
+      },
+      "h_technician_043": {
+        "readiness": 0.95,
+        "fatigue": 0.07,
+        "capacity": 0.83
+      },
+      "h_technician_044": {
+        "readiness": 0.88,
+        "fatigue": 0.15,
+        "capacity": 0.76
+      },
+      "h_technician_045": {
+        "readiness": 0.91,
+        "fatigue": 0.07,
+        "capacity": 0.57
+      },
+      "h_technician_046": {
+        "readiness": 0.8,
+        "fatigue": 0.25,
+        "capacity": 0.58
+      },
+      "h_technician_047": {
+        "readiness": 0.87,
+        "fatigue": 0.14,
+        "capacity": 0.75
+      },
+      "h_technician_048": {
+        "readiness": 0.82,
+        "fatigue": 0.3,
+        "capacity": 0.8
+      },
+      "h_technician_049": {
+        "readiness": 0.84,
+        "fatigue": 0.29,
+        "capacity": 0.43
+      },
+      "h_technician_050": {
+        "readiness": 0.79,
+        "fatigue": 0.29,
+        "capacity": 0.43
+      },
+      "h_technician_051": {
+        "readiness": 0.82,
+        "fatigue": 0.29,
+        "capacity": 0.4
+      },
+      "h_technician_052": {
+        "readiness": 0.88,
+        "fatigue": 0.25,
+        "capacity": 0.58
+      },
+      "h_technician_053": {
+        "readiness": 0.97,
+        "fatigue": 0.12,
+        "capacity": 0.35
+      },
+      "h_technician_054": {
+        "readiness": 0.98,
+        "fatigue": 0.1,
+        "capacity": 0.62
+      },
+      "h_technician_055": {
+        "readiness": 0.85,
+        "fatigue": 0.16,
+        "capacity": 0.52
+      },
+      "h_technician_056": {
+        "readiness": 0.75,
+        "fatigue": 0.34,
+        "capacity": 0.5
+      },
+      "h_technician_057": {
+        "readiness": 0.91,
+        "fatigue": 0.15,
+        "capacity": 0.73
+      },
+      "h_technician_058": {
+        "readiness": 0.86,
+        "fatigue": 0.21,
+        "capacity": 0.7
+      },
+      "h_technician_059": {
+        "readiness": 0.92,
+        "fatigue": 0.11,
+        "capacity": 0.88
+      },
+      "h_technician_060": {
+        "readiness": 0.87,
+        "fatigue": 0.27,
+        "capacity": 0.44
+      },
+      "h_technician_061": {
+        "readiness": 0.95,
+        "fatigue": 0.06,
+        "capacity": 0.61
+      },
+      "h_technician_062": {
+        "readiness": 0.99,
+        "fatigue": 0.06,
+        "capacity": 0.81
+      },
+      "h_technician_063": {
+        "readiness": 0.99,
+        "fatigue": 0.06,
+        "capacity": 0.48
+      },
+      "h_technician_064": {
+        "readiness": 0.9,
+        "fatigue": 0.16,
+        "capacity": 0.53
+      },
+      "h_technician_065": {
+        "readiness": 0.77,
+        "fatigue": 0.35,
+        "capacity": 0.36
+      },
+      "h_technician_066": {
+        "readiness": 0.96,
+        "fatigue": 0.07,
+        "capacity": 0.7
+      },
+      "h_technician_067": {
+        "readiness": 0.84,
+        "fatigue": 0.26,
+        "capacity": 0.72
+      },
+      "h_technician_068": {
+        "readiness": 0.96,
+        "fatigue": 0.08,
+        "capacity": 0.72
+      },
+      "h_technician_069": {
+        "readiness": 0.89,
+        "fatigue": 0.14,
+        "capacity": 0.76
+      },
+      "h_technician_070": {
+        "readiness": 0.81,
+        "fatigue": 0.33,
+        "capacity": 0.57
+      },
+      "h_cx_agent_071": {
+        "readiness": 0.7,
+        "fatigue": 0.45,
+        "capacity": 0.7
+      },
+      "h_cx_agent_072": {
+        "readiness": 0.89,
+        "fatigue": 0.17,
+        "capacity": 0.45
+      },
+      "h_cx_agent_073": {
+        "readiness": 0.69,
+        "fatigue": 0.5,
+        "capacity": 0.73
+      },
+      "h_cx_agent_074": {
+        "readiness": 0.73,
+        "fatigue": 0.4,
+        "capacity": 0.44
+      },
+      "h_cx_agent_075": {
+        "readiness": 0.79,
+        "fatigue": 0.35,
+        "capacity": 0.42
+      },
+      "h_cx_agent_076": {
+        "readiness": 0.81,
+        "fatigue": 0.24,
+        "capacity": 0.65
+      },
+      "h_cx_agent_077": {
+        "readiness": 0.7,
+        "fatigue": 0.42,
+        "capacity": 0.56
+      },
+      "h_cx_agent_078": {
+        "readiness": 0.82,
+        "fatigue": 0.28,
+        "capacity": 0.61
+      },
+      "h_cx_agent_079": {
+        "readiness": 0.86,
+        "fatigue": 0.3,
+        "capacity": 0.37
+      },
+      "h_cx_agent_080": {
+        "readiness": 0.95,
+        "fatigue": 0.17,
+        "capacity": 0.77
+      },
+      "h_cx_agent_081": {
+        "readiness": 0.93,
+        "fatigue": 0.17,
+        "capacity": 0.36
+      },
+      "h_cx_agent_082": {
+        "readiness": 0.81,
+        "fatigue": 0.31,
+        "capacity": 0.7
+      },
+      "h_cx_agent_083": {
+        "readiness": 0.76,
+        "fatigue": 0.42,
+        "capacity": 0.74
+      },
+      "h_cx_agent_084": {
+        "readiness": 0.7,
+        "fatigue": 0.42,
+        "capacity": 0.66
+      },
+      "h_cx_agent_085": {
+        "readiness": 0.8,
+        "fatigue": 0.27,
+        "capacity": 0.71
+      },
+      "h_cx_agent_086": {
+        "readiness": 0.87,
+        "fatigue": 0.16,
+        "capacity": 0.71
+      },
+      "h_cx_agent_087": {
+        "readiness": 0.85,
+        "fatigue": 0.25,
+        "capacity": 0.47
+      },
+      "h_cx_agent_088": {
+        "readiness": 0.93,
+        "fatigue": 0.17,
+        "capacity": 0.52
+      },
+      "h_cx_agent_089": {
+        "readiness": 0.76,
+        "fatigue": 0.44,
+        "capacity": 0.53
+      },
+      "h_cx_agent_090": {
+        "readiness": 0.84,
+        "fatigue": 0.32,
+        "capacity": 0.53
+      },
+      "h_cx_agent_091": {
+        "readiness": 0.79,
+        "fatigue": 0.36,
+        "capacity": 0.57
+      },
+      "h_cx_agent_092": {
+        "readiness": 0.79,
+        "fatigue": 0.32,
+        "capacity": 0.7
+      },
+      "h_cx_agent_093": {
+        "readiness": 0.73,
+        "fatigue": 0.4,
+        "capacity": 0.59
+      },
+      "h_cx_agent_094": {
+        "readiness": 0.7,
+        "fatigue": 0.49,
+        "capacity": 0.63
+      },
+      "h_cx_agent_095": {
+        "readiness": 0.71,
+        "fatigue": 0.43,
+        "capacity": 0.77
+      },
+      "h_cx_agent_096": {
+        "readiness": 0.73,
+        "fatigue": 0.45,
+        "capacity": 0.41
+      },
+      "h_cx_agent_097": {
+        "readiness": 0.73,
+        "fatigue": 0.39,
+        "capacity": 0.74
+      },
+      "h_cx_agent_098": {
+        "readiness": 0.76,
+        "fatigue": 0.48,
+        "capacity": 0.76
+      },
+      "h_cx_agent_099": {
+        "readiness": 0.81,
+        "fatigue": 0.24,
+        "capacity": 0.86
+      },
+      "h_cx_agent_100": {
+        "readiness": 0.93,
+        "fatigue": 0.19,
+        "capacity": 0.66
+      },
+      "h_cx_agent_101": {
+        "readiness": 0.74,
+        "fatigue": 0.35,
+        "capacity": 0.71
+      },
+      "h_cx_agent_102": {
+        "readiness": 0.83,
+        "fatigue": 0.26,
+        "capacity": 0.36
+      },
+      "h_cx_agent_103": {
+        "readiness": 0.85,
+        "fatigue": 0.18,
+        "capacity": 0.68
+      },
+      "h_cx_agent_104": {
+        "readiness": 0.88,
+        "fatigue": 0.26,
+        "capacity": 0.69
+      },
+      "h_cx_agent_105": {
+        "readiness": 0.82,
+        "fatigue": 0.27,
+        "capacity": 0.8
+      },
+      "h_cx_agent_106": {
+        "readiness": 0.68,
+        "fatigue": 0.49,
+        "capacity": 0.6
+      },
+      "h_cx_agent_107": {
+        "readiness": 0.86,
+        "fatigue": 0.3,
+        "capacity": 0.84
+      },
+      "h_cx_agent_108": {
+        "readiness": 0.87,
+        "fatigue": 0.2,
+        "capacity": 0.86
+      },
+      "h_cx_agent_109": {
+        "readiness": 0.84,
+        "fatigue": 0.32,
+        "capacity": 0.4
+      },
+      "h_cx_agent_110": {
+        "readiness": 0.73,
+        "fatigue": 0.37,
+        "capacity": 0.59
+      },
+      "h_venue_operator_111": {
+        "readiness": 0.92,
+        "fatigue": 0.14,
+        "capacity": 0.7
+      },
+      "h_venue_operator_112": {
+        "readiness": 0.77,
+        "fatigue": 0.44,
+        "capacity": 0.74
+      },
+      "h_venue_operator_113": {
+        "readiness": 0.69,
+        "fatigue": 0.45,
+        "capacity": 0.67
+      },
+      "h_venue_operator_114": {
+        "readiness": 0.85,
+        "fatigue": 0.25,
+        "capacity": 0.72
+      },
+      "h_venue_operator_115": {
+        "readiness": 0.71,
+        "fatigue": 0.43,
+        "capacity": 0.78
+      },
+      "h_venue_operator_116": {
+        "readiness": 0.88,
+        "fatigue": 0.24,
+        "capacity": 0.82
+      },
+      "h_venue_operator_117": {
+        "readiness": 0.9,
+        "fatigue": 0.19,
+        "capacity": 0.81
+      },
+      "h_venue_operator_118": {
+        "readiness": 0.88,
+        "fatigue": 0.11,
+        "capacity": 0.83
+      },
+      "h_venue_operator_119": {
+        "readiness": 0.81,
+        "fatigue": 0.37,
+        "capacity": 0.56
+      },
+      "h_venue_operator_120": {
+        "readiness": 0.74,
+        "fatigue": 0.45,
+        "capacity": 0.44
+      },
+      "h_venue_operator_121": {
+        "readiness": 0.9,
+        "fatigue": 0.12,
+        "capacity": 0.59
+      },
+      "h_venue_operator_122": {
+        "readiness": 0.79,
+        "fatigue": 0.28,
+        "capacity": 0.38
+      },
+      "h_venue_operator_123": {
+        "readiness": 0.96,
+        "fatigue": 0.13,
+        "capacity": 0.87
+      },
+      "h_venue_operator_124": {
+        "readiness": 0.79,
+        "fatigue": 0.32,
+        "capacity": 0.52
+      },
+      "h_venue_operator_125": {
+        "readiness": 0.81,
+        "fatigue": 0.26,
+        "capacity": 0.55
+      },
+      "h_venue_operator_126": {
+        "readiness": 0.83,
+        "fatigue": 0.31,
+        "capacity": 0.71
+      },
+      "h_venue_operator_127": {
+        "readiness": 0.78,
+        "fatigue": 0.41,
+        "capacity": 0.74
+      },
+      "h_venue_operator_128": {
+        "readiness": 0.75,
+        "fatigue": 0.36,
+        "capacity": 0.83
+      },
+      "h_venue_operator_129": {
+        "readiness": 0.95,
+        "fatigue": 0.16,
+        "capacity": 0.76
+      },
+      "h_venue_operator_130": {
+        "readiness": 0.9,
+        "fatigue": 0.13,
+        "capacity": 0.53
+      },
+      "h_compliance_lead_131": {
+        "readiness": 0.75,
+        "fatigue": 0.44,
+        "capacity": 0.75
+      },
+      "h_compliance_lead_132": {
+        "readiness": 0.91,
+        "fatigue": 0.16,
+        "capacity": 0.83
+      },
+      "h_compliance_lead_133": {
+        "readiness": 0.81,
+        "fatigue": 0.3,
+        "capacity": 0.69
+      },
+      "h_compliance_lead_134": {
+        "readiness": 0.78,
+        "fatigue": 0.33,
+        "capacity": 0.41
+      },
+      "h_compliance_lead_135": {
+        "readiness": 0.92,
+        "fatigue": 0.17,
+        "capacity": 0.7
+      },
+      "h_compliance_lead_136": {
+        "readiness": 0.82,
+        "fatigue": 0.28,
+        "capacity": 0.6
+      },
+      "h_compliance_lead_137": {
+        "readiness": 0.79,
+        "fatigue": 0.43,
+        "capacity": 0.72
+      },
+      "h_compliance_lead_138": {
+        "readiness": 0.85,
+        "fatigue": 0.25,
+        "capacity": 0.45
+      },
+      "h_compliance_lead_139": {
+        "readiness": 0.86,
+        "fatigue": 0.16,
+        "capacity": 0.55
+      },
+      "h_compliance_lead_140": {
+        "readiness": 0.88,
+        "fatigue": 0.2,
+        "capacity": 0.38
+      },
+      "h_compliance_lead_141": {
+        "readiness": 0.83,
+        "fatigue": 0.26,
+        "capacity": 0.39
+      },
+      "h_compliance_lead_142": {
+        "readiness": 0.92,
+        "fatigue": 0.18,
+        "capacity": 0.79
+      },
+      "h_compliance_lead_143": {
+        "readiness": 0.81,
+        "fatigue": 0.29,
+        "capacity": 0.35
+      },
+      "h_compliance_lead_144": {
+        "readiness": 0.8,
+        "fatigue": 0.38,
+        "capacity": 0.52
+      },
+      "h_compliance_lead_145": {
+        "readiness": 0.88,
+        "fatigue": 0.26,
+        "capacity": 0.7
+      },
+      "h_field_tech_146": {
+        "readiness": 0.96,
+        "fatigue": 0.12,
+        "capacity": 0.86
+      },
+      "h_field_tech_147": {
+        "readiness": 0.76,
+        "fatigue": 0.4,
+        "capacity": 0.79
+      },
+      "h_field_tech_148": {
+        "readiness": 0.74,
+        "fatigue": 0.37,
+        "capacity": 0.79
+      },
+      "h_field_tech_149": {
+        "readiness": 0.9,
+        "fatigue": 0.25,
+        "capacity": 0.45
+      },
+      "h_field_tech_150": {
+        "readiness": 0.95,
+        "fatigue": 0.11,
+        "capacity": 0.68
+      },
+      "h_field_tech_151": {
+        "readiness": 0.87,
+        "fatigue": 0.28,
+        "capacity": 0.58
+      },
+      "h_field_tech_152": {
+        "readiness": 0.9,
+        "fatigue": 0.13,
+        "capacity": 0.85
+      },
+      "h_field_tech_153": {
+        "readiness": 0.79,
+        "fatigue": 0.37,
+        "capacity": 0.42
+      },
+      "h_field_tech_154": {
+        "readiness": 0.89,
+        "fatigue": 0.14,
+        "capacity": 0.43
+      },
+      "h_field_tech_155": {
+        "readiness": 0.88,
+        "fatigue": 0.13,
+        "capacity": 0.43
+      },
+      "h_field_tech_156": {
+        "readiness": 0.9,
+        "fatigue": 0.1,
+        "capacity": 0.57
+      },
+      "h_field_tech_157": {
+        "readiness": 0.79,
+        "fatigue": 0.35,
+        "capacity": 0.51
+      },
+      "h_field_tech_158": {
+        "readiness": 0.86,
+        "fatigue": 0.26,
+        "capacity": 0.84
+      },
+      "h_field_tech_159": {
+        "readiness": 0.76,
+        "fatigue": 0.33,
+        "capacity": 0.8
+      },
+      "h_field_tech_160": {
+        "readiness": 0.72,
+        "fatigue": 0.39,
+        "capacity": 0.4
+      },
+      "h_field_tech_161": {
+        "readiness": 0.93,
+        "fatigue": 0.16,
+        "capacity": 0.53
+      },
+      "h_field_tech_162": {
+        "readiness": 0.85,
+        "fatigue": 0.18,
+        "capacity": 0.46
+      },
+      "h_field_tech_163": {
+        "readiness": 0.86,
+        "fatigue": 0.16,
+        "capacity": 0.52
+      },
+      "h_field_tech_164": {
+        "readiness": 0.79,
+        "fatigue": 0.3,
+        "capacity": 0.76
+      },
+      "h_field_tech_165": {
+        "readiness": 0.88,
+        "fatigue": 0.26,
+        "capacity": 0.42
+      },
+      "h_field_tech_166": {
+        "readiness": 0.84,
+        "fatigue": 0.25,
+        "capacity": 0.59
+      },
+      "h_field_tech_167": {
+        "readiness": 0.86,
+        "fatigue": 0.2,
+        "capacity": 0.54
+      },
+      "h_field_tech_168": {
+        "readiness": 0.89,
+        "fatigue": 0.23,
+        "capacity": 0.54
+      },
+      "h_field_tech_169": {
+        "readiness": 0.87,
+        "fatigue": 0.21,
+        "capacity": 0.43
+      },
+      "h_field_tech_170": {
+        "readiness": 0.86,
+        "fatigue": 0.16,
+        "capacity": 0.31
+      },
+      "h_hr_lead_171": {
+        "readiness": 0.82,
+        "fatigue": 0.31,
+        "capacity": 0.56
+      },
+      "h_hr_lead_172": {
+        "readiness": 0.75,
+        "fatigue": 0.37,
+        "capacity": 0.5
+      },
+      "h_hr_lead_173": {
+        "readiness": 0.84,
+        "fatigue": 0.22,
+        "capacity": 0.57
+      },
+      "h_hr_lead_174": {
+        "readiness": 0.93,
+        "fatigue": 0.19,
+        "capacity": 0.62
+      },
+      "h_hr_lead_175": {
+        "readiness": 0.86,
+        "fatigue": 0.27,
+        "capacity": 0.79
+      },
+      "h_hr_lead_176": {
+        "readiness": 0.76,
+        "fatigue": 0.4,
+        "capacity": 0.76
+      },
+      "h_hr_lead_177": {
+        "readiness": 0.81,
+        "fatigue": 0.26,
+        "capacity": 0.58
+      },
+      "h_hr_lead_178": {
+        "readiness": 0.74,
+        "fatigue": 0.35,
+        "capacity": 0.61
+      },
+      "h_hr_lead_179": {
+        "readiness": 0.9,
+        "fatigue": 0.21,
+        "capacity": 0.75
+      },
+      "h_hr_lead_180": {
+        "readiness": 0.8,
+        "fatigue": 0.32,
+        "capacity": 0.33
+      },
+      "agent_claude_opus_47": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "agent_claude_haiku_47": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "agent_gpt_51": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "agent_gpt_51_mini": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "agent_salesforce_af": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.85
+      },
+      "agent_uniphore_bac": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "agent_cloudflare_think": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.88
+      },
+      "agent_claude_opus_47_r7": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.86
+      },
+      "agent_claude_haiku_47_r8": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "agent_gpt_51_r9": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.84
+      },
+      "agent_gpt_51_mini_r10": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.9
+      },
+      "agent_salesforce_af_r11": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "agent_uniphore_bac_r12": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.9
+      },
+      "agent_cloudflare_think_r13": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.9
+      },
+      "agent_claude_opus_47_r14": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "agent_claude_haiku_47_r15": {
+        "readiness": 0.98,
+        "fatigue": 0.0,
+        "capacity": 0.86
+      },
+      "agent_gpt_51_r16": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "agent_gpt_51_mini_r17": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "agent_salesforce_af_r18": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "agent_uniphore_bac_r19": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      }
+    },
+    "coordination_tax": {
+      "default": 0.12,
+      "service_bay_diagnosis": 0.15,
+      "contact_center_escalation": 0.1,
+      "venue_operations_incident": 0.18,
+      "automotive_cockpit_compliance": 0.22,
+      "field_service_dispatch": 0.09,
+      "hr_workforce_coaching": 0.14
+    }
+  }
+}

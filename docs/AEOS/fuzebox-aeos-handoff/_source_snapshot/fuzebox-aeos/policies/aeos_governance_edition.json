@@ -1,0 +1,17 @@
+{
+  "id": "aeos_governance_edition",
+  "version": "2026.04",
+  "description": "FuzeBox AEOS Governance Edition — enforces two-party (FuzeBox + rPotential) attestation on every board-level evidence bundle. Single-party signatures are not acceptable.",
+  "rules": [
+    {
+      "id": "two_party_attestation_required",
+      "severity": "critical",
+      "when": {"always": true},
+      "require": {
+        "governance.audit_log_required": true,
+        "governance.evidence_export_required": true,
+        "governance.human_override_available": true
+      }
+    }
+  ]
+}

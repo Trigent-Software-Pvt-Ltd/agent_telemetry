@@ -1,0 +1,23 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "pre_input",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3GAMB3",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3GAMB3",
+  "issued_at": "2026-04-20T12:43:05.010Z",
+  "rules_fired": ["dir_gambling_responsible_play"],
+  "additional_instructions": [
+    "Responsible-play controls are in effect. Do not encourage additional wagering, do not reference bonus offers, and if the guest shows loss-chasing language, surface the self-exclusion resource before continuing."
+  ],
+  "restricted_tools": [
+    "offer_bonus_credit",
+    "comp_upsell"
+  ],
+  "required_tools": ["responsible_play_resource_lookup"],
+  "required_citations": false,
+  "require_human_confirmation": false,
+  "safety_envelope": "gambling_responsible_v1",
+  "metadata": {
+    "pack_id": "gaming_compliance",
+    "ttl_seconds": 1800
+  }
+}

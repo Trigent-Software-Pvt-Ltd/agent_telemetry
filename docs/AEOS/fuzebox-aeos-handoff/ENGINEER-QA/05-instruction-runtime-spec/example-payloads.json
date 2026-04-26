@@ -1,0 +1,113 @@
+{
+  "description": "Six representative InstructionPatch payloads, one per built-in DIR rule. Use these as integration test fixtures.",
+  "examples": [
+    {
+      "rule": "dir_safety_relevant_confirmation",
+      "fires_when": "task.risk_level in [high, critical]",
+      "patch": {
+        "additional_instructions": [
+          "This task is safety-relevant. Cite manufacturer service bulletins for every recommendation and flag any action requiring human sign-off before execution."
+        ],
+        "restricted_tools": [],
+        "required_tools": [],
+        "required_citations": true,
+        "require_human_confirmation": true,
+        "rules_fired": ["dir_safety_relevant_confirmation"],
+        "safety_envelope": "safety_relevant_v1"
+      }
+    },
+    {
+      "rule": "dir_auto_safety_tool_lockdown",
+      "fires_when": "task.regulatory_class == 'auto_safety'",
+      "patch": {
+        "additional_instructions": [],
+        "restricted_tools": ["clear_dtc_without_root_cause", "ota_push_untested"],
+        "required_tools": [],
+        "required_citations": false,
+        "require_human_confirmation": false,
+        "rules_fired": ["dir_auto_safety_tool_lockdown"],
+        "safety_envelope": null
+      }
+    },
+    {
+      "rule": "dir_gambling_responsible_play",
+      "fires_when": "task.regulatory_class == 'gambling'",
+      "patch": {
+        "additional_instructions": [
+          "Include a responsible-play disclaimer in all user-facing recommendations. Never encourage chasing losses."
+        ],
+        "restricted_tools": [],
+        "required_tools": [],
+        "required_citations": false,
+        "require_human_confirmation": false,
+        "rules_fired": ["dir_gambling_responsible_play"],
+        "safety_envelope": "gambling_responsible_v1"
+      }
+    },
+    {
+      "rule": "dir_drift_coaching",
+      "fires_when": "signals.skill_drift_risk > 0.30",
+      "patch": {
+        "additional_instructions": [
+          "Drift risk is elevated for this skill. Annotate the output with a one-line coaching note for the human reviewer so the skill is reinforced, not eroded."
+        ],
+        "restricted_tools": [],
+        "required_tools": [],
+        "required_citations": false,
+        "require_human_confirmation": false,
+        "rules_fired": ["dir_drift_coaching"],
+        "safety_envelope": null
+      }
+    },
+    {
+      "rule": "dir_fatigue_handoff",
+      "fires_when": "signals.actor_fatigue > 0.55",
+      "patch": {
+        "additional_instructions": [
+          "Actor fatigue is elevated. Structure the output as a checklist the agent can carry to completion, minimizing steps that demand sustained human focus."
+        ],
+        "restricted_tools": [],
+        "required_tools": [],
+        "required_citations": false,
+        "require_human_confirmation": false,
+        "rules_fired": ["dir_fatigue_handoff"],
+        "safety_envelope": null
+      }
+    },
+    {
+      "rule": "dir_people_data_pii_mask",
+      "fires_when": "'gdpr_sensitive' in skill.governance_tags",
+      "patch": {
+        "additional_instructions": [
+          "Before sending any name, address, email, or phone number to the model, replace it with <PII_MASK_N>."
+        ],
+        "restricted_tools": ["raw_customer_lookup"],
+        "required_tools": [],
+        "required_citations": false,
+        "require_human_confirmation": true,
+        "rules_fired": ["dir_people_data_pii_mask"],
+        "safety_envelope": "gdpr_pii_mask_v1"
+      }
+    },
+    {
+      "rule": "multi-rule merge (typical brake-diagnosis dispatch)",
+      "fires_when": "HIGH risk + auto_safety + drift>0.30",
+      "patch": {
+        "additional_instructions": [
+          "This task is safety-relevant. Cite manufacturer service bulletins for every recommendation and flag any action requiring human sign-off before execution.",
+          "Drift risk is elevated for this skill. Annotate the output with a one-line coaching note for the human reviewer so the skill is reinforced, not eroded."
+        ],
+        "restricted_tools": ["clear_dtc_without_root_cause", "ota_push_untested"],
+        "required_tools": [],
+        "required_citations": true,
+        "require_human_confirmation": true,
+        "rules_fired": [
+          "dir_safety_relevant_confirmation",
+          "dir_auto_safety_tool_lockdown",
+          "dir_drift_coaching"
+        ],
+        "safety_envelope": "safety_relevant_v1"
+      }
+    }
+  ]
+}

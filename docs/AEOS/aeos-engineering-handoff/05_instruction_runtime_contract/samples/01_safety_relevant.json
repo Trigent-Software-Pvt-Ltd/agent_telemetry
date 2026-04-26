@@ -1,0 +1,20 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "pre_input",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3SAFE1",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3SAFE1",
+  "issued_at": "2026-04-20T12:41:18.432Z",
+  "rules_fired": ["dir_safety_relevant_confirmation"],
+  "additional_instructions": [
+    "This task is safety-relevant. Cite manufacturer service bulletins for every recommendation and flag any action requiring human sign-off before execution."
+  ],
+  "restricted_tools": [],
+  "required_tools": [],
+  "required_citations": true,
+  "require_human_confirmation": true,
+  "safety_envelope": "safety_relevant_v1",
+  "metadata": {
+    "pack_id": "auto_safety_standard",
+    "ttl_seconds": 3600
+  }
+}

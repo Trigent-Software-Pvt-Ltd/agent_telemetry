@@ -1,0 +1,4465 @@
+{
+  "aeos_demo_enterprise": [
+    {
+      "actor_id": "h_technician_001",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_02",
+        "skill_auto_diag_03",
+        "skill_auto_diag_07_r34"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.22,
+      "certifications": [
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Peyton Larsen",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_002",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_diag_05",
+        "skill_auto_diag_05_r39"
+      ],
+      "availability": 0.5,
+      "fatigue": 0.12,
+      "certifications": [
+        "GDPR_DPO",
+        "ITIL_v4",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Logan Nguyen",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_003",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_02",
+        "skill_auto_diag_02",
+        "skill_auto_diag_01_r35"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.11,
+      "certifications": [
+        "ASE_Master",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Jordan Jansen",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_004",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_03",
+        "skill_auto_diag_02",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.7,
+      "fatigue": 0.1,
+      "certifications": [
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Jordan Larsen",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_005",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_02",
+        "skill_auto_repair_03",
+        "skill_auto_diag_01_r35"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.26,
+      "certifications": [
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Casey Tanaka",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_006",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_03",
+        "skill_auto_repair_05",
+        "skill_auto_diag_06_r33"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.35,
+      "certifications": [
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Taylor O'Connor",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_007",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_01",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_02"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.33,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Harper Silva",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_008",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_01",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.62,
+      "fatigue": 0.08,
+      "certifications": [
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Logan Mart\u00edn",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_009",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_06",
+        "skill_auto_diag_02_r36",
+        "skill_auto_repair_04",
+        "skill_auto_repair_02",
+        "skill_auto_diag_01_r35"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.24,
+      "certifications": [
+        "GDPR_DPO",
+        "OEM_Ford",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Sam Patel",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_010",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_05",
+        "skill_auto_repair_04",
+        "skill_auto_repair_01",
+        "skill_auto_diag_06_r33"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.21,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Rowan Dubois",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_011",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_07",
+        "skill_auto_diag_01_r35"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.1,
+      "certifications": [
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Logan Cohen",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_012",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_05",
+        "skill_auto_diag_02",
+        "skill_auto_diag_06",
+        "skill_auto_repair_04",
+        "skill_auto_diag_01_r35",
+        "skill_auto_repair_03",
+        "skill_auto_repair_02"
+      ],
+      "availability": 0.87,
+      "fatigue": 0.18,
+      "certifications": [
+        "SHRM_SCP",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Emery Tanaka",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_013",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06_r33",
+        "skill_auto_repair_03",
+        "skill_auto_repair_05",
+        "skill_auto_diag_05",
+        "skill_auto_diag_07",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.51,
+      "fatigue": 0.29,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Casey O'Connor",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_014",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06_r33",
+        "skill_auto_repair_04",
+        "skill_auto_diag_01",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_07",
+        "skill_auto_repair_03",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.4,
+      "fatigue": 0.09,
+      "certifications": [
+        "CIPP_E",
+        "Hybrid_Safety",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Morgan Mart\u00edn",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_015",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_03",
+        "skill_auto_diag_03",
+        "skill_auto_repair_04",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_04_r38"
+      ],
+      "availability": 0.66,
+      "fatigue": 0.3,
+      "certifications": [
+        "ITIL_v4",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Sam Nguyen",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_016",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_repair_04",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_05"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.26,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Casey Garc\u00eda",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_017",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_06_r33",
+        "skill_auto_repair_03",
+        "skill_auto_repair_02",
+        "skill_auto_diag_04",
+        "skill_auto_diag_06"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.16,
+      "certifications": [
+        "EV_L2_Cert",
+        "OEM_Ford",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Logan Kim",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_018",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_05",
+        "skill_auto_diag_02_r36",
+        "skill_auto_repair_02",
+        "skill_auto_diag_06",
+        "skill_auto_diag_04_r38"
+      ],
+      "availability": 0.85,
+      "fatigue": 0.28,
+      "certifications": [
+        "OEM_Ford",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Riley Jansen",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_019",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_03_r37",
+        "skill_auto_repair_02",
+        "skill_auto_diag_04",
+        "skill_auto_diag_05"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.22,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Casey Novak",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_020",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_02",
+        "skill_auto_diag_01",
+        "skill_auto_diag_04",
+        "skill_auto_repair_02"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.18,
+      "certifications": [
+        "EV_L2_Cert",
+        "SHRM_SCP",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Rowan Garc\u00eda",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_021",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01",
+        "skill_auto_diag_04_r38",
+        "skill_auto_repair_03"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.15,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Alex Dubois",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_022",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_03",
+        "skill_auto_diag_07",
+        "skill_auto_repair_05",
+        "skill_auto_diag_04",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_06"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.34,
+      "certifications": [
+        "OEM_Toyota",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Parker Okafor",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_023",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_04",
+        "skill_auto_diag_01",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.13,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "ASE_Master",
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Sage Dubois",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_024",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_06",
+        "skill_auto_diag_04",
+        "skill_auto_repair_01",
+        "skill_auto_repair_04",
+        "skill_auto_diag_02_r36"
+      ],
+      "availability": 0.65,
+      "fatigue": 0.07,
+      "certifications": [
+        "CIPP_E",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Morgan Rossi",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_025",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_03_r37",
+        "skill_auto_repair_03",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_06",
+        "skill_auto_diag_05_r39"
+      ],
+      "availability": 0.49,
+      "fatigue": 0.07,
+      "certifications": [
+        "SHRM_SCP",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Harper Patel",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_026",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_01",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_03",
+        "skill_auto_diag_01",
+        "skill_auto_diag_04",
+        "skill_auto_diag_06_r33"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.28,
+      "certifications": [
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Morgan Larsen",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_027",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_repair_01",
+        "skill_auto_diag_04",
+        "skill_auto_diag_05",
+        "skill_auto_diag_02",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.21,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Rowan Kim",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_028",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_06_r33",
+        "skill_auto_repair_01",
+        "skill_auto_diag_04",
+        "skill_auto_diag_05",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_07_r34"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.06,
+      "certifications": [
+        "OEM_Toyota",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Avery Larsen",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_029",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_04"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.06,
+      "certifications": [
+        "EV_L2_Cert",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Alex Novak",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_030",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_07",
+        "skill_auto_diag_06"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.19,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Sage Mart\u00edn",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_031",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07",
+        "skill_auto_diag_01",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.31,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "OEM_GM",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Harper Dubois",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_032",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_02",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_01"
+      ],
+      "availability": 0.85,
+      "fatigue": 0.24,
+      "certifications": [
+        "OEM_GM",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Quinn Dubois",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_033",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_03",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_07",
+        "skill_auto_diag_04"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.18,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Peyton Larsen",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_034",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_03",
+        "skill_auto_repair_04",
+        "skill_auto_repair_01",
+        "skill_auto_diag_05",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_05_r39"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.31,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SOC2_Lead_Auditor",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Reese Jansen",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_035",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_diag_02",
+        "skill_auto_diag_02_r36"
+      ],
+      "availability": 0.72,
+      "fatigue": 0.24,
+      "certifications": [
+        "OEM_Toyota",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Jordan Mart\u00edn",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_036",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_03",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_02",
+        "skill_auto_diag_04"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.12,
+      "certifications": [
+        "OEM_Toyota",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Parker O'Connor",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_037",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_repair_02",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_03",
+        "skill_auto_diag_06",
+        "skill_auto_diag_07_r34"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.32,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Drew Schmidt",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_038",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_05"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.28,
+      "certifications": [
+        "SHRM_SCP",
+        "WP29_Assessor",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Morgan Yamada",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_039",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_02",
+        "skill_auto_diag_06",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_07",
+        "skill_auto_repair_03"
+      ],
+      "availability": 0.7,
+      "fatigue": 0.23,
+      "certifications": [
+        "ASE_A5_Brakes",
+        "GDPR_DPO",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Peyton Schmidt",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_040",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_diag_06",
+        "skill_auto_diag_01",
+        "skill_auto_repair_01",
+        "skill_auto_diag_04",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_04_r38"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.2,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Skyler Silva",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_041",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02",
+        "skill_auto_repair_01",
+        "skill_auto_repair_04",
+        "skill_auto_diag_05"
+      ],
+      "availability": 0.4,
+      "fatigue": 0.24,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Peyton Cohen",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_042",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_02"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.14,
+      "certifications": [
+        "CIPP_E",
+        "OEM_Ford",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Casey Cohen",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_043",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_02",
+        "skill_auto_repair_04",
+        "skill_auto_diag_07_r34"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.07,
+      "certifications": [
+        "OEM_Ford",
+        "OEM_Toyota",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Emery Rossi",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_044",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05",
+        "skill_auto_repair_04",
+        "skill_auto_repair_03",
+        "skill_auto_repair_05",
+        "skill_auto_repair_02"
+      ],
+      "availability": 0.78,
+      "fatigue": 0.15,
+      "certifications": [
+        "Hybrid_Safety",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Morgan Tanaka",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_045",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_repair_05",
+        "skill_auto_diag_01"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.07,
+      "certifications": [
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Parker Schmidt",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_046",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_05",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_04"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.25,
+      "certifications": [
+        "Hybrid_Safety",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Casey Garc\u00eda",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_047",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_06",
+        "skill_auto_repair_02"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.14,
+      "certifications": [
+        "SHRM_SCP",
+        "ITIL_v4",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Drew Rossi",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_048",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_05",
+        "skill_auto_diag_03",
+        "skill_auto_diag_01",
+        "skill_auto_diag_05_r39"
+      ],
+      "availability": 0.82,
+      "fatigue": 0.3,
+      "certifications": [
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Alex Kim",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_049",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_03",
+        "skill_auto_diag_06",
+        "skill_auto_repair_05",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.29,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Riley Garc\u00eda",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_050",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_03",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_06_r33"
+      ],
+      "availability": 0.49,
+      "fatigue": 0.29,
+      "certifications": [
+        "Lean_Six_Sigma_GB"
+      ],
+      "metadata": {
+        "display_name": "Harper Fischer",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_051",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_07",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_03"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.29,
+      "certifications": [
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Emery Jansen",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_052",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_02",
+        "skill_auto_diag_03"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.25,
+      "certifications": [
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Sage Yamada",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_053",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_diag_02",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_06"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.12,
+      "certifications": [
+        "OEM_GM",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Alex Haddad",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_054",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_04_r38",
+        "skill_auto_repair_01",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.1,
+      "certifications": [
+        "OEM_GM",
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Sam Yamada",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_055",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_02",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_07",
+        "skill_auto_diag_04_r38"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.16,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Sam Patel",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_056",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_01",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_01",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.51,
+      "fatigue": 0.34,
+      "certifications": [
+        "ASE_Master",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Harper Kim",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_057",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_02_r36"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.15,
+      "certifications": [
+        "ASE_Master",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Sage Kim",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_058",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_07",
+        "skill_auto_diag_04",
+        "skill_auto_repair_04",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_03_r37",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_05"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.21,
+      "certifications": [
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Quinn Haddad",
+        "role": "technician",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_technician_059",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_02",
+        "skill_auto_diag_03",
+        "skill_auto_diag_04",
+        "skill_auto_repair_01",
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_04_r38"
+      ],
+      "availability": 0.89,
+      "fatigue": 0.11,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Reese Cohen",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_060",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_02",
+        "skill_auto_repair_03",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.27,
+      "certifications": [
+        "WP29_Assessor",
+        "OEM_GM",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Jordan Schmidt",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_061",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_01_r35"
+      ],
+      "availability": 0.62,
+      "fatigue": 0.06,
+      "certifications": [
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Sage Patel",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_062",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06_r33",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_05",
+        "skill_auto_diag_06"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.06,
+      "certifications": [
+        "OEM_Toyota",
+        "Lean_Six_Sigma_GB",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Reese Tanaka",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_063",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_04",
+        "skill_auto_diag_05",
+        "skill_auto_repair_05",
+        "skill_auto_diag_02_r36"
+      ],
+      "availability": 0.48,
+      "fatigue": 0.06,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Parker Haddad",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_064",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_04",
+        "skill_auto_diag_01",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.16,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Quinn Kim",
+        "role": "technician",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_technician_065",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_05",
+        "skill_auto_diag_01",
+        "skill_auto_repair_01"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.35,
+      "certifications": [
+        "ASE_Master",
+        "Lean_Six_Sigma_GB",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Rowan Yamada",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_066",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_06_r33",
+        "skill_auto_repair_04",
+        "skill_auto_diag_04",
+        "skill_auto_diag_05_r39",
+        "skill_auto_repair_01"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.07,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Avery Rossi",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_067",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_02_r36",
+        "skill_auto_repair_05",
+        "skill_auto_repair_03",
+        "skill_auto_diag_04_r38",
+        "skill_auto_repair_02",
+        "skill_auto_diag_01_r35",
+        "skill_auto_diag_02"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.26,
+      "certifications": [
+        "Hybrid_Safety",
+        "GDPR_DPO",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Morgan Cohen",
+        "role": "technician",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_technician_068",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_06",
+        "skill_auto_diag_05_r39",
+        "skill_auto_diag_03_r37",
+        "skill_auto_repair_01",
+        "skill_auto_diag_05",
+        "skill_auto_diag_03",
+        "skill_auto_diag_07"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.08,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Sam O'Connor",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_technician_069",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_repair_03",
+        "skill_auto_repair_01",
+        "skill_auto_diag_04",
+        "skill_auto_diag_06",
+        "skill_auto_diag_07_r34"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.14,
+      "certifications": [
+        "OEM_Toyota",
+        "CIPP_E",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Alex Cohen",
+        "role": "technician",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_technician_070",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_auto_diag_01",
+        "skill_auto_repair_05",
+        "skill_auto_diag_05",
+        "skill_auto_diag_07_r34",
+        "skill_auto_diag_03_r37"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.33,
+      "certifications": [
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Sage Jansen",
+        "role": "technician",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_071",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.45,
+      "certifications": [
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Sage Tanaka",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_072",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.17,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Sage Novak",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_073",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.5,
+      "certifications": [
+        "ASE_Master",
+        "OEM_Toyota",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Peyton Nguyen",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_074",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.46,
+      "fatigue": 0.4,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Logan Silva",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_075",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.46,
+      "fatigue": 0.35,
+      "certifications": [
+        "ASE_Master",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Peyton Kim",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_076",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.68,
+      "fatigue": 0.24,
+      "certifications": [
+        "SHRM_SCP",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Alex Patel",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_077",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.42,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Harper Mart\u00edn",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_078",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.65,
+      "fatigue": 0.28,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Riley Patel",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_079",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_03",
+        "skill_cx_triage_04",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.3,
+      "certifications": [
+        "WP29_Assessor",
+        "Lean_Six_Sigma_GB",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Parker Dubois",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_080",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.17,
+      "certifications": [
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Skyler Petrov",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_081",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.17,
+      "certifications": [
+        "EV_L2_Cert",
+        "SOC2_Lead_Auditor",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Harper Novak",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_082",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.31,
+      "certifications": [
+        "OEM_Toyota",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Reese Novak",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_083",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.42,
+      "certifications": [
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Avery Patel",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_084",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_02",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.42,
+      "certifications": [
+        "ITIL_v4",
+        "CIPP_E",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Emery Okafor",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_085",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.27,
+      "certifications": [
+        "OEM_Ford",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Harper Haddad",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_086",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.16,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "GDPR_DPO",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Jordan Silva",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_087",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.25,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Morgan Tanaka",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_088",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.17,
+      "certifications": [
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Avery Tanaka",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_089",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.44,
+      "certifications": [
+        "CIPP_E",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Parker Nguyen",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_090",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.32,
+      "certifications": [
+        "WP29_Assessor",
+        "SOC2_Lead_Auditor",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Logan Cohen",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_091",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.36,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Avery Garc\u00eda",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_092",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.32,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Quinn Fischer",
+        "role": "cx_agent",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_093",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.66,
+      "fatigue": 0.4,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Harper Silva",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_094",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_03",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.66,
+      "fatigue": 0.49,
+      "certifications": [
+        "Hybrid_Safety",
+        "EV_L2_Cert",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Casey Dubois",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_095",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_03",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.43,
+      "certifications": [
+        "Hybrid_Safety",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Reese Okafor",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_096",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.45,
+      "certifications": [
+        "CIPP_E",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Casey Jansen",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_097",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.39,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Reese Larsen",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_098",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.48,
+      "certifications": [
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Skyler Patel",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_099",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.89,
+      "fatigue": 0.24,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Parker Patel",
+        "role": "cx_agent",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_100",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.72,
+      "fatigue": 0.19,
+      "certifications": [
+        "ASE_A5_Brakes",
+        "ASE_Master",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Avery O'Connor",
+        "role": "cx_agent",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_101",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.73,
+      "fatigue": 0.35,
+      "certifications": [
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Parker Silva",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_102",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_02",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.4,
+      "fatigue": 0.26,
+      "certifications": [
+        "SHRM_SCP",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Skyler Yamada",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_103",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.18,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Sage Garc\u00eda",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_104",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.78,
+      "fatigue": 0.26,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Taylor Kim",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_105",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.82,
+      "fatigue": 0.27,
+      "certifications": [
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Reese Schmidt",
+        "role": "cx_agent",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_106",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.49,
+      "certifications": [
+        "CIPP_E",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Alex Mart\u00edn",
+        "role": "cx_agent",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_107",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.87,
+      "fatigue": 0.3,
+      "certifications": [
+        "EV_L2_Cert",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Reese Mart\u00edn",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_108",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.88,
+      "fatigue": 0.2,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Peyton Jansen",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_109",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_02",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.32,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Sam Mart\u00edn",
+        "role": "cx_agent",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_cx_agent_110",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.37,
+      "certifications": [
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Skyler Tanaka",
+        "role": "cx_agent",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_111",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_01",
+        "skill_events_ops_02",
+        "skill_events_ops_04",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.14,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Peyton Okafor",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_112",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_01",
+        "skill_events_ops_02",
+        "skill_events_ops_04",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.44,
+      "certifications": [
+        "ITIL_v4",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Peyton Yamada",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_113",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_02",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.45,
+      "certifications": [
+        "EV_L2_Cert",
+        "Lean_Six_Sigma_GB",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Rowan Silva",
+        "role": "venue_operator",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_114",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_02",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.8,
+      "fatigue": 0.25,
+      "certifications": [
+        "GDPR_DPO",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Emery Schmidt",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_115",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_03",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.43,
+      "certifications": [
+        "GDPR_DPO",
+        "SOC2_Lead_Auditor",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Morgan Schmidt",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_116",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_03",
+        "skill_events_ops_01",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.86,
+      "fatigue": 0.24,
+      "certifications": [
+        "EV_L2_Cert",
+        "ASE_A5_Brakes",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Rowan Okafor",
+        "role": "venue_operator",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_117",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_01",
+        "skill_events_ops_04",
+        "skill_events_ops_03",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.88,
+      "fatigue": 0.19,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Casey Larsen",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_118",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.88,
+      "fatigue": 0.11,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Avery Cohen",
+        "role": "venue_operator",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_119",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_01",
+        "skill_events_ops_03",
+        "skill_events_ops_04",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.37,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Cameron Haddad",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_120",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_03",
+        "skill_events_ops_01",
+        "skill_events_ops_04"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.45,
+      "certifications": [
+        "EV_L2_Cert",
+        "SHRM_SCP",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Rowan Patel",
+        "role": "venue_operator",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_121",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_03",
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.12,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Logan Kim",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_122",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_02",
+        "skill_events_ops_01",
+        "skill_events_ops_04"
+      ],
+      "availability": 0.41,
+      "fatigue": 0.28,
+      "certifications": [
+        "ITIL_v4",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Jordan Larsen",
+        "role": "venue_operator",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_123",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_02",
+        "skill_events_ops_04",
+        "skill_events_ops_03",
+        "skill_events_ops_01"
+      ],
+      "availability": 0.87,
+      "fatigue": 0.13,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Logan Haddad",
+        "role": "venue_operator",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_124",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_03",
+        "skill_events_ops_01",
+        "skill_events_ops_04",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.32,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Casey Tanaka",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_125",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_02",
+        "skill_events_ops_04",
+        "skill_events_ops_03",
+        "skill_events_ops_01"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.26,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "OEM_Ford",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Sage Nguyen",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_126",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_03",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.31,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Sam Patel",
+        "role": "venue_operator",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_127",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_02",
+        "skill_events_ops_04",
+        "skill_events_ops_01",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.41,
+      "certifications": [
+        "ITIL_v4",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Casey Dubois",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_128",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_03",
+        "skill_events_ops_01",
+        "skill_events_ops_02",
+        "skill_events_ops_04"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.36,
+      "certifications": [
+        "GDPR_DPO",
+        "ASE_A5_Brakes",
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Cameron Novak",
+        "role": "venue_operator",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_129",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_01",
+        "skill_events_ops_03",
+        "skill_events_ops_04",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.16,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "GDPR_DPO",
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Riley Dubois",
+        "role": "venue_operator",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_venue_operator_130",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_events_ops_04",
+        "skill_events_ops_02",
+        "skill_events_ops_03",
+        "skill_events_ops_01"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.13,
+      "certifications": [
+        "SHRM_SCP",
+        "WP29_Assessor",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Skyler Larsen",
+        "role": "venue_operator",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_131",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_03",
+        "skill_compliance_02",
+        "skill_compliance_04",
+        "skill_compliance_01"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.44,
+      "certifications": [
+        "OEM_Toyota",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Alex Garc\u00eda",
+        "role": "compliance_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_132",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_03",
+        "skill_compliance_04",
+        "skill_compliance_02",
+        "skill_compliance_01"
+      ],
+      "availability": 0.86,
+      "fatigue": 0.16,
+      "certifications": [
+        "ASE_A5_Brakes",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Emery O'Connor",
+        "role": "compliance_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_133",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_04",
+        "skill_compliance_02",
+        "skill_compliance_01",
+        "skill_compliance_03"
+      ],
+      "availability": 0.73,
+      "fatigue": 0.3,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Logan Jansen",
+        "role": "compliance_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_134",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_02",
+        "skill_compliance_01",
+        "skill_compliance_04"
+      ],
+      "availability": 0.51,
+      "fatigue": 0.33,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Taylor Petrov",
+        "role": "compliance_lead",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_135",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_01",
+        "skill_compliance_02",
+        "skill_compliance_03",
+        "skill_compliance_04"
+      ],
+      "availability": 0.78,
+      "fatigue": 0.17,
+      "certifications": [
+        "Hybrid_Safety",
+        "ASE_A5_Brakes",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Sam Yamada",
+        "role": "compliance_lead",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_136",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_02",
+        "skill_compliance_04",
+        "skill_compliance_03",
+        "skill_compliance_01"
+      ],
+      "availability": 0.68,
+      "fatigue": 0.28,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Skyler Rossi",
+        "role": "compliance_lead",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_137",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_01",
+        "skill_compliance_03",
+        "skill_compliance_04"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.43,
+      "certifications": [
+        "OEM_Ford",
+        "EV_L2_Cert",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Harper Mart\u00edn",
+        "role": "compliance_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_138",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_02",
+        "skill_compliance_04",
+        "skill_compliance_03",
+        "skill_compliance_01"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.25,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Rowan Novak",
+        "role": "compliance_lead",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_139",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_02",
+        "skill_compliance_03",
+        "skill_compliance_01",
+        "skill_compliance_04"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.16,
+      "certifications": [
+        "OEM_GM",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Drew O'Connor",
+        "role": "compliance_lead",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_140",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_02",
+        "skill_compliance_01",
+        "skill_compliance_04",
+        "skill_compliance_03"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.2,
+      "certifications": [
+        "OEM_GM",
+        "Hybrid_Safety",
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Sage Larsen",
+        "role": "compliance_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_141",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_01",
+        "skill_compliance_02",
+        "skill_compliance_04",
+        "skill_compliance_03"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.26,
+      "certifications": [
+        "WP29_Assessor",
+        "Hybrid_Safety",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Morgan Novak",
+        "role": "compliance_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_142",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_03",
+        "skill_compliance_01",
+        "skill_compliance_02",
+        "skill_compliance_04"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.18,
+      "certifications": [
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Riley Nguyen",
+        "role": "compliance_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_143",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_04",
+        "skill_compliance_01",
+        "skill_compliance_02",
+        "skill_compliance_03"
+      ],
+      "availability": 0.41,
+      "fatigue": 0.29,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Reese Fischer",
+        "role": "compliance_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_144",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_01",
+        "skill_compliance_03",
+        "skill_compliance_04"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.38,
+      "certifications": [
+        "OEM_Ford",
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Reese Silva",
+        "role": "compliance_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_compliance_lead_145",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_compliance_03",
+        "skill_compliance_01",
+        "skill_compliance_02"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.26,
+      "certifications": [
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Rowan Petrov",
+        "role": "compliance_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_146",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_03"
+      ],
+      "availability": 0.89,
+      "fatigue": 0.12,
+      "certifications": [
+        "ITIL_v4",
+        "OEM_GM"
+      ],
+      "metadata": {
+        "display_name": "Riley Larsen",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_147",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_02"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.4,
+      "certifications": [
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Casey Patel",
+        "role": "field_tech",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_148",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_04",
+        "skill_field_service_03"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.37,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "ASE_Master",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Parker Schmidt",
+        "role": "field_tech",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_149",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_04"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.25,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "SHRM_SCP",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Riley Okafor",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_150",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_02"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.11,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Avery Patel",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_151",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_03"
+      ],
+      "availability": 0.62,
+      "fatigue": 0.28,
+      "certifications": [
+        "OEM_Toyota",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Quinn Schmidt",
+        "role": "field_tech",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_152",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.87,
+      "fatigue": 0.13,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Emery Dubois",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_153",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.48,
+      "fatigue": 0.37,
+      "certifications": [
+        "OEM_GM",
+        "Lean_Six_Sigma_GB"
+      ],
+      "metadata": {
+        "display_name": "Sage Haddad",
+        "role": "field_tech",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_154",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.49,
+      "fatigue": 0.14,
+      "certifications": [
+        "GDPR_DPO",
+        "Hybrid_Safety"
+      ],
+      "metadata": {
+        "display_name": "Skyler Larsen",
+        "role": "field_tech",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_155",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_04"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.13,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Casey Okafor",
+        "role": "field_tech",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_156",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_03"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.1,
+      "certifications": [
+        "ASE_Master",
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Avery Larsen",
+        "role": "field_tech",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_157",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_04"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.35,
+      "certifications": [
+        "SOC2_Lead_Auditor",
+        "CIPP_E",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Alex Silva",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_158",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_04",
+        "skill_field_service_02"
+      ],
+      "availability": 0.86,
+      "fatigue": 0.26,
+      "certifications": [
+        "SOC2_Lead_Auditor"
+      ],
+      "metadata": {
+        "display_name": "Avery Rossi",
+        "role": "field_tech",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_159",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_03",
+        "skill_field_service_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.89,
+      "fatigue": 0.33,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Riley Rossi",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_160",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_03"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.39,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Rowan Nguyen",
+        "role": "field_tech",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_161",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_04"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.16,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "CIPP_E",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Avery Novak",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_162",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_04",
+        "skill_field_service_03"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.18,
+      "certifications": [
+        "CIPP_E",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Sam Nguyen",
+        "role": "field_tech",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_163",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_03",
+        "skill_field_service_04"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.16,
+      "certifications": [
+        "Lean_Six_Sigma_GB",
+        "OEM_GM",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Drew Patel",
+        "role": "field_tech",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_164",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_02"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.3,
+      "certifications": [
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Taylor Yamada",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_165",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_03",
+        "skill_field_service_01"
+      ],
+      "availability": 0.5,
+      "fatigue": 0.26,
+      "certifications": [
+        "ITIL_v4",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Rowan Larsen",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_166",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_field_service_03"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.25,
+      "certifications": [
+        "WP29_Assessor"
+      ],
+      "metadata": {
+        "display_name": "Alex Patel",
+        "role": "field_tech",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_167",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_01",
+        "skill_field_service_04",
+        "skill_field_service_03",
+        "skill_field_service_02"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.2,
+      "certifications": [
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Peyton Jansen",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_168",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.23,
+      "certifications": [
+        "ASE_A5_Brakes",
+        "Hybrid_Safety",
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Morgan Haddad",
+        "role": "field_tech",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_169",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_03",
+        "skill_field_service_01",
+        "skill_field_service_04"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.21,
+      "certifications": [
+        "ITIL_v4"
+      ],
+      "metadata": {
+        "display_name": "Skyler Larsen",
+        "role": "field_tech",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_field_tech_170",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_04"
+      ],
+      "availability": 0.41,
+      "fatigue": 0.16,
+      "certifications": [
+        "GDPR_DPO"
+      ],
+      "metadata": {
+        "display_name": "Emery Yamada",
+        "role": "field_tech",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_171",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_01",
+        "skill_hr_people_02"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.31,
+      "certifications": [
+        "Hybrid_Safety",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Logan Mart\u00edn",
+        "role": "hr_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_172",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_01",
+        "skill_hr_people_02",
+        "skill_hr_people_04",
+        "skill_hr_people_03"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.37,
+      "certifications": [
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Peyton Novak",
+        "role": "hr_lead",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_173",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_01",
+        "skill_hr_people_04",
+        "skill_hr_people_02"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.22,
+      "certifications": [
+        "ASE_A5_Brakes",
+        "OEM_GM",
+        "OEM_Toyota"
+      ],
+      "metadata": {
+        "display_name": "Logan Okafor",
+        "role": "hr_lead",
+        "region": "EU-DE"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_174",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_04",
+        "skill_hr_people_02",
+        "skill_hr_people_01"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.19,
+      "certifications": [
+        "ASE_Master"
+      ],
+      "metadata": {
+        "display_name": "Logan Kim",
+        "role": "hr_lead",
+        "region": "US-East"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_175",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_02",
+        "skill_hr_people_01",
+        "skill_hr_people_03",
+        "skill_hr_people_04"
+      ],
+      "availability": 0.8,
+      "fatigue": 0.27,
+      "certifications": [
+        "ASE_Master",
+        "GDPR_DPO",
+        "CIPP_E"
+      ],
+      "metadata": {
+        "display_name": "Drew O'Connor",
+        "role": "hr_lead",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_176",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_01",
+        "skill_hr_people_02",
+        "skill_hr_people_04"
+      ],
+      "availability": 0.8,
+      "fatigue": 0.4,
+      "certifications": [
+        "ASE_A5_Brakes"
+      ],
+      "metadata": {
+        "display_name": "Avery Petrov",
+        "role": "hr_lead",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_177",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_01",
+        "skill_hr_people_02",
+        "skill_hr_people_03",
+        "skill_hr_people_04"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.26,
+      "certifications": [
+        "OEM_Toyota",
+        "OEM_GM",
+        "EV_L2_Cert"
+      ],
+      "metadata": {
+        "display_name": "Sam Silva",
+        "role": "hr_lead",
+        "region": "APAC-JP"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_178",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_02",
+        "skill_hr_people_03",
+        "skill_hr_people_04",
+        "skill_hr_people_01"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.35,
+      "certifications": [
+        "CIPP_E",
+        "ASE_Master",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Quinn Kim",
+        "role": "hr_lead",
+        "region": "US-West"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_179",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_04",
+        "skill_hr_people_01"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.21,
+      "certifications": [
+        "EV_L2_Cert",
+        "SHRM_SCP"
+      ],
+      "metadata": {
+        "display_name": "Casey Patel",
+        "role": "hr_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "h_hr_lead_180",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_04",
+        "skill_hr_people_01"
+      ],
+      "availability": 0.4,
+      "fatigue": 0.32,
+      "certifications": [
+        "EV_L2_Cert",
+        "OEM_Ford"
+      ],
+      "metadata": {
+        "display_name": "Riley Novak",
+        "role": "hr_lead",
+        "region": "EU-FR"
+      }
+    },
+    {
+      "actor_id": "agent_claude_opus_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_auto_diag_02_r36",
+        "skill_compliance_02",
+        "skill_events_ops_02",
+        "skill_hr_people_02",
+        "skill_auto_diag_07",
+        "skill_hr_people_04",
+        "skill_auto_diag_03",
+        "skill_auto_diag_04",
+        "skill_auto_diag_06",
+        "skill_compliance_01"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Opus 4.7",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_claude_haiku_47",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_cx_triage_02",
+        "skill_field_service_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_04",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Haiku 4.7",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_auto_diag_01_r35",
+        "skill_cx_triage_03",
+        "skill_auto_diag_07",
+        "skill_auto_diag_04_r38",
+        "skill_auto_diag_05",
+        "skill_auto_diag_02",
+        "skill_cx_triage_04",
+        "skill_field_service_01",
+        "skill_field_service_04"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Thinking",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51_mini",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_field_service_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_field_service_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Mini",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_salesforce_af",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "skill_cx_triage_01",
+        "skill_hr_people_02",
+        "skill_hr_people_04",
+        "skill_hr_people_03",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.9,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Agentforce Standard",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_uniphore_bac",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Uniphore BAC v2",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_cloudflare_think",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "skill_field_service_02",
+        "skill_cx_triage_02",
+        "skill_field_service_01",
+        "skill_cx_triage_03",
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_field_service_03",
+        "skill_field_service_04",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Project Think v1",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_claude_opus_47_r7",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_auto_diag_05",
+        "skill_hr_people_01",
+        "skill_auto_diag_02_r36",
+        "skill_auto_diag_03",
+        "skill_auto_diag_04",
+        "skill_hr_people_02",
+        "skill_events_ops_02"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Opus 4.7 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_claude_haiku_47_r8",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_cx_triage_05",
+        "skill_cx_triage_01",
+        "skill_field_service_04",
+        "skill_field_service_02",
+        "skill_field_service_03"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Haiku 4.7 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51_r9",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_auto_diag_07",
+        "skill_auto_diag_03",
+        "skill_events_ops_01",
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_auto_diag_01",
+        "skill_auto_diag_06_r33"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Thinking (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51_mini_r10",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_field_service_02",
+        "skill_field_service_01",
+        "skill_field_service_04"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Mini (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_salesforce_af_r11",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "skill_hr_people_01",
+        "skill_cx_triage_03",
+        "skill_hr_people_03",
+        "skill_hr_people_02",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02",
+        "skill_cx_triage_01",
+        "skill_hr_people_04"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Agentforce Standard (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_uniphore_bac_r12",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Uniphore BAC v2 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_cloudflare_think_r13",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "skill_field_service_03",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_field_service_01"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Project Think v1 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_claude_opus_47_r14",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_auto_diag_02",
+        "skill_hr_people_01",
+        "skill_auto_diag_01",
+        "skill_events_ops_03"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Opus 4.7 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_claude_haiku_47_r15",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "skill_field_service_04",
+        "skill_field_service_01",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Claude Haiku 4.7 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51_r16",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_auto_diag_04",
+        "skill_auto_diag_07",
+        "skill_cx_triage_02",
+        "skill_auto_diag_02_r36",
+        "skill_events_ops_01",
+        "skill_auto_diag_04_r38",
+        "skill_cx_triage_01"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Thinking (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_gpt_51_mini_r17",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "skill_field_service_01",
+        "skill_field_service_02",
+        "skill_cx_triage_02",
+        "skill_cx_triage_03",
+        "skill_field_service_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04",
+        "skill_field_service_03"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "GPT-5.1 Mini (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_salesforce_af_r18",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "skill_hr_people_03",
+        "skill_hr_people_04",
+        "skill_hr_people_01",
+        "skill_cx_triage_01",
+        "skill_hr_people_02",
+        "skill_cx_triage_03",
+        "skill_cx_triage_02",
+        "skill_cx_triage_05",
+        "skill_cx_triage_04"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Agentforce Standard (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    },
+    {
+      "actor_id": "agent_uniphore_bac_r19",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "skill_cx_triage_04",
+        "skill_cx_triage_05",
+        "skill_cx_triage_03",
+        "skill_cx_triage_01",
+        "skill_cx_triage_02"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0,
+      "certifications": [],
+      "metadata": {
+        "display_name": "Uniphore BAC v2 (regional)",
+        "role": "agent",
+        "region": "GLOBAL"
+      }
+    }
+  ]
+}

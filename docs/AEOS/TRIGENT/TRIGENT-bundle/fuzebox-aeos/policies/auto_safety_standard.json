@@ -1,0 +1,19 @@
+{
+  "id": "auto_safety_standard",
+  "version": "2026.04",
+  "description": "Baseline automotive service-bay safety pack (Ken Garff-grade).",
+  "rules": [
+    {
+      "id": "brake_engine_human_in_loop",
+      "severity": "critical",
+      "when": {"task.regulatory_class": ["auto_safety"]},
+      "require": {"path.human_involved": true}
+    },
+    {
+      "id": "audit_log_365d",
+      "severity": "high",
+      "when": {"always": true},
+      "require": {"governance.audit_log_required": true, "governance.trace_retention_days_min": 365}
+    }
+  ]
+}

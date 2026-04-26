@@ -1,0 +1,27 @@
+[project]
+name = "fuzebox-aeos"
+version = "0.1.0"
+description = "FuzeBox Agentic Enterprise Operating System — MVP reference monorepo"
+authors = [{ name = "FuzeBox.AI" }]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "Proprietary — FuzeBox.AI reference implementation" }
+
+# No required runtime dependencies. Everything below is optional.
+dependencies = []
+
+[project.optional-dependencies]
+live = ["anthropic>=0.30.0", "openai>=1.40.0"]
+services = ["fastapi>=0.110.0", "uvicorn>=0.29.0"]
+test = ["pytest>=8.0.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["apps", "tests"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["packages*", "apps*", "services*"]

@@ -1,0 +1,28 @@
+%% Ingestion sequence — /api/v1/ingest/batch
+%% Mermaid — render at https://mermaid.live/
+
+sequenceDiagram
+    autonumber
+    participant Client as Customer agent
+    participant API as POST /api/v1/ingest/batch
+    participant Keys as api_keys
+    participant Tx as Drizzle transaction
+    participant Runs as runs (PG)
+
+    Client->>API: Authorization: Bearer rk_…
+    API->>API: extractBearer(), sha256(token)
+    API->>Keys: SELECT id, org_id WHERE key_hash = ?
+    alt no match
+        API-->>Client: 401 Invalid API key
+    else match
+        Keys-->>API: orgId
+        API->>API: validateRunPayload(each of N runs)
+        API->>API: resolve agent_slug → agent_id (scoped to orgId)
+        API->>Tx: BEGIN
+        loop for each run
+            Tx->>Runs: INSERT … ON CONFLICT (agent_id, run_id) DO NOTHING
+        end
+        API->>Tx: COMMIT
+        API->>Keys: UPDATE last_used_at
+        API-->>Client: 201 { inserted, skipped, total, runs[] }
+    end

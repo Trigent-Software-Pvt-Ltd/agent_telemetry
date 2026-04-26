@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>FuzeBox AEOS — Wireframes</title>
+<style>
+:root{
+  --bg:#0b1220; --card:#131c30; --nested:#0d1526;
+  --line:#223255; --divider:#22315a;
+  --fg:#e8eefb; --sec:#9db2d9; --muted:#8da0c0;
+  --accent:#8fd3ff; --ok:#6ee7b7; --warn:#fbbf24; --bad:#f87171;
+  --pill-bg:#1d3a6a; --pill-fg:#9fd8ff;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 Inter,system-ui,-apple-system,sans-serif;}
+.page{max-width:1440px;margin:0 auto;padding:32px 28px 80px;}
+h1{margin:0 0 6px;font-size:22px;color:var(--accent);}
+.sub{color:var(--muted);font-size:13px;margin-bottom:28px;}
+h2.screen{margin:40px 0 14px;font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent);padding-bottom:6px;border-bottom:1px solid var(--line);}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;}
+.card h3{margin:0 0 14px;font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent);}
+.span6{grid-column:span 6;} .span12{grid-column:span 12;} .span4{grid-column:span 4;} .span8{grid-column:span 8;} .span3{grid-column:span 3;}
+.row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--divider);font-size:14px;}
+.row:last-child{border-bottom:none;}
+.k{color:var(--sec);}
+.v{color:var(--fg);font-family:'JetBrains Mono',Menlo,ui-monospace,monospace;}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--pill-bg);color:var(--pill-fg);font-size:12px;margin-right:6px;}
+.pill.ok{background:#0f3e2d;color:var(--ok);}
+.pill.warn{background:#3a2b08;color:var(--warn);}
+.pill.bad{background:#3a1313;color:var(--bad);}
+.data{font-family:'JetBrains Mono',Menlo,ui-monospace,monospace;font-size:12.5px;line-height:1.65;color:#cde0ff;background:var(--nested);padding:12px 14px;border-radius:8px;margin-top:6px;overflow:auto;white-space:pre;}
+.hero{font-size:36px;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',Menlo,monospace;margin:2px 0;}
+.caption{color:var(--muted);font-size:12px;}
+.ring-metric{display:flex;flex-direction:column;gap:4px;padding:14px;background:var(--nested);border-radius:10px;}
+.ring-metric .n{font-family:'JetBrains Mono',Menlo,monospace;font-size:22px;color:var(--fg);}
+.ring-metric .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:20px;}
+.header .switch{display:flex;gap:8px;align-items:center;}
+.btn{background:var(--pill-bg);color:var(--pill-fg);border:1px solid #2b4a82;border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer;}
+.btn:hover{background:#264a82;}
+.spark{display:flex;align-items:flex-end;gap:3px;height:38px;margin-top:8px;}
+.spark span{width:6px;background:var(--accent);opacity:.85;border-radius:2px 2px 0 0;}
+table.ledger{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',Menlo,monospace;font-size:12.5px;}
+table.ledger th{text-align:left;padding:10px 8px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);}
+table.ledger td{padding:9px 8px;border-bottom:1px dashed var(--divider);color:var(--fg);}
+table.ledger tr:hover td{background:rgba(143,211,255,.04);}
+.status{color:var(--ok);} .status.bad{color:var(--bad);}
+.legend{font-size:12px;color:var(--muted);margin-top:6px;}
+.note{color:var(--muted);font-size:12px;margin:6px 0 0;font-style:normal;}
+</style></head>
+<body>
+<div class="page">
+
+<h1>FuzeBox AEOS — Control Plane Wireframes</h1>
+<div class="sub">Reference visuals for Screens 1–3. Dark canvas, monospaced data, audit-ready density. Open in any browser; there is no build step.</div>
+
+<!-- ================================================================= -->
+<h2 class="screen">Screen 1 — Decision Explorer</h2>
+
+<div class="header">
+  <div class="switch">
+    <span class="pill">Tenant</span>
+    <strong style="font-family:'JetBrains Mono',monospace;color:var(--accent);">aeos_demo_enterprise</strong>
+  </div>
+  <div class="switch">
+    <span class="pill">Task</span>
+    <span class="v">task_kg_001 · Brake squeal + low pedal (auto_safety, high risk)</span>
+    <button class="btn">Re-run decision</button>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card span6">
+    <h3>Layer 7 — UEF Decision</h3>
+    <div class="row"><span class="k">selected_path</span><span class="v"><span class="pill ok">hybrid_anthropic_human</span></span></div>
+    <div class="row"><span class="k">selected_actor</span><span class="v">h_technician_062 (Alex Kim · ASE_Master)</span></div>
+    <div class="row"><span class="k">confidence</span><span class="v">0.575</span></div>
+    <div class="row"><span class="k">decision_id</span><span class="v">dec_01HX8KF2Q3…</span></div>
+    <div class="row"><span class="k">skill</span><span class="v">skill_auto_diag_01 (Brake, sw=0.68)</span></div>
+  </div>
+
+  <div class="card span6">
+    <h3>Layer 8 — Adapter Gateway</h3>
+    <div class="row"><span class="k">provider</span><span class="v">anthropic + human (hybrid)</span></div>
+    <div class="row"><span class="k">model</span><span class="v">claude-opus-4-7</span></div>
+    <div class="row"><span class="k">success</span><span class="v" style="color:var(--ok)">✓ true</span></div>
+    <div class="row"><span class="k">latency_ms</span><span class="v">718,420</span></div>
+    <div class="row"><span class="k">cost_usd</span><span class="v">$13.18</span></div>
+  </div>
+
+  <div class="card span12">
+    <h3>Layer 7 — Scored Paths (all 5 candidates, 8-dimension breakdown)</h3>
+    <div class="data">path                         total    cap    gsti    uop   -coord    gov    rt     econ   -risk
+hybrid_anthropic_human       0.573    0.92   +0.48   +0.66   -0.12   +0.40  +0.18   +0.22   -0.00
+hybrid_openai_human          0.561    0.90   +0.46   +0.66   -0.12   +0.40  +0.20   +0.24   -0.00
+human                        0.445    0.95   +0.26   +0.64   -0.00   +0.38  -0.10   -0.08   -0.00
+anthropic_agent              0.208    0.71   +0.20   +0.00   -0.18   -0.30  +0.32   +0.40   -0.05
+openai_agent                 0.190    0.69   +0.18   +0.00   -0.18   -0.30  +0.34   +0.42   -0.05
+</div>
+    <div class="legend">total = cap + gsti + uop − coord + gov + rt + econ − risk · rPotential owns gsti/uop/coord</div>
+  </div>
+
+  <div class="card span6">
+    <h3>Layer 9 — Dynamic Instruction Runtime</h3>
+    <div class="row"><span class="k">rules_fired</span><span class="v">2</span></div>
+    <div class="row"><span class="k">#1</span><span class="v"><span class="pill">dir_safety_relevant_confirmation</span></span></div>
+    <div class="row"><span class="k">#2</span><span class="v"><span class="pill">dir_auto_safety_tool_lockdown</span></span></div>
+    <div class="row"><span class="k">safety_envelope</span><span class="v">safety_relevant_v1</span></div>
+    <div class="row"><span class="k">tools_locked</span><span class="v">clear_dtc_without_root_cause, ota_push_untested</span></div>
+    <div class="row"><span class="k">human_confirm</span><span class="v" style="color:var(--ok)">✓ required</span></div>
+  </div>
+
+  <div class="card span6">
+    <h3>Layer 12 — Governance (pack = auto_safety_standard)</h3>
+    <div class="row"><span class="k">policy.allow</span><span class="v" style="color:var(--ok)">✓ true</span></div>
+    <div class="row"><span class="k">required_controls</span><span class="v">audit_log · human_in_loop · evidence_export · retention_365d</span></div>
+    <div class="row"><span class="k">fired_rules</span><span class="v">brake_engine_human_in_loop, audit_log_365d</span></div>
+    <div class="row"><span class="k">attestation</span><span class="v"><span class="pill ok">FuzeBox + rPotential verified ✓</span></span></div>
+  </div>
+
+  <div class="card span12">
+    <h3>Layer 11 — Ledger Row</h3>
+    <div class="row"><span class="k">execution_id</span><span class="v">exe_01HX8KF2Q3MDE5WG3ABCD</span></div>
+    <div class="row"><span class="k">gsti_delta / uop_delta / coord_delta</span><span class="v">+0.010 / +0.005 / −0.006</span></div>
+    <div class="row"><span class="k">EAI contribution</span><span class="v">ai_share=1.00 · success=1.00 · gov=1.00 · preserve=0.68 · econ=0.85</span></div>
+    <div class="row"><span class="k">outcome_value_usd</span><span class="v">$300.00</span></div>
+    <div class="row"><span class="k">signed_integrity_hash</span><span class="v">b7e4…ae21 (SHA-256)</span></div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<h2 class="screen">Screen 2 — EAI Board</h2>
+
+<div class="grid">
+  <div class="card span4" style="display:flex;flex-direction:column;gap:6px;">
+    <h3>Enterprise Autonomy Index</h3>
+    <div class="hero">0.8734</div>
+    <div class="caption">aeos_demo_enterprise · trailing 30 days · 214 executions</div>
+    <div class="spark">
+      <span style="height:22%"></span><span style="height:30%"></span><span style="height:38%"></span>
+      <span style="height:46%"></span><span style="height:54%"></span><span style="height:62%"></span>
+      <span style="height:55%"></span><span style="height:63%"></span><span style="height:70%"></span>
+      <span style="height:66%"></span><span style="height:74%"></span><span style="height:80%"></span>
+      <span style="height:78%"></span><span style="height:82%"></span><span style="height:86%"></span>
+      <span style="height:88%"></span><span style="height:92%"></span><span style="height:95%"></span>
+    </div>
+    <div class="caption">D−30 ·················· D−1</div>
+    <div style="margin-top:10px;"><span class="pill ok">FuzeBox + rPotential signed ✓ 2026-Q2</span></div>
+  </div>
+
+  <div class="card span8">
+    <h3>Metric Board</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div class="ring-metric"><div class="l">UCS · unit cost</div><div class="n">$8.41</div></div>
+      <div class="ring-metric"><div class="l">SY · success yield</div><div class="n">0.911</div></div>
+      <div class="ring-metric"><div class="l">SER · skill elasticity</div><div class="n">1.248</div></div>
+      <div class="ring-metric"><div class="l">EROI · econ ROI</div><div class="n">3.04×</div></div>
+      <div class="ring-metric"><div class="l">HPI · human preservation</div><div class="n">0.622</div></div>
+      <div class="ring-metric"><div class="l">HLR · hybrid leverage</div><div class="n">2.17×</div></div>
+    </div>
+    <div class="caption" style="margin-top:10px;">SDD tracked internally; exposed in the per-skill drilldown.</div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<h2 class="screen">Screen 3 — Ledger</h2>
+
+<div class="grid">
+  <div class="card span3">
+    <h3>Filters</h3>
+    <div class="row"><span class="k">tenant</span><span class="v">aeos_demo…</span></div>
+    <div class="row"><span class="k">skill</span><span class="v">all (40)</span></div>
+    <div class="row"><span class="k">path</span><span class="v">all</span></div>
+    <div class="row"><span class="k">date</span><span class="v">2026-04-01 → 2026-04-20</span></div>
+    <div class="row"><span class="k">success</span><span class="v">true ∨ false</span></div>
+    <div style="margin-top:14px;">
+      <button class="btn">Apply</button>
+      <button class="btn" style="background:transparent;">Export CSV</button>
+    </div>
+  </div>
+
+  <div class="card span9">
+    <h3>Append-Only Ledger · 214 rows · tenant = aeos_demo_enterprise</h3>
+    <table class="ledger">
+      <thead><tr>
+        <th>timestamp</th><th>skill</th><th>path</th><th>provider</th><th>actor</th><th>ok</th><th>cost</th><th>EAI Δ</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>04-20 06:41:12</td><td>skill_auto_diag_01</td><td>hybrid_anthropic_human</td><td>anthropic</td><td>h_technician_062</td><td class="status">✓</td><td>$13.18</td><td>+0.0042</td></tr>
+        <tr><td>04-20 06:38:05</td><td>skill_cx_triage_02</td><td>openai_agent</td><td>openai</td><td>agent_gpt_51</td><td class="status">✓</td><td>$0.36</td><td>+0.0021</td></tr>
+        <tr><td>04-20 06:35:40</td><td>skill_compliance_03</td><td>hybrid_anthropic_human</td><td>anthropic</td><td>h_compliance_lead_07</td><td class="status">✓</td><td>$58.00</td><td>+0.0066</td></tr>
+        <tr><td>04-20 06:32:18</td><td>skill_field_service_02</td><td>cloudflare_agent</td><td>cloudflare</td><td>agent_cloudflare_think</td><td class="status">✓</td><td>$0.09</td><td>+0.0012</td></tr>
+        <tr><td>04-20 06:29:51</td><td>skill_hr_people_01</td><td>hybrid_anthropic_human</td><td>anthropic</td><td>h_hr_lead_04</td><td class="status">✓</td><td>$21.40</td><td>+0.0038</td></tr>
+        <tr><td>04-20 06:27:03</td><td>skill_events_ops_01</td><td>anthropic_agent</td><td>anthropic</td><td>agent_claude_opus_47</td><td class="status bad">✗</td><td>$0.31</td><td>−0.0005</td></tr>
+        <tr><td>04-20 06:23:17</td><td>skill_auto_diag_02</td><td>human</td><td>human</td><td>h_technician_119</td><td class="status">✓</td><td>$27.00</td><td>+0.0018</td></tr>
+        <tr><td>04-20 06:19:44</td><td>skill_cx_triage_04</td><td>uniphore_agent</td><td>uniphore</td><td>agent_uniphore_bac</td><td class="status">✓</td><td>$0.57</td><td>+0.0020</td></tr>
+        <tr><td>04-20 06:14:02</td><td>skill_auto_diag_01</td><td>hybrid_openai_human</td><td>openai</td><td>h_technician_028</td><td class="status">✓</td><td>$11.80</td><td>+0.0044</td></tr>
+      </tbody>
+    </table>
+    <div class="caption" style="margin-top:8px;">Row click opens a drawer with the full LedgerRow JSON, canonical trace, and the two-party attestation block.</div>
+  </div>
+</div>
+
+<p class="note" style="margin-top:40px;">Screens 4–7 (Policy Packs, Skills Authority, Evidence Export, Dynamic Instructions) follow the same card grammar. See <code>screen-inventory.md</code> for per-screen data bindings.</p>
+
+</div>
+</body></html>

@@ -1,0 +1,101 @@
+%% Core telemetry ER — Mermaid
+%% Render at https://mermaid.live/
+
+erDiagram
+    organisations ||--o{ processes : has
+    organisations ||--o{ users : employs
+    organisations ||--o{ api_keys : issues
+    organisations ||--o{ anomalies : receives
+    organisations ||--o{ audit_log : logs
+    organisations ||--o{ governance_rules : defines
+
+    processes ||--o{ agents : contains
+    processes ||--o{ onet_tasks : decomposes_into
+    processes ||--o{ process_metrics_daily : rolls_up
+
+    agents ||--o{ agent_versions : versions
+    agents ||--o{ runs : produces
+    agents ||--o{ agent_metrics_daily : rolls_up
+    agents ||--o{ agent_budgets : capped_by
+
+    onet_tasks }o--|| agents : owned_by
+
+    users ||--o{ sessions : has
+    users ||--o{ accounts : has
+
+    organisations {
+        uuid id PK
+        text name
+        text industry
+        text quality_framework
+        text langfuse_host
+        text langfuse_api_key_enc
+        timestamptz langfuse_last_sync
+    }
+    processes {
+        uuid id PK
+        uuid org_id FK
+        text slug
+        text name
+        int headcount
+        numeric avg_hourly_wage
+    }
+    agents {
+        uuid id PK
+        uuid process_id FK
+        text slug
+        text name
+        text model
+        text framework
+    }
+    runs {
+        uuid id PK
+        text run_id
+        uuid agent_id FK
+        timestamptz timestamp
+        int duration_ms
+        bool outcome
+        numeric total_cost
+        int token_count
+        int tool_calls
+        jsonb spans
+        text langfuse_trace_id
+    }
+    agent_metrics_daily {
+        uuid agent_id FK
+        date date
+        int total_runs
+        int successful_runs
+        int failed_runs
+        numeric total_cost
+        int p95_duration_ms
+        numeric sigma_score
+        int dpmo
+    }
+    process_metrics_daily {
+        uuid process_id FK
+        date date
+        numeric gross_saving_weekly
+        numeric inference_cost_weekly
+        numeric oversight_cost_weekly
+        numeric governance_cost_weekly
+        numeric net_roi_weekly
+    }
+    api_keys {
+        uuid id PK
+        uuid org_id FK
+        text label
+        text key_hash
+        text key_prefix
+        timestamptz last_used_at
+    }
+    anomalies {
+        uuid id PK
+        uuid org_id FK
+        uuid agent_id FK
+        timestamptz timestamp
+        text severity
+        text category
+        text description
+        bool acknowledged
+    }

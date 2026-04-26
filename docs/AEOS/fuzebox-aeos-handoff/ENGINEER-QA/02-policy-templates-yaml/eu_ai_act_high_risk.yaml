@@ -1,0 +1,48 @@
+id: eu_ai_act_high_risk
+version: "2026.04"
+description: >-
+  EU AI Act Annex-III high-risk systems — human oversight, audit log,
+  2-year trace retention, and explainability interface required.
+
+rules:
+  # Article 14 — human oversight
+  - id: human_in_loop_required
+    severity: critical
+    when:
+      task.risk_level: [high, critical]
+    require:
+      path.human_involved: true
+
+  # Article 12 — record-keeping (baseline)
+  - id: audit_log_mandatory
+    severity: high
+    when:
+      always: true
+    require:
+      governance.audit_log_required: true
+      governance.trace_retention_days_min: 365
+
+  # Article 13 — transparency / evidence
+  - id: evidence_export_required
+    severity: high
+    when:
+      task.risk_level: [high, critical]
+    require:
+      governance.evidence_export_required: true
+
+  # Article 14 — human override always available
+  - id: human_override_available
+    severity: high
+    when:
+      always: true
+    require:
+      governance.human_override_available: true
+
+  # Article 13 + 12 — explainability on high-risk work (Prompt 3 tightening)
+  - id: explainability_required_on_high_risk
+    severity: high
+    when:
+      task.risk_level: [high, critical]
+    require:
+      governance.trace_retention_days_min: 730       # 2 years
+      governance.explainability_required: true

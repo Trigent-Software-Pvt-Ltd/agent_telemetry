@@ -1,0 +1,98 @@
+# EU AI Act high-risk systems — Annex III scope.
+# Enforced by services/governance_service.py at every UEF decision for
+# tenants whose governance.policy_pack = "eu_ai_act_high_risk".
+#
+# Pack references: Regulation (EU) 2024/1689.
+
+id: eu_ai_act_high_risk
+version: "2026.04"
+jurisdiction: [EU, EEA]
+description: >
+  High-risk AI system controls for Annex III use cases, including
+  employment (Annex III.4), critical infrastructure (III.2), and access
+  to essential services (III.5). All high- or critical-risk tasks must
+  route through a human-involved execution path and emit a full
+  evidence trail.
+
+rules:
+  # ------------------------------------------------------------------
+  # Article 14 — Human oversight
+  # ------------------------------------------------------------------
+  - id: human_in_loop_required
+    severity: critical
+    description: >
+      High- and critical-risk outputs must have a natural person
+      either executing or approving the action (Article 14(1)).
+    when:
+      "task.risk_level": [high, critical]
+    require:
+      "path.human_involved": true
+      "governance.human_override_available": true
+    references:
+      - "EU AI Act Article 14(1) — Human oversight"
+      - "EU AI Act Article 14(4)(a)-(d) — Specific oversight measures"
+
+  # ------------------------------------------------------------------
+  # Article 12 — Automatic recording (logging)
+  # ------------------------------------------------------------------
+  - id: audit_log_mandatory
+    severity: high
+    description: >
+      Logs must be automatically recorded over the system's lifetime
+      with sufficient retention for post-market monitoring.
+    when:
+      always: true
+    require:
+      "governance.audit_log_required": true
+      "governance.trace_retention_days_min": 365
+    references:
+      - "EU AI Act Article 12(1) — Automatic recording of events"
+      - "EU AI Act Article 19 — Automatically generated logs"
+
+  # ------------------------------------------------------------------
+  # Article 13 — Transparency and information provision
+  # ------------------------------------------------------------------
+  - id: explanation_interface_required
+    severity: high
+    description: >
+      Users must be able to interpret outputs and use them appropriately.
+      Requires an explainability interface for high-risk outputs.
+    when:
+      "task.risk_level": [high, critical]
+    require:
+      "governance.explanation_interface": true
+    references:
+      - "EU AI Act Article 13 — Transparency and provision of information"
+      - "EU AI Act Article 86 — Right to explanation of individual decision-making"
+
+  # ------------------------------------------------------------------
+  # Article 17 — Quality management; Evidence export
+  # ------------------------------------------------------------------
+  - id: evidence_export_required
+    severity: high
+    description: >
+      For post-market monitoring and conformity assessment, high-risk
+      executions must export a signed evidence bundle on request.
+    when:
+      "task.risk_level": [high, critical]
+    require:
+      "governance.evidence_export_required": true
+    references:
+      - "EU AI Act Article 17 — Quality management system"
+      - "EU AI Act Article 72 — Post-market monitoring"
+
+  # ------------------------------------------------------------------
+  # Article 10 — Data governance (training/operations data controls)
+  # ------------------------------------------------------------------
+  - id: data_residency_eu
+    severity: high
+    description: >
+      Personal data processed for EU Annex III use cases must stay in
+      EU/EEA regions unless an adequacy decision applies.
+    when:
+      always: true
+    require:
+      "governance.data_residency_required": [EU, EEA]
+    references:
+      - "EU AI Act Article 10 — Data and data governance"
+      - "GDPR Chapter V — Transfers of personal data to third countries"

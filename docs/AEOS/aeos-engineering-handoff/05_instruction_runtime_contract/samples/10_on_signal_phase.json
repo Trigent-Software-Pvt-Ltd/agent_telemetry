@@ -1,0 +1,29 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "on_signal",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3SIG10",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3SIG10",
+  "issued_at": "2026-04-20T12:51:12.220Z",
+  "rules_fired": [
+    "dir_coordination_tax_spike",
+    "dir_error_rate_breaker"
+  ],
+  "additional_instructions": [
+    "Coordination tax has spiked (> 0.6). Reduce the number of tools in flight: consolidate into a single synthesizing call and defer non-critical parallel branches.",
+    "Recent error rate on this skill has crossed 0.15. Enter cautious-mode: lower temperature, require a validation pass on every numerical output."
+  ],
+  "restricted_tools": [
+    "parallel_tool_fanout",
+    "speculative_subagent"
+  ],
+  "required_tools": ["validation_pass"],
+  "required_citations": false,
+  "require_human_confirmation": false,
+  "safety_envelope": "runtime_stability_v1",
+  "metadata": {
+    "pack_id": "runtime_stability",
+    "ttl_seconds": 300,
+    "coordination_tax_observed": 0.68,
+    "error_rate_observed": 0.18
+  }
+}

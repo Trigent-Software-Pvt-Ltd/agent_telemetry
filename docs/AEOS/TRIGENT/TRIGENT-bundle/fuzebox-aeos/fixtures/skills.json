@@ -1,0 +1,165 @@
+[
+  {
+    "skill_id": "skill_brake_diag_v3",
+    "name": "Brake System Diagnosis",
+    "allowed_paths": ["human", "anthropic_agent", "openai_agent", "hybrid_anthropic_human", "hybrid_openai_human"],
+    "required_tools": ["dtc_reader", "service_bulletin_lookup"],
+    "governance_tags": ["safety_relevant", "strategic_skill"],
+    "strategic_weight": 0.65,
+    "version": "3.0",
+    "description": "Diagnose brake system faults from DTCs and recommend repair actions for automotive service bays.",
+    "performance": {
+      "human": {"success_rate": 0.92, "avg_cost": 28.0, "avg_latency_ms": 1800000},
+      "anthropic_agent": {"success_rate": 0.71, "avg_cost": 0.80, "avg_latency_ms": 12000},
+      "openai_agent": {"success_rate": 0.69, "avg_cost": 0.65, "avg_latency_ms": 9000},
+      "hybrid_anthropic_human": {"success_rate": 0.94, "avg_cost": 14.0, "avg_latency_ms": 720000},
+      "hybrid_openai_human": {"success_rate": 0.93, "avg_cost": 12.0, "avg_latency_ms": 660000}
+    }
+  },
+  {
+    "skill_id": "skill_engine_diag_v2",
+    "name": "Engine Diagnosis",
+    "allowed_paths": ["human", "anthropic_agent", "hybrid_anthropic_human"],
+    "required_tools": ["dtc_reader", "oem_bulletin_lookup"],
+    "governance_tags": ["safety_relevant", "strategic_skill"],
+    "strategic_weight": 0.60,
+    "description": "Diagnose powertrain faults.",
+    "performance": {
+      "human": {"success_rate": 0.90, "avg_cost": 32.0, "avg_latency_ms": 2100000},
+      "anthropic_agent": {"success_rate": 0.65, "avg_cost": 0.90, "avg_latency_ms": 14000},
+      "hybrid_anthropic_human": {"success_rate": 0.92, "avg_cost": 16.0, "avg_latency_ms": 850000}
+    }
+  },
+  {
+    "skill_id": "skill_tire_alignment_v1",
+    "name": "Tire & Alignment Service",
+    "allowed_paths": ["human", "hybrid_anthropic_human"],
+    "required_tools": ["alignment_rig", "tread_gauge"],
+    "governance_tags": ["safety_relevant"],
+    "strategic_weight": 0.40,
+    "description": "Routine tire and four-wheel alignment work.",
+    "performance": {
+      "human": {"success_rate": 0.95, "avg_cost": 22.0, "avg_latency_ms": 1500000},
+      "hybrid_anthropic_human": {"success_rate": 0.96, "avg_cost": 15.0, "avg_latency_ms": 900000}
+    }
+  },
+  {
+    "skill_id": "skill_contact_escalation_v1",
+    "name": "Contact Center Escalation Triage",
+    "allowed_paths": ["human", "anthropic_agent", "openai_agent", "uniphore_agent", "hybrid_openai_human"],
+    "required_tools": ["case_lookup", "sentiment"],
+    "governance_tags": ["customer_facing"],
+    "strategic_weight": 0.45,
+    "description": "Triage high-priority customer escalations and recommend next action.",
+    "performance": {
+      "human": {"success_rate": 0.84, "avg_cost": 9.0, "avg_latency_ms": 480000},
+      "anthropic_agent": {"success_rate": 0.76, "avg_cost": 0.40, "avg_latency_ms": 5000},
+      "openai_agent": {"success_rate": 0.78, "avg_cost": 0.35, "avg_latency_ms": 4500},
+      "uniphore_agent": {"success_rate": 0.73, "avg_cost": 0.60, "avg_latency_ms": 6500},
+      "hybrid_openai_human": {"success_rate": 0.89, "avg_cost": 4.5, "avg_latency_ms": 180000}
+    }
+  },
+  {
+    "skill_id": "skill_sportsbook_reco_v1",
+    "name": "Sportsbook Recommendation",
+    "allowed_paths": ["openai_agent", "anthropic_agent", "hybrid_openai_human"],
+    "required_tools": ["odds_feed", "responsible_play_check"],
+    "governance_tags": ["regulated_gambling"],
+    "strategic_weight": 0.35,
+    "description": "Generate personalized wager recommendations with responsible-play guardrails.",
+    "performance": {
+      "openai_agent": {"success_rate": 0.72, "avg_cost": 0.10, "avg_latency_ms": 2500},
+      "anthropic_agent": {"success_rate": 0.70, "avg_cost": 0.12, "avg_latency_ms": 2800},
+      "hybrid_openai_human": {"success_rate": 0.82, "avg_cost": 2.1, "avg_latency_ms": 90000}
+    }
+  },
+  {
+    "skill_id": "skill_venue_incident_v1",
+    "name": "Venue Operations Incident Response",
+    "allowed_paths": ["human", "openai_agent", "anthropic_agent", "hybrid_anthropic_human"],
+    "required_tools": ["incident_log", "comms_broadcast"],
+    "governance_tags": ["safety_relevant"],
+    "strategic_weight": 0.55,
+    "description": "Coordinate response to in-venue incidents.",
+    "performance": {
+      "human": {"success_rate": 0.88, "avg_cost": 35.0, "avg_latency_ms": 900000},
+      "openai_agent": {"success_rate": 0.60, "avg_cost": 0.25, "avg_latency_ms": 3000},
+      "anthropic_agent": {"success_rate": 0.63, "avg_cost": 0.30, "avg_latency_ms": 3200},
+      "hybrid_anthropic_human": {"success_rate": 0.91, "avg_cost": 18.0, "avg_latency_ms": 420000}
+    }
+  },
+  {
+    "skill_id": "skill_marketing_exception_v1",
+    "name": "Marketing Campaign Exception",
+    "allowed_paths": ["human", "openai_agent", "hybrid_openai_human", "salesforce_agent"],
+    "required_tools": ["campaign_console", "brand_guardrails"],
+    "governance_tags": ["brand_safety"],
+    "strategic_weight": 0.30,
+    "description": "Resolve exception cases in running marketing campaigns.",
+    "performance": {
+      "human": {"success_rate": 0.86, "avg_cost": 40.0, "avg_latency_ms": 1200000},
+      "openai_agent": {"success_rate": 0.75, "avg_cost": 0.20, "avg_latency_ms": 4000},
+      "salesforce_agent": {"success_rate": 0.71, "avg_cost": 0.35, "avg_latency_ms": 5000},
+      "hybrid_openai_human": {"success_rate": 0.90, "avg_cost": 9.0, "avg_latency_ms": 360000}
+    }
+  },
+  {
+    "skill_id": "skill_cockpit_compliance_v1",
+    "name": "Automotive Cockpit Compliance Review",
+    "allowed_paths": ["human", "anthropic_agent", "hybrid_anthropic_human"],
+    "required_tools": ["wp29_ruleset", "telematics_audit"],
+    "governance_tags": ["safety_relevant", "regulatory"],
+    "strategic_weight": 0.70,
+    "description": "Review in-cockpit AI behavior against WP.29 requirements.",
+    "performance": {
+      "human": {"success_rate": 0.93, "avg_cost": 180.0, "avg_latency_ms": 7200000},
+      "anthropic_agent": {"success_rate": 0.68, "avg_cost": 1.40, "avg_latency_ms": 20000},
+      "hybrid_anthropic_human": {"success_rate": 0.95, "avg_cost": 60.0, "avg_latency_ms": 2400000}
+    }
+  },
+  {
+    "skill_id": "skill_field_dispatch_v1",
+    "name": "Field Service Dispatch",
+    "allowed_paths": ["human", "openai_agent", "cloudflare_agent", "google_vertex_agent", "hybrid_openai_human"],
+    "required_tools": ["fleet_tracker", "sla_calculator"],
+    "governance_tags": ["sla_sensitive"],
+    "strategic_weight": 0.40,
+    "description": "Dispatch field technicians under SLA constraints.",
+    "performance": {
+      "human": {"success_rate": 0.82, "avg_cost": 12.0, "avg_latency_ms": 300000},
+      "openai_agent": {"success_rate": 0.79, "avg_cost": 0.15, "avg_latency_ms": 3500},
+      "cloudflare_agent": {"success_rate": 0.74, "avg_cost": 0.08, "avg_latency_ms": 2000},
+      "google_vertex_agent": {"success_rate": 0.77, "avg_cost": 0.12, "avg_latency_ms": 2500},
+      "hybrid_openai_human": {"success_rate": 0.88, "avg_cost": 4.0, "avg_latency_ms": 120000}
+    }
+  },
+  {
+    "skill_id": "skill_hr_coaching_v1",
+    "name": "HR Workforce Coaching",
+    "allowed_paths": ["human", "anthropic_agent", "hybrid_anthropic_human"],
+    "required_tools": ["performance_history", "coaching_templates"],
+    "governance_tags": ["people_data", "gdpr_sensitive"],
+    "strategic_weight": 0.50,
+    "description": "Generate workforce coaching plans tied to performance history.",
+    "performance": {
+      "human": {"success_rate": 0.89, "avg_cost": 75.0, "avg_latency_ms": 1800000},
+      "anthropic_agent": {"success_rate": 0.70, "avg_cost": 0.60, "avg_latency_ms": 8000},
+      "hybrid_anthropic_human": {"success_rate": 0.92, "avg_cost": 22.0, "avg_latency_ms": 600000}
+    }
+  },
+  {
+    "skill_id": "skill_claim_triage_v1",
+    "name": "Insurance Claim Triage",
+    "allowed_paths": ["human", "openai_agent", "anthropic_agent", "hybrid_openai_human"],
+    "required_tools": ["claim_intake", "policy_lookup", "fraud_signal"],
+    "governance_tags": ["customer_facing", "financial"],
+    "strategic_weight": 0.45,
+    "description": "Triage inbound first-notice-of-loss claims and recommend routing (fast-track, adjuster, SIU).",
+    "performance": {
+      "human": {"success_rate": 0.87, "avg_cost": 24.0, "avg_latency_ms": 900000},
+      "openai_agent": {"success_rate": 0.74, "avg_cost": 0.22, "avg_latency_ms": 4200},
+      "anthropic_agent": {"success_rate": 0.76, "avg_cost": 0.28, "avg_latency_ms": 4800},
+      "hybrid_openai_human": {"success_rate": 0.90, "avg_cost": 6.0, "avg_latency_ms": 240000}
+    }
+  }
+]

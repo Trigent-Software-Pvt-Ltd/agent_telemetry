@@ -1,0 +1,98 @@
+{
+  "manifest_version": "evb.v1",
+  "bundle_id": "evb_01HX8KF2Q3MDE5WG3EVB",
+  "tenant_id": "aeos_demo_enterprise",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3ABCD",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3NOPQ",
+  "issued_at": "2026-04-20T12:55:03.110Z",
+  "policy_pack": {
+    "pack_id": "auto_safety_standard",
+    "version": "1.2.0",
+    "sha256": "9f1e4c7a2db8e44de21bc7ee2c9d71a0f9b44d3e1e2b8a3c4d5e6f708192a3b4"
+  },
+  "safety_envelope": "auto_safety_lockdown_v1",
+  "files": [
+    {
+      "path": "decision.json",
+      "sha256": "3a1b2c4d5e6f70819a2b3c4d5e6f708192a3b4c5d6e7f808192a3b4c5d6e7f80",
+      "size_bytes": 4821,
+      "content_type": "application/json"
+    },
+    {
+      "path": "instruction_patch.json",
+      "sha256": "7c2b4a6d8e0f192a3b4c5d6e7f80910a2b3c4d5e6f708192a3b4c5d6e7f80911",
+      "size_bytes": 1532,
+      "content_type": "application/json"
+    },
+    {
+      "path": "skill.json",
+      "sha256": "5d6e7f808192a3b4c5d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819",
+      "size_bytes": 2041,
+      "content_type": "application/json"
+    },
+    {
+      "path": "actor.json",
+      "sha256": "8192a3b4c5d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f",
+      "size_bytes": 1184,
+      "content_type": "application/json"
+    },
+    {
+      "path": "signals/gsti.json",
+      "sha256": "a3b4c5d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192",
+      "size_bytes": 612,
+      "content_type": "application/json"
+    },
+    {
+      "path": "signals/drift.json",
+      "sha256": "b4c5d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3",
+      "size_bytes": 488,
+      "content_type": "application/json"
+    },
+    {
+      "path": "signals/uop.json",
+      "sha256": "c5d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3b4",
+      "size_bytes": 544,
+      "content_type": "application/json"
+    },
+    {
+      "path": "signals/coordination_tax.json",
+      "sha256": "d6e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3b4c5",
+      "size_bytes": 420,
+      "content_type": "application/json"
+    },
+    {
+      "path": "telemetry/normalized.jsonl",
+      "sha256": "e7f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3b4c5d6",
+      "size_bytes": 18204,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "path": "policy_pack_used.yaml",
+      "sha256": "f80819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3b4c5d6e7",
+      "size_bytes": 3102,
+      "content_type": "application/yaml"
+    },
+    {
+      "path": "ledger_transactions.jsonl",
+      "sha256": "0819203a1b2c4d5e6f708192a3b4c5d6e7f80819205d6e7f8192a3b4c5d6e7f8",
+      "size_bytes": 5688,
+      "content_type": "application/x-ndjson"
+    }
+  ],
+  "attestations": {
+    "fuzebox": {
+      "algorithm": "ed25519",
+      "key_id": "fuzebox-evb-signer-2026q2",
+      "signature_path": "attestations/fuzebox.sig"
+    },
+    "rpotential": {
+      "algorithm": "HMAC-SHA256",
+      "key_id": "rpotential-witness-2026q2",
+      "witness_path": "attestations/rpotential.hmac"
+    }
+  },
+  "retention": {
+    "mode": "compliance",
+    "expires_at": "2033-04-20T12:55:03Z"
+  }
+}

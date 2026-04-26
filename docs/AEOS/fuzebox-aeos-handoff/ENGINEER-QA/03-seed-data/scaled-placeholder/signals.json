@@ -1,0 +1,1258 @@
+{
+  "demo_tenant_01_automotive": {
+    "tenant_id": "demo_tenant_01_automotive",
+    "gsti": {
+      "demo_skill_004": 0.4,
+      "demo_skill_009": 0.25,
+      "demo_skill_011": 0.47,
+      "demo_skill_018": 0.42,
+      "demo_skill_020": 0.52,
+      "demo_skill_023": 0.7,
+      "demo_skill_024": 0.23,
+      "demo_skill_025": 0.43,
+      "demo_skill_027": 0.56,
+      "demo_skill_028": 0.22,
+      "demo_skill_040": 0.24
+    },
+    "skill_drift_risk": {
+      "demo_skill_004": 0.25,
+      "demo_skill_009": 0.2,
+      "demo_skill_011": 0.22,
+      "demo_skill_018": 0.1,
+      "demo_skill_020": 0.1,
+      "demo_skill_023": 0.28,
+      "demo_skill_024": 0.13,
+      "demo_skill_025": 0.28,
+      "demo_skill_027": 0.1,
+      "demo_skill_028": 0.1,
+      "demo_skill_040": 0.24
+    },
+    "uop_by_actor": {
+      "demo_agent_0001": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0002": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0003": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0004": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0005": {
+        "readiness": 0.63,
+        "fatigue": 0.19,
+        "capacity": 0.65
+      },
+      "demo_agent_0006": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_agent_0007": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.9
+      },
+      "demo_agent_0008": {
+        "readiness": 0.98,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_agent_0009": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_agent_0010": {
+        "readiness": 0.98,
+        "fatigue": 0.0,
+        "capacity": 0.98
+      },
+      "demo_actor_0011": {
+        "readiness": 0.84,
+        "fatigue": 0.45,
+        "capacity": 0.85
+      },
+      "demo_agent_0012": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "demo_agent_0013": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.98
+      },
+      "demo_actor_0014": {
+        "readiness": 0.69,
+        "fatigue": 0.48,
+        "capacity": 0.73
+      },
+      "demo_agent_0015": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_agent_0016": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0017": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0018": {
+        "readiness": 0.64,
+        "fatigue": 0.33,
+        "capacity": 0.67
+      },
+      "demo_agent_0019": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0020": {
+        "readiness": 0.69,
+        "fatigue": 0.28,
+        "capacity": 0.66
+      },
+      "demo_agent_0021": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0022": {
+        "readiness": 0.61,
+        "fatigue": 0.2,
+        "capacity": 0.56
+      },
+      "demo_agent_0023": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0024": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0025": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      }
+    },
+    "coordination_tax": {
+      "default": 0.12
+    }
+  },
+  "demo_tenant_02_contact_center": {
+    "tenant_id": "demo_tenant_02_contact_center",
+    "gsti": {
+      "demo_skill_009": 0.55,
+      "demo_skill_017": 0.63,
+      "demo_skill_030": 0.38,
+      "demo_skill_034": 0.32
+    },
+    "skill_drift_risk": {
+      "demo_skill_009": 0.11,
+      "demo_skill_017": 0.19,
+      "demo_skill_030": 0.11,
+      "demo_skill_034": 0.19
+    },
+    "uop_by_actor": {
+      "demo_agent_0026": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0027": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_actor_0028": {
+        "readiness": 0.55,
+        "fatigue": 0.26,
+        "capacity": 0.58
+      },
+      "demo_actor_0029": {
+        "readiness": 0.81,
+        "fatigue": 0.52,
+        "capacity": 0.81
+      },
+      "demo_agent_0030": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0031": {
+        "readiness": 0.52,
+        "fatigue": 0.11,
+        "capacity": 0.54
+      },
+      "demo_actor_0032": {
+        "readiness": 0.45,
+        "fatigue": 0.17,
+        "capacity": 0.45
+      },
+      "demo_actor_0033": {
+        "readiness": 0.69,
+        "fatigue": 0.28,
+        "capacity": 0.71
+      },
+      "demo_agent_0034": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0035": {
+        "readiness": 0.8,
+        "fatigue": 0.12,
+        "capacity": 0.76
+      },
+      "demo_actor_0036": {
+        "readiness": 0.68,
+        "fatigue": 0.52,
+        "capacity": 0.68
+      },
+      "demo_actor_0037": {
+        "readiness": 0.83,
+        "fatigue": 0.48,
+        "capacity": 0.8
+      },
+      "demo_actor_0038": {
+        "readiness": 0.52,
+        "fatigue": 0.53,
+        "capacity": 0.56
+      },
+      "demo_agent_0039": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0040": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0041": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0042": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0043": {
+        "readiness": 0.41,
+        "fatigue": 0.44,
+        "capacity": 0.37
+      },
+      "demo_actor_0044": {
+        "readiness": 0.42,
+        "fatigue": 0.42,
+        "capacity": 0.45
+      },
+      "demo_actor_0045": {
+        "readiness": 0.6,
+        "fatigue": 0.23,
+        "capacity": 0.55
+      },
+      "demo_agent_0046": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "demo_agent_0047": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0048": {
+        "readiness": 0.67,
+        "fatigue": 0.08,
+        "capacity": 0.68
+      },
+      "demo_actor_0049": {
+        "readiness": 0.6,
+        "fatigue": 0.35,
+        "capacity": 0.56
+      },
+      "demo_actor_0050": {
+        "readiness": 0.59,
+        "fatigue": 0.49,
+        "capacity": 0.56
+      }
+    },
+    "coordination_tax": {
+      "default": 0.08
+    }
+  },
+  "demo_tenant_03_gaming": {
+    "tenant_id": "demo_tenant_03_gaming",
+    "gsti": {
+      "demo_skill_003": 0.47,
+      "demo_skill_006": 0.24,
+      "demo_skill_007": 0.58,
+      "demo_skill_008": 0.76,
+      "demo_skill_011": 0.75,
+      "demo_skill_017": 0.6,
+      "demo_skill_030": 0.21,
+      "demo_skill_033": 0.52,
+      "demo_skill_036": 0.45
+    },
+    "skill_drift_risk": {
+      "demo_skill_003": 0.05,
+      "demo_skill_006": 0.23,
+      "demo_skill_007": 0.18,
+      "demo_skill_008": 0.12,
+      "demo_skill_011": 0.18,
+      "demo_skill_017": 0.22,
+      "demo_skill_030": 0.16,
+      "demo_skill_033": 0.28,
+      "demo_skill_036": 0.09
+    },
+    "uop_by_actor": {
+      "demo_actor_0051": {
+        "readiness": 0.54,
+        "fatigue": 0.21,
+        "capacity": 0.58
+      },
+      "demo_actor_0052": {
+        "readiness": 0.44,
+        "fatigue": 0.09,
+        "capacity": 0.44
+      },
+      "demo_actor_0053": {
+        "readiness": 0.83,
+        "fatigue": 0.33,
+        "capacity": 0.8
+      },
+      "demo_agent_0054": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0055": {
+        "readiness": 0.5,
+        "fatigue": 0.1,
+        "capacity": 0.48
+      },
+      "demo_agent_0056": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_agent_0057": {
+        "readiness": 0.92,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_agent_0058": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_actor_0059": {
+        "readiness": 0.74,
+        "fatigue": 0.16,
+        "capacity": 0.79
+      },
+      "demo_actor_0060": {
+        "readiness": 0.72,
+        "fatigue": 0.44,
+        "capacity": 0.72
+      },
+      "demo_agent_0061": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0062": {
+        "readiness": 0.6,
+        "fatigue": 0.26,
+        "capacity": 0.62
+      },
+      "demo_agent_0063": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "demo_agent_0064": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0065": {
+        "readiness": 0.75,
+        "fatigue": 0.43,
+        "capacity": 0.71
+      },
+      "demo_actor_0066": {
+        "readiness": 0.62,
+        "fatigue": 0.27,
+        "capacity": 0.67
+      },
+      "demo_actor_0067": {
+        "readiness": 0.43,
+        "fatigue": 0.48,
+        "capacity": 0.44
+      },
+      "demo_actor_0068": {
+        "readiness": 0.81,
+        "fatigue": 0.48,
+        "capacity": 0.76
+      },
+      "demo_agent_0069": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.98
+      },
+      "demo_actor_0070": {
+        "readiness": 0.51,
+        "fatigue": 0.34,
+        "capacity": 0.5
+      },
+      "demo_actor_0071": {
+        "readiness": 0.75,
+        "fatigue": 0.09,
+        "capacity": 0.75
+      },
+      "demo_agent_0072": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0073": {
+        "readiness": 0.48,
+        "fatigue": 0.44,
+        "capacity": 0.5
+      },
+      "demo_actor_0074": {
+        "readiness": 0.43,
+        "fatigue": 0.27,
+        "capacity": 0.39
+      },
+      "demo_actor_0075": {
+        "readiness": 0.43,
+        "fatigue": 0.28,
+        "capacity": 0.46
+      }
+    },
+    "coordination_tax": {
+      "default": 0.13
+    }
+  },
+  "demo_tenant_04_insurance": {
+    "tenant_id": "demo_tenant_04_insurance",
+    "gsti": {
+      "demo_skill_001": 0.4,
+      "demo_skill_002": 0.79,
+      "demo_skill_005": 0.78,
+      "demo_skill_006": 0.74,
+      "demo_skill_013": 0.75,
+      "demo_skill_014": 0.34,
+      "demo_skill_015": 0.74,
+      "demo_skill_016": 0.62,
+      "demo_skill_020": 0.54,
+      "demo_skill_023": 0.36,
+      "demo_skill_024": 0.75,
+      "demo_skill_026": 0.61,
+      "demo_skill_031": 0.37
+    },
+    "skill_drift_risk": {
+      "demo_skill_001": 0.19,
+      "demo_skill_002": 0.21,
+      "demo_skill_005": 0.09,
+      "demo_skill_006": 0.26,
+      "demo_skill_013": 0.05,
+      "demo_skill_014": 0.1,
+      "demo_skill_015": 0.09,
+      "demo_skill_016": 0.26,
+      "demo_skill_020": 0.26,
+      "demo_skill_023": 0.28,
+      "demo_skill_024": 0.12,
+      "demo_skill_026": 0.19,
+      "demo_skill_031": 0.19
+    },
+    "uop_by_actor": {
+      "demo_actor_0076": {
+        "readiness": 0.79,
+        "fatigue": 0.48,
+        "capacity": 0.82
+      },
+      "demo_agent_0077": {
+        "readiness": 0.98,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0078": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0079": {
+        "readiness": 0.69,
+        "fatigue": 0.07,
+        "capacity": 0.68
+      },
+      "demo_agent_0080": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_agent_0081": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_agent_0082": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_agent_0083": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.87
+      },
+      "demo_agent_0084": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0085": {
+        "readiness": 0.9,
+        "fatigue": 0.0,
+        "capacity": 0.88
+      },
+      "demo_actor_0086": {
+        "readiness": 0.49,
+        "fatigue": 0.55,
+        "capacity": 0.45
+      },
+      "demo_actor_0087": {
+        "readiness": 0.75,
+        "fatigue": 0.47,
+        "capacity": 0.72
+      },
+      "demo_agent_0088": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.89
+      },
+      "demo_actor_0089": {
+        "readiness": 0.42,
+        "fatigue": 0.23,
+        "capacity": 0.43
+      },
+      "demo_agent_0090": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_agent_0091": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0092": {
+        "readiness": 0.64,
+        "fatigue": 0.53,
+        "capacity": 0.69
+      },
+      "demo_agent_0093": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0094": {
+        "readiness": 0.78,
+        "fatigue": 0.48,
+        "capacity": 0.79
+      },
+      "demo_actor_0095": {
+        "readiness": 0.81,
+        "fatigue": 0.12,
+        "capacity": 0.84
+      },
+      "demo_actor_0096": {
+        "readiness": 0.82,
+        "fatigue": 0.26,
+        "capacity": 0.82
+      },
+      "demo_actor_0097": {
+        "readiness": 0.57,
+        "fatigue": 0.06,
+        "capacity": 0.54
+      },
+      "demo_agent_0098": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_agent_0099": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.93
+      },
+      "demo_actor_0100": {
+        "readiness": 0.52,
+        "fatigue": 0.47,
+        "capacity": 0.49
+      }
+    },
+    "coordination_tax": {
+      "default": 0.13
+    }
+  },
+  "demo_tenant_05_healthcare": {
+    "tenant_id": "demo_tenant_05_healthcare",
+    "gsti": {
+      "demo_skill_004": 0.43,
+      "demo_skill_012": 0.66,
+      "demo_skill_013": 0.38,
+      "demo_skill_019": 0.35,
+      "demo_skill_020": 0.24,
+      "demo_skill_021": 0.36,
+      "demo_skill_022": 0.43,
+      "demo_skill_025": 0.67,
+      "demo_skill_037": 0.29
+    },
+    "skill_drift_risk": {
+      "demo_skill_004": 0.15,
+      "demo_skill_012": 0.14,
+      "demo_skill_013": 0.07,
+      "demo_skill_019": 0.29,
+      "demo_skill_020": 0.16,
+      "demo_skill_021": 0.24,
+      "demo_skill_022": 0.08,
+      "demo_skill_025": 0.07,
+      "demo_skill_037": 0.16
+    },
+    "uop_by_actor": {
+      "demo_actor_0101": {
+        "readiness": 0.45,
+        "fatigue": 0.17,
+        "capacity": 0.46
+      },
+      "demo_agent_0102": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_agent_0103": {
+        "readiness": 0.9,
+        "fatigue": 0.0,
+        "capacity": 0.86
+      },
+      "demo_actor_0104": {
+        "readiness": 0.43,
+        "fatigue": 0.31,
+        "capacity": 0.39
+      },
+      "demo_actor_0105": {
+        "readiness": 0.79,
+        "fatigue": 0.07,
+        "capacity": 0.8
+      },
+      "demo_actor_0106": {
+        "readiness": 0.75,
+        "fatigue": 0.22,
+        "capacity": 0.76
+      },
+      "demo_agent_0107": {
+        "readiness": 0.9,
+        "fatigue": 0.0,
+        "capacity": 0.93
+      },
+      "demo_actor_0108": {
+        "readiness": 0.68,
+        "fatigue": 0.46,
+        "capacity": 0.72
+      },
+      "demo_actor_0109": {
+        "readiness": 0.76,
+        "fatigue": 0.49,
+        "capacity": 0.71
+      },
+      "demo_actor_0110": {
+        "readiness": 0.64,
+        "fatigue": 0.18,
+        "capacity": 0.63
+      },
+      "demo_agent_0111": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0112": {
+        "readiness": 0.6,
+        "fatigue": 0.53,
+        "capacity": 0.62
+      },
+      "demo_actor_0113": {
+        "readiness": 0.57,
+        "fatigue": 0.45,
+        "capacity": 0.58
+      },
+      "demo_actor_0114": {
+        "readiness": 0.44,
+        "fatigue": 0.35,
+        "capacity": 0.49
+      },
+      "demo_agent_0115": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.93
+      },
+      "demo_actor_0116": {
+        "readiness": 0.42,
+        "fatigue": 0.49,
+        "capacity": 0.42
+      },
+      "demo_actor_0117": {
+        "readiness": 0.69,
+        "fatigue": 0.23,
+        "capacity": 0.71
+      },
+      "demo_agent_0118": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_agent_0119": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0120": {
+        "readiness": 0.71,
+        "fatigue": 0.52,
+        "capacity": 0.69
+      },
+      "demo_actor_0121": {
+        "readiness": 0.64,
+        "fatigue": 0.25,
+        "capacity": 0.6
+      },
+      "demo_agent_0122": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_actor_0123": {
+        "readiness": 0.75,
+        "fatigue": 0.4,
+        "capacity": 0.73
+      },
+      "demo_actor_0124": {
+        "readiness": 0.46,
+        "fatigue": 0.09,
+        "capacity": 0.44
+      },
+      "demo_actor_0125": {
+        "readiness": 0.72,
+        "fatigue": 0.32,
+        "capacity": 0.75
+      }
+    },
+    "coordination_tax": {
+      "default": 0.1
+    }
+  },
+  "demo_tenant_06_finserv": {
+    "tenant_id": "demo_tenant_06_finserv",
+    "gsti": {
+      "demo_skill_004": 0.77,
+      "demo_skill_006": 0.63,
+      "demo_skill_010": 0.5,
+      "demo_skill_013": 0.57,
+      "demo_skill_021": 0.47,
+      "demo_skill_024": 0.28,
+      "demo_skill_027": 0.2,
+      "demo_skill_031": 0.44,
+      "demo_skill_035": 0.7,
+      "demo_skill_039": 0.43,
+      "demo_skill_040": 0.72
+    },
+    "skill_drift_risk": {
+      "demo_skill_004": 0.16,
+      "demo_skill_006": 0.16,
+      "demo_skill_010": 0.26,
+      "demo_skill_013": 0.21,
+      "demo_skill_021": 0.2,
+      "demo_skill_024": 0.13,
+      "demo_skill_027": 0.2,
+      "demo_skill_031": 0.22,
+      "demo_skill_035": 0.17,
+      "demo_skill_039": 0.09,
+      "demo_skill_040": 0.15
+    },
+    "uop_by_actor": {
+      "demo_actor_0126": {
+        "readiness": 0.63,
+        "fatigue": 0.11,
+        "capacity": 0.61
+      },
+      "demo_actor_0127": {
+        "readiness": 0.41,
+        "fatigue": 0.33,
+        "capacity": 0.43
+      },
+      "demo_actor_0128": {
+        "readiness": 0.43,
+        "fatigue": 0.25,
+        "capacity": 0.44
+      },
+      "demo_agent_0129": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0130": {
+        "readiness": 0.75,
+        "fatigue": 0.11,
+        "capacity": 0.78
+      },
+      "demo_actor_0131": {
+        "readiness": 0.63,
+        "fatigue": 0.2,
+        "capacity": 0.61
+      },
+      "demo_actor_0132": {
+        "readiness": 0.8,
+        "fatigue": 0.47,
+        "capacity": 0.78
+      },
+      "demo_actor_0133": {
+        "readiness": 0.44,
+        "fatigue": 0.37,
+        "capacity": 0.47
+      },
+      "demo_agent_0134": {
+        "readiness": 0.98,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0135": {
+        "readiness": 0.92,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0136": {
+        "readiness": 0.69,
+        "fatigue": 0.2,
+        "capacity": 0.66
+      },
+      "demo_actor_0137": {
+        "readiness": 0.47,
+        "fatigue": 0.26,
+        "capacity": 0.52
+      },
+      "demo_actor_0138": {
+        "readiness": 0.79,
+        "fatigue": 0.21,
+        "capacity": 0.76
+      },
+      "demo_agent_0139": {
+        "readiness": 0.92,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_actor_0140": {
+        "readiness": 0.53,
+        "fatigue": 0.24,
+        "capacity": 0.48
+      },
+      "demo_agent_0141": {
+        "readiness": 0.92,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0142": {
+        "readiness": 0.44,
+        "fatigue": 0.25,
+        "capacity": 0.48
+      },
+      "demo_actor_0143": {
+        "readiness": 0.56,
+        "fatigue": 0.08,
+        "capacity": 0.53
+      },
+      "demo_actor_0144": {
+        "readiness": 0.59,
+        "fatigue": 0.49,
+        "capacity": 0.62
+      },
+      "demo_agent_0145": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0146": {
+        "readiness": 0.77,
+        "fatigue": 0.36,
+        "capacity": 0.73
+      },
+      "demo_agent_0147": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0148": {
+        "readiness": 0.58,
+        "fatigue": 0.07,
+        "capacity": 0.61
+      },
+      "demo_actor_0149": {
+        "readiness": 0.47,
+        "fatigue": 0.5,
+        "capacity": 0.49
+      },
+      "demo_actor_0150": {
+        "readiness": 0.67,
+        "fatigue": 0.3,
+        "capacity": 0.63
+      }
+    },
+    "coordination_tax": {
+      "default": 0.09
+    }
+  },
+  "demo_tenant_07_marketing": {
+    "tenant_id": "demo_tenant_07_marketing",
+    "gsti": {
+      "demo_skill_001": 0.35,
+      "demo_skill_002": 0.29,
+      "demo_skill_003": 0.45,
+      "demo_skill_027": 0.43,
+      "demo_skill_028": 0.47,
+      "demo_skill_031": 0.56,
+      "demo_skill_033": 0.55,
+      "demo_skill_034": 0.52,
+      "demo_skill_037": 0.75
+    },
+    "skill_drift_risk": {
+      "demo_skill_001": 0.27,
+      "demo_skill_002": 0.15,
+      "demo_skill_003": 0.06,
+      "demo_skill_027": 0.29,
+      "demo_skill_028": 0.23,
+      "demo_skill_031": 0.25,
+      "demo_skill_033": 0.2,
+      "demo_skill_034": 0.28,
+      "demo_skill_037": 0.08
+    },
+    "uop_by_actor": {
+      "demo_actor_0151": {
+        "readiness": 0.57,
+        "fatigue": 0.39,
+        "capacity": 0.54
+      },
+      "demo_agent_0152": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_agent_0153": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_agent_0154": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0155": {
+        "readiness": 0.54,
+        "fatigue": 0.13,
+        "capacity": 0.55
+      },
+      "demo_agent_0156": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_agent_0157": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_agent_0158": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.99
+      },
+      "demo_actor_0159": {
+        "readiness": 0.72,
+        "fatigue": 0.21,
+        "capacity": 0.7
+      },
+      "demo_actor_0160": {
+        "readiness": 0.7,
+        "fatigue": 0.24,
+        "capacity": 0.73
+      },
+      "demo_agent_0161": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_actor_0162": {
+        "readiness": 0.77,
+        "fatigue": 0.19,
+        "capacity": 0.73
+      },
+      "demo_agent_0163": {
+        "readiness": 0.9,
+        "fatigue": 0.0,
+        "capacity": 0.87
+      },
+      "demo_agent_0164": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_actor_0165": {
+        "readiness": 0.58,
+        "fatigue": 0.52,
+        "capacity": 0.59
+      },
+      "demo_agent_0166": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.98
+      },
+      "demo_agent_0167": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0168": {
+        "readiness": 0.53,
+        "fatigue": 0.35,
+        "capacity": 0.52
+      },
+      "demo_agent_0169": {
+        "readiness": 0.94,
+        "fatigue": 0.0,
+        "capacity": 0.94
+      },
+      "demo_actor_0170": {
+        "readiness": 0.47,
+        "fatigue": 0.28,
+        "capacity": 0.49
+      },
+      "demo_actor_0171": {
+        "readiness": 0.76,
+        "fatigue": 0.33,
+        "capacity": 0.78
+      },
+      "demo_agent_0172": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.93
+      },
+      "demo_actor_0173": {
+        "readiness": 0.82,
+        "fatigue": 0.05,
+        "capacity": 0.87
+      },
+      "demo_actor_0174": {
+        "readiness": 0.73,
+        "fatigue": 0.06,
+        "capacity": 0.73
+      },
+      "demo_agent_0175": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      }
+    },
+    "coordination_tax": {
+      "default": 0.17
+    }
+  },
+  "demo_tenant_08_field_ops": {
+    "tenant_id": "demo_tenant_08_field_ops",
+    "gsti": {
+      "demo_skill_002": 0.25,
+      "demo_skill_009": 0.7,
+      "demo_skill_010": 0.64,
+      "demo_skill_011": 0.41,
+      "demo_skill_015": 0.41,
+      "demo_skill_017": 0.67,
+      "demo_skill_022": 0.51,
+      "demo_skill_023": 0.41,
+      "demo_skill_029": 0.26,
+      "demo_skill_030": 0.63,
+      "demo_skill_032": 0.47,
+      "demo_skill_036": 0.24,
+      "demo_skill_037": 0.23,
+      "demo_skill_038": 0.63
+    },
+    "skill_drift_risk": {
+      "demo_skill_002": 0.06,
+      "demo_skill_009": 0.14,
+      "demo_skill_010": 0.08,
+      "demo_skill_011": 0.25,
+      "demo_skill_015": 0.28,
+      "demo_skill_017": 0.24,
+      "demo_skill_022": 0.18,
+      "demo_skill_023": 0.19,
+      "demo_skill_029": 0.13,
+      "demo_skill_030": 0.16,
+      "demo_skill_032": 0.17,
+      "demo_skill_036": 0.25,
+      "demo_skill_037": 0.21,
+      "demo_skill_038": 0.1
+    },
+    "uop_by_actor": {
+      "demo_actor_0176": {
+        "readiness": 0.81,
+        "fatigue": 0.2,
+        "capacity": 0.83
+      },
+      "demo_agent_0177": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_agent_0178": {
+        "readiness": 0.96,
+        "fatigue": 0.0,
+        "capacity": 0.98
+      },
+      "demo_agent_0179": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_actor_0180": {
+        "readiness": 0.47,
+        "fatigue": 0.21,
+        "capacity": 0.46
+      },
+      "demo_actor_0181": {
+        "readiness": 0.49,
+        "fatigue": 0.34,
+        "capacity": 0.48
+      },
+      "demo_actor_0182": {
+        "readiness": 0.63,
+        "fatigue": 0.28,
+        "capacity": 0.58
+      },
+      "demo_actor_0183": {
+        "readiness": 0.58,
+        "fatigue": 0.46,
+        "capacity": 0.55
+      },
+      "demo_agent_0184": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_actor_0185": {
+        "readiness": 0.84,
+        "fatigue": 0.29,
+        "capacity": 0.86
+      },
+      "demo_actor_0186": {
+        "readiness": 0.74,
+        "fatigue": 0.54,
+        "capacity": 0.77
+      },
+      "demo_agent_0187": {
+        "readiness": 0.91,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_agent_0188": {
+        "readiness": 0.92,
+        "fatigue": 0.0,
+        "capacity": 0.95
+      },
+      "demo_actor_0189": {
+        "readiness": 0.78,
+        "fatigue": 0.43,
+        "capacity": 0.78
+      },
+      "demo_agent_0190": {
+        "readiness": 0.93,
+        "fatigue": 0.0,
+        "capacity": 0.92
+      },
+      "demo_actor_0191": {
+        "readiness": 0.76,
+        "fatigue": 0.26,
+        "capacity": 0.73
+      },
+      "demo_agent_0192": {
+        "readiness": 0.95,
+        "fatigue": 0.0,
+        "capacity": 0.91
+      },
+      "demo_actor_0193": {
+        "readiness": 0.73,
+        "fatigue": 0.25,
+        "capacity": 0.75
+      },
+      "demo_actor_0194": {
+        "readiness": 0.43,
+        "fatigue": 0.3,
+        "capacity": 0.43
+      },
+      "demo_actor_0195": {
+        "readiness": 0.77,
+        "fatigue": 0.17,
+        "capacity": 0.82
+      },
+      "demo_agent_0196": {
+        "readiness": 0.99,
+        "fatigue": 0.0,
+        "capacity": 0.97
+      },
+      "demo_agent_0197": {
+        "readiness": 0.97,
+        "fatigue": 0.0,
+        "capacity": 0.96
+      },
+      "demo_actor_0198": {
+        "readiness": 0.48,
+        "fatigue": 0.32,
+        "capacity": 0.47
+      },
+      "demo_actor_0199": {
+        "readiness": 0.46,
+        "fatigue": 0.28,
+        "capacity": 0.42
+      },
+      "demo_actor_0200": {
+        "readiness": 0.57,
+        "fatigue": 0.18,
+        "capacity": 0.56
+      }
+    },
+    "coordination_tax": {
+      "default": 0.11
+    }
+  }
+}

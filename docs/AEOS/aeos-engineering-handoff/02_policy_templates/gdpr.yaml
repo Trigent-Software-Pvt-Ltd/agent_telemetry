@@ -1,0 +1,111 @@
+# GDPR controls for personal-data processing through AEOS.
+# Enforced when governance.policy_pack = "gdpr".
+# Pack references: Regulation (EU) 2016/679.
+
+id: gdpr
+version: "2026.04"
+jurisdiction: [EU, EEA]
+description: >
+  Baseline GDPR controls covering lawfulness, minimisation, purpose
+  limitation, storage limitation, and data-subject rights. Required
+  for any task whose inputs include personal data of an EU data subject.
+
+rules:
+  # ------------------------------------------------------------------
+  # Article 5 — Principles relating to processing
+  # ------------------------------------------------------------------
+  - id: purpose_limitation_audit
+    severity: high
+    description: >
+      Every processing operation must record the declared purpose and
+      lawful basis for later audit (Article 5(1)(b), 5(2) accountability).
+    when:
+      always: true
+    require:
+      "governance.audit_log_required": true
+      "governance.trace_retention_days_min": 180
+    references:
+      - "GDPR Article 5(1)(b) — Purpose limitation"
+      - "GDPR Article 5(2) — Accountability"
+      - "GDPR Article 30 — Records of processing activities"
+
+  # ------------------------------------------------------------------
+  # Article 22 — Automated decision-making
+  # ------------------------------------------------------------------
+  - id: automated_decision_human_override
+    severity: critical
+    description: >
+      A data subject has the right not to be subject to a decision
+      based solely on automated processing. Any high-risk task must
+      offer a human override path.
+    when:
+      "task.risk_level": [high, critical]
+    require:
+      "path.human_involved": true
+      "governance.human_override_available": true
+    references:
+      - "GDPR Article 22(1) — Automated individual decision-making"
+      - "GDPR Article 22(3) — Right to human intervention"
+
+  # ------------------------------------------------------------------
+  # Article 25 — Data protection by design
+  # ------------------------------------------------------------------
+  - id: data_minimisation_pii_mask
+    severity: high
+    description: >
+      Personal data sent to vendor runtimes must be minimised or masked.
+      Triggers the L9 DIR rule dir_people_data_pii_mask.
+    when:
+      "skill.governance_tags": [gdpr_sensitive, people_data]
+    require:
+      "governance.pii_masking_required": true
+    references:
+      - "GDPR Article 5(1)(c) — Data minimisation"
+      - "GDPR Article 25 — Data protection by design and by default"
+
+  # ------------------------------------------------------------------
+  # Article 32 — Security of processing
+  # ------------------------------------------------------------------
+  - id: security_of_processing
+    severity: high
+    description: >
+      Technical and organisational measures to ensure confidentiality,
+      integrity, availability, and resilience (Article 32(1)).
+    when:
+      always: true
+    require:
+      "controls.encryption_at_rest": true
+      "controls.encryption_in_transit": true
+    references:
+      - "GDPR Article 32 — Security of processing"
+
+  # ------------------------------------------------------------------
+  # Article 35 — Data Protection Impact Assessment
+  # ------------------------------------------------------------------
+  - id: dpia_high_risk_processing
+    severity: high
+    description: >
+      DPIA required when processing is likely to result in high risk to
+      rights and freedoms of natural persons (Article 35(1)).
+    when:
+      "task.risk_level": [high, critical]
+      "skill.governance_tags": [gdpr_sensitive, people_data]
+    require:
+      "governance.dpia_required": true
+    references:
+      - "GDPR Article 35 — Data protection impact assessment"
+
+  # ------------------------------------------------------------------
+  # Article 44 — International transfers
+  # ------------------------------------------------------------------
+  - id: eu_data_residency
+    severity: high
+    description: >
+      Personal data of EU subjects must remain within EU/EEA unless an
+      approved transfer mechanism applies.
+    when:
+      "task.tenant_region": [EU, EEA]
+    require:
+      "governance.data_residency_required": [EU, EEA]
+    references:
+      - "GDPR Chapter V — International transfers"

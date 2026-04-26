@@ -1,0 +1,18 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "pre_input",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3NOOP8",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3NOOP8",
+  "issued_at": "2026-04-20T12:48:50.001Z",
+  "rules_fired": [],
+  "additional_instructions": [],
+  "restricted_tools": [],
+  "required_tools": [],
+  "required_citations": false,
+  "require_human_confirmation": false,
+  "safety_envelope": null,
+  "metadata": {
+    "ttl_seconds": 300,
+    "note": "No governance rules matched. Adapter proceeds with vendor call unchanged but must still log receipt of this empty patch for audit."
+  }
+}

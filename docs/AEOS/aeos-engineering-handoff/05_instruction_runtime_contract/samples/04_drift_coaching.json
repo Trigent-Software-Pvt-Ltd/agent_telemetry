@@ -1,0 +1,21 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "pre_input",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3DRFT4",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3DRFT4",
+  "issued_at": "2026-04-20T12:44:11.777Z",
+  "rules_fired": ["dir_drift_coaching_inline"],
+  "additional_instructions": [
+    "Skill drift risk for this capability is elevated (drift_risk > 0.35). Emit the chain-of-checks: state assumption, cite source, declare confidence, and name the fallback action if confidence is below 0.6."
+  ],
+  "restricted_tools": [],
+  "required_tools": [],
+  "required_citations": true,
+  "require_human_confirmation": false,
+  "safety_envelope": null,
+  "metadata": {
+    "pack_id": "quality_ops",
+    "ttl_seconds": 900,
+    "drift_risk_observed": 0.42
+  }
+}

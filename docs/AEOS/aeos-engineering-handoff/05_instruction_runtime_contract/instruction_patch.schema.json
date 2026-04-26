@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fuzebox.ai/aeos/dir/instruction_patch/v1",
+  "title": "DIR Instruction Patch (L9 → adapter)",
+  "type": "object",
+  "required": [
+    "contract_version", "phase", "decision_id", "execution_id",
+    "issued_at", "rules_fired"
+  ],
+  "properties": {
+    "contract_version": { "type": "string", "const": "dir.v1" },
+    "phase": {
+      "type": "string",
+      "enum": ["pre_input", "mid_toolcall", "post_output", "on_signal"]
+    },
+    "decision_id":  { "type": "string", "pattern": "^dec_[A-Za-z0-9]+$" },
+    "execution_id": { "type": "string", "pattern": "^exe_[A-Za-z0-9]+$" },
+    "issued_at":    { "type": "string", "format": "date-time" },
+    "rules_fired": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "additional_instructions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "default": []
+    },
+    "restricted_tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "required_tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "required_citations": { "type": "boolean", "default": false },
+    "require_human_confirmation": { "type": "boolean", "default": false },
+    "safety_envelope": { "type": ["string", "null"], "default": null },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "pack_id": { "type": "string" },
+        "ttl_seconds": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+id: wp29
+version: "2026.04"
+description: >-
+  UN ECE WP.29 Cybersecurity (R.155) and Software Update (R.156)
+  regulations for connected vehicles. Safety-relevant automotive work
+  must always involve a human in the loop, and evidence retention for
+  cockpit compliance reviews is mandatory.
+
+rules:
+  - id: auto_safety_human_signoff
+    severity: critical
+    when:
+      task.regulatory_class: [auto_safety]
+    require:
+      path.human_involved: true
+
+  - id: cockpit_evidence_retention
+    severity: high
+    when:
+      task.regulatory_class: [auto_safety]
+    require:
+      governance.evidence_export_required: true
+      governance.trace_retention_days_min: 365
+
+  - id: wp29_audit_log
+    severity: high
+    when:
+      always: true
+    require:
+      governance.audit_log_required: true

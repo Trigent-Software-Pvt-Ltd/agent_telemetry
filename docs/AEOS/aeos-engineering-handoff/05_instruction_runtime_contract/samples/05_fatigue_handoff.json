@@ -1,0 +1,24 @@
+{
+  "contract_version": "dir.v1",
+  "phase": "on_signal",
+  "decision_id": "dec_01HX8KF2Q3MDE5WG3FATG5",
+  "execution_id": "exe_01HX8KF2Q3MDE5WG3FATG5",
+  "issued_at": "2026-04-20T12:45:22.003Z",
+  "rules_fired": ["dir_fatigue_handoff"],
+  "additional_instructions": [
+    "The assigned human actor's fatigue index has crossed 0.75. Summarise the current state in ≤150 words, mark three next-step candidates, and stage a handoff packet for the standby actor. Do not close the task."
+  ],
+  "restricted_tools": [
+    "finalize_task",
+    "close_ticket"
+  ],
+  "required_tools": ["stage_handoff_packet"],
+  "required_citations": false,
+  "require_human_confirmation": true,
+  "safety_envelope": "human_welfare_v1",
+  "metadata": {
+    "pack_id": "workforce_welfare",
+    "ttl_seconds": 600,
+    "fatigue_observed": 0.81
+  }
+}

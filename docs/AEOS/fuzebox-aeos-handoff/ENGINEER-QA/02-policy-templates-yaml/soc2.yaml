@@ -1,0 +1,44 @@
+id: soc2
+version: "2026.04"
+description: >-
+  AICPA SOC 2 Trust Services Criteria — common criteria CC6 (logical
+  and physical access), CC7 (system operations), CC8 (change management).
+  This pack maps audit-log, override, and evidence-export requirements
+  onto the AEOS governance envelope so that every execution contributes
+  to the SOC 2 evidence pool automatically.
+
+rules:
+  # CC6.1 — logical access controls over sensitive data
+  - id: soc2_cc6_human_override
+    severity: high
+    when:
+      always: true
+    require:
+      governance.human_override_available: true
+
+  # CC7.2 — monitoring of system components and the operation of controls
+  - id: soc2_cc7_audit_log
+    severity: high
+    when:
+      always: true
+    require:
+      governance.audit_log_required: true
+      governance.trace_retention_days_min: 365       # 1 year minimum for SOC 2 Type II
+
+  # CC7.4 — security incidents and responses — evidence export on high-risk
+  - id: soc2_cc7_evidence_on_high_risk
+    severity: high
+    when:
+      task.risk_level: [high, critical]
+    require:
+      governance.evidence_export_required: true
+
+  # CC8.1 — change management — a pair of critical-severity rules so any
+  # attempt to execute a safety-relevant change without human oversight is
+  # refused at the policy layer, not just flagged.
+  - id: soc2_cc8_safety_relevant_human
+    severity: critical
+    when:
+      task.regulatory_class: [auto_safety]
+    require:
+      path.human_involved: true

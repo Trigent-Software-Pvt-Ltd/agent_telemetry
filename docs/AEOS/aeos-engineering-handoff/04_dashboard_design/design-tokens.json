@@ -1,0 +1,55 @@
+{
+  "$schema": "https://design-tokens.org/format/1.0",
+  "color": {
+    "bg": {
+      "canvas":  { "value": "#0b1220" },
+      "card":    { "value": "#131c30" },
+      "nested":  { "value": "#0d1526" }
+    },
+    "border": {
+      "line":    { "value": "#223255" },
+      "divider": { "value": "#22315a" }
+    },
+    "fg": {
+      "primary":   { "value": "#e8eefb" },
+      "secondary": { "value": "#9db2d9" },
+      "muted":     { "value": "#8da0c0" }
+    },
+    "accent": {
+      "primary": { "value": "#8fd3ff" },
+      "ok":      { "value": "#6ee7b7" },
+      "warn":    { "value": "#fbbf24" },
+      "bad":     { "value": "#f87171" }
+    },
+    "pill": {
+      "bg": { "value": "#1d3a6a" },
+      "fg": { "value": "#9fd8ff" }
+    }
+  },
+  "font": {
+    "ui":   { "value": "Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif" },
+    "mono": { "value": "'JetBrains Mono', Menlo, ui-monospace, monospace" }
+  },
+  "fontSize": {
+    "caption": { "value": "12px" },
+    "body":    { "value": "14px" },
+    "label":   { "value": "11px" },
+    "title":   { "value": "22px" },
+    "hero":    { "value": "34px" }
+  },
+  "radius": {
+    "sm": { "value": "8px" },
+    "md": { "value": "12px" },
+    "pill": { "value": "999px" }
+  },
+  "space": {
+    "xs": { "value": "4px" },
+    "s":  { "value": "8px" },
+    "m":  { "value": "12px" },
+    "l":  { "value": "20px" },
+    "xl": { "value": "24px" }
+  },
+  "motion": {
+    "transition": { "value": "150ms cubic-bezier(.2,.8,.2,1)" }
+  }
+}

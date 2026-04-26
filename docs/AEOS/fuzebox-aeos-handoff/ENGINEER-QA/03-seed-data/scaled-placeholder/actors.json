@@ -1,0 +1,2573 @@
+{
+  "demo_tenant_01_automotive": [
+    {
+      "actor_id": "demo_agent_0001",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_027",
+        "demo_skill_025",
+        "demo_skill_024",
+        "demo_skill_040",
+        "demo_skill_009"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0002",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_018",
+        "demo_skill_020",
+        "demo_skill_011",
+        "demo_skill_025"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0003",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_040",
+        "demo_skill_028"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0004",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_027",
+        "demo_skill_024",
+        "demo_skill_009",
+        "demo_skill_025",
+        "demo_skill_040"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0005",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_020"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.19,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0006",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_027",
+        "demo_skill_011"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0007",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_020",
+        "demo_skill_024"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0008",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_020",
+        "demo_skill_040"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0009",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_025",
+        "demo_skill_027",
+        "demo_skill_028",
+        "demo_skill_040"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0010",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_018",
+        "demo_skill_028",
+        "demo_skill_024",
+        "demo_skill_009"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0011",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_024",
+        "demo_skill_028"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.45,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0012",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_011",
+        "demo_skill_027",
+        "demo_skill_023",
+        "demo_skill_024"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0013",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_004",
+        "demo_skill_011",
+        "demo_skill_024",
+        "demo_skill_040",
+        "demo_skill_023"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0014",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_028",
+        "demo_skill_024"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0015",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_025",
+        "demo_skill_027",
+        "demo_skill_004",
+        "demo_skill_020"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0016",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_024",
+        "demo_skill_040"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0017",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_020",
+        "demo_skill_004",
+        "demo_skill_027",
+        "demo_skill_040"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0018",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_024",
+        "demo_skill_011",
+        "demo_skill_018"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.33,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0019",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_028",
+        "demo_skill_024"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0020",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_018",
+        "demo_skill_025"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.28,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0021",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_040",
+        "demo_skill_027",
+        "demo_skill_011",
+        "demo_skill_009"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0022",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_040",
+        "demo_skill_024",
+        "demo_skill_020"
+      ],
+      "availability": 0.61,
+      "fatigue": 0.2,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0023",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_018",
+        "demo_skill_024"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0024",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_024",
+        "demo_skill_020",
+        "demo_skill_040"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0025",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_025"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    }
+  ],
+  "demo_tenant_02_contact_center": [
+    {
+      "actor_id": "demo_agent_0026",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_009",
+        "demo_skill_034",
+        "demo_skill_017"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0027",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_030",
+        "demo_skill_034"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0028",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_009",
+        "demo_skill_034"
+      ],
+      "availability": 0.55,
+      "fatigue": 0.26,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0029",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_009",
+        "demo_skill_017"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.52,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0030",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_017",
+        "demo_skill_034",
+        "demo_skill_030"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0031",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_009",
+        "demo_skill_017",
+        "demo_skill_034"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.11,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0032",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_030",
+        "demo_skill_017"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.17,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0033",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_030",
+        "demo_skill_009"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.28,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0034",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_034",
+        "demo_skill_030",
+        "demo_skill_017"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0035",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017"
+      ],
+      "availability": 0.8,
+      "fatigue": 0.12,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0036",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_034",
+        "demo_skill_009",
+        "demo_skill_030"
+      ],
+      "availability": 0.68,
+      "fatigue": 0.52,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0037",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_034",
+        "demo_skill_030"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0038",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_009",
+        "demo_skill_017"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.53,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0039",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_030"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0040",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_009",
+        "demo_skill_030",
+        "demo_skill_034"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0041",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_034",
+        "demo_skill_009"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0042",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_030",
+        "demo_skill_034"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0043",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017"
+      ],
+      "availability": 0.41,
+      "fatigue": 0.44,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0044",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_009",
+        "demo_skill_034",
+        "demo_skill_017"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.42,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0045",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_034"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.23,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0046",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_030",
+        "demo_skill_009",
+        "demo_skill_034"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0047",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_017",
+        "demo_skill_009",
+        "demo_skill_030"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0048",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.08,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0049",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_030",
+        "demo_skill_017"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.35,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0050",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.49,
+      "certifications": []
+    }
+  ],
+  "demo_tenant_03_gaming": [
+    {
+      "actor_id": "demo_actor_0051",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_036",
+        "demo_skill_017",
+        "demo_skill_003"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.21,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0052",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_033",
+        "demo_skill_006"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.09,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0053",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_007",
+        "demo_skill_003",
+        "demo_skill_011"
+      ],
+      "availability": 0.83,
+      "fatigue": 0.33,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0054",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_003",
+        "demo_skill_007",
+        "demo_skill_011"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0055",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_007",
+        "demo_skill_033"
+      ],
+      "availability": 0.5,
+      "fatigue": 0.1,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0056",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_008"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0057",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_036",
+        "demo_skill_003",
+        "demo_skill_011",
+        "demo_skill_017",
+        "demo_skill_007",
+        "demo_skill_033"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0058",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_003",
+        "demo_skill_006",
+        "demo_skill_030"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0059",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_003",
+        "demo_skill_006"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.16,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0060",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_007",
+        "demo_skill_017",
+        "demo_skill_036"
+      ],
+      "availability": 0.72,
+      "fatigue": 0.44,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0061",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_007",
+        "demo_skill_036"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0062",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_011"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.26,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0063",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_008",
+        "demo_skill_006",
+        "demo_skill_007",
+        "demo_skill_036"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0064",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_036",
+        "demo_skill_011",
+        "demo_skill_003",
+        "demo_skill_006",
+        "demo_skill_008"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0065",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_008"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.43,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0066",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_003"
+      ],
+      "availability": 0.62,
+      "fatigue": 0.27,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0067",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_036",
+        "demo_skill_017"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0068",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_033"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0069",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_011",
+        "demo_skill_003",
+        "demo_skill_008",
+        "demo_skill_036"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0070",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_006",
+        "demo_skill_008",
+        "demo_skill_003"
+      ],
+      "availability": 0.51,
+      "fatigue": 0.34,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0071",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_017",
+        "demo_skill_006",
+        "demo_skill_007"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.09,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0072",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_008",
+        "demo_skill_017",
+        "demo_skill_007",
+        "demo_skill_033",
+        "demo_skill_006",
+        "demo_skill_011"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0073",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_007",
+        "demo_skill_006"
+      ],
+      "availability": 0.48,
+      "fatigue": 0.44,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0074",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_017",
+        "demo_skill_036",
+        "demo_skill_006",
+        "demo_skill_008"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.27,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0075",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_003",
+        "demo_skill_017",
+        "demo_skill_011"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.28,
+      "certifications": []
+    }
+  ],
+  "demo_tenant_04_insurance": [
+    {
+      "actor_id": "demo_actor_0076",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_002",
+        "demo_skill_024"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0077",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_016",
+        "demo_skill_023",
+        "demo_skill_020",
+        "demo_skill_001",
+        "demo_skill_031"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0078",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_016",
+        "demo_skill_020",
+        "demo_skill_005"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0079",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_026",
+        "demo_skill_002",
+        "demo_skill_020"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.07,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0080",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_020",
+        "demo_skill_023",
+        "demo_skill_005",
+        "demo_skill_014",
+        "demo_skill_026",
+        "demo_skill_013"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0081",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_024",
+        "demo_skill_026",
+        "demo_skill_014",
+        "demo_skill_002",
+        "demo_skill_023"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0082",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_026",
+        "demo_skill_024",
+        "demo_skill_023",
+        "demo_skill_005"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0083",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_024",
+        "demo_skill_026",
+        "demo_skill_015"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0084",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_020",
+        "demo_skill_015",
+        "demo_skill_024",
+        "demo_skill_014"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0085",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_002",
+        "demo_skill_024",
+        "demo_skill_026",
+        "demo_skill_015",
+        "demo_skill_020",
+        "demo_skill_014"
+      ],
+      "availability": 0.9,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0086",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_014",
+        "demo_skill_016"
+      ],
+      "availability": 0.49,
+      "fatigue": 0.55,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0087",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_002",
+        "demo_skill_020"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.47,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0088",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_023",
+        "demo_skill_005",
+        "demo_skill_026"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0089",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_026",
+        "demo_skill_016"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.23,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0090",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_026",
+        "demo_skill_016",
+        "demo_skill_006",
+        "demo_skill_020",
+        "demo_skill_023"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0091",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_014",
+        "demo_skill_024",
+        "demo_skill_023"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0092",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_015",
+        "demo_skill_020"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.53,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0093",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_001",
+        "demo_skill_024"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0094",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_026"
+      ],
+      "availability": 0.78,
+      "fatigue": 0.48,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0095",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_016"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.12,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0096",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_016",
+        "demo_skill_014"
+      ],
+      "availability": 0.82,
+      "fatigue": 0.26,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0097",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_006",
+        "demo_skill_015",
+        "demo_skill_002"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.06,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0098",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_005",
+        "demo_skill_026",
+        "demo_skill_001"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0099",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_026",
+        "demo_skill_016"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0100",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_001"
+      ],
+      "availability": 0.52,
+      "fatigue": 0.47,
+      "certifications": []
+    }
+  ],
+  "demo_tenant_05_healthcare": [
+    {
+      "actor_id": "demo_actor_0101",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_012",
+        "demo_skill_020",
+        "demo_skill_037",
+        "demo_skill_013"
+      ],
+      "availability": 0.45,
+      "fatigue": 0.17,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0102",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_012",
+        "demo_skill_037",
+        "demo_skill_022",
+        "demo_skill_019",
+        "demo_skill_020"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0103",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_020",
+        "demo_skill_019"
+      ],
+      "availability": 0.9,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0104",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_012",
+        "demo_skill_020",
+        "demo_skill_037"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.31,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0105",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_022"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.07,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0106",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_020",
+        "demo_skill_004",
+        "demo_skill_013"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.22,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0107",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_021",
+        "demo_skill_013"
+      ],
+      "availability": 0.9,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0108",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_037"
+      ],
+      "availability": 0.68,
+      "fatigue": 0.46,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0109",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_020",
+        "demo_skill_012",
+        "demo_skill_037"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.49,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0110",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_037",
+        "demo_skill_022",
+        "demo_skill_025"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.18,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0111",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_021",
+        "demo_skill_004",
+        "demo_skill_022",
+        "demo_skill_037"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0112",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_022",
+        "demo_skill_037",
+        "demo_skill_021"
+      ],
+      "availability": 0.6,
+      "fatigue": 0.53,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0113",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_037"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.45,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0114",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_022"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.35,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0115",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_021",
+        "demo_skill_012",
+        "demo_skill_004",
+        "demo_skill_013"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0116",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_025",
+        "demo_skill_037",
+        "demo_skill_019"
+      ],
+      "availability": 0.42,
+      "fatigue": 0.49,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0117",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_020",
+        "demo_skill_004",
+        "demo_skill_025",
+        "demo_skill_021"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.23,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0118",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_013",
+        "demo_skill_022"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0119",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_012",
+        "demo_skill_019",
+        "demo_skill_022"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0120",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013"
+      ],
+      "availability": 0.71,
+      "fatigue": 0.52,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0121",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013"
+      ],
+      "availability": 0.64,
+      "fatigue": 0.25,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0122",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_013"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0123",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_020"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.4,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0124",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_025",
+        "demo_skill_019",
+        "demo_skill_004"
+      ],
+      "availability": 0.46,
+      "fatigue": 0.09,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0125",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_012",
+        "demo_skill_021",
+        "demo_skill_025",
+        "demo_skill_013"
+      ],
+      "availability": 0.72,
+      "fatigue": 0.32,
+      "certifications": []
+    }
+  ],
+  "demo_tenant_06_finserv": [
+    {
+      "actor_id": "demo_actor_0126",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_040",
+        "demo_skill_024"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.11,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0127",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_031"
+      ],
+      "availability": 0.41,
+      "fatigue": 0.33,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0128",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_039",
+        "demo_skill_006"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.25,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0129",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_027",
+        "demo_skill_040",
+        "demo_skill_006",
+        "demo_skill_010",
+        "demo_skill_031",
+        "demo_skill_024"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0130",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_035",
+        "demo_skill_040"
+      ],
+      "availability": 0.75,
+      "fatigue": 0.11,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0131",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_006"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.2,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0132",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_024",
+        "demo_skill_035"
+      ],
+      "availability": 0.8,
+      "fatigue": 0.47,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0133",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_021",
+        "demo_skill_035"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.37,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0134",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_039",
+        "demo_skill_024"
+      ],
+      "availability": 0.98,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0135",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_039"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0136",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_039",
+        "demo_skill_004",
+        "demo_skill_031",
+        "demo_skill_021"
+      ],
+      "availability": 0.69,
+      "fatigue": 0.2,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0137",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_021",
+        "demo_skill_031",
+        "demo_skill_006",
+        "demo_skill_004"
+      ],
+      "availability": 0.47,
+      "fatigue": 0.26,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0138",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_039",
+        "demo_skill_010",
+        "demo_skill_024"
+      ],
+      "availability": 0.79,
+      "fatigue": 0.21,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0139",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_024",
+        "demo_skill_035",
+        "demo_skill_006",
+        "demo_skill_040"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0140",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_010",
+        "demo_skill_006",
+        "demo_skill_004"
+      ],
+      "availability": 0.53,
+      "fatigue": 0.24,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0141",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_024",
+        "demo_skill_039",
+        "demo_skill_040"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0142",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_021",
+        "demo_skill_040",
+        "demo_skill_004"
+      ],
+      "availability": 0.44,
+      "fatigue": 0.25,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0143",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_013",
+        "demo_skill_039"
+      ],
+      "availability": 0.56,
+      "fatigue": 0.08,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0144",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_021",
+        "demo_skill_035",
+        "demo_skill_004",
+        "demo_skill_006"
+      ],
+      "availability": 0.59,
+      "fatigue": 0.49,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0145",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_004",
+        "demo_skill_027",
+        "demo_skill_040",
+        "demo_skill_013"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0146",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_035",
+        "demo_skill_031",
+        "demo_skill_040",
+        "demo_skill_021"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.36,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0147",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_027",
+        "demo_skill_024"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0148",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_013",
+        "demo_skill_035"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.07,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0149",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_031",
+        "demo_skill_035",
+        "demo_skill_040"
+      ],
+      "availability": 0.47,
+      "fatigue": 0.5,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0150",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_010",
+        "demo_skill_027",
+        "demo_skill_021"
+      ],
+      "availability": 0.67,
+      "fatigue": 0.3,
+      "certifications": []
+    }
+  ],
+  "demo_tenant_07_marketing": [
+    {
+      "actor_id": "demo_actor_0151",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_034",
+        "demo_skill_033",
+        "demo_skill_001"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.39,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0152",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_034",
+        "demo_skill_003",
+        "demo_skill_031"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0153",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_034",
+        "demo_skill_002"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0154",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_027",
+        "demo_skill_001",
+        "demo_skill_028"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0155",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_034"
+      ],
+      "availability": 0.54,
+      "fatigue": 0.13,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0156",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_001",
+        "demo_skill_031",
+        "demo_skill_002",
+        "demo_skill_028",
+        "demo_skill_033"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0157",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_033",
+        "demo_skill_031",
+        "demo_skill_002",
+        "demo_skill_027",
+        "demo_skill_028",
+        "demo_skill_003"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0158",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_027",
+        "demo_skill_002",
+        "demo_skill_003"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0159",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_027",
+        "demo_skill_031"
+      ],
+      "availability": 0.72,
+      "fatigue": 0.21,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0160",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_002",
+        "demo_skill_037"
+      ],
+      "availability": 0.7,
+      "fatigue": 0.24,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0161",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_001",
+        "demo_skill_003"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0162",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_034",
+        "demo_skill_002",
+        "demo_skill_033"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.19,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0163",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_002",
+        "demo_skill_027",
+        "demo_skill_037"
+      ],
+      "availability": 0.9,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0164",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_002",
+        "demo_skill_027"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0165",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_003"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.52,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0166",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_031",
+        "demo_skill_003"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0167",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_027",
+        "demo_skill_001",
+        "demo_skill_002",
+        "demo_skill_037",
+        "demo_skill_033",
+        "demo_skill_034"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0168",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_003",
+        "demo_skill_028",
+        "demo_skill_001",
+        "demo_skill_033"
+      ],
+      "availability": 0.53,
+      "fatigue": 0.35,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0169",
+      "actor_type": "agent",
+      "provider": "salesforce",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_037",
+        "demo_skill_002",
+        "demo_skill_028"
+      ],
+      "availability": 0.94,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0170",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_031"
+      ],
+      "availability": 0.47,
+      "fatigue": 0.28,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0171",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_031"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.33,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0172",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_033",
+        "demo_skill_037",
+        "demo_skill_028",
+        "demo_skill_003",
+        "demo_skill_001",
+        "demo_skill_027"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0173",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_034",
+        "demo_skill_031"
+      ],
+      "availability": 0.82,
+      "fatigue": 0.05,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0174",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_028",
+        "demo_skill_031",
+        "demo_skill_003",
+        "demo_skill_037"
+      ],
+      "availability": 0.73,
+      "fatigue": 0.06,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0175",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_001",
+        "demo_skill_002",
+        "demo_skill_027"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    }
+  ],
+  "demo_tenant_08_field_ops": [
+    {
+      "actor_id": "demo_actor_0176",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_036",
+        "demo_skill_009",
+        "demo_skill_032"
+      ],
+      "availability": 0.81,
+      "fatigue": 0.2,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0177",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_010",
+        "demo_skill_038"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0178",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_037",
+        "demo_skill_029",
+        "demo_skill_032",
+        "demo_skill_011",
+        "demo_skill_030"
+      ],
+      "availability": 0.96,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0179",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_023",
+        "demo_skill_029",
+        "demo_skill_036",
+        "demo_skill_017",
+        "demo_skill_009",
+        "demo_skill_030"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0180",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_029"
+      ],
+      "availability": 0.47,
+      "fatigue": 0.21,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0181",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_032"
+      ],
+      "availability": 0.49,
+      "fatigue": 0.34,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0182",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_037",
+        "demo_skill_002",
+        "demo_skill_023",
+        "demo_skill_010"
+      ],
+      "availability": 0.63,
+      "fatigue": 0.28,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0183",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_032",
+        "demo_skill_037",
+        "demo_skill_015",
+        "demo_skill_002"
+      ],
+      "availability": 0.58,
+      "fatigue": 0.46,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0184",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_002",
+        "demo_skill_022"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0185",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_009"
+      ],
+      "availability": 0.84,
+      "fatigue": 0.29,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0186",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_037",
+        "demo_skill_010"
+      ],
+      "availability": 0.74,
+      "fatigue": 0.54,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0187",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_022",
+        "demo_skill_023",
+        "demo_skill_038",
+        "demo_skill_036"
+      ],
+      "availability": 0.91,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0188",
+      "actor_type": "agent",
+      "provider": "cloudflare",
+      "capabilities": [
+        "demo_skill_032",
+        "demo_skill_017",
+        "demo_skill_009"
+      ],
+      "availability": 0.92,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0189",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_036",
+        "demo_skill_011"
+      ],
+      "availability": 0.78,
+      "fatigue": 0.43,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0190",
+      "actor_type": "agent",
+      "provider": "uniphore",
+      "capabilities": [
+        "demo_skill_022",
+        "demo_skill_029",
+        "demo_skill_038",
+        "demo_skill_011",
+        "demo_skill_032",
+        "demo_skill_023"
+      ],
+      "availability": 0.93,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0191",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_002"
+      ],
+      "availability": 0.76,
+      "fatigue": 0.26,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0192",
+      "actor_type": "agent",
+      "provider": "anthropic",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_009",
+        "demo_skill_037"
+      ],
+      "availability": 0.95,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0193",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_011"
+      ],
+      "availability": 0.73,
+      "fatigue": 0.25,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0194",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_037",
+        "demo_skill_038"
+      ],
+      "availability": 0.43,
+      "fatigue": 0.3,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0195",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_030",
+        "demo_skill_038",
+        "demo_skill_032"
+      ],
+      "availability": 0.77,
+      "fatigue": 0.17,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_agent_0196",
+      "actor_type": "agent",
+      "provider": "google",
+      "capabilities": [
+        "demo_skill_011",
+        "demo_skill_022",
+        "demo_skill_015",
+        "demo_skill_036",
+        "demo_skill_002",
+        "demo_skill_029"
+      ],
+      "availability": 0.99,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_agent_0197",
+      "actor_type": "agent",
+      "provider": "openai",
+      "capabilities": [
+        "demo_skill_029",
+        "demo_skill_023",
+        "demo_skill_002",
+        "demo_skill_017",
+        "demo_skill_022"
+      ],
+      "availability": 0.97,
+      "fatigue": 0.0
+    },
+    {
+      "actor_id": "demo_actor_0198",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_022",
+        "demo_skill_010",
+        "demo_skill_015",
+        "demo_skill_038"
+      ],
+      "availability": 0.48,
+      "fatigue": 0.32,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0199",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_015",
+        "demo_skill_036"
+      ],
+      "availability": 0.46,
+      "fatigue": 0.28,
+      "certifications": []
+    },
+    {
+      "actor_id": "demo_actor_0200",
+      "actor_type": "human",
+      "provider": "human",
+      "capabilities": [
+        "demo_skill_022",
+        "demo_skill_029",
+        "demo_skill_037",
+        "demo_skill_010"
+      ],
+      "availability": 0.57,
+      "fatigue": 0.18,
+      "certifications": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "gdpr",
+  "version": "2026.04",
+  "description": "GDPR personal-data processing controls for EU tenants.",
+  "rules": [
+    {
+      "id": "gdpr_audit_log",
+      "severity": "high",
+      "when": {"always": true},
+      "require": {"governance.audit_log_required": true, "governance.trace_retention_days_min": 180}
+    },
+    {
+      "id": "people_data_human_override",
+      "severity": "high",
+      "when": {"always": true},
+      "require": {"governance.human_override_available": true}
+    }
+  ]
+}

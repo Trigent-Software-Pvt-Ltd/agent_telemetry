@@ -1,0 +1,64 @@
+name: AEOS Conformance Suite
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  conformance:
+    name: conformance-9-of-9
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytest (no runtime deps required for the suite itself)
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Run conformance suite (gate — merges blocked on failure)
+        run: python -m apps.conformance_suite.run_suite
+
+      - name: Run two-party attestation tests
+        run: python -m pytest tests/test_two_party_attestation.py -v
+
+      - name: Sign EAI attestation (CI secret — replace in production)
+        env:
+          FUZEBOX_CI_SECRET: ${{ secrets.FUZEBOX_CI_SECRET }}
+          RPOTENTIAL_CI_SECRET: ${{ secrets.RPOTENTIAL_CI_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from apps._runtime import build_runtime
+          from packages.governance.evidence import AttestationSigner
+
+          # Fall back to deterministic demo secrets if CI hasn't injected real ones;
+          # prod must override both FUZEBOX_CI_SECRET and RPOTENTIAL_CI_SECRET.
+          fb = os.getenv("FUZEBOX_CI_SECRET") or "FUZEBOX_CI_FALLBACK"
+          rp = os.getenv("RPOTENTIAL_CI_SECRET") or "RPOTENTIAL_CI_FALLBACK"
+          signer = AttestationSigner(fuzebox_secret=fb, rpotential_secret=rp)
+          att = signer.sign(
+              tenant_id="ci_tenant",
+              period="ci-build",
+              metric_name="EAI",
+              metric_value=1.0,
+              details={"conformance_suite": "9_of_9_passed"},
+          )
+          assert signer.verify(att), "two-party signature must verify"
+          with open("eai_attestation.json", "w") as f:
+              json.dump(att.to_dict(), f, sort_keys=True, indent=2)
+          print("attestation_id:", att.attestation_id)
+          PY
+
+      - name: Upload EAI attestation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eai-attestation
+          path: eai_attestation.json

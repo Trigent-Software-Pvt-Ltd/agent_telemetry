@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fuzebox.ai/aeos/dir/context_request/v1",
+  "title": "DIR Context Request (adapter → L9)",
+  "type": "object",
+  "required": [
+    "contract_version", "phase", "decision_id", "execution_id",
+    "tenant_id", "task", "skill", "selected_path", "signals"
+  ],
+  "properties": {
+    "contract_version": { "type": "string", "const": "dir.v1" },
+    "phase": {
+      "type": "string",
+      "enum": ["pre_input", "mid_toolcall", "post_output", "on_signal"]
+    },
+    "decision_id": { "type": "string", "pattern": "^dec_[A-Za-z0-9]+$" },
+    "execution_id": { "type": "string", "pattern": "^exe_[A-Za-z0-9]+$" },
+    "tenant_id": { "type": "string" },
+    "task": {
+      "type": "object",
+      "required": ["task_id", "task_type", "risk_level"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "task_type": { "type": "string" },
+        "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+        "regulatory_class": { "type": "string" },
+        "complexity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "latency_budget_ms": { "type": "integer", "minimum": 0 },
+        "cost_budget_usd": { "type": "number", "minimum": 0 },
+        "explainability_required": { "type": "boolean" },
+        "human_signoff_required": { "type": "boolean" }
+      }
+    },
+    "skill": {
+      "type": "object",
+      "required": ["skill_id"],
+      "properties": {
+        "skill_id": { "type": "string" },
+        "governance_tags": { "type": "array", "items": { "type": "string" } },
+        "strategic_weight": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "selected_path": {
+      "type": "string",
+      "enum": [
+        "human", "anthropic_agent", "openai_agent", "salesforce_agent",
+        "uniphore_agent", "cloudflare_agent", "google_vertex_agent",
+        "hybrid_anthropic_human", "hybrid_openai_human"
+      ]
+    },
+    "signals": {
+      "type": "object",
+      "description": "Slice of workforce signals relevant to this invocation.",
+      "properties": {
+        "skill_drift_risk":    { "type": "number", "minimum": 0, "maximum": 1 },
+        "actor_fatigue":       { "type": "number", "minimum": 0, "maximum": 1 },
+        "coordination_tax":    { "type": "number", "minimum": 0, "maximum": 1 },
+        "recent_error_rate":   { "type": "number", "minimum": 0, "maximum": 1 },
+        "actor_readiness":     { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

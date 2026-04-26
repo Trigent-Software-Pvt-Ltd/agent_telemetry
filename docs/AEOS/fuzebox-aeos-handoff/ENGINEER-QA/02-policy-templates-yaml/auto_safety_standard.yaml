@@ -1,0 +1,22 @@
+id: auto_safety_standard
+version: "2026.04"
+description: >-
+  Generic auto-safety controls for service bays, dealer networks, and
+  non-OEM automotive work that isn't explicitly WP.29 scope. Hybrid
+  human-in-loop is the default for any safety-relevant routing.
+
+rules:
+  - id: auto_safety_hybrid_required
+    severity: critical
+    when:
+      task.regulatory_class: [auto_safety]
+    require:
+      path.human_involved: true
+
+  - id: auto_safety_evidence
+    severity: high
+    when:
+      task.regulatory_class: [auto_safety]
+    require:
+      governance.evidence_export_required: true
+      governance.audit_log_required: true

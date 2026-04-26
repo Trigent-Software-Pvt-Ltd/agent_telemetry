@@ -1,0 +1,41 @@
+@startuml deployment
+' Deployment view — PlantUML
+' Render at https://plantuml.com/plantuml or in VS Code with PlantUML extension
+
+!theme plain
+skinparam componentStyle rectangle
+
+cloud "AWS (single region)" {
+  node "EC2 (Amazon Linux 2023)" as EC2 {
+    component "PM2 fork\nnode next start :3000" as PM2
+    component "/etc/cron.d/agent-telemetry" as CRON
+  }
+  database "RDS\nPostgreSQL" as RDS
+  database "ElastiCache\nRedis" as REDIS
+}
+
+cloud "Langfuse SaaS" as LF
+
+actor "Browser" as BROWSER
+BROWSER --> PM2 : HTTPS
+PM2 --> RDS : pg Pool
+PM2 ..> REDIS : ioredis (pub/sub, rate-limit)
+CRON --> PM2 : localhost:3000\nx-cron-secret
+PM2 --> LF : Langfuse REST (pull every 15m)
+
+note right of PM2
+  ecosystem.config.js
+  fork mode · max_memory_restart 1G
+  logs → /var/log/agent-telemetry/*
+end note
+
+note right of CRON
+  deploy/crontab
+  sync-langfuse */15m
+  compute-metrics :00
+  compute-process-roi :05
+  check-governance :10
+  check-budgets :15
+  detect-anomalies 0 */6
+end note
+@enduml

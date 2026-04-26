@@ -1,0 +1,34 @@
+%% Telemetry data flow — ingest → metrics → serving
+%% Mermaid — render at https://mermaid.live/
+
+flowchart LR
+    subgraph Producers
+        A1[Customer agent] -->|POST| I1[/api/v1/ingest/batch/]
+        A2[Langfuse-instrumented agent] -->|traces| LF[(Langfuse)]
+        LF -->|pull 15m| I2[/api/cron/sync-langfuse/]
+    end
+
+    I1 --> R[(runs)]
+    I2 --> R
+
+    subgraph "Hourly rollups"
+        R --> C1[compute-metrics]
+        R --> C2[compute-process-roi]
+        C1 --> AMD[(agent_metrics_daily)]
+        C2 --> PMD[(process_metrics_daily)]
+    end
+
+    subgraph "Monitoring checks"
+        AMD --> D1[detect-anomalies<br/>every 6h · z-score]
+        AMD --> D2[check-governance<br/>hourly · rule DSL]
+        R   --> D3[check-budgets<br/>hourly · MTD sum]
+        D1 --> AN[(anomalies)]
+        D3 --> AN
+    end
+
+    subgraph "Serving layer"
+        R   --> S1[/api/monitoring/stream/]
+        AMD --> S2[dashboards]
+        PMD --> S2
+        AN  --> S2
+    end
