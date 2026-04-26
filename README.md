@@ -3,15 +3,15 @@
 > **Production URL:** https://vipaeos.arkos.studio
 > **Vercel project:** `agent-telemetry-aeos` (under `trigent-ark-os` team)
 > **Production branch:** `aeos-mock` (this branch)
-> **Status:** Demoable. All 7 AEOS routes content-complete.
+> **Status:** Demoable. All 7 AEOS routes content-complete. UI matches the main app's light theme + dark navy sidebar.
 
 This branch is one of three parallel mocks living on the same git repo. Each mock has its own Vercel project and its own production URL — they coexist without touching each other.
 
 | Branch | Vercel project | Production URL | What it is |
 |---|---|---|---|
-| `main` | `agent_telemetry` | https://vipsigma.arkos.studio | Production telemetry app — 41 routes, full DB, real auth. The "deep observability" surface. |
+| `main` | `agent_telemetry` | https://vipsigma.arkos.studio | Production telemetry app — 41 routes, full DB-mode option, real auth. The "deep observability" surface. |
 | `quadrant-mock` | `agent-telemetry-quadrant` | https://vipquadrant.arkos.studio | Quadrant mock — Sourcing-Agent-live slice for Les (per Apr-15 commitment). |
-| **`aeos-mock`** | **`agent-telemetry-aeos`** | **https://vipaeos.arkos.studio** | **This branch.** Mock-only AEOS demo for Les. |
+| **`aeos-mock`** | **`agent-telemetry-aeos`** | **https://vipaeos.arkos.studio** | **This branch.** Mock-only AEOS demo for Les — Cross-Vendor Observation, Predictive Economic Ledger, L9 DIR, Auto-Improvement workspace. |
 
 Each project has its own "Production Branch" setting in Vercel. Pushes to one branch only deploy that branch's project. Local `.vercel/project.json` is per-developer-machine, gitignored.
 
@@ -19,7 +19,9 @@ Each project has its own "Production Branch" setting in Vercel. Pushes to one br
 
 ## What this demo proves
 
-AEOS = **Agent Economic Observation System** — the FuzeBox + rPotential joint-IP control plane that sits *above* every runtime vendor. The narrative answers three questions Les uses in every briefing:
+AEOS = **Agent Economic Observation System** — the FuzeBox + rPotential joint-IP control plane that sits *above* every runtime vendor. The narrative answers three questions Les uses in every briefing, plus one selling utility built on top.
+
+### The three load-bearing capabilities
 
 1. **Cross-vendor observation** — every execution from any vendor (Anthropic, OpenAI, Bedrock, Azure OpenAI, Vertex, Salesforce Agentforce, Uniphore, Cloudflare Workers AI, CrewAI, etc.) produces the same `ObservationEvent` shape. Coverage gaps are explicit on a signed Coverage Manifest.
 
@@ -29,7 +31,9 @@ AEOS = **Agent Economic Observation System** — the FuzeBox + rPotential joint-
 
 The structural moat: every signed asset is **two-party signed** (FuzeBox ed25519 + rPotential HMAC-SHA256). Single-party signatures are structurally refused — code invariant, not policy.
 
-The flavor: **self-improving agents**. Aggregated eval failures feed instruction synthesis. The system writes its own DIR rules. Variance shrinks. The next decision runs under a tighter rule set. Variance trends visibly downward per agent over time, on screen.
+### The selling utility — Auto-Improvement
+
+The system continuously analyses the ledger for delta-improvement opportunities. Variance breaches, drift signals, and aggregated eval failures feed a hypothesis generator. Every recommendation has a projected impact (variance reduction $/wk, EAI delta, confidence). Humans approve before deployment via L9 DIR injection. Outcomes are measured against the next ledger window — confirmed, reverted, or rolled back automatically. The agent population improves over time on signed evidence; humans stay in control of every shipped change.
 
 ---
 
@@ -40,30 +44,21 @@ The flavor: **self-improving agents**. Aggregated eval failures feed instruction
 | Route | Purpose |
 |---|---|
 | `/` | **Mission Control** — hero metrics (EAI / HPI / HLR with two-party sig pill), Coverage Manifest (33 vendors across 4 layers), Live Decision Feed, Path Mix donut, Recent Variance Breaches |
-| `/decisions/[id]` | **Decision Explorer** — 8-dim ScoredPathTable with the 3 rPotential-exclusive columns highlighted; DIR Patch card; PolicyEvaluation; Cross-Vendor Patch translation (Anthropic / OpenAI / Vertex side-by-side); Ledger Row card; Variance-Shrinkage Timeline (Original → Breach → Attribution → Patch → Next 5 runs ↓ 73%) |
-| `/eai` | **EAI Board** — signed 56px hero, 6 sub-metrics (UCS/SY/SER/EROI/HPI/HLR), 30-day rolling time-series with **3 inflection points where synthesized DIR rules fired** (hover for source aggregate) |
-| `/ledger` | **Predictive Economic Ledger** — 80-row table with predicted/actual/variance/attribution/correction columns + click-through drawer with full LedgerRow detail |
+| `/decisions/[id]` | **Decision Explorer** — 8-dim ScoredPathTable with the 3 rPotential-exclusive columns highlighted; **Score Computation panel** showing the line-by-line math sum; DIR Patch card; PolicyEvaluation; Cross-Vendor Patch translation (Anthropic / OpenAI / Vertex side-by-side); Ledger Row card; Variance-Shrinkage Timeline |
+| `/eai` | **EAI Board** — signed 56px hero, 6 sub-metrics (UCS/SY/SER/EROI/HPI/HLR), **EAI Computation panel** showing the three-component formula evaluated against this tenant's actual values, 30-day rolling time-series with 3 inflection points where synthesized DIR rules fired (hover for source aggregate) |
+| `/ledger` | **Predictive Economic Ledger** — top-of-page **LedgerRow v2.3 explainer** naming the 5 substructures (Predicted / Actual / Variance / Attribution / Correction); 80-row table with click-through drawer showing the full structure |
 | `/policy-packs` | **Policy Packs** — EU AI Act high-risk (5 rules), GDPR (6), SOC 2 (8); rule table with severity, fired/denied 7d, YAML drawer |
 | `/skills` | **Skills Authority** — 35-skill grid across 7 families with strategic-weight rings, drift indicators, drawer with per-path performance |
-| `/evidence` | **Evidence Export** — form (format/period) + bundle queue; export triggers 1.8s skeleton then a modal revealing both signatures side-by-side |
-| `/dir` | **Dynamic Instructions** — 6 default rules + **3 synthesized rules** (live/in_review/proposed lifecycle states); DEODAG flywheel (Observe → Evaluate → Synthesize → Inject) |
+| `/evidence` | **Evidence Export** — form (format/period) + bundle queue; export triggers a 1.8s skeleton then a modal revealing both signatures side-by-side |
+| `/dir` | **Auto-Improvement** — realised-impact summary row, 4 active recommendation cards with view-diff and approve/reject UX, 6-row improvement history with click-through outcome modal showing projected vs realised side-by-side, 7-step "How Auto-Improvement works" flow, live DIR rule set summary |
 
-### 90-second demo orchestrator
+### Math made prominent
 
-Click `Run 90-sec demo` in the sidebar. Plays scripted timeline:
+Three new panels surface the AEOS calculations explicitly so the formulas aren't buried in captions:
 
-| Beat | Time | What happens |
-|---|---|---|
-| Opening | 0:00 | Mission Control loads with hero metrics + signed coverage manifest |
-| Injecting | 0:12 | Toast: brake-diagnosis ticket arriving from service bay |
-| Exploring | 0:22 | Auto-navigates to a representative Decision Explorer; ScoredPathTable lights up |
-| Patching | 0:36 | DIR Patch card highlights — `dir_safety_relevant_confirmation` + `dir_auto_safety_tool_lockdown` fired |
-| Policy | 0:50 | Policy ALLOW with required_controls; cross-vendor patch translation |
-| Signing | 1:04 | Two-party signature reveal |
-| Zoomed | 1:18 | Auto-navigates to /eai; rolling time-series fills screen |
-| Done | 1:30 | Toast: "Every point on this chart is signed by both parties" |
-
-`Reset` button in TopBar returns to a clean state.
+- **Score Computation · winner** (Decision Explorer) — line-by-line walkthrough of the 8 dimensions with rPotential columns pilled in cyan, summing to the winner's `total_score`.
+- **EAI Computation** (EAI Board) — three component cards (A · AI execution quality, B · Human preservation lift, C · Risk drag) with operands stacked. Bottom callout shows the equation with this tenant's actual numbers: `EAI = A + B − C = 0.NNN`.
+- **LedgerRow v2.3 · five substructures** (Ledger top) — five numbered cards naming Predicted / Actual / Variance / Attribution / Correction with the AEOS-canonical definitions inline.
 
 ### Tenant switcher
 
@@ -83,6 +78,7 @@ All under `lib/aeos/`:
 - `seed/actors.ts` — ~50 actors (40 humans + 8 agents — Claude Opus 4.7, Sonnet 4.6, GPT-4o, Gemini 2.5 Pro, Agentforce, Uniphore BAC, Cloudflare Workers AI)
 - `seed/coverage-manifest.ts` — 33 vendors across 4 layers (hyperscaler / model_lab / agent_platform / tool_surface) with observed / gap / planned status
 - `seed/dir-rules.ts` — 6 default rules from the reference Python impl + 3 mock-synthesized rules in different lifecycle states
+- `seed/improvements.ts` — 4 active + 6 historical Auto-Improvement recommendations across all 4 tenants, each with source telemetry, proposed diff, projected impact, and (for history) measured outcome
 - `seed/policy-packs.ts` — EU AI Act / GDPR / SOC 2 (lifted from `docs/AEOS/aeos-engineering-handoff/02_policy_templates/`)
 - `seed/signals.ts` — GSTI × 35, drift × 35, UoP per actor, coordination_tax by task type
 - `seed/ledger.ts` — 470 LedgerRow v2.3 records with engineered downward-trending variance
@@ -91,6 +87,14 @@ All under `lib/aeos/`:
 - `prng.ts` — deterministic mulberry32 (seed `20260420`)
 
 Everything is reproducible. Same seed → identical output, every run.
+
+### Companion docs (repo root)
+
+| File | Purpose |
+|---|---|
+| `AEOS_Demo_plan.md` | Full planning doc — what was built, how it coexists with `main` and `quadrant-mock`, deployment notes |
+| `AEOS_DEMO_SCRIPT.md` | Live-walkthrough talk-track for in-person briefings |
+| `AEOS_VIDEO_SCRIPT.md` | Tight 6–8 min screen-recording script with per-section actions and shot list |
 
 ### Source documents
 
@@ -101,9 +105,6 @@ Everything is reproducible. Same seed → identical output, every run.
 - The full engineering handoff bundle (`aeos-engineering-handoff/` — JSON schemas, YAML policy packs, seed JSON, dashboard wireframes)
 - The reference Python monorepo (`fuzebox-aeos-handoff/_source_snapshot/`)
 - AEOS PRD with Motion A/B/C (Paperclip / Vast.ai / Eval Harness)
-
-`AEOS_Demo_plan.md` (repo root) — the planning doc for this branch.
-`AEOS_DEMO_SCRIPT.md` (repo root) — talk-track for Les to rehearse from.
 
 ---
 
@@ -116,11 +117,13 @@ This is a **mock-only** branch. The following are intentionally out of scope:
 - **No authentication.** Single-operator demo. The `(app)` group's NextAuth login screen is still reachable but not used by AEOS routes.
 - **No real cron / ingestion.** Cron endpoints exist at `/api/cron/*` from `main` but are not exercised by AEOS.
 - **No real Coverage Manifest signing.** The signatures are mock hex strings from the deterministic PRNG.
-- **No real evaluation pipeline.** The 3-tier eval harness (Motion C) is *narrated* via the synthesized DIR rules and the DEODAG flywheel illustration, not actually running.
+- **No real evaluation pipeline.** The 3-tier eval harness (Motion C) is *narrated* via the synthesized DIR rules and the Auto-Improvement flywheel illustration, not actually running.
 - **No actual cross-vendor patch propagation.** The "translated patch for Anthropic / OpenAI / Vertex" panel renders three pre-canned prefixed strings. The shape is right; the dispatch is mocked.
+- **No actual Auto-Improvement deployment.** Approve/Reject buttons are visual only — they don't push patches to a runtime. The data shown in the active and history sections is seeded.
+- **No 90-second auto-play.** The earlier orchestrator (sidebar play button + timeline scrubber) was removed because it felt mockish. The platform now reads as an operator's console; you drive the demo manually.
 - **No hosted Vercel `vercel.app` URL access.** Project SSO protection is on for `*.vercel.app` aliases (default for new Vercel projects). Use the custom domain **vipaeos.arkos.studio** which is public.
 
-If Les approves the demo, the next step is the **6-week production build** described in `docs/AEOS/Engineering_Instructions_PEL_v1.md` — real adapters, real SoR connectors, real attribution engine, real cross-vendor patch translation. That is a separate engagement.
+If Les approves the demo, the next step is the **6-week production build** described in `docs/AEOS/Engineering_Instructions_PEL_v1.md` — real adapters, real SoR connectors, real attribution engine, real cross-vendor patch translation, real Auto-Improvement deployment pipeline. That is a separate engagement.
 
 ---
 
@@ -128,8 +131,9 @@ If Les approves the demo, the next step is the **6-week production build** descr
 
 - **No edits to `main`.** Existing telemetry app still works. Existing routes (`/dashboard`, `/process/*`, `/agents/*`, `/governance/*`) still build and render on this branch.
 - **All AEOS code is namespaced.** `app/(aeos)/*`, `components/aeos/*`, `lib/aeos/*`, `types/aeos.ts`. Removing this branch leaves zero AEOS artifacts on `main`.
-- **Tailwind + globals.css.** Added a single `[data-theme="aeos-dark"]` block — additive, scoped. No existing tokens overridden.
+- **Tailwind + globals.css.** Variant adds a `:root`-level alias block (`--aeos-*` aliases pointing at the existing main tokens) — no existing tokens overridden.
 - **One destructive change** vs. `main`: `app/page.tsx` was deleted on this branch (it was a redirect → /dashboard). On the AEOS domain, `/` should be Mission Control. Other branches still have the redirect.
+- **UI matches the main app.** Same dark navy sidebar (`#0f1117`), same blue rP badge logo, same `.card` style on white, same accent palette. The AEOS branch does NOT introduce a new design language.
 
 ---
 
@@ -141,7 +145,7 @@ npm install      # if node_modules is stale
 npm run dev      # http://localhost:3000
 ```
 
-The home page IS the AEOS Mission Control. Tenant switcher and demo button are in the sidebar.
+The home page IS the AEOS Mission Control. Tenant switcher is in the sidebar.
 
 ## Local production-build sanity-check
 
