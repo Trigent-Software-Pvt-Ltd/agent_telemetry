@@ -35,6 +35,21 @@ yarn-error.log*
 
 # credentials
 credentials.csv
+arkosdb_credentials.md
+*_credentials.md
+*credentials.txt
+*.pem.txt
+
+# personal scratch / drafts
+achievement.md
+
+# macOS resource forks (noise inside docs/AEOS bundles)
+._*
+.DS_Store
+
+# Big binary AEOS source archives — content extracted into folders alongside
+docs/AEOS/**/*.tar.gz
+docs/AEOS/**/*.zip
 
 # vercel
 .vercel
