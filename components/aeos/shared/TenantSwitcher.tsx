@@ -15,14 +15,21 @@ export function TenantSwitcher() {
   const { tenantId, setTenantId } = useAEOSDemo()
   return (
     <label
-      className="flex items-center justify-between gap-2 w-full px-3 py-2 rounded-md cursor-pointer"
+      className="flex items-center justify-between gap-2 w-full px-3 py-2 rounded-lg cursor-pointer"
       style={{
-        background: 'var(--aeos-bg-canvas)',
-        border: '1px solid var(--aeos-border-line)',
+        background: 'rgba(255, 255, 255, 0.04)',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
         fontSize: 12,
       }}
     >
-      <span style={{ color: 'var(--aeos-fg-muted)', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <span
+        style={{
+          color: '#6B7280',
+          fontSize: 10,
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+        }}
+      >
         Tenant
       </span>
       <select
@@ -31,7 +38,7 @@ export function TenantSwitcher() {
         className="flex-1 outline-none cursor-pointer"
         style={{
           background: 'transparent',
-          color: 'var(--aeos-fg-primary)',
+          color: '#FFFFFF',
           border: 'none',
           fontSize: 12,
           appearance: 'none',
@@ -39,12 +46,12 @@ export function TenantSwitcher() {
         }}
       >
         {TENANTS.map(t => (
-          <option key={t.id} value={t.id} style={{ background: 'var(--aeos-bg-card)' }}>
+          <option key={t.id} value={t.id} style={{ background: '#0f1117', color: '#FFFFFF' }}>
             {t.label}
           </option>
         ))}
       </select>
-      <ChevronDown size={12} style={{ color: 'var(--aeos-fg-muted)' }} />
+      <ChevronDown size={12} style={{ color: '#9CA3AF' }} />
     </label>
   )
 }

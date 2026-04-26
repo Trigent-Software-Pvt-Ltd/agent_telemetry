@@ -13,23 +13,16 @@ export const metadata: Metadata = {
 
 export default function AEOSLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      data-theme="aeos-dark"
-      className="min-h-screen"
-      style={{
-        background: 'var(--aeos-bg-canvas)',
-        color: 'var(--aeos-fg-primary)',
-        fontFamily: 'var(--font-dm), Inter, system-ui, sans-serif',
-        fontSize: 'var(--aeos-fs-body)',
-      }}
-    >
+    <div className="min-h-screen" style={{ background: 'var(--surface)' }}>
       <AEOSDemoProvider>
-        <div className="flex min-h-screen">
+        <aside data-sidebar>
           <AEOSSidebar />
-          <div className="flex-1 flex flex-col" style={{ marginLeft: 260 }}>
+        </aside>
+        <div style={{ marginLeft: 260 }} data-main>
+          <div data-topbar>
             <AEOSTopBar />
-            <main className="flex-1 px-8 py-6">{children}</main>
           </div>
+          <main className="p-6">{children}</main>
         </div>
       </AEOSDemoProvider>
     </div>

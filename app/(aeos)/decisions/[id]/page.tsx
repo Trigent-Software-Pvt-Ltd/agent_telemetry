@@ -150,7 +150,7 @@ export default function DecisionDetailPage({ params }: { params: Promise<{ id: s
                     key={sp.path}
                     style={{
                       borderTop: '1px solid var(--aeos-border-divider)',
-                      background: isWinner ? 'rgba(143,211,255,0.06)' : 'transparent',
+                      background: isWinner ? 'rgba(55,138,221,0.06)' : 'transparent',
                     }}
                   >
                     <td className="py-2 px-2 font-sans" style={{ color: isWinner ? 'var(--aeos-accent-primary)' : 'var(--aeos-fg-primary)', fontWeight: isWinner ? 600 : 400 }}>

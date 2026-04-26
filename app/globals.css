@@ -128,25 +128,28 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-/* ── AEOS dark control plane (mock branch only) ──────────── */
-[data-theme="aeos-dark"] {
-  --aeos-bg-canvas: #0b1220;
-  --aeos-bg-card:   #131c30;
-  --aeos-bg-nested: #0d1526;
-  --aeos-bg-elevated: #182645;
-  --aeos-border-line:    #223255;
-  --aeos-border-divider: #22315a;
-  --aeos-fg-primary:   #e8eefb;
-  --aeos-fg-secondary: #9db2d9;
-  --aeos-fg-muted:     #8da0c0;
-  --aeos-accent-primary: #8fd3ff;
-  --aeos-accent-ok:      #6ee7b7;
-  --aeos-accent-warn:    #fbbf24;
-  --aeos-accent-bad:     #f87171;
-  --aeos-accent-fuzebox: #6ee7b7;
-  --aeos-accent-rpotential: #8fd3ff;
-  --aeos-pill-bg: #1d3a6a;
-  --aeos-pill-fg: #9fd8ff;
+/* ── AEOS aliases — reuse the main light-theme tokens so AEOS routes
+   share the same visual language as the rest of the app. The main
+   sidebar bg (#0f1117) is the one dark surface; everything else is
+   white/F8F9FA per the existing design system. */
+:root {
+  --aeos-bg-canvas: var(--surface);
+  --aeos-bg-card:   #FFFFFF;
+  --aeos-bg-nested: var(--surface);
+  --aeos-bg-elevated: #FFFFFF;
+  --aeos-border-line:    var(--border);
+  --aeos-border-divider: #F1F0EC;
+  --aeos-fg-primary:   var(--text-primary);
+  --aeos-fg-secondary: var(--text-secondary);
+  --aeos-fg-muted:     var(--text-muted);
+  --aeos-accent-primary: var(--accent-blue);
+  --aeos-accent-ok:      var(--status-green);
+  --aeos-accent-warn:    var(--status-amber);
+  --aeos-accent-bad:     var(--status-red);
+  --aeos-accent-fuzebox: var(--status-green);
+  --aeos-accent-rpotential: var(--accent-blue);
+  --aeos-pill-bg: rgba(55, 138, 221, 0.08);
+  --aeos-pill-fg: var(--accent-blue);
   --aeos-radius-sm: 8px;
   --aeos-radius-md: 12px;
   --aeos-radius-lg: 16px;
@@ -163,13 +166,18 @@ body {
   --aeos-fs-hero:    34px;
 }
 
-[data-theme="aeos-dark"] .aeos-card {
+.aeos-card {
   background: var(--aeos-bg-card);
   border: 1px solid var(--aeos-border-line);
   border-radius: var(--aeos-radius-md);
   padding: var(--aeos-space-l);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  transition: box-shadow 0.15s ease;
 }
-[data-theme="aeos-dark"] .aeos-pill {
+.aeos-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.aeos-pill {
   background: var(--aeos-pill-bg);
   color: var(--aeos-pill-fg);
   border-radius: 999px;
@@ -178,16 +186,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  border: 1px solid rgba(55, 138, 221, 0.18);
 }
-[data-theme="aeos-dark"] .aeos-mono {
+.aeos-mono {
   font-family: var(--font-mono-jb), 'JetBrains Mono', Menlo, monospace;
   font-variant-numeric: tabular-nums;
 }
-[data-theme="aeos-dark"] .aeos-hero-num {
+.aeos-hero-num {
   font-family: var(--font-mono-jb), 'JetBrains Mono', monospace;
   font-size: var(--aeos-fs-hero);
   color: var(--aeos-accent-primary);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -195,7 +204,7 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
-[data-theme="aeos-dark"] .aeos-pulse {
+.aeos-pulse {
   animation: aeos-pulse 1.6s ease-in-out infinite;
 }
 

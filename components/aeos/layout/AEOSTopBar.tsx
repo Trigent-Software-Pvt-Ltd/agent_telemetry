@@ -16,28 +16,31 @@ const TITLES: Record<string, string> = {
   '/dir': 'Dynamic Instructions',
 }
 
+const TENANT_LABEL: Record<string, string> = {
+  kengarff_automotive: 'Ken Garff Automotive',
+  vipsigma_sports_betting: 'VIPSigma Sports Betting',
+  artgroup: 'ARTGROUP',
+  loop_tv: 'Loop TV',
+}
+
 export function AEOSTopBar() {
   const pathname = usePathname()
   const { tenantId, beat, isPlaying, reset } = useAEOSDemo()
 
-  // Find best-matching title
   const title =
     Object.entries(TITLES).find(([k]) => k === pathname || (k !== '/' && pathname.startsWith(k)))?.[1] ??
     'AEOS'
 
   return (
-    <header
-      className="sticky top-0 z-10 flex items-center justify-between px-6"
-      style={{
-        height: 56,
-        background: 'var(--aeos-bg-canvas)',
-        borderBottom: '1px solid var(--aeos-border-line)',
-      }}
+    <div
+      className="flex items-center justify-between py-3.5 px-6 bg-white"
+      style={{ borderBottom: '1px solid #E8E6E0' }}
     >
-      <div className="flex items-center gap-3" style={{ fontSize: 13 }}>
-        <span style={{ color: 'var(--aeos-fg-muted)' }}>{tenantLabel(tenantId)}</span>
-        <span style={{ color: 'var(--aeos-fg-muted)' }}>›</span>
-        <span style={{ color: 'var(--aeos-fg-primary)', fontWeight: 500 }}>{title}</span>
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-1.5 text-sm">
+        <span style={{ color: '#9CA3AF' }}>{TENANT_LABEL[tenantId] ?? tenantId}</span>
+        <span style={{ color: '#D1D5DB' }}>/</span>
+        <span className="font-semibold" style={{ color: '#111827' }}>{title}</span>
       </div>
 
       <div className="flex items-center gap-3">
@@ -47,12 +50,12 @@ export function AEOSTopBar() {
           <button
             type="button"
             onClick={reset}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg cursor-pointer"
             style={{
-              border: '1px solid var(--aeos-border-line)',
-              color: 'var(--aeos-fg-secondary)',
+              border: '1px solid var(--border)',
+              color: 'var(--text-muted)',
               fontSize: 12,
-              background: 'transparent',
+              background: 'var(--surface)',
             }}
           >
             <RotateCcw size={12} />
@@ -60,18 +63,8 @@ export function AEOSTopBar() {
           </button>
         )}
       </div>
-    </header>
+    </div>
   )
-}
-
-function tenantLabel(id: string) {
-  const map: Record<string, string> = {
-    kengarff_automotive: 'Ken Garff Automotive',
-    vipsigma_sports_betting: 'VIPSigma Sports Betting',
-    artgroup: 'ARTGROUP',
-    loop_tv: 'Loop TV',
-  }
-  return map[id] ?? id
 }
 
 const BEATS: Array<{ key: string; label: string; t: string }> = [
@@ -99,12 +92,10 @@ function DemoTimelineScrubber({ beat }: { beat: string }) {
               width: 6,
               height: 6,
               borderRadius: 999,
-              background: i === idx
-                ? 'var(--aeos-accent-primary)'
-                : i < idx ? 'var(--aeos-accent-ok)' : 'var(--aeos-fg-muted)',
+              background: i === idx ? '#378ADD' : i < idx ? '#1D9E75' : '#9CA3AF',
             }}
           />
-          <span style={{ fontSize: 9, color: 'var(--aeos-fg-muted)' }}>{b.t}</span>
+          <span style={{ fontSize: 9, color: '#9CA3AF' }}>{b.t}</span>
         </div>
       ))}
     </div>

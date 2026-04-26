@@ -79,7 +79,7 @@ export function LiveDecisionFeed({ decisions }: Props) {
                     className="px-2 py-0.5 rounded-full"
                     style={{
                       fontSize: 10,
-                      background: 'rgba(255,255,255,0.04)',
+                      background: 'var(--surface)',
                       color: PATH_COLOR[d.selected_path] ?? 'var(--aeos-fg-secondary)',
                       border: `1px solid ${PATH_COLOR[d.selected_path] ?? 'var(--aeos-border-line)'}33`,
                     }}

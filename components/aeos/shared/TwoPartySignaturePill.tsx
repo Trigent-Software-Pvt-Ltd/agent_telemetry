@@ -14,30 +14,31 @@ export function TwoPartySignaturePill({ size = 'sm', showCheck = true, className
       className={`flex items-center rounded-full overflow-hidden ${className}`}
       style={{
         height: h,
-        border: '1px solid var(--aeos-border-line)',
+        border: '1px solid var(--border)',
         fontSize: fs,
         fontWeight: 500,
+        background: '#FFFFFF',
       }}
       title="Signed by FuzeBox + rPotential"
     >
       <div
         className="flex items-center gap-1 px-2 h-full"
-        style={{ background: 'rgba(110, 231, 183, 0.12)', color: 'var(--aeos-accent-fuzebox)' }}
+        style={{ background: 'rgba(29, 158, 117, 0.08)', color: 'var(--status-green)' }}
       >
-        <span style={{ width: 6, height: 6, borderRadius: 999, background: 'var(--aeos-accent-fuzebox)' }} />
+        <span style={{ width: 6, height: 6, borderRadius: 999, background: 'var(--status-green)' }} />
         FuzeBox
       </div>
       <div
         className="flex items-center gap-1 px-2 h-full"
         style={{
-          background: 'rgba(143, 211, 255, 0.12)',
-          color: 'var(--aeos-accent-rpotential)',
-          borderLeft: '1px solid var(--aeos-border-line)',
+          background: 'rgba(55, 138, 221, 0.08)',
+          color: 'var(--accent-blue)',
+          borderLeft: '1px solid var(--border)',
         }}
       >
-        <span style={{ width: 6, height: 6, borderRadius: 999, background: 'var(--aeos-accent-rpotential)' }} />
+        <span style={{ width: 6, height: 6, borderRadius: 999, background: 'var(--accent-blue)' }} />
         rPotential
-        {showCheck && <Check size={11} style={{ marginLeft: 2 }} />}
+        {showCheck && <Check size={11} style={{ marginLeft: 2, color: 'var(--status-green)' }} />}
       </div>
     </div>
   )
