@@ -53,6 +53,7 @@ docs/AEOS/**/*.zip
 
 # vercel
 .vercel
+.vercel.*.bak
 
 # typescript
 *.tsbuildinfo
