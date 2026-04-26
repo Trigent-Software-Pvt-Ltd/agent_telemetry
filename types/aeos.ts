@@ -417,22 +417,78 @@ export interface AdapterResult {
   applied_patch?: InstructionPatch
 }
 
-// ── Demo orchestrator ────────────────────────────────────
-export type DemoBeat =
-  | 'idle'
-  | 'opening' // 0:00
-  | 'injecting' // 0:15
-  | 'exploring' // 0:25
-  | 'patching' // 0:40
-  | 'policy' // 0:55
-  | 'signing' // 1:10
-  | 'zoomed' // 1:25
-  | 'done' // 1:30
+// ── Auto-Improvement (the selling utility) ───────────────
+//
+// AEOS continuously analyzes the Predictive Economic Ledger for
+// delta-improvement opportunities. Patterns from variance breaches,
+// drift signals, and aggregated eval failures feed a hypothesis
+// generator. Every recommendation is human-approved before it ships
+// — humans stay in control; the agent population improves over time.
 
-export interface DemoState {
-  beat: DemoBeat
-  isPlaying: boolean
-  startedAt: string | null
-  scenarioId: string
-  playbackSpeed: 0.5 | 1 | 2
+export type ImprovementStatus =
+  | 'new' // detected, awaiting review
+  | 'in_review' // under human review
+  | 'approved' // approved, queued for deployment
+  | 'applied' // deployed; outcome being measured
+  | 'confirmed' // outcome measured, delta confirmed
+  | 'reverted' // outcome did not match hypothesis; rolled back
+  | 'rejected' // human rejected before deploy
+
+export type ImprovementType =
+  | 'prompt_edit'
+  | 'instruction_add'
+  | 'tool_restriction'
+  | 'tool_addition'
+  | 'routing_override'
+  | 'model_swap'
+  | 'dir_rule_synthesis'
+
+export interface ImprovementSourceTelemetry {
+  ledger_rows: number
+  window_days: number
+  scope: string // e.g., "kengarff_automotive · skill_brake_diag_v3 · anthropic_agent"
+  observed_metric: string // e.g., "−$214 mean variance per run"
+  observed_value: number // raw value
+}
+
+export interface ImprovementProjection {
+  variance_reduction_usd_per_week: number
+  eai_delta: number
+  cost_change_usd_per_week: number
+  confidence: number // 0..1
+}
+
+export interface ImprovementOutcome {
+  measured_at: string
+  variance_actual_delta_usd_per_week: number
+  eai_actual_delta: number
+  rows_observed: number
+  notes: string
+}
+
+export interface ImprovementRecommendation {
+  improvement_id: string
+  status: ImprovementStatus
+  tenant_id: AEOSTenantId
+  skill_id?: string
+  affected_path?: ExecutionPath
+  type: ImprovementType
+  title: string
+  hypothesis: string
+  source_telemetry: ImprovementSourceTelemetry
+  diff: {
+    before: string
+    after: string
+    summary: string
+  }
+  projected_impact: ImprovementProjection
+  detected_at: string
+  reviewed_by?: string
+  reviewed_at?: string
+  applied_at?: string
+  outcome?: ImprovementOutcome
+  // governance
+  policy_check: 'passed' | 'flagged' | 'blocked'
+  policy_notes?: string
+  signature_pair?: SignaturePair
 }

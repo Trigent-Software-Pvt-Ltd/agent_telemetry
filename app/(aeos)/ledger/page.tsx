@@ -41,11 +41,58 @@ export default function LedgerPage() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 style={{ fontSize: 'var(--aeos-fs-title)', fontWeight: 600 }}>Predictive Economic Ledger</h1>
-        <p style={{ color: 'var(--aeos-fg-secondary)', marginTop: 4, fontSize: 14 }}>
-          Append-only · Predicted, Actual, Variance, Attribution, Correction.
+        <h1
+          className="font-[var(--font-sora)]"
+          style={{ fontSize: 22, fontWeight: 600, color: 'var(--text-primary)' }}
+        >
+          Predictive Economic Ledger
+        </h1>
+        <p style={{ color: 'var(--text-secondary)', marginTop: 4, fontSize: 14 }}>
+          Append-only · LedgerRow v2.3 · two-party co-signed at every actual.
         </p>
       </header>
+
+      {/* What's in a LedgerRow — the 5 substructures of v2.3 */}
+      <div className="card">
+        <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          LedgerRow v2.3 · five substructures
+        </div>
+        <div style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 2 }}>
+          Every row carries the full predictive economic story. Click any row for the full structure.
+        </div>
+        <div className="grid grid-cols-5 gap-3 mt-4">
+          <Substructure
+            n={1}
+            name="Predicted"
+            sub="$ at decision time"
+            note="Signed by FuzeBox · ed25519"
+          />
+          <Substructure
+            n={2}
+            name="Actual"
+            sub="$ from external SoR"
+            note="Co-signed FuzeBox + rPotential"
+          />
+          <Substructure
+            n={3}
+            name="Variance"
+            sub="Two-dimensional"
+            note="Technical (σ, latency, hallucination) AND economic ($, win rate)"
+          />
+          <Substructure
+            n={4}
+            name="Attribution"
+            sub="5-bucket classification"
+            note="agent_capability · agent_instructions · data · policy · environment"
+          />
+          <Substructure
+            n={5}
+            name="Correction"
+            sub="L9 DIR patch object"
+            note="Auto-fires when attribution = agent_*. Cross-vendor propagation."
+          />
+        </div>
+      </div>
 
       <div className="aeos-card">
         <div className="flex items-center gap-4 mb-3">
@@ -136,6 +183,35 @@ export default function LedgerPage() {
       </div>
 
       {drawerRow && <LedgerRowDrawer row={drawerRow} onClose={() => setDrawerRow(null)} />}
+    </div>
+  )
+}
+
+function Substructure({ n, name, sub, note }: { n: number; name: string; sub: string; note: string }) {
+  return (
+    <div className="p-3 rounded-lg" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+      <div className="flex items-center gap-2 mb-1">
+        <div
+          className="rounded-md flex items-center justify-center font-[var(--font-mono-jb)]"
+          style={{
+            width: 20,
+            height: 20,
+            background: 'var(--accent-blue)',
+            color: '#FFFFFF',
+            fontSize: 11,
+            fontWeight: 700,
+          }}
+        >
+          {n}
+        </div>
+        <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>{name}</span>
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 4, lineHeight: 1.4 }}>
+        {sub}
+      </div>
+      <div style={{ fontSize: 10, color: 'var(--text-muted)', marginTop: 6, lineHeight: 1.4 }}>
+        {note}
+      </div>
     </div>
   )
 }

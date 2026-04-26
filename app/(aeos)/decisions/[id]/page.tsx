@@ -1,6 +1,6 @@
 'use client'
 
-import { use } from 'react'
+import { use, Fragment } from 'react'
 import { notFound } from 'next/navigation'
 import { getDecision, getLedgerRow } from '@/lib/aeos/data'
 import type { ScoredPath, UEFDecision, LedgerRow } from '@/types/aeos'
@@ -184,6 +184,9 @@ export default function DecisionDetailPage({ params }: { params: Promise<{ id: s
         </div>
       </div>
 
+      {/* 8-dimension score computation — winner walkthrough */}
+      <ScoreComputation winner={decision.scored_paths[0]} />
+
       {/* DIR patch + Policy evaluation */}
       <div className="grid grid-cols-2 gap-4">
         {decision.applied_patch ? (
@@ -259,6 +262,66 @@ export default function DecisionDetailPage({ params }: { params: Promise<{ id: s
           )}
         </div>
       )}
+    </div>
+  )
+}
+
+function ScoreComputation({ winner }: { winner: ScoredPath | undefined }) {
+  if (!winner) return null
+  const lines: Array<{ sign: '+' | '−'; v: number; key: string; note: string; rp?: boolean }> = [
+    { sign: '+', v: winner.capability_fit, key: 'capability_fit', note: 'skill performance baseline + path success rate' },
+    { sign: '+', v: winner.gsti_value, key: 'gsti_value', note: 'rPotential — strategic talent signal', rp: true },
+    { sign: '+', v: winner.uop_value, key: 'uop_value', note: 'rPotential — actor readiness − fatigue', rp: true },
+    { sign: '−', v: winner.coordination_tax, key: 'coordination_tax', note: 'rPotential — workflow friction (subtracted)', rp: true },
+    { sign: '+', v: winner.governance_score, key: 'governance_score', note: 'pack rules + human-in-loop bonus on high-risk' },
+    { sign: '+', v: winner.runtime_fit, key: 'runtime_fit', note: 'latency / cost / reliability vs. budget' },
+    { sign: '+', v: winner.economic_value, key: 'economic_value', note: '(expected outcome − cost) / 30' },
+    { sign: '−', v: winner.risk_penalty, key: 'risk_penalty', note: 'auto-safety / gambling guardrails (subtracted)' },
+  ]
+  return (
+    <div className="card">
+      <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+        Score computation · winner
+      </div>
+      <div style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 2 }}>
+        How <span className="font-[var(--font-mono-jb)]">{winner.path}</span> reached <span className="font-[var(--font-mono-jb)]">{winner.total.toFixed(2)}</span>. The three rPotential signals are inaccessible to any single runtime vendor.
+      </div>
+      <div className="mt-4 grid grid-cols-[40px_60px_1fr_180px] gap-x-3 gap-y-2 items-baseline">
+        {lines.map(l => (
+          <Fragment key={l.key}>
+            <div
+              className="font-[var(--font-mono-jb)]"
+              style={{ fontSize: 16, color: l.sign === '−' ? 'var(--status-amber)' : 'var(--text-primary)', textAlign: 'right', fontWeight: 500 }}
+            >
+              {l.sign}
+            </div>
+            <div
+              className="font-[var(--font-mono-jb)] tabular-nums"
+              style={{ fontSize: 16, color: l.rp ? 'var(--accent-blue)' : 'var(--text-primary)', textAlign: 'right', fontWeight: 600 }}
+            >
+              {l.v.toFixed(2)}
+            </div>
+            <div className="font-[var(--font-mono-jb)]" style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
+              {l.key}
+              {l.rp && <span className="ml-2 px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(55,138,221,0.1)', color: 'var(--accent-blue)', fontSize: 9, letterSpacing: '0.04em' }}>● rPotential</span>}
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.4 }}>{l.note}</div>
+          </Fragment>
+        ))}
+        {/* Sum line */}
+        <div style={{ borderTop: '1px solid var(--border)', gridColumn: 'span 4', height: 0, marginTop: 4 }} />
+        <div />
+        <div
+          className="font-[var(--font-mono-jb)] tabular-nums"
+          style={{ fontSize: 18, color: 'var(--accent-blue)', textAlign: 'right', fontWeight: 700 }}
+        >
+          {winner.total.toFixed(2)}
+        </div>
+        <div className="font-[var(--font-mono-jb)]" style={{ fontSize: 12, color: 'var(--text-primary)', fontWeight: 600 }}>
+          total_score
+        </div>
+        <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>winner</div>
+      </div>
     </div>
   )
 }

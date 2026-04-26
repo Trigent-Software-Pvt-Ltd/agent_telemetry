@@ -27,8 +27,10 @@ import { POLICY_PACKS, getPolicyPack as _getPolicyPack } from './seed/policy-pac
 import { DIR_RULES, getDIRRuleById } from './seed/dir-rules'
 import { getCoverageManifest as _getCoverageManifest } from './seed/coverage-manifest'
 import { getLedgerRowsForTenant, getLedgerRowByExecutionId } from './seed/ledger'
+import { listImprovements as _listImprovements, listActiveImprovements as _listActive, listImprovementHistory as _listHistory } from './seed/improvements'
 import { computeEAIBreakdown, computeEAITimeSeries } from './eai'
 import { mulberry32, AEOS_SEED, mockHex, mockId, range, clamp, pickOne } from './prng'
+import type { ImprovementRecommendation } from '@/types/aeos'
 
 // ── Tenants ──────────────────────────────────────────────
 export function listTenants(): AEOSTenant[] {
@@ -394,6 +396,19 @@ export function listDIRRules(): DIRRule[] {
 }
 export function getDIRRule(ruleId: string): DIRRule | undefined {
   return getDIRRuleById(ruleId)
+}
+
+// ── Auto-Improvement ─────────────────────────────────────
+export function listImprovements(): ImprovementRecommendation[] {
+  return _listImprovements()
+}
+export function listActiveImprovements(tenantId?: string): ImprovementRecommendation[] {
+  const all = _listActive()
+  return tenantId ? all.filter(i => i.tenant_id === tenantId) : all
+}
+export function listImprovementHistory(tenantId?: string): ImprovementRecommendation[] {
+  const all = _listHistory()
+  return tenantId ? all.filter(i => i.tenant_id === tenantId) : all
 }
 
 // ── Observation events (lightweight derivation) ──────────

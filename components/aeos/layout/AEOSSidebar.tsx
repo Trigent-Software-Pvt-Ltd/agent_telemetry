@@ -9,17 +9,14 @@ import {
   ShieldCheck,
   Brain,
   Package,
-  Zap,
-  Play,
-  CheckCircle2,
+  Sparkles,
   Home,
+  CheckCircle2,
 } from 'lucide-react'
-import { useAEOSDemo } from './AEOSDemoProvider'
 import { TenantSwitcher } from '@/components/aeos/shared/TenantSwitcher'
 
 export function AEOSSidebar() {
   const pathname = usePathname()
-  const { start, isPlaying } = useAEOSDemo()
 
   return (
     <aside
@@ -71,6 +68,14 @@ export function AEOSSidebar() {
             active={pathname === '/ledger'}
           />
 
+          <SectionLabel>Auto-Improvement</SectionLabel>
+          <NavItem
+            href="/dir"
+            label="Recommendations"
+            icon={<Sparkles size={16} />}
+            active={pathname === '/dir'}
+          />
+
           <SectionLabel>Governance</SectionLabel>
           <NavItem
             href="/policy-packs"
@@ -90,42 +95,18 @@ export function AEOSSidebar() {
             icon={<Package size={16} />}
             active={pathname === '/evidence'}
           />
-          <NavItem
-            href="/dir"
-            label="Dynamic Instructions"
-            icon={<Zap size={16} />}
-            active={pathname === '/dir'}
-          />
         </nav>
       </div>
 
-      {/* Footer: run demo + signed pills */}
-      <div className="px-4 py-4 space-y-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <button
-          type="button"
-          onClick={start}
-          disabled={isPlaying}
-          className="w-full flex items-center justify-center gap-2 py-2 rounded-lg transition-opacity"
-          style={{
-            background: '#378ADD',
-            color: '#FFFFFF',
-            fontWeight: 600,
-            fontSize: 13,
-            opacity: isPlaying ? 0.5 : 1,
-          }}
-        >
-          <Play size={14} />
-          {isPlaying ? 'Demo running…' : 'Run 90-sec demo'}
-        </button>
-        <div className="space-y-1.5">
-          <div className="flex items-center gap-2" style={{ fontSize: 11, color: '#9CA3AF' }}>
-            <CheckCircle2 size={12} style={{ color: '#1D9E75' }} />
-            Coverage manifest verified
-          </div>
-          <div className="flex items-center gap-2" style={{ fontSize: 11, color: '#9CA3AF' }}>
-            <CheckCircle2 size={12} style={{ color: '#1D9E75' }} />
-            Two-party attestation active
-          </div>
+      {/* Footer: signed pills */}
+      <div className="px-5 py-4 space-y-2" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="flex items-center gap-2" style={{ fontSize: 11, color: '#9CA3AF' }}>
+          <CheckCircle2 size={12} style={{ color: '#1D9E75' }} />
+          Coverage manifest · signed
+        </div>
+        <div className="flex items-center gap-2" style={{ fontSize: 11, color: '#9CA3AF' }}>
+          <CheckCircle2 size={12} style={{ color: '#1D9E75' }} />
+          Two-party attestation · live
         </div>
       </div>
     </aside>
